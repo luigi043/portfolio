@@ -1,0 +1,412 @@
+/* Geral */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #121212; /* Fundo escuro */
+  color: #fff;
+  text-align: center;
+}
+
+/* Containers e Layout */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.text {
+  padding: 100px 20px;
+  max-width: 600px;
+}
+
+#projects {
+  margin: 2rem;
+  text-align: center;
+  padding: 40px;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajuste responsivo */
+  gap: 20px;
+  justify-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Garante o alinhamento central se houver espaço extra */
+  align-items: start; /* Alinha o conteúdo no topo */
+}
+
+.project-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%; /* Ajusta para ocupar toda a largura disponível */
+  max-width: 300px; /* Limita a largura dos cartões */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  color: #000000;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Tipografia */
+h1, .bigHome, .highlight {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+#animated-name {
+  font-size: 50px;
+  color: #007BFF;
+  width: 0; /* Ajusta o tamanho do texto inicial */
+  white-space: nowrap; /* Evita quebra de linha */
+  overflow: hidden; /* Esconde o texto enquanto digita */
+  border-right: 4px solid #007BFF; /* Efeito de cursor */
+  animation: typing 3s steps(15) 1s forwards, blink 0.75s step-end infinite;
+}
+
+.mediumHome {
+  font-size: 18px;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.cv-section, .project-card {
+  text-align: center;
+}
+
+.fa-arrow-down {
+  font-size: 30px;
+  margin: 20px 0;
+  color: #007BFF;
+  animation: bounce 1s infinite;
+}
+
+/* Efeitos de Animação */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #007BFF; }
+  100% { text-shadow: 0 0 20px #00f, 0 0 30px #007BFF; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes typing {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes ledGlow {
+  0% { box-shadow: 0 0 10px rgba(0, 0, 255, 0.8); }
+  100% { box-shadow: 0 0 25px rgba(0, 0, 255, 1), 0 0 40px rgba(0, 0, 255, 0.7); }
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+.cv a, .cv-link {
+  background: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.cv a:hover, .cv-link:hover {
+  background: #0056b3;
+}
+
+/* Imagens */
+img {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+  animation: ledGlow 1.5s infinite alternate;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  margin: 10px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.social-icons a:hover {
+  color: #007BFF;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Botões */
+button {
+  padding: 0.6rem 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Sobre Mim */
+#about-me {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: auto;
+}
+
+#about-me h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#about-me p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Responsividade para o grid */
+.w3-row-padding {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.w3-half {
+  flex: 1 1 calc(50% - 16px);
+  max-width: 50%;
+}
+
+.w3-half img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+  .w3-half {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.project-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%; /* Ajusta para ocupar toda a largura disponível */
+  max-width: 300px; /* Limita a largura dos cartões */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  color: #000000;
+}
+
+#internship {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  color: #555;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: auto;
+}
+
+#internship h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.company-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.company-info h4 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.company-info p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.skills-and-impact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  justify-items: start;
+}
+
+.skills, .impact {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skills h4, .impact h4 {
+  font-size: 22px;
+  color: #007BFF;
+  margin-bottom: 15px;
+}
+
+.skills ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skills ul li {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.skills ul li strong {
+  color: #007BFF;
+}
+
+.impact p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+/* Estilo do Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #007BFF;
+}
+
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  margin: 0 15px;
+  font-size: 20px;
+}
+
+footer .social-links a:hover {
+  color: #007BFF;
+}
+
+footer p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #bbb;
+}
