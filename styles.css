@@ -2,7 +2,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   background-color: #121212; /* Fundo escuro */
   color: #fff;
   text-align: center;
@@ -16,6 +16,7 @@ html, body {
   padding: 50px;
   gap: 50px;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .text {
@@ -31,11 +32,11 @@ html, body {
 
 .project-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajuste responsivo */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  justify-items: center; /* Centraliza os itens horizontalmente */
-  justify-content: center; /* Garante o alinhamento central se houver espaço extra */
-  align-items: start; /* Alinha o conteúdo no topo */
+  justify-items: center;
+  justify-content: center;
+  align-items: start;
 }
 
 .project-card {
@@ -43,44 +44,11 @@ html, body {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  width: 100%; /* Ajusta para ocupar toda a largura disponível */
-  max-width: 300px; /* Limita a largura dos cartões */
+  width: 100%;
+  max-width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   color: #000000;
-}
-
-.project-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-h3 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li {
-  margin-bottom: 8px;
-}
-
-a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* Tipografia */
@@ -89,46 +57,30 @@ h1, .bigHome, .highlight {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 #animated-name {
-  font-size: 50px;
+  font-size: 2.5rem;
   color: #007BFF;
-  width: 0; /* Ajusta o tamanho do texto inicial */
-  white-space: nowrap; /* Evita quebra de linha */
-  overflow: hidden; /* Esconde o texto enquanto digita */
-  border-right: 4px solid #007BFF; /* Efeito de cursor */
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #007BFF;
   animation: typing 3s steps(15) 1s forwards, blink 0.75s step-end infinite;
 }
 
 .mediumHome {
-  font-size: 18px;
+  font-size: 1.125rem;
   max-width: 700px;
   margin: auto;
   line-height: 1.6;
-}
-
-.cv-section, .project-card {
-  text-align: center;
-}
-
-.fa-arrow-down {
-  font-size: 30px;
-  margin: 20px 0;
-  color: #007BFF;
-  animation: bounce 1s infinite;
 }
 
 /* Efeitos de Animação */
 @keyframes glow {
   0% { text-shadow: 0 0 5px #007BFF; }
   100% { text-shadow: 0 0 20px #00f, 0 0 30px #007BFF; }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
 }
 
 @keyframes typing {
@@ -160,50 +112,11 @@ a {
   text-decoration: none;
   border-radius: 5px;
   font-size: 18px;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .cv a:hover, .cv-link:hover {
   background: #0056b3;
-}
-
-/* Imagens */
-img {
-  border-radius: 10px;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  object-fit: cover;
-  box-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
-  animation: ledGlow 1.5s infinite alternate;
-}
-
-.project-card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.social-icons a {
-  margin: 10px;
-  font-size: 30px;
-  color: #fff;
-}
-
-.social-icons a:hover {
-  color: #007BFF;
-}
-
-.social-icons img {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
 }
 
 /* Botões */
@@ -222,6 +135,121 @@ button:hover {
   background-color: #45a049;
 }
 
+/* Imagens */
+img {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+  animation: ledGlow 1.5s infinite alternate;
+}
+
+/* Estilos gerais para o container */
+#projects {
+  padding: 40px 20px;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 32px;
+  color: #007BFF;
+  margin-bottom: 30px;
+}
+
+/* Contêiner dos cards de projeto */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+/* Estilos para cada card de projeto */
+.project-card {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.project-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.project-card ul li {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Links no card de projeto */
+.project-card a {
+  color: #007BFF;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #0056b3;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .project-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-container {
+    grid-template-columns: 1fr; /* 1 coluna */
+  }
+}
+
+
+.social-icons a {
+  margin: 10px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.social-icons a:hover {
+  color: #007BFF;
+}
+
 /* Sobre Mim */
 #about-me {
   background-color: #f9f9f9;
@@ -234,14 +262,14 @@ button:hover {
 }
 
 #about-me h2 {
-  font-size: 28px;
+  font-size: 1.75rem;
   color: #333;
   margin-bottom: 15px;
   text-align: center;
 }
 
 #about-me p {
-  font-size: 16px;
+  font-size: 1rem;
   color: #555;
   line-height: 1.6;
   max-width: 800px;
@@ -249,45 +277,7 @@ button:hover {
   text-align: center;
 }
 
-/* Responsividade para o grid */
-.w3-row-padding {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-
-.w3-half {
-  flex: 1 1 calc(50% - 16px);
-  max-width: 50%;
-}
-
-.w3-half img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin-bottom: 16px;
-}
-
-/* Ajuste para dispositivos móveis */
-@media (max-width: 768px) {
-  .w3-half {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-.project-card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  width: 100%; /* Ajusta para ocupar toda a largura disponível */
-  max-width: 300px; /* Limita a largura dos cartões */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  color: #000000;
-}
+/* Estágio */
 #internship {
   background-color: #f9f9f9;
   padding: 50px 20px;
@@ -413,21 +403,146 @@ footer a:hover {
   color: #007BFF;
 }
 
-footer .social-links {
-  margin-top: 10px;
+/* Certificações e Cursos */
+#certifications {
+  background-color: #121212; /* Fundo escuro */
+  color: #fff;
+  padding: 40px 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-footer .social-links a {
-  margin: 0 15px;
-  font-size: 20px;
+#certifications h2 {
+  font-size: 28px;
+  color: #007BFF;
+  margin-bottom: 20px;
 }
 
-footer .social-links a:hover {
+#certifications ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#certifications li {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+#certifications li:before {
+  content: "✔️";
+  margin-right: 10px;
   color: #007BFF;
 }
 
-footer p {
-  margin-top: 20px;
-  font-size: 14px;
+/* Contato */
+#contact {
+  background-color: #121212; /* Fundo escuro */
+  color: #fff;
+  padding: 40px 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+  font-size: 28px;
+  color: #007BFF;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 16px;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+/* Estilos para a seção de Experiência Profissional */
+#experience {
+  padding: 40px 20px;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+}
+
+#experience h2 {
+  font-size: 32px;
+  color: #007BFF;
+  margin-bottom: 30px;
+}
+
+#experience ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+#experience ul li {
+  font-size: 18px;
+  color: #ddd;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+#experience ul li strong {
+  font-size: 20px;
+  color: #fff;
+}
+
+#experience ul li em {
+  font-style: italic;
   color: #bbb;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+.dark-mode .company-info {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .skills, .dark-mode .impact {
+  background-color: #1f1f1f;
 }
