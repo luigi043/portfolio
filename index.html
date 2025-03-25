@@ -1,159 +1,275 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luiz Fehlberg - Portfolio</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<style>
-  
-</style>
+<!-- Plugin ChartDataLabels -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
-
-<body>
-  
-  <div class="container">
-    <!-- Text and Info Section -->
-    <div class="text">
-        <p class="center bigHome">Hello! My name is</p>
-        <h1 id="animated-name" data-value="LUIZ FEHLBERG">LUIZ FEHLBERG</h1>
-        <p class="center mediumHome">
-            I have a degree in <span class="highlight">Computer Engineering</span> from the <span class="highlight">Polytechnic Institute of Beja</span> and I am passionate about <span class="highlight">Artificial Intelligence</span> and <span class="highlight">Software Development</span>.
-            <br><br>
-            I am always looking for new challenges and opportunities to expand my knowledge and apply my skills.
-        </p>
-        <i class="fas fa-arrow-down"></i>
-        <p><em>"Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution." - Albert Einstein</em></p>
+    <script>
       
-        <div class="cv">
-          <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/luigi043/portfolio/main/file/CV-LuizFehlberg.pdf" target="_blank" rel="noopener noreferrer">
-              Curriculum Vitae
-          </a>
-      </div>
-    </div>
+      document.addEventListener("DOMContentLoaded", function() {
+        AOS.init();
+      });
+    </script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+
+
+    <section id="home">
+      <div class="container">
+        <!-- Text and Info Section -->
+        <div class="text">
+          <p class="center bigHome">Hello! My name is</p>
+          <h1 id="animated-name" data-value="LUIZ FEHLBERG">LUIZ FEHLBERG</h1>
+          <p class="center mediumHome">
+            I have a degree in <span class="highlight">Computer Engineering</span> from the <span class="highlight">Polytechnic Institute of Beja</span>
+            and I am passionate about <span class="highlight">Artificial Intelligence</span> and <span class="highlight">Software Development</span>.
+          </p>
+          <i class="fas fa-arrow-down"></i>
+          <p><em>"Imagination is more important than knowledge..." - Albert Einstein</em></p>
+          <div class="cv">
+            <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/luigi043/portfolio/main/file/CV-LuizFehlberg.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
+          </div>
+        </div>
+        
         <!-- Image and Contact Section -->
         <div class="contact">
-            <div class="border-blur"></div>
-            <img src="https://snipboard.io/aOEr1c.jpg" alt="Photo of Luiz">
-            <h2>Contact Me</h2>
-            <p class="medium mail"><i class="fa-solid fa-square-envelope mail "></i> <a href="mailto:cluiz4003@outlook.pt"> cluiz4003&#64;outlook.pt</a></p>
-    
-            <h2>Or Find Me Online!</h2>
-            <div class="social-icons">
-              <a href="https://www.linkedin.com/in/luizfehlberg/" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="https://github.com/luigi043" target="_blank"><i class="fab fa-github"></i></a>            
+          <div class="border-blur"></div>
+          <img src="https://snipboard.io/aOEr1c.jpg" alt="Photo of Luiz">
+          <h2>Contact Me</h2>
+          <p class="medium mail">
+            <i class="fa-solid fa-square-envelope mail"></i> 
+            <a href="mailto:cluiz4003@outlook.pt">cluiz4003&#64;outlook.pt</a>
+          </p>
+          <h2>Or Find Me Online!</h2>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/luizfehlberg/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/luigi043" target="_blank"><i class="fab fa-github"></i></a>            
           </div>
         </div>
       </div>
-   
-  <section id="about-me">
-    <h2>About Me</h2>
-    <p>
-      I am a young, creative, and highly motivated individual, always striving to support and encourage my team. I believe in collaboration and am always available to assist the project in moving forward. 
-  </p>
-  <p>
-      My passion for technology and robotics led me to pursue a degree in Engineering. With every advancement in technology, I am inspired to keep learning and evolving, ensuring that I stay at the forefront of innovation. This drive for continuous learning fuels my curiosity and my commitment to personal growth.
-  </p>
-  <p>
-      Aside from my professional interests, I am an enthusiast of extreme sports and cars. While I do not consider myself an artist, I am an inventor with a deep appreciation for the arts. I believe that creativity and technical knowledge go hand-in-hand, and I love to combine these elements to solve problems and create unique solutions.
-  </p>
-  <h3>My Educational Journey</h3>
-  <p>
-      I began my educational journey at Colégio Mordeno, a private school in Maputo, Mozambique, where I completed my secondary education in the field of Sciences with Drawing. During these years, I studied subjects such as Chemistry, Physics, and Drawing, which allowed me to develop a solid foundation in the sciences and sparked my interest in technology and engineering.
-  </p>
-  <p>
-      Inspired by my passion for technology, I pursued a degree in Computer Science at the Polytechnic Institute of Beja - School of Technology and Management in Portugal. During my time at university, I deepened my understanding of computer science, particularly in areas such as software development and artificial intelligence. I also had the opportunity to work on various projects, further enhancing my skills and knowledge.
-  </p>
-  <p>
-      Over the years, I have gained valuable experience through both academic learning and hands-on practice. Along the way, I have formed strong relationships with my peers and mentors, who have supported and guided me in my professional journey. This network of like-minded individuals continues to inspire and motivate me as I pursue my career.
-  </p>
-  <h3>Personal Interests and Future Goals</h3>
-  <p>
-      I am constantly seeking new challenges to test my abilities and expand my knowledge. As an avid learner, I look forward to the opportunity to contribute to innovative projects and technologies. My goal is to continue growing as a professional and to leverage my skills to make a meaningful impact in the field of technology and software development.
-  </p>
-  <p>
-      Ultimately, I aspire to work on projects that not only push the boundaries of innovation but also improve the lives of individuals and communities. Whether it's through software solutions, robotics, or other technological advancements, I am committed to making a positive difference in the world.
-  </p>
+    </section>
     
-    <!-- Grid for photos
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="https://snipboard.io/DuGvV0.jpg" style="width:100%; margin-bottom: 16px;">
-       <img src="https://snipboard.io/ExRrDz.jpg" style="width:100%; margin-bottom: 16px;">
-      </div>
-  
-      <div class="w3-half">
-        <img src="https://snipboard.io/JpRBqG.jpg" style="width:100%; margin-bottom: 16px;">
-        <img src="https://snipboard.io/zoObNV.jpg" style="width:100%; margin-bottom: 16px;">
-        <img src="https://snipboard.io/ExRrDz.jpg" style="width:100%; margin-bottom: 16px;">
-      </div>
+       <!-- About Me Section -->
+       <section id="about-me">
+        <h2>About Me</h2>      
+          <p>  I am a young, creative, and highly motivated individual, always striving to support and encourage my team. I believe in collaboration and am always available to assist the project in moving forward. 
+          </p> 
+          <p>    My passion for technology and robotics led me to pursue a degree in Engineering. With every advancement in technology, I am inspired to keep learning and evolving, ensuring that I stay at the forefront of innovation. This drive for continuous learning fuels my curiosity and my commitment to personal growth.     
+          </p>
+          <p>
+            Aside from my professional interests, I am an enthusiast of extreme sports and cars. While I do not consider myself an artist, I am an inventor with a deep appreciation for the arts. I believe that creativity and technical knowledge go hand-in-hand, and I love to combine these elements to solve problems and create unique solutions.
+          </p>
+        <div class="about-me-content">
+          <!-- My Educational Journey -->
+          <div class="educational-journey">
+            <h3>My Educational Journey</h3>
+            <p>
+              I began my educational journey at <strong>Colégio Mordeno</strong>, a private school in Maputo, Mozambique, where I completed my secondary education in the field of Sciences with Drawing. During these years, I studied subjects such as Chemistry, Physics, and Drawing, which allowed me to develop a solid foundation in the sciences and sparked my interest in technology and engineering.
+            </p>
+            <p>
+              Inspired by my passion for technology, I pursued a degree in <strong>Computer Science</strong> at the Polytechnic Institute of Beja - School of Technology and Management in Portugal. During my time at university, I deepened my understanding of computer science, particularly in areas such as software development and artificial intelligence. I also had the opportunity to work on various projects, further enhancing my skills and knowledge.
+            </p>
+            <p>
+              Over the years, I have gained valuable experience through both academic learning and hands-on practice. Along the way, I have formed strong relationships with my peers and mentors, who have supported and guided me in my professional journey. This network of like-minded individuals continues to inspire and motivate me as I pursue my career.
+            </p>
+          </div>
+          <!-- Personal Interests and Future Goals -->
+          <div class="personal-interests">
+            <h3>Personal Interests and Future Goals</h3>
+            <p>
+              I am constantly seeking new challenges to test my abilities and expand my knowledge. As an avid learner, I look forward to the opportunity to contribute to innovative projects and technologies. My goal is to continue growing as a professional and to leverage my skills to make a meaningful impact in the field of technology and software development.
+            </p>
+            <p>
+              Ultimately, I aspire to work on projects that not only push the boundaries of innovation but also improve the lives of individuals and communities. Whether it's through software solutions, robotics, or other technological advancements, I am committed to making a positive difference in the world.
+            </p>
+          </div>
+        </div>
+      </section>
+        
+  <!-- Grid for photos -->
+    <!--  
+  <div class="w3-row-padding" style="margin:0 -16px">
+    <div class="w3-half">
+      <img src="https://snipboard.io/DuGvV0.jpg" alt="Photo 1" style="width:100%; margin-bottom: 16px;">
+      <img src="https://snipboard.io/ExRrDz.jpg" alt="Photo 2" style="width:100%; margin-bottom: 16px;">
     </div>
-    <!-- End photo grid -->
-  </section>
 
-  <section id="experience" class="experience">
-    <h2>Experiência Profissional</h2>
-    <ul>
-      <li><strong>Freelancer - Desenvolvimento Web</strong> - Sites para pequenas empresas.</li>
-      <li><strong>Projeto Acadêmico - App de Oficina Mecânica</strong> - Controle de entrada e saída de veículos.</li>
-    </ul>
-  </section>
+    <div class="w3-half">
+      <img src="https://snipboard.io/JpRBqG.jpg" alt="Photo 3" style="width:100%; margin-bottom: 16px;">
+      <img src="https://snipboard.io/zoObNV.jpg" alt="Photo 4" style="width:100%; margin-bottom: 16px;">
+    </div>
+  </div> 
+-->
   
-  <section id="projects">
-    <h2>Projects</h2> 
+  <!-- End photo grid -->
+   
+</section>
+      
+<!-- Seção de Tecnologias com Gráficos -->
+<section id="techno-1" class="tech-section-graphs-1">
+  <h2>Technology Domains</h2>
+  <div class="tech-charts-1">
+    <div class="tech-item-1">
+      <canvas id="jsChart"></canvas>
+      <p>JavaScript</p>
+    </div>
+    <div class="tech-item-1">
+      <canvas id="laravelChart"></canvas>
+      <p>Laravel</p>
+    </div>
+    <div class="tech-item-1">
+      <canvas id="phpChart"></canvas>
+      <p>PHP</p>
+    </div>
+    <div class="tech-item-1">
+      <canvas id="pythonChart"></canvas>
+      <p>Python</p>
+    </div>
+    <div class="tech-item-1">
+      <canvas id="htmlCssChart"></canvas>
+      <p>HTML/CSS</p>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de Tecnologias e Ferramentas com ícones e listas -->
+<section id="technologie-2" class="tech-section-list-2">
+  <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Tecnologias e Ferramentas</h2>
+  <div id="tech-container" class="tech-container" data-aos="fade-up" data-aos-duration="1000"></div>
+</section>
+
+<script>
+  const techCategories = [
+    {
+      icon: "💻",
+      title: "Linguagens de Programação",
+      items: ["HTML", "CSS", "JavaScript", "PHP", "Kotlin", "Python", "Java", "C", "C++", "C#", "TypeScript"]
+    },
+    {
+      icon: "⚙️",
+      title: "Frameworks e Bibliotecas",
+      items: ["Bootstrap", "React", "Angular", "Node.js", "ASP.NET"]
+    },
+    {
+      icon: "🗃️",
+      title: "Banco de Dados",
+      items: ["MySQL", "PostgreSQL", "Firebase"]
+    },
+    {
+      icon: "🛠️",
+      title: "Ferramentas",
+      items: ["Git", "GitHub", "Docker", "Visual Studio Code"]
+    }
+  ];
+
+  const techContainer = document.getElementById("tech-container");
+
+  techCategories.forEach(category => {
+    const categoryDiv = document.createElement("div");
+    categoryDiv.classList.add("tech-item-2");
+    categoryDiv.innerHTML = `
+      <div class="icon-2">${category.icon}</div>
+      <h3>${category.title}</h3>
+      <ul>${category.items.map(item => `<li>${item}</li>`).join('')}</ul>
+    `;
+    techContainer.appendChild(categoryDiv);
+  });
+</script>
+
+
+  <section id="projects"style="text-align: center;">
+    <h2>My Projects and Achievements</h2>
     <div class="projects-container">
       <div class="project-container">
-        <!-- Tic-Tac-Toe -->
-        <div class="project-card">
-          <div class="project-image-container">
-            <img src="https://snipboard.io/Kt7LuW.jpg" alt="Tic-Tac-Toe" class="project-image">
-            <div class="image-overlay">
-              <a href="https://github.com/luigi043/Tic-Tac-Toe" class="project-link">View on GitHub</a>
-            </div>
-          </div>
-          <h3>Tic-Tac-Toe</h3>
-          <p><strong>Year:</strong> 2019</p>
-          <p><strong>Role:</strong> Developer</p>
-          <p><strong>Description:</strong> A simple C++ game applying OOP concepts. Logic and interface in the terminal.</p>
-          <p><strong>Impact:</strong> Demonstrated fundamental game development concepts in a console environment.</p>
+       <!-- Tic-Tac-Toe -->
+    <div class="project-card">
+      <div class="project-image-container">
+        <img src="https://snipboard.io/Kt7LuW.jpg" alt="Tic-Tac-Toe" class="project-image">
+        <div class="image-overlay">
+          <a href="https://github.com/luigi043/Tic-Tac-Toe" class="project-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
         </div>
+      </div>
+      <h3>Tic-Tac-Toe</h3>
+      <p><strong>Year:</strong> 2019</p>
+      <p><strong>Role:</strong> Developer</p>
+      <p><strong>Tech Stack:</strong> C++</p>
+      <p><strong>Description:</strong> A simple Tic-Tac-Toe game developed in C++ using Object-Oriented Programming (OOP) principles such as encapsulation and classes. The game runs in the terminal with a user-friendly interface and supports multiplayer mode.</p>
+      <p><strong>Impact:</strong> Strengthened understanding of OOP and game logic, applying fundamental programming concepts to create an interactive console-based game.</p>
+    </div>
+
     
         <!-- Sokoban -->
-        <div class="project-card">
-          <div class="project-image-container">
-            <img src="https://snipboard.io/1SvQac.jpg" alt="Sokoban" class="project-image">
-            <div class="image-overlay">
-              <a href="https://github.com/luigi043/Sokoban" class="project-link">View on GitHub</a>
-            </div>
-          </div>
-          <h3>Sokoban</h3>
-          <p><strong>Year:</strong> 2020</p>
-          <p><strong>Role:</strong> Developer</p>
-          <p><strong>Description:</strong> A 2D puzzle game with movement control and interaction, developed in C++.</p>
-          <p><strong>Impact:</strong> Improved problem-solving skills and experience with game mechanics design.</p>
+    <div class="project-card">
+      <div class="project-image-container">
+        <img src="https://snipboard.io/1SvQac.jpg" alt="Sokoban" class="project-image">
+        <div class="image-overlay">
+          <a href="https://github.com/luigi043/Sokoban" class="project-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
         </div>
+      </div>
+      <h3>Sokoban</h3>
+      <p><strong>Year:</strong> 2020</p>
+      <p><strong>Role:</strong> Developer</p>
+      <p><strong>Tech Stack:</strong> C++</p>
+      <p><strong>Description:</strong> A classic 2D puzzle game where players push boxes to designated locations while navigating obstacles. Developed in C++ using object-oriented programming concepts for movement logic, collision detection, and game state management.</p>
+      <p><strong>Impact:</strong> Enhanced problem-solving skills by implementing pathfinding logic, collision handling, and structured game mechanics. Strengthened knowledge of game development fundamentals.</p>
+    </div>
+
     
-        <!-- Lodging System -->
-        <div class="project-card">
-          <h3>Lodging System</h3>
-          <p><strong>Year:</strong> 2020</p>
-          <p><strong>Role:</strong> Full Stack Developer</p>
-          <p><strong>Description:</strong> A hotel reservation management system, focusing on efficient data processing with SQL and Python.</p>
-          <p><strong>Technologies:</strong> Python (backend), SQL (database management)</p>
-          <ul>
-            <li>Room reservation and management</li>
-            <li>Cancellation and refund processing</li>
-            <li>Real-time availability check</li>
-            <li>Analytical reports on occupancy and revenue</li>
-          </ul>
-          <a href="https://github.com/luigi043/Lodging-System" class="project-link">GitHub Repository</a>
-          <p><strong>Impact:</strong> Streamlined booking process, reducing errors and time spent on reservations.</p>
-        </div>
+    <!-- Lodging System -->
+    <div class="project-card">
+      <div class="project-image-container">
+        <h3>Lodging System</h3>
+        <p><strong>Year:</strong> 2020</p>
+        <p><strong>Role:</strong> Full Stack Developer</p>
+        
+        <p><strong>Technologies:</strong> 
+          <span class="tech-tag">Python (Backend)</span> 
+          <span class="tech-tag">SQL (Database Management)</span>
+        </p>
+
+        <p><strong>Description:</strong> A comprehensive hotel reservation management system designed to optimize booking operations and minimize errors. Built using Python for backend processing and SQL for efficient data handling.</p>
+
+        <h4>Key Features:</h4>
+        <ul>
+          <li>🛏️ Room reservation and management</li>
+          <li>🔄 Cancellation and refund processing</li>
+          <li>📊 Real-time availability check</li>
+          <li>📈 Analytical reports on occupancy and revenue</li>
+        </ul>
+
+        <p><strong>Impact:</strong> Streamlined the booking process, reducing manual errors and processing time while improving efficiency and customer satisfaction.</p>
+
+        <a href="https://github.com/luigi043/Lodging-System" class="project-link">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+    </div>
+
     
         <!-- Customer Registration and Billing App -->
         <div class="project-card">
@@ -223,127 +339,172 @@
           <div class="project-image-container">
             <img src="https://snipboard.io/IS97wF.jpg" alt="Luigi's Clouds" class="project-image">
             <div class="image-overlay">
-              <a href="https://github.com/luigi043/LuigisClouds" class="project-link">View on GitHub</a>
+              <a href="https://github.com/luigi043/LuigisClouds" class="project-link">🎬 View on GitHub</a>
             </div>
           </div>
-          <h3>Luigi’s Clouds – Movie & Series Platform</h3>
-          <p><strong>Year:</strong> 2023</p>
-          <p><strong>Role:</strong> Full Stack Developer</p>
-          <p><strong>Description:</strong> A web application using the TMDB API to fetch movie and TV series information. The platform allows users to explore movies and series, search by genre or name, and get detailed information about each title. The app includes a simple and clean interface with real-time search functionality.</p>
-          <p><strong>Technologies:</strong> React, Node.js, TMDB API, MongoDB</p>
-          <p><strong>Impact:</strong> The app provided a quick and easy way for users to explore movies and TV series, while demonstrating my skills in API consumption and full-stack development.</p>
+          
+          <h3 class="project-title">☁️ Luigi’s Clouds – Movie & Series Platform</h3>
+          <p class="project-year"><strong>Year:</strong> 2023</p>
+          <p class="project-role"><strong>Role:</strong> Full Stack Developer</p>
+          
+          <div class="project-tech">
+            <strong>Technologies:</strong> 
+            <span class="tech-tag">⚛️ React</span> 
+            <span class="tech-tag">🌐 Node.js</span> 
+            <span class="tech-tag">🎥 TMDB API</span> 
+            <span class="tech-tag">🗄️ MongoDB</span>
+          </div>
+
+          <p class="project-description">
+            A dynamic web application that integrates with the <strong>TMDB API</strong> to provide an engaging movie and TV series exploration experience. 
+            Users can search for content by genre, name, and access detailed information about each title with a smooth, real-time search functionality.
+          </p>
+
+          <h4 class="project-features-title">✨ Key Features:</h4>
+          <ul class="project-features">
+            <li>🔎 Real-time search with instant results</li>
+            <li>🎭 Explore movies & TV series by genre</li>
+            <li>📌 Save favorite titles for later</li>
+            <li>📊 View ratings, descriptions, and trailers</li>
+          </ul>
+
+          <p class="project-impact"><strong>Impact:</strong> Delivered an intuitive and engaging platform for discovering movies & TV series, showcasing API integration and full-stack development expertise.</p>
         </div>
+
+         <!-- Projeto: Rhea Print Service -->
+         <div class="project-card">
+          <div class="project-image-container">
+    <h3>Rhea Print Service</h3>
+    <p>
+      <strong>Descrição:</strong> Um sistema web para gestão de serviços de impressão, com foco em serigrafia, design gráfico e outros. O sistema foi desenvolvido com <strong>Laravel</strong> e <strong>PHP</strong>, com funcionalidades para gerenciar produtos, realizar pedidos, acompanhar o status e integrar com serviços de logística como <strong>DHL</strong> e <strong>Correio 24</strong>.
+    </p>
+    <p>
+      <strong>Tecnologias Usadas:</strong> <strong>Laravel</strong>, <strong>PHP</strong>, <strong>MySQL</strong>, <strong>CSV Import</strong>, Integração com APIs de Logística.
+    </p>
+    <p>
+      O projeto visa facilitar o pedido e a gestão dos serviços de impressão através de uma plataforma intuitiva para os clientes. A integração com os serviços de logística proporciona uma experiência mais eficiente para os usuários ao acompanhar seus pedidos em tempo real.
+    </p>
+    <p>
+      <strong>Objetivos do Projeto:</strong> Criar uma plataforma que permita aos clientes solicitar e acompanhar pedidos de serviços de impressão de forma simples e rápida. Este projeto tem sido uma excelente oportunidade para aprimorar minhas habilidades em desenvolvimento web e gestão de projetos.
+    </p>
+    <p>
+      <a href="link-para-o-repositorio-ou-site-do-projeto" target="_blank">Veja o projeto aqui</a>
+    </p>
+  </div>
       </div>
     </div>
   </section>
-  
-  
 
-      <section id="internship">
-        <!-- Informações da Empresa -->
-        <div class="company-info">
-          <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFAaXdecfks-g/company-logo_200_200/company-logo_200_200/0/1630488778499/redshift_consulting_logo?e=1747267200&v=beta&t=JpabRSZbr85tLCj5wRXOCKg5_mn4nkND2MiJ-wsP_W0" alt="Redshift Logo" class="company-logo">
-          <h4>Redshift III Innovation, Lda</h4>
-          <p><strong>Location:</strong> Beja, Portugal</p>
-          <p><strong>Internship Period:</strong> 2024</p>
-        </div>
-      
-        <!-- Título do Projeto -->
-        <h3>Project: Markdown Editor</h3>
-      
-        <!-- Descrição do Projeto -->
+  <section id="internship" class="internship-section">
+    <div class="company-info" data-aos="fade-up">
+      <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFAaXdecfks-g/company-logo_200_200/company-logo_200_200/0/1630488778499/redshift_consulting_logo?e=1747267200&v=beta&t=JpabRSZbr85tLCj5wRXOCKg5_mn4nkND2MiJ-wsP_W0" 
+           alt="Redshift Logo" class="company-logo">
+      <div class="company-details">
+        <h4>🚀 Redshift III Innovation, Lda</h4>
+        <p><strong>📍 Location:</strong> Beja, Portugal</p>
+        <p><strong>📅 Internship Period:</strong> 2024</p>
+      </div>
+    </div>
+
+    <h3 class="project-title" data-aos="fade-up">📝 Project: Markdown Editor</h3>
+
+    <p class="project-description" data-aos="fade-up">
+      During my internship at Redshift III Innovation, I developed a dynamic <strong>Markdown Editor</strong> that enables real-time document creation and preview. The project was built using <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>HTML/CSS</strong>, and <strong>TypeScript</strong>, ensuring a robust and efficient web application.
+    </p>
+
+    <div class="skills-and-impact" data-aos="fade-up">
+
+      <!-- Skills Acquired -->
+      <div class="skills">
+        <h4>🛠️ Skills Acquired:</h4>
+        <ul>
+          <li><strong>⚡ Angular:</strong> Built interactive UI components.</li>
+          <li><strong>🖥️ Node.js:</strong> Developed REST APIs and handled async processes.</li>
+          <li><strong>🌍 Full-stack Development:</strong> Integrated front-end and back-end seamlessly.</li>
+          <li><strong>🎨 UI/UX Design:</strong> Designed an intuitive and clean interface.</li>
+          <li><strong>🤝 Collaboration:</strong> Worked with GitHub for version control and team coordination.</li>
+        </ul>
+      </div>
+
+      <!-- Impact and Results -->
+      <div class="impact">
+        <h4>📈 Impact and Results:</h4>
         <p>
-          During my internship at Redshift III Innovation, I worked on the development of a dynamic <strong>Markdown Editor</strong>. This tool allows users to create documents and see a real-time preview, making the process of working with Markdown easier and more intuitive. The project focused on using modern technologies such as <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>HTML/CSS</strong>, and <strong>TypeScript</strong> to build a robust and efficient web application.
+          This experience enhanced my problem-solving abilities and allowed me to gain expertise in modern web development. By the end of my internship, I had successfully contributed to the project, ensuring a seamless and user-friendly experience.
         </p>
         <p>
-          The project involved both <strong>Front-end</strong> and <strong>Back-end</strong> development, ensuring that the integration between the user interface and the server-side logic was seamless. The end goal was to provide an easy-to-use and responsive interface while maintaining excellent performance on the back-end.
+          The hands-on experience with <strong>Angular</strong> and <strong>Node.js</strong> has been invaluable, strengthening my full-stack development skills and preparing me for more advanced projects.
         </p>
-      
-        <!-- Habilidades Adquiridas e Impacto e Resultados -->
-        <div class="skills-and-impact">
-          
-          <!-- Habilidades Adquiridas -->
-          <div class="skills">
-            <h4>Skills Acquired:</h4>
-            <ul>
-              <li><strong>Angular:</strong> Gained hands-on experience in Angular for building dynamic, component-based web applications.</li>
-              <li><strong>Node.js:</strong> Deepened my understanding of Node.js, including building REST APIs and handling asynchronous processes.</li>
-              <li><strong>Full-stack Development:</strong> Worked across both front-end and back-end, learning to integrate both layers into a cohesive solution.</li>
-              <li><strong>UI/UX Design:</strong> Applied principles of user-centered design to ensure the application was both functional and aesthetically pleasing.</li>
-              <li><strong>Collaboration:</strong> Collaborated with a team using GitHub for version control, participating in daily stand-ups, and contributing to sprint planning sessions.</li>
-            </ul>
-          </div>
-      
-          <!-- Impacto e Resultados -->
-          <div class="impact">
-            <h4>Impact and Results:</h4>
-            <p>
-              This internship provided valuable insights into modern web development practices. It helped me improve my ability to solve complex problems while working on both the front-end and back-end of the project. By the end of my time at Redshift III Innovation, I had successfully contributed to the development of the Markdown Editor, ensuring that users had a smooth experience interacting with the application.
-            </p>
-            <p>
-              The skills I gained during this internship, particularly in technologies like <strong>Angular</strong> and <strong>Node.js</strong>, have been pivotal in my growth as a software developer. I am now better equipped to tackle more complex projects and continue building my expertise in full-stack development.
-            </p>
-          </div>
-      
-        </div>
-      </section>
-      
-    
-    <!-- 
-      <section id="blog" class="blog">
-      <h2>Blog / Artigos Técnicos</h2>
+      </div>
+
+    </div>
+  </section>
+
+   
+  
+    <section id="certifications" class="certifications">
+      <h2>Certificações e Cursos</h2>
       <ul>
-        <li><a href="https://medium.com/@luiz">Como construir uma API REST com Laravel</a></li>
+        <li><strong>Google UX Design – Coursera</strong> 
+          <a href="https://coursera.org/share/30d9d3f00648753ebac70b00614b89ff" target="_blank">Visualizar Certificado</a>
+        </li>
+        <li>"Foundations of User Experience (UX) Design – Coursera"</li>
+        <li>"Start the UX Design Process: Empathize, Define, and Ideate – Coursera"</li>
+        <li>"Build Wireframes and Low-Fidelity Prototypes – Coursera"</li>
+        <li>"Conduct UX Research and Test Early Concepts – Coursera"</li>
+        <li>"Create High-Fidelity Designs and Prototypes in Figma – Coursera"</li>
+        <li>"Build Dynamic User Interfaces (UI) for Websites – Coursera"</li>
+        <li>"Design a User Experience for Social Good & Prepare for Jobs – Coursera"</li>
       </ul>
-    </section>
-    -->
+    </section> 
+  
 
-<section id="certifications" class="certifications">
-  <h2>Certificações e Cursos</h2>
-  <ul>
-    <li> "Foundations of User Experience (UX) Design – Coursera"</li>
-    <li> "Start the UX Design Process: Empathize, Define, and Ideate – Coursera"</li>
-    <li> "Build Wireframes and Low-Fidelity Prototypes – Coursera"</li>
-    <li> "Conduct UX Research and Test Early Concepts – Coursera"</li>
-    <li> "Create High-Fidelity Designs and Prototypes in Figma – Coursera"</li>
-    <li> "Build Dynamic User Interfaces (UI) for Websites – Coursera"</li>
-    <li> "Design a User Experience for Social Good & Prepare for Jobs – Coursera"</li>
-  </ul>
-</section>
-
-
+    <!-- Contact Section -->
 <section id="contact" class="contact">
-<h2>Contato</h2>
-<form class="contact-form" method="POST" action="enviar_email.php">
-  <input type="text" name="nome" placeholder="Seu Nome" required>
-  <input type="email" name="email" placeholder="Seu Email" required>
-  <textarea name="mensagem" placeholder="Sua Mensagem" required></textarea>
-  <button type="submit">Enviar Mensagem</button>
-</form>
+  <h2>📩 Get in Touch</h2>
+  <p>Have a question or want to collaborate? Fill out the form below and we will get back to you!</p>
+
+  <form class="contact-form" method="POST" action="send.php">
+    <div class="input-group">
+      <input type="text" name="name" placeholder="Name" required>
+    </div>
+
+    <div class="input-group">
+      <input type="email" name="email" placeholder="Email" required>
+    </div>
+
+    <div class="input-group">
+      <textarea name="message" placeholder="Your Message" required></textarea>
+    </div>
+
+    <button type="submit">🚀 Send Message</button>
+  </form>
 </section>
 
-<footer>
-  <div class="social-icons">
-    <a href="https://www.linkedin.com/in/luizfehlberg/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/luigi043" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.twitch.tv/luigi_043_" target="_blank"><i class="fab fa-twitch"></i></a>
-</div>
-<p class="copyright">© 2023</p>
-<p class="design">Design by Luiz Fehlberg</p>  
-</footer>
 
-<script>
-// Adiciona animação ao rolar
-document.addEventListener('scroll', function() {
-  const sections = document.querySelectorAll('section');
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    const isVisible = sectionTop < window.innerHeight - 100;
-    if (isVisible) {
-      section.classList.add('visible');
-    }
-  });
-});
-</script>
+
+    <footer>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/luizfehlberg/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/luigi043" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.twitch.tv/luigi_043_" target="_blank" class="social-icon"><i class="fab fa-twitch"></i></a>
+      </div>
+      <p class="copyright typewriter">© 2023</p>
+      <p class="design typewriter">Design by Luiz Fehlberg</p>  
+    </footer>
+
+    <script>
+      // Adiciona animação ao rolar
+      document.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const isVisible = sectionTop < window.innerHeight - 100;
+          if (isVisible) {
+            section.classList.add('visible');
+          }
+        });
+      });
+    </script>
 </body>
 </html>
