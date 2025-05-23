@@ -1,3 +1,8 @@
+import { Chart } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+Chart.register(ChartDataLabels);
+
 document.addEventListener("DOMContentLoaded", function () {
   
   const animatedName = document.getElementById("animated-name");
@@ -102,3 +107,19 @@ document.addEventListener("DOMContentLoaded", function () {
       console.warn("Chart.js ou ChartDataLabels não carregado.");
   }
 });
+
+// Show timeline items on scroll
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+const revealOnScroll = () => {
+  timelineItems.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top <= window.innerHeight * 0.85) {
+      item.classList.add('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+

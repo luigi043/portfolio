@@ -1,510 +1,490 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luiz Fehlberg - Portfolio</title>
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-    
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- Plugin ChartDataLabels -->
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luiz Fehlberg- Portfólio</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
-    <script>
-      
-      document.addEventListener("DOMContentLoaded", function() {
-        AOS.init();
-      });
-    </script>
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-
-
-    <section id="home">
-      <div class="container">
-        <!-- Text and Info Section -->
-        <div class="text">
-          <p class="center bigHome">Hello! My name is</p>
-          <h1 id="animated-name" data-value="LUIZ FEHLBERG">LUIZ FEHLBERG</h1>
-          <p class="center mediumHome">
-            I have a degree in <span class="highlight">Computer Engineering</span> from the <span class="highlight">Polytechnic Institute of Beja</span>
-            and I am passionate about <span class="highlight">Artificial Intelligence</span> and <span class="highlight">Software Development</span>.
-          </p>
-          <i class="fas fa-arrow-down"></i>
-          <p><em>"Imagination is more important than knowledge..." - Albert Einstein</em></p>
-          <div class="cv">
-            <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/luigi043/portfolio/main/file/CV-LuizFehlberg.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
-          </div>
-        </div>
-        
-        <!-- Image and Contact Section -->
-        <div class="contact">
-          <div class="border-blur"></div>
-          <img src="https://snipboard.io/aOEr1c.jpg" alt="Photo of Luiz">
-          <h2>Contact Me</h2>
-          <p class="medium mail">
-            <i class="fa-solid fa-square-envelope mail"></i> 
-            <a href="mailto:cluiz4003@outlook.pt">cluiz4003&#64;outlook.pt</a>
-          </p>
-          <h2>Or Find Me Online!</h2>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/luizfehlberg/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/luigi043" target="_blank"><i class="fab fa-github"></i></a>            
-          </div>
-        </div>
-      </div>
-    </section>
-    
-       <!-- About Me Section -->
-       <section id="about-me">
-        <h2>About Me</h2>      
-          <p>  I am a young, creative, and highly motivated individual, always striving to support and encourage my team. I believe in collaboration and am always available to assist the project in moving forward. 
-          </p> 
-          <p>    My passion for technology and robotics led me to pursue a degree in Engineering. With every advancement in technology, I am inspired to keep learning and evolving, ensuring that I stay at the forefront of innovation. This drive for continuous learning fuels my curiosity and my commitment to personal growth.     
-          </p>
-          <p>
-            Aside from my professional interests, I am an enthusiast of extreme sports and cars. While I do not consider myself an artist, I am an inventor with a deep appreciation for the arts. I believe that creativity and technical knowledge go hand-in-hand, and I love to combine these elements to solve problems and create unique solutions.
-          </p>
-        <div class="about-me-content">
-          <!-- My Educational Journey -->
-          <div class="educational-journey">
-            <h3>My Educational Journey</h3>
-            <p>
-              I began my educational journey at <strong>Colégio Mordeno</strong>, a private school in Maputo, Mozambique, where I completed my secondary education in the field of Sciences with Drawing. During these years, I studied subjects such as Chemistry, Physics, and Drawing, which allowed me to develop a solid foundation in the sciences and sparked my interest in technology and engineering.
-            </p>
-            <p>
-              Inspired by my passion for technology, I pursued a degree in <strong>Computer Science</strong> at the Polytechnic Institute of Beja - School of Technology and Management in Portugal. During my time at university, I deepened my understanding of computer science, particularly in areas such as software development and artificial intelligence. I also had the opportunity to work on various projects, further enhancing my skills and knowledge.
-            </p>
-            <p>
-              Over the years, I have gained valuable experience through both academic learning and hands-on practice. Along the way, I have formed strong relationships with my peers and mentors, who have supported and guided me in my professional journey. This network of like-minded individuals continues to inspire and motivate me as I pursue my career.
-            </p>
-          </div>
-          <!-- Personal Interests and Future Goals -->
-          <div class="personal-interests">
-            <h3>Personal Interests and Future Goals</h3>
-            <p>
-              I am constantly seeking new challenges to test my abilities and expand my knowledge. As an avid learner, I look forward to the opportunity to contribute to innovative projects and technologies. My goal is to continue growing as a professional and to leverage my skills to make a meaningful impact in the field of technology and software development.
-            </p>
-            <p>
-              Ultimately, I aspire to work on projects that not only push the boundaries of innovation but also improve the lives of individuals and communities. Whether it's through software solutions, robotics, or other technological advancements, I am committed to making a positive difference in the world.
-            </p>
-          </div>
-        </div>
-      </section>
-        
-  <!-- Grid for photos -->
-    <!--  
-  <div class="w3-row-padding" style="margin:0 -16px">
-    <div class="w3-half">
-      <img src="https://snipboard.io/DuGvV0.jpg" alt="Photo 1" style="width:100%; margin-bottom: 16px;">
-      <img src="https://snipboard.io/ExRrDz.jpg" alt="Photo 2" style="width:100%; margin-bottom: 16px;">
-    </div>
-
-    <div class="w3-half">
-      <img src="https://snipboard.io/JpRBqG.jpg" alt="Photo 3" style="width:100%; margin-bottom: 16px;">
-      <img src="https://snipboard.io/zoObNV.jpg" alt="Photo 4" style="width:100%; margin-bottom: 16px;">
-    </div>
-  </div> 
--->
-  
-  <!-- End photo grid -->
-   
-</section>
-      
-<!-- Seção de Tecnologias com Gráficos -->
-<section id="techno-1" class="tech-section-graphs-1">
-  <h2>Technology Domains</h2>
-  <div class="tech-charts-1">
-    <div class="tech-item-1">
-      <canvas id="jsChart"></canvas>
-      <p>JavaScript</p>
-    </div>
-    <div class="tech-item-1">
-      <canvas id="laravelChart"></canvas>
-      <p>Laravel</p>
-    </div>
-    <div class="tech-item-1">
-      <canvas id="phpChart"></canvas>
-      <p>PHP</p>
-    </div>
-    <div class="tech-item-1">
-      <canvas id="pythonChart"></canvas>
-      <p>Python</p>
-    </div>
-    <div class="tech-item-1">
-      <canvas id="htmlCssChart"></canvas>
-      <p>HTML/CSS</p>
-    </div>
-  </div>
-</section>
-
-<!-- Seção de Tecnologias e Ferramentas com ícones e listas -->
-<section id="technologie-2" class="tech-section-list-2">
-  <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Tecnologias e Ferramentas</h2>
-  <div id="tech-container" class="tech-container" data-aos="fade-up" data-aos-duration="1000"></div>
-</section>
-
 <script>
-  const techCategories = [
-    {
-      icon: "💻",
-      title: "Linguagens de Programação",
-      items: ["HTML", "CSS", "JavaScript", "PHP", "Kotlin", "Python", "Java", "C", "C++", "C#", "TypeScript"]
-    },
-    {
-      icon: "⚙️",
-      title: "Frameworks e Bibliotecas",
-      items: ["Bootstrap", "React", "Angular", "Node.js", "ASP.NET"]
-    },
-    {
-      icon: "🗃️",
-      title: "Banco de Dados",
-      items: ["MySQL", "PostgreSQL", "Firebase"]
-    },
-    {
-      icon: "🛠️",
-      title: "Ferramentas",
-      items: ["Git", "GitHub", "Docker", "Visual Studio Code"]
-    }
-  ];
+  // Registro do plugin
+  Chart.register(ChartDataLabels);
 
-  const techContainer = document.getElementById("tech-container");
-
-  techCategories.forEach(category => {
-    const categoryDiv = document.createElement("div");
-    categoryDiv.classList.add("tech-item-2");
-    categoryDiv.innerHTML = `
-      <div class="icon-2">${category.icon}</div>
-      <h3>${category.title}</h3>
-      <ul>${category.items.map(item => `<li>${item}</li>`).join('')}</ul>
-    `;
-    techContainer.appendChild(categoryDiv);
+  const ctx = document.getElementById('meuGrafico');
+  new Chart(ctx, {
+    type: 'bar',
+    options: {
+      plugins: {
+        datalabels: {
+          color: '#000',
+          anchor: 'end',
+          align: 'top',
+        }
+      }
+    },
+    plugins: [ChartDataLabels]
   });
 </script>
 
+</head>
 
-  <section id="projects"style="text-align: center;">
-    <h2>My Projects and Achievements</h2>
-    <div class="projects-container">
-      <div class="project-container">
-       <!-- Tic-Tac-Toe -->
-    <div class="project-card">
-      <div class="project-image-container">
-        <img src="https://snipboard.io/Kt7LuW.jpg" alt="Tic-Tac-Toe" class="project-image">
-        <div class="image-overlay">
-          <a href="https://github.com/luigi043/Tic-Tac-Toe" class="project-link">
-            <i class="fab fa-github"></i> View on GitHub
-          </a>
+<body data-new-gr-c-s-check-loaded="14.1235.0" data-gr-ext-installed="">
+    <!-- Header -->
+    <header>
+      <!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- ChartDataLabels (plugin) -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Luiz Fehlberg</h1>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+<!-- Hero Section -->
+<section id="hero" class="section">
+  <div class="container">
+    <div class="hero-content">
+      <img src="https://snipboard.io/aOEr1c.jpg" alt="Luiz Fehlberg" class="hero-img" />
+      <h1 id="animated-name" class="hero-name">LUIZ FEHLBERG</h1>
+      <p class="hero-role">Computer Engineer | Software Developer | AI Enthusiast</p>
+      <p class="hero-quote">"Imagination is more important than knowledge..." - Albert Einstein</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/luizfehlberg/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/luigi043" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://x.com/luigi_043" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       </div>
-      <h3>Tic-Tac-Toe</h3>
-      <p><strong>Year:</strong> 2019</p>
-      <p><strong>Role:</strong> Developer</p>
-      <p><strong>Tech Stack:</strong> C++</p>
-      <p><strong>Description:</strong> A simple Tic-Tac-Toe game developed in C++ using Object-Oriented Programming (OOP) principles such as encapsulation and classes. The game runs in the terminal with a user-friendly interface and supports multiplayer mode.</p>
-      <p><strong>Impact:</strong> Strengthened understanding of OOP and game logic, applying fundamental programming concepts to create an interactive console-based game.</p>
+      <a href="#contact" class="btn">Contact Me</a>
     </div>
-
-    
-        <!-- Sokoban -->
-    <div class="project-card">
-      <div class="project-image-container">
-        <img src="https://snipboard.io/1SvQac.jpg" alt="Sokoban" class="project-image">
-        <div class="image-overlay">
-          <a href="https://github.com/luigi043/Sokoban" class="project-link">
-            <i class="fab fa-github"></i> View on GitHub
-          </a>
-        </div>
-      </div>
-      <h3>Sokoban</h3>
-      <p><strong>Year:</strong> 2020</p>
-      <p><strong>Role:</strong> Developer</p>
-      <p><strong>Tech Stack:</strong> C++</p>
-      <p><strong>Description:</strong> A classic 2D puzzle game where players push boxes to designated locations while navigating obstacles. Developed in C++ using object-oriented programming concepts for movement logic, collision detection, and game state management.</p>
-      <p><strong>Impact:</strong> Enhanced problem-solving skills by implementing pathfinding logic, collision handling, and structured game mechanics. Strengthened knowledge of game development fundamentals.</p>
-    </div>
-
-    
-    <!-- Lodging System -->
-    <div class="project-card">
-      <div class="project-image-container">
-        <h3>Lodging System</h3>
-        <p><strong>Year:</strong> 2020</p>
-        <p><strong>Role:</strong> Full Stack Developer</p>
-        
-        <p><strong>Technologies:</strong> 
-          <span class="tech-tag">Python (Backend)</span> 
-          <span class="tech-tag">SQL (Database Management)</span>
-        </p>
-
-        <p><strong>Description:</strong> A comprehensive hotel reservation management system designed to optimize booking operations and minimize errors. Built using Python for backend processing and SQL for efficient data handling.</p>
-
-        <h4>Key Features:</h4>
-        <ul>
-          <li>🛏️ Room reservation and management</li>
-          <li>🔄 Cancellation and refund processing</li>
-          <li>📊 Real-time availability check</li>
-          <li>📈 Analytical reports on occupancy and revenue</li>
-        </ul>
-
-        <p><strong>Impact:</strong> Streamlined the booking process, reducing manual errors and processing time while improving efficiency and customer satisfaction.</p>
-
-        <a href="https://github.com/luigi043/Lodging-System" class="project-link">
-          <i class="fab fa-github"></i> View on GitHub
-        </a>
-      </div>
-    </div>
-
-    
-        <!-- Customer Registration and Billing App -->
-        <div class="project-card">
-          <h3>Customer Registration and Billing App</h3>
-          <p><strong>Year:</strong> 2021</p>
-          <p><strong>Role:</strong> Mobile Developer</p>
-          <p><strong>Description:</strong> A mobile application developed in Android Studio to manage the entry and exit of vehicles in a mechanic workshop, along with customer registration, purchases, invoices, and quick budget generation. The app allows mechanics to quickly register customer information, track car status, and generate invoices for repairs and services, with seamless communication for sending estimates and receipts.</p>
-    
-          <p><strong>Technologies:</strong> Android Studio (Java/Kotlin), SQLite/Firebase (Database), XML (UI Design)</p>
-    
-          <p><strong>Key Features:</strong></p>
-          <ul>
-            <li><strong>Car Entry/Exit Tracking:</strong> Easily register and track vehicles entering or leaving the workshop, including service details.</li>
-            <li><strong>Customer Management:</strong> Register and manage customer profiles, contact information, and service history.</li>
-            <li><strong>Quick Budget Generation:</strong> Generate and send service estimates to customers quickly via SMS or email.</li>
-            <li><strong>Invoice Generation:</strong> Automatic creation of invoices for completed services, including parts and labor details.</li>
-            <li><strong>Parts and Materials Tracking:</strong> Manage materials used for each repair and track inventory levels.</li>
-            <li><strong>User-friendly UI/UX:</strong> Simple, intuitive interface for easy navigation and quick data entry, optimized for mechanics and staff.</li>
-            <li><strong>Quick Communication:</strong> Send invoices, budgets, and receipts directly to customers via email or SMS.</li>
-          </ul>
-    
-          <a href="https://github.com/luigi043/PDM_Projeto" class="project-link">GitHub Repository</a>
-    
-          <p><strong>Impact:</strong> The app improved workshop efficiency by simplifying the process of managing car repairs and customer interactions. It enabled mechanics to focus more on repairs rather than administrative tasks, sped up communication with customers, and provided a seamless experience from initial contact to billing. The quick budget and invoice generation significantly reduced wait times for customers and improved service delivery.</p>
-    
-          <p><strong>Results:</strong></p>
-          <ul>
-            <li>Reduced paperwork and manual data entry, increasing workshop efficiency by 30%.</li>
-            <li>Faster response times for customers, leading to improved customer satisfaction.</li>
-            <li>Streamlined communication between mechanics and customers, resulting in fewer misunderstandings and errors.</li>
-            <li>Increased revenue by offering faster and more accurate invoicing.</li>
-          </ul>
-        </div>
-    
-        <!-- Car Sales Analysis -->
-        <div class="project-card">
-          <h3>Car Sales Analysis</h3>
-          <p><strong>Year:</strong> 2022</p>
-          <p><strong>Role:</strong> Data Analyst</p>
-          <p><strong>Description:</strong> Developed a comprehensive system to analyze car sales trends, customer demographics, and market behavior, leveraging SQL and Power BI for advanced data processing and visualization. The system tracked various metrics such as total sales, best-selling car models, sales per region, and customer preferences. It allowed the company to optimize inventory, improve pricing strategies, and predict future sales trends based on historical data.</p>
-          
-          <p><strong>Technologies:</strong> SQL, Power BI, Excel (for data preparation), DAX (for custom metrics), Data Modeling</p>
-    
-          <p><strong>Key Features:</strong></p>
-          <ul>
-            <li><strong>Sales Trend Analysis:</strong> Real-time tracking of car sales performance by model, region, and time period.</li>
-            <li><strong>Brand & Model Analysis:</strong> Breakdown of sales data by brand, enabling targeted sales strategies and stock management.</li>
-            <li><strong>Customer Behavior Insights:</strong> Identification of patterns in customer purchases, helping the sales team to focus on high-potential customers.</li>
-            <li><strong>Dashboard Visualizations:</strong> Interactive dashboards providing a high-level overview of sales performance with drill-down capabilities.</li>
-            <li><strong>Predictive Analysis:</strong> Used historical sales data to forecast future trends and predict popular models and regions for upcoming quarters.</li>
-          </ul>
-          
-          <a href="https://github.com/luigi043/Car-Sales-Analysis" class="project-link">GitHub Repository</a>
-          
-          <p><strong>Impact:</strong> The insights generated by this system helped the company refine its sales strategies by focusing on high-performing models and regions. Inventory management became more efficient, with optimized stock levels based on predicted demand. Additionally, the marketing team used customer behavior insights to personalize campaigns, leading to higher customer engagement and increased sales.</p>
-          
-          <p><strong>Results:</strong></p>
-          <ul>
-            <li>Reduction in excess inventory and stockouts by aligning stock levels with forecasted demand.</li>
-            <li>Increased sales by 15% in the first quarter after implementing the recommendations derived from the data analysis.</li>
-            <li>Improved customer targeting for promotions, with a 10% increase in customer retention based on targeted campaigns.</li>
-          </ul>
-        </div>
-    
-        <!-- Luigi's Clouds -->
-        <div class="project-card">
-          <div class="project-image-container">
-            <img src="https://snipboard.io/IS97wF.jpg" alt="Luigi's Clouds" class="project-image">
-            <div class="image-overlay">
-              <a href="https://github.com/luigi043/LuigisClouds" class="project-link">🎬 View on GitHub</a>
-            </div>
-          </div>
-          
-          <h3 class="project-title">☁️ Luigi’s Clouds – Movie & Series Platform</h3>
-          <p class="project-year"><strong>Year:</strong> 2023</p>
-          <p class="project-role"><strong>Role:</strong> Full Stack Developer</p>
-          
-          <div class="project-tech">
-            <strong>Technologies:</strong> 
-            <span class="tech-tag">⚛️ React</span> 
-            <span class="tech-tag">🌐 Node.js</span> 
-            <span class="tech-tag">🎥 TMDB API</span> 
-            <span class="tech-tag">🗄️ MongoDB</span>
-          </div>
-
-          <p class="project-description">
-            A dynamic web application that integrates with the <strong>TMDB API</strong> to provide an engaging movie and TV series exploration experience. 
-            Users can search for content by genre, name, and access detailed information about each title with a smooth, real-time search functionality.
-          </p>
-
-          <h4 class="project-features-title">✨ Key Features:</h4>
-          <ul class="project-features">
-            <li>🔎 Real-time search with instant results</li>
-            <li>🎭 Explore movies & TV series by genre</li>
-            <li>📌 Save favorite titles for later</li>
-            <li>📊 View ratings, descriptions, and trailers</li>
-          </ul>
-
-          <p class="project-impact"><strong>Impact:</strong> Delivered an intuitive and engaging platform for discovering movies & TV series, showcasing API integration and full-stack development expertise.</p>
-        </div>
-
-         <!-- Projeto: Rhea Print Service -->
-         <div class="project-card">
-          <div class="project-image-container">
-    <h3>Rhea Print Service</h3>
-    <p>
-      <strong>Descrição:</strong> Um sistema web para gestão de serviços de impressão, com foco em serigrafia, design gráfico e outros. O sistema foi desenvolvido com <strong>Laravel</strong> e <strong>PHP</strong>, com funcionalidades para gerenciar produtos, realizar pedidos, acompanhar o status e integrar com serviços de logística como <strong>DHL</strong> e <strong>Correio 24</strong>.
-    </p>
-    <p>
-      <strong>Tecnologias Usadas:</strong> <strong>Laravel</strong>, <strong>PHP</strong>, <strong>MySQL</strong>, <strong>CSV Import</strong>, Integração com APIs de Logística.
-    </p>
-    <p>
-      O projeto visa facilitar o pedido e a gestão dos serviços de impressão através de uma plataforma intuitiva para os clientes. A integração com os serviços de logística proporciona uma experiência mais eficiente para os usuários ao acompanhar seus pedidos em tempo real.
-    </p>
-    <p>
-      <strong>Objetivos do Projeto:</strong> Criar uma plataforma que permita aos clientes solicitar e acompanhar pedidos de serviços de impressão de forma simples e rápida. Este projeto tem sido uma excelente oportunidade para aprimorar minhas habilidades em desenvolvimento web e gestão de projetos.
-    </p>
-    <p>
-      <a href="link-para-o-repositorio-ou-site-do-projeto" target="_blank">Veja o projeto aqui</a>
-    </p>
   </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="internship" class="internship-section">
-    <div class="company-info" data-aos="fade-up">
-      <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFAaXdecfks-g/company-logo_200_200/company-logo_200_200/0/1630488778499/redshift_consulting_logo?e=1747267200&v=beta&t=JpabRSZbr85tLCj5wRXOCKg5_mn4nkND2MiJ-wsP_W0" 
-           alt="Redshift Logo" class="company-logo">
-      <div class="company-details">
-        <h4>🚀 Redshift III Innovation, Lda</h4>
-        <p><strong>📍 Location:</strong> Beja, Portugal</p>
-        <p><strong>📅 Internship Period:</strong> 2024</p>
-      </div>
-    </div>
-
-    <h3 class="project-title" data-aos="fade-up">📝 Project: Markdown Editor</h3>
-
-    <p class="project-description" data-aos="fade-up">
-      During my internship at Redshift III Innovation, I developed a dynamic <strong>Markdown Editor</strong> that enables real-time document creation and preview. The project was built using <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>HTML/CSS</strong>, and <strong>TypeScript</strong>, ensuring a robust and efficient web application.
-    </p>
-
-    <div class="skills-and-impact" data-aos="fade-up">
-
-      <!-- Skills Acquired -->
-      <div class="skills">
-        <h4>🛠️ Skills Acquired:</h4>
-        <ul>
-          <li><strong>⚡ Angular:</strong> Built interactive UI components.</li>
-          <li><strong>🖥️ Node.js:</strong> Developed REST APIs and handled async processes.</li>
-          <li><strong>🌍 Full-stack Development:</strong> Integrated front-end and back-end seamlessly.</li>
-          <li><strong>🎨 UI/UX Design:</strong> Designed an intuitive and clean interface.</li>
-          <li><strong>🤝 Collaboration:</strong> Worked with GitHub for version control and team coordination.</li>
-        </ul>
-      </div>
-
-      <!-- Impact and Results -->
-      <div class="impact">
-        <h4>📈 Impact and Results:</h4>
-        <p>
-          This experience enhanced my problem-solving abilities and allowed me to gain expertise in modern web development. By the end of my internship, I had successfully contributed to the project, ensuring a seamless and user-friendly experience.
-        </p>
-        <p>
-          The hands-on experience with <strong>Angular</strong> and <strong>Node.js</strong> has been invaluable, strengthening my full-stack development skills and preparing me for more advanced projects.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-   
-  
-    <section id="certifications" class="certifications">
-      <h2>Certificações e Cursos</h2>
-      <ul>
-        <li><strong>Google UX Design – Coursera</strong> 
-          <a href="https://coursera.org/share/30d9d3f00648753ebac70b00614b89ff" target="_blank">Visualizar Certificado</a>
-        </li>
-        <li>"Foundations of User Experience (UX) Design – Coursera"</li>
-        <li>"Start the UX Design Process: Empathize, Define, and Ideate – Coursera"</li>
-        <li>"Build Wireframes and Low-Fidelity Prototypes – Coursera"</li>
-        <li>"Conduct UX Research and Test Early Concepts – Coursera"</li>
-        <li>"Create High-Fidelity Designs and Prototypes in Figma – Coursera"</li>
-        <li>"Build Dynamic User Interfaces (UI) for Websites – Coursera"</li>
-        <li>"Design a User Experience for Social Good & Prepare for Jobs – Coursera"</li>
-      </ul>
-    </section> 
-  
-
-    <!-- Contact Section -->
-<section id="contact" class="contact">
-  <h2>📩 Get in Touch</h2>
-  <p>Have a question or want to collaborate? Fill out the form below and we will get back to you!</p>
-
-  <form class="contact-form" method="POST" action="send.php">
-    <div class="input-group">
-      <input type="text" name="name" placeholder="Name" required>
-    </div>
-
-    <div class="input-group">
-      <input type="email" name="email" placeholder="Email" required>
-    </div>
-
-    <div class="input-group">
-      <textarea name="message" placeholder="Your Message" required></textarea>
-    </div>
-
-    <button type="submit">🚀 Send Message</button>
-  </form>
 </section>
 
 
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p>I am a web developer, designer, and computer engineer passionate about technology and innovation. I have solid experience in various languages and frameworks, including PHP, Laravel, Angular, React, Kotlin, Python, Java, C, C++, C#, TypeScript, as well as skills in graphic design and video editing.</p>
+              <p>I enjoy working on creative projects, ranging from web applications and mobile apps to games, always focusing on delivering efficient and high-quality solutions. My strengths include creativity, attention to detail, fast execution, and ease of working in teams, whether in-person or remotely.</p>
+              <p>Currently, I am involved in developing an e-commerce website and have completed an internship at Redshift III Innovation, Lda, as well as contributed to social projects aimed at improving the city of Beja.</p>
+              <p>I am seeking job opportunities and partnerships to grow professionally and add value to the projects I participate in. I am proactive, communicative, curious, and detail-oriented, always eager to learn and evolve.</p>
+          </div>
+          </div>
+        </div>
+    </section>
 
-    <footer>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/luizfehlberg/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/luigi043" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-        <a href="https://www.twitch.tv/luigi_043_" target="_blank" class="social-icon"><i class="fab fa-twitch"></i></a>
+<!-- Education Section -->
+<section id="education" class="section">
+  <div class="container">
+    <h2 class="section-title">My Educational Journey</h2>
+    <div class="timeline">
+
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="timeline-date">2025 | Lisbon, Portugal</div>
+          <h3>UX Design Certifications (Coursera)</h3>
+          <p>EQF Level: EQF Level 5</p>
+        </div>
       </div>
-      <p class="copyright typewriter">© 2023</p>
-      <p class="design typewriter">Design by Luiz Fehlberg</p>  
-    </footer>
 
-    <script>
-      // Adiciona animação ao rolar
-      document.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-          const sectionTop = section.getBoundingClientRect().top;
-          const isVisible = sectionTop < window.innerHeight - 100;
-          if (isVisible) {
-            section.classList.add('visible');
-          }
-        });
-      });
-    </script>
-</body>
-</html>
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="timeline-date">2019 – 2024 | Beja, Portugal</div>
+          <h3>Degree in Computer Engineering</h3>
+          <p>IPBeja - Polytechnic Institute of Beja</p>
+          <p>EQF Level: EQF Level 6</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="timeline-date">2017</div>
+          <h3>Secondary Education - Sciences with Drawing</h3>
+          <p>Moderno College, Maputo, Mozambique</p>
+          <p>Studied Chemistry, Physics, and Drawing</p>
+           <p>EQF Level: EQF Level 4</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="section-title">Technology Domains</h2>
+    <div class="skills-container">
+
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+        <div class="skills-list">
+          <div class="skill-item">HTML</div>
+          <div class="skill-item">CSS</div>
+          <div class="skill-item">Sass</div>
+          <div class="skill-item">JavaScript</div>
+          <div class="skill-item">PHP</div>
+          <div class="skill-item">Kotlin</div>
+          <div class="skill-item">Python</div>
+          <div class="skill-item">Java</div>
+          <div class="skill-item">C</div>
+          <div class="skill-item">C++</div>
+          <div class="skill-item">C#</div>
+          <div class="skill-item">TypeScript</div>
+          <div class="skill-item">SQL</div>
+          <div class="skill-item">JSON</div>
+          <div class="skill-item">XML</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3><i class="fas fa-layer-group"></i> Frameworks &amp; Libraries</h3>
+        <div class="skills-list">
+          <div class="skill-item">Bootstrap</div>
+          <div class="skill-item">React</div>
+          <div class="skill-item">Angular</div>
+          <div class="skill-item">Node.js</div>
+          <div class="skill-item">ASP.NET</div>
+          <div class="skill-item">Laravel</div>
+          <div class="skill-item">Express.js</div>
+          <div class="skill-item">jQuery</div>
+          <div class="skill-item">Vue.js</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3><i class="fas fa-database"></i> Databases</h3>
+        <div class="skills-list">
+          <div class="skill-item">MySQL</div>
+          <div class="skill-item">PostgreSQL</div>
+          <div class="skill-item">Firebase</div>
+          <div class="skill-item">MongoDB</div>
+          <div class="skill-item">SQLite</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3><i class="fas fa-cloud"></i> Cloud &amp; DevOps</h3>
+        <div class="skills-list">
+          <div class="skill-item">Docker</div>
+          <div class="skill-item">AWS (Amazon Web Services)</div>
+          <div class="skill-item">Heroku</div>
+          <div class="skill-item">CI/CD Pipelines</div>
+          <div class="skill-item">Kubernetes (básico)</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3><i class="fas fa-tools"></i> Tools &amp; IDEs</h3>
+        <div class="skills-list">
+          <div class="skill-item">Git</div>
+          <div class="skill-item">GitHub</div>
+          <div class="skill-item">Visual Studio Code</div>
+          <div class="skill-item">Figma</div>
+          <div class="skill-item">Adobe Photoshop</div>
+          <div class="skill-item">Adobe Premiere Pro</div>
+          <div class="skill-item">Postman</div>
+          <div class="skill-item">JIRA</div>
+          <div class="skill-item">Trello</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3><i class="fas fa-paint-brush"></i> Design &amp; UX</h3>
+        <div class="skills-list">
+          <div class="skill-item">Graphic Design</div>
+          <div class="skill-item">UX Research</div>
+          <div class="skill-item">Wireframing</div>
+          <div class="skill-item">Prototyping</div>
+          <div class="skill-item">User Testing</div>
+          <div class="skill-item">Responsive Design</div>
+          <div class="skill-item">Accessibility (a11y)</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3><i class="fas fa-gamepad"></i> Other Skills</h3>
+        <div class="skills-list">
+          <div class="skill-item">Video Editing</div>
+          <div class="skill-item">Game Development</div>
+          <div class="skill-item">Creative Problem Solving</div>
+          <div class="skill-item">Agile Methodologies (Scrum, Kanban)</div>
+          <div class="skill-item">Communication</div>
+          <div class="skill-item">Teamwork</div>
+          <div class="skill-item">Project Management</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My Projects and Achievements</h2>
+            <div class="projects-container">  
+                <div class="project-card">
+                    <img src="https://snipboard.io/Kt7LuW.jpg" alt="Tic-Tac-Toe" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Tic-Tac-Toe</h3>
+                        <p>A simple Tic-Tac-Toe game developed in C++ using Object-Oriented Programming principles.</p>
+                        <div class="project-tech">
+                            <span>C++</span>
+                            <span>OOP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://snipboard.io/1SvQac.jpg" alt="Sokoban" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Sokoban</h3>
+                        <p>A classic 2D puzzle game where players push boxes to designated locations while navigating obstacles.</p>
+                        <div class="project-tech">
+                            <span>C++</span>
+                            <span>Game Development</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://snipboard.io/yuKkea.jpg" alt="Lodging System" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Lodging System</h3>
+                        <p>A comprehensive hotel reservation management system designed to optimize booking operations and minimize errors.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>SQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://snipboard.io/KVtrNi.jpg" alt="Customer Registration App" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Customer Registration and Billing App</h3>
+                        <p>A mobile application for managing vehicles in a mechanic workshop, along with customer registration and invoicing.</p>
+                        <div class="project-tech">
+                            <span>Android Studio</span>
+                            <span>Java/Kotlin</span>
+                            <span>SQLite/Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://snipboard.io/NVYCi8.jpg" alt="Car Sales Analysis" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Car Sales Analysis</h3>
+                        <p>A system to analyze car sales trends, customer demographics, and market behavior using SQL and Power BI.</p>
+                        <div class="project-tech">
+                            <span>SQL</span>
+                            <span>Power BI</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://snipboard.io/IS97wF.jpg" alt="Luigi's Clouds" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Luigi's Clouds</h3>
+                        <p>A dynamic web application integrating with the TMDB API to provide an engaging movie and TV series exploration experience.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>TMDB API</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> View on GitHub</a>
+                            <a href="#"><i class="fas fa-play"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- JavaScript para animação ao rolar -->
+<script>
+  const cards = document.querySelectorAll('.project-card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  cards.forEach(card => observer.observe(card));
+</script>
+
+
+  <!-- Certifications Section -->
+<section id="certifications" class="section">
+    <div class="container">
+        <h2 class="section-title">Certifications and Courses</h2>
+        <div class="certifications-list">
+            <div class="certification-item">
+                <h3 class="certification-title">Google UX Design</h3>
+                <p class="certification-issuer">Coursera</p>
+                <ul>
+                    <li>Foundations of User Experience (UX) Design</li>
+                    <li>Start the UX Design Process: Empathize, Define, and Ideate</li>
+                    <li>Build Wireframes and Low-Fidelity Prototypes</li>
+                    <li>Conduct UX Research and Test Early Concepts</li>
+                    <li>Create High-Fidelity Designs and Prototypes in Figma</li>
+                    <li>Build Dynamic User Interfaces (UI) for Websites</li>
+                    <li>Design a User Experience for Social Good &amp; Prepare for Jobs</li>
+                </ul>
+                <a href="https://coursera.org/share/30d9d3f00648753ebac70b00614b89ff" class="certification-link"><i class="fas fa-certificate"></i> View Certificate</a>
+            </div>
+            
+            <!-- Você pode adicionar mais .certification-item aqui -->
+        </div>
+    </div>
+</section>
+
+<script>
+  const certs = document.querySelectorAll('.certification-item');
+
+  const certObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationDelay = "0.2s";
+        entry.target.classList.add('visible');
+        // Reset transform e opacity para animação pelo CSS
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateX(0)';
+        certObserver.unobserve(entry.target); // Só anima uma vez
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  certs.forEach(cert => certObserver.observe(cert));
+</script>
+
+
+<!-- Contact Section -->
+<section id="contact" class="section" aria-labelledby="contact-title">
+  <div class="container">
+    <h2 id="contact-title" class="section-title">Get in Touch</h2>
+    <div class="contact-container">
+      
+      <!-- Contact Info -->
+      <aside class="contact-info" aria-label="Contact Information">
+        <div class="contact-info-item">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:cluiz4003@outlook.pt" class="contact-link">cluiz4003@outlook.pt</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <div>
+            <h3>Location</h3>
+            <p>Lisbon, Portugal</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-globe" aria-hidden="true"></i>
+          <div>
+            <h3>Find Me Online</h3>
+            <nav class="social-links" aria-label="Social Media Links">
+              <a href="https://www.linkedin.com/in/luizfehlberg/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/luigi043" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://x.com/luigi_043" target="_blank" rel="noopener" aria-label="X Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Contact Form -->
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/mayvlndk" method="POST" novalidate>
+        <div class="form-group">
+          <label for="name"><i class="fas fa-user" aria-hidden="true"></i> Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope" aria-hidden="true"></i> Email</label>
+          <input type="email" id="email" name="email" placeholder="example@mail.com" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="message"><i class="fas fa-comment" aria-hidden="true"></i> Your Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn" aria-label="Send Message">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>© 2023 Design by <a href="https://luizfehlberg.com" target="_blank" rel="noopener noreferrer" class="footer-link">Luiz Fehlberg</a></p>
+    </div>
+  </div>
+</footer>
+
+    <script src="script.js"></script>
+
+</body> </html>
