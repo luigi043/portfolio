@@ -790,181 +790,201 @@ header {
   }
 }
 
-/* --- HERO SECTION --- */
-#hero {
-  padding: 5rem 0 4rem;
+/* --- CONTACT SECTION --- */
+#contact {
   background: linear-gradient(135deg, #0d3b66 40%, #faa916 100%);
+  padding: 4rem 1rem;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
   color: white;
-  text-align: center;
-  animation: fadeInDown 1s ease forwards;
 }
 
-.hero-content {
-  max-width: 700px;
+#contact.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.hero-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-  animation: popIn 0.8s ease forwards;
-}
-
-.hero-name {
-  font-size: 2.8rem;
-  font-weight: 900;
-  letter-spacing: 4px;
-  margin-bottom: 0.3rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.4s;
-  opacity: 0;
-}
-
-.hero-role {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  font-style: italic;
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.6s;
-  opacity: 0;
-}
-
-.hero-quote {
-  font-size: 1rem;
-  margin-bottom: 1.8rem;
-  font-style: italic;
-  opacity: 0.85;
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.8s;
-  opacity: 0;
-}
-
-.social-links {
-  margin-bottom: 2rem;
-}
-
-.social-links a {
-  color: white;
-  margin: 0 0.8rem;
-  font-size: 1.4rem;
-  transition: color 0.3s ease;
-  display: inline-block;
-  animation: fadeIn 1s ease forwards;
-  opacity: 0;
-}
-
-.social-links a:hover {
-  color: #faa916;
-}
-
-/* Animations delay for each social link */
-.social-links a:nth-child(1) {
-  animation-delay: 1s;
-}
-.social-links a:nth-child(2) {
-  animation-delay: 1.2s;
-}
-.social-links a:nth-child(3) {
-  animation-delay: 1.4s;
-}
-
-.btn {
-  display: inline-block;
-  background-color: #faa916;
-  color: #0d3b66;
-  font-weight: 700;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(250, 169, 22, 0.5);
-  animation: popIn 0.8s ease forwards;
-  animation-delay: 1.6s;
-  opacity: 0;
-}
-
-.btn:hover {
-  background-color: #e09f11;
-  box-shadow: 0 6px 15px rgba(224, 159, 17, 0.7);
-}
-
-/* --- SECTIONS --- */
-.section {
-  padding: 4rem 0;
-}
-
 .section-title {
-  text-align: center;
   font-size: 2.4rem;
+  color: white;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* CONTACT INFO */
+.contact-info {
+  flex: 1 1 280px;
+  background: #333;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  color: #a0c4ff;
+  transition: background-color 0.3s ease;
+}
+
+.contact-info:hover {
+  background: #0d3b66;
+  color: #faa916;
+  box-shadow: 0 15px 40px rgba(250,169,22,0.7);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
   margin-bottom: 2rem;
+}
+
+.contact-info-item i {
+  font-size: 2rem;
+  color: #faa916;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.contact-info:hover .contact-info-item i {
+  color: #a0c4ff;
+}
+
+.contact-info-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+/* Social Links */
+.social-links a {
+  color: #a0c4ff;
+  font-size: 1.8rem;
+  margin-right: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+  color: #faa916;
+  transform: scale(1.2);
+}
+
+/* CONTACT FORM */
+.contact-form {
+  flex: 1 1 350px;
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(13, 59, 102, 0.15);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #0d3b66;
+  font-size: 1.1rem;
+}
+
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
+  resize: vertical;
+}
+
+.contact-form input[type="email"]::placeholder,
+.contact-form textarea::placeholder {
+  color: #bbb;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #faa916;
+  box-shadow: 0 0 10px 3px rgba(250, 169, 22, 0.4);
+}
+
+/* BUTTON */
+.btn {
+  align-self: flex-start;
+  padding: 0.75rem 2rem;
+  background-color: #faa916;
   color: #0d3b66;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(250, 169, 22, 0.7);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
   position: relative;
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
+  overflow: hidden;
 }
 
-.section-title::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 4px;
-  background-color: #faa916;
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
+.btn:hover,
+.btn:focus {
+  background-color: #e5a200;
+  box-shadow: 0 8px 25px rgba(229, 162, 0, 0.9);
+  outline: none;
 }
 
-/* --- ANIMATIONS --- */
-@keyframes fadeInDown {
-  0% {
+/* Ripple effect */
+.btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 600ms linear;
+  background-color: rgba(13, 59, 102, 0.3);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Animations */
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
     opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes popIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
   }
 }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 
 /* --- FOOTER --- */
 footer {
