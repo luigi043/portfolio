@@ -51,10 +51,4 @@ Description of the project and important details.
 - Visual Studio Code
 - Docker
 
-## How to Use
 
-To run any of my projects locally, follow the steps below:
-
-1. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/luigi043/portfolio.git
