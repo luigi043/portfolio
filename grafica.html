@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Curso de Design e Comunicação Gráfica</title>
+  <link rel="stylesheet" href="style.css"> <!-- Usa o teu CSS principal -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+<script>
+  // Aplica volume 45% apenas aos elementos de áudio
+  document.querySelectorAll("section h2:contains('Edição de Som') ~ audio").forEach(el => {
+    el.volume = 0.45;
+  });
+  document.querySelectorAll("section").forEach(section => {
+  if (section.querySelector('h2')?.textContent.includes("Edição de Som")) {
+    section.querySelectorAll("audio").forEach(audio => {
+      audio.volume = 0.45;
+    });
+  }
+});
+
+</script>
+
+</head>
+<body>
+  <!-- MAIN CONTENT -->
+  <main>
+    <h1 data-aos="fade-down">Curso: Design e Comunicação Gráfica</h1>
+
+<!-- ========================
+     EDIÇÃO DE SOM
+========================= -->
+<section data-aos="fade-up" id="edicao-som">
+  <h2>Edição de Som</h2>
+  <p>
+    Neste projeto, utilizei ferramentas como <strong>Audacity</strong> e <strong>Soundtrap</strong> para edição e criação dos áudios apresentados abaixo. 
+    O Audacity foi usado para gravação, edição detalhada e aplicação de efeitos, enquanto o Soundtrap auxiliou na composição e mixagem musical online.
+  </p>
+
+  <div class="audio-grid">
+
+    <article class="audio-item">
+      <h3>🎙️ Spot Publicitário – MozPest</h3>
+      <p>
+        Produzi um spot publicitário de até 30 segundos para promover a empresa <strong>MozPest</strong> em Moçambique. Desenvolvi um roteiro claro e impactante, realizei a locução com entonação adequada e editei o áudio com efeitos, cortes precisos e compressão para qualidade profissional.
+      </p>
+      <audio src="midia/Spot - MozPest.mp3" controls preload="none"></audio>
+    </article>
+
+    <article class="audio-item">
+      <h3>🎧 Medley de Sons – Edição Criativa</h3>
+      <p>
+        Criei um medley harmonioso ao mixar vários trechos de áudio, garantindo transições suaves e ajustes dinâmicos para uma experiência sonora coesa e agradável.
+      </p>
+      <audio src="midia/sons variados - Luiz Fehlberg.mp3" controls preload="none"></audio>
+    </article>
+
+    <article class="audio-item">
+      <h3>🎶 Medley Musical – Criação no Soundtrap</h3>
+      <p>
+        Produzi um medley musical de aproximadamente 5 minutos na plataforma <a href="https://www.soundtrap.com/" target="_blank" rel="noopener noreferrer">Soundtrap</a>, utilizando composição, arranjo e mixagem colaborativa com múltiplas camadas sonoras.
+      </p>
+      <audio src="midia/Medley Luiz Fehlberg 1.mp3" controls preload="none"></audio>
+    </article>
+
+    <article class="audio-item">
+      <h3>🔥 Intro Musical – Canal Twitch.tv/luigi_043</h3>
+      <p>
+        Desenvolvi uma intro sonora personalizada para o canal Twitch.tv/luigi_043, criando uma identidade sonora marcante através de composição, efeitos sonoros e mixagem para impacto imediato nas transmissões ao vivo.
+      </p>
+      <audio src="midia/My Intro_.mp3" controls preload="none"></audio>
+    </article>
+
+  </div>
+</section>
+
+
+
+<!-- ========================
+     EDIÇÃO DE VÍDEO
+========================= -->
+<section data-aos="fade-up">
+  <h2>Edição de Vídeo</h2>
+  <p>Produção de vídeos com técnicas profissionais incluindo cortes precisos, transições dinâmicas, correção de cor avançada e integração harmoniosa de áudio e texto para um resultado impactante e coerente.</p>
+
+  <!-- Bloco 1 -->
+  <div class="video-block">
+    <!-- Texto -->
+    <div class="video-text">
+      <p>
+        <strong>🎞️ Projeto de Edição Livre – M4 CS</strong><br>
+        Vídeo elaborado a partir de uma seleção cuidadosa de fotografias e música, utilizando o Adobe Premiere para criar uma narrativa visual envolvente, explorando ritmo, sincronização e efeitos de transição para transmitir emoção e dinamismo.
+      </p>
+    </div>
+    <!-- Vídeo -->
+    <div class="video-wrapper">
+      <video src="midia/M4_CS_LuizFehlberg.mov" controls autoplay muted loop></video>
+    </div>
+  </div>
+
+  <!-- Bloco 2 -->
+  <div class="video-block">
+    <div class="video-text">
+      <p>
+        <strong>📱 Vídeo Publicitário – Reel: BMW M4 CS Edition VR46</strong><br>
+        Produção de um vídeo vertical (reel) publicitário, focado em captar a atenção rápida do público nas redes sociais. Com cortes ágeis, enquadramentos impactantes e cores vibrantes, o vídeo promove o BMW M4 CS Edition VR46, destacando seu design e performance em formato otimizado para dispositivos móveis.
+      </p>
+    </div>
+    <div class="video-wrapper">
+      <video class="video-reel" src="midia/BMW M4 CS EDITION VR46_Luiz.mp4" controls autoplay muted loop></video>
+    </div>
+  </div>
+
+  <!-- Outros blocos podem seguir o mesmo padrão -->
+</section>
+
+
+<!-- ========================
+     TRATAMENTO DE IMAGEM
+========================= -->
+<section data-aos="fade-up" class="image-treatment-section">
+  <h2>Tratamento de Imagem Avançado</h2>
+  <p>
+    Durante esta etapa, aprofundei técnicas avançadas de manipulação e edição de imagens utilizando ferramentas como 
+    <strong>Adobe Photoshop</strong>, <strong>Lightroom</strong> e <strong>GIMP</strong>. 
+    Aprendi desde o retoque fino até a composição criativa, preparando imagens para diversos fins profissionais.
+  </p>
+
+  <hr>
+
+  <h3>Exercícios Realizados</h3>
+
+  <article class="exercise exercise-analysis">
+    <h4>Análise Visual Detalhada</h4>
+    <p>Avaliação crítica de imagens para identificar elementos de composição, iluminação e cor.</p>
+    <div class="media-container">
+      <iframe 
+        src="https://docs.google.com/presentation/d/e/2PACX-1vS31iCL1lx14OqfcXSLzpywbFV6MbPV9ZXrQpJjhjMqVad7HO8QXtXNuoQxqV-p4A/pubembed?start=true&loop=true&delayms=3500" 
+        frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </article>
+
+  <article class="exercise exercise-editing">
+    <h4>Edição Fotográfica Profissional (Photoshop)</h4>
+    <p>Aplicação de ajustes de cor, remoção de imperfeições e técnicas de máscara para aprimorar imagens com alta qualidade.</p>
+    <div class="media-container">
+      <iframe 
+        src="https://docs.google.com/presentation/d/e/2PACX-1vRDx-DfbzTxFAUPvBqZALqe5ICVMGaX-Cd5MmgB3vdbJgWee5xGSyCeL1VOC3ZDhg/pubembed?start=true&loop=true&delayms=3000" 
+        frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </article>
+
+  <article class="exercise exercise-cutout">
+    <h4>Recorte Preciso de Elementos</h4>
+    <p>Treinamento em recorte detalhado e isolamento de elementos para uso em montagens e colagens.</p>
+    <div class="image-grid">
+      <img src="imagens/1.png" alt="Recorte Imagem 1" loading="lazy">
+      <img src="imagens/2.png" alt="Recorte Imagem 2" loading="lazy">
+      <img src="imagens/3.png" alt="Recorte Imagem 3" loading="lazy">
+      <img src="imagens/4.png" alt="Recorte Imagem 4" loading="lazy">
+      <img src="imagens/5.png" alt="Recorte Imagem 5" loading="lazy">
+      <img src="imagens/6.png" alt="Recorte Imagem 6" loading="lazy">
+    </div>
+  </article>
+
+  <article class="exercise exercise-composition">
+    <h4>Composição Visual Criativa</h4>
+    <p>Desenvolvimento de composições visuais harmoniosas, trabalhando com camadas, efeitos e equilíbrio visual.</p>
+    <div class="image-grid">
+      <img src="imagens/images-0.jpg" alt="Composição Visual 1" loading="lazy">
+      <img src="imagens/images-1.jpg" alt="Composição Visual 2" loading="lazy">
+      <img src="imagens/images-2.jpg" alt="Composição Visual 3" loading="lazy">
+      <img src="imagens/images-3.jpg" alt="Composição Visual 4" loading="lazy">
+      <img src="imagens/images-4.jpg" alt="Composição Visual 5" loading="lazy">
+      <img src="imagens/images-5.jpg" alt="Composição Visual 6" loading="lazy">
+    </div>
+  </article>
+
+</section>
+
+<!-- ========================
+     PROJETO FINAL
+========================= -->
+<section id="projeto-final" class="container">
+  <h1>Projeto Final de Design</h1>
+
+  <div class="final-project-wrapper">
+
+    <!-- Conteúdo principal com cards -->
+    <div class="final-project-cards">
+
+      <article class="project-card" id="briefing">
+        <h2>Exercício 1: Desenvolvimento de um Briefing</h2>
+        <p><strong>Objetivo:</strong> Criar um briefing detalhado para um projeto de design, que serve como documento base para orientar todas as etapas seguintes do trabalho.</p>
+        <p>Este exercício envolveu a pesquisa sobre o público-alvo, definição dos objetivos do projeto, análise da concorrência e especificação dos requisitos visuais e funcionais. O briefing é fundamental para alinhar expectativas entre o cliente e a equipe de design, garantindo clareza e foco durante a execução.</p>
+      </article>
+
+      <article class="project-card" id="logotipos">
+        <h2>Exercício 2: Criação de Logotipo</h2>
+        <p>Desenvolvimento de um logotipo original para a identidade visual do projeto, considerando simplicidade, memorabilidade e versatilidade. O processo contemplou esboços, refinamento digital e escolha cuidadosa de cores e tipografia.</p>
+        <img src="imagens/logo.png" alt="Logotipo do Projeto" loading="lazy">
+      </article>
+
+      <article class="project-card" id="web-apresentacao">
+        <h2>Apresentação do Projeto Web — BMW M Series</h2>
+        <p>Criação de uma página web moderna e responsiva para apresentar a linha BMW M Series, com animações suaves, layout intuitivo e navegação otimizada para dispositivos móveis e desktops.</p>
+        <p>O projeto focou em design centrado no usuário, acessibilidade e carregamento rápido, destacando modelos, especificações técnicas e diferenciais da linha.</p>
+      </article>
+
+      <div class="project-summary-text">
+        <p>As imagens à direita (ou abaixo em dispositivos móveis) ilustram os principais layouts e elementos visuais do site BMW M Series, ressaltando a identidade e o impacto visual do projeto.</p>
+      </div>
+
+      <div class="btn-wrapper">
+        <a href="BMW_M_Series.html" class="btn-primary" role="button" aria-label="Acessar Projeto BMW M Series">
+          Ver Projeto Completo
+        </a>
+      </div>
+    </div>
+
+    <!-- Slideshow de imagens -->
+    <aside class="final-project-slideshow">
+      <div class="slideshow-container">
+        <div class="slide fade active">
+          <img src="imagens/Cabeçalho.png" alt="BMW M Series 1" loading="lazy">
+        </div>
+        <div class="slide fade">
+          <img src="imagens/Hero.png" alt="BMW M Series 2" loading="lazy">
+        </div>
+        <div class="slide fade">
+          <img src="imagens/Hero.png" alt="BMW M Series 3" loading="lazy">
+        </div>
+        <div class="slide fade">
+          <img src="imagens/História da Linha M.png" alt="BMW M Series 4" loading="lazy">
+        </div>
+
+        <!-- Controles -->
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+
+      <!-- Pontos indicadores -->
+      <div class="dots-container" aria-label="Navegação do slideshow">
+        <span class="dot active" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+
+  <!-- ========================
+       FOOTER
+  ========================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Design by
+          <a href="https://github.com/luigi043" target="_blank" rel="noopener noreferrer" class="footer-link">
+            Luiz Fehlberg
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="scripts.js"></script>
+
+</html>
