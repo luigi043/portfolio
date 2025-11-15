@@ -24,66 +24,87 @@
 </head>
 
 <body data-new-gr-c-s-check-loaded="14.1235.0" data-gr-ext-installed="">
-    <!-- Header -->
-    <header>
-        <!-- NAV -->
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <h1>Luiz Fehlberg</h1>
-                </div>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#hero" class="active">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#professional-experience">Experience</a></li>                  
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!-- Clean Header -->
+<header class="header">
+    <div class="container">
+        <nav class="nav">
+            <!-- Simple Logo -->
+            <div class="logo">
+                <a href="#hero">
+                    <span class="logo-text">Luiz Fehlberg</span>
+                </a>
+            </div>
 
-<!-- Hero Section -->
-<section id="hero" class="section">
-  <div class="container">
-    <div class="hero-content">
-      <img 
-        src="https://snipboard.io/aOEr1c.jpg" 
-        alt="Luiz Fehlberg" 
-        class="hero-img fade-in" 
-      />
-      <h1 id="animated-name" class="hero-name typing-effect">LUIZ FEHLBERG</h1>
-      <p class="hero-role fade-delay">
-        Computer Engineer | Software Developer | AI Enthusiast
-      </p>
-      <p class="hero-quote fade-delay">
-        "Imagination is more important than knowledge..." - Albert Einstein
-      </p>
-      <div class="social-links fade-delay">
-        <a href="https://www.linkedin.com/in/luizfehlberg/" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://github.com/luigi043" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://x.com/luigi_043" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </div>
-      <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/luigi043/portfolio/main/file/CV-LuizFehlberg.pdf&embedded=true" 
-   target="_blank" rel="noopener noreferrer" class="btn fade-delay">
-   Curriculum Vitae
-</a>
+            <!-- Navigation -->
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#professional-experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <!-- Simple CTA -->
+            <div class="nav-cta">
+                <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/luigi043/portfolio/main/file/CV-LuizFehlberg.pdf&embedded=true" 
+                   target="_blank" rel="noopener noreferrer" class="resume-btn">
+                    Resume
+                </a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
     </div>
-  </div>
-</section>
+</header>
+<!-- Enhanced Hero Section -->
+<!-- Spacious Hero Section -->
+<section id="hero" class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <!-- Profile Image -->
+            <div class="hero-image">
+                <img 
+                    src="https://snipboard.io/aOEr1c.jpg" 
+                    alt="Luiz Fehlberg" 
+                    class="profile-pic"
+                />
+            </div>
 
+            <!-- Text Content with More Space -->
+            <div class="hero-text">
+                <div class="intro">
+                    <p class="greeting">Hello, I'm</p>
+                    <h1 class="name">Luiz Fehlberg</h1>
+                    <h2 class="title">Computer Engineer & Software Developer</h2>
+                </div>
+
+                <div class="description">
+                    <p>I create digital solutions that solve real-world problems. Passionate about clean code, user experience, and innovative technology.</p>
+                </div>
+
+                <!-- Simple CTA -->
+                <div class="hero-actions">
+                    <a href="#projects" class="btn primary">View My Work</a>
+                    <a href="#contact" class="btn secondary">Get In Touch</a>
+                </div>
+
+                <!-- Minimal Social Links -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/luizfehlberg/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/luigi043"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/luigi_043"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
  <!-- About Section -->
     <section id="about">
         <div class="container">
@@ -167,7 +188,105 @@
             </div>
         </div>
     </section>
+<script>
+  // JavaScript para a seção About
+document.addEventListener('DOMContentLoaded', function() {
+    // Animação de scroll para a seção About
+    const aboutContent = document.querySelector('.about-content');
+    
+    const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // Animar os cards flutuantes
+                const floatingCards = entry.target.querySelectorAll('.floating-card');
+                floatingCards.forEach((card, index) => {
+                    card.style.animationDelay = `${0.2 + (index * 0.2)}s`;
+                });
+                
+                // Animar as estatísticas
+                const stats = entry.target.querySelectorAll('.stat-number');
+                stats.forEach((stat, index) => {
+                    setTimeout(() => {
+                        animateCounter(stat);
+                    }, 1000 + (index * 300));
+                });
+            }
+        });
+    }, { threshold: 0.3 });
 
+    if (aboutContent) {
+        aboutObserver.observe(aboutContent);
+    }
+
+    // Função para animar contadores
+    function animateCounter(element) {
+        const target = parseInt(element.textContent.replace('+', '').replace('%', ''));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            
+            if (element.textContent.includes('+')) {
+                element.textContent = Math.floor(current) + '+';
+            } else if (element.textContent.includes('%')) {
+                element.textContent = Math.floor(current) + '%';
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 16);
+    }
+
+    // Efeitos hover para os cards flutuantes
+    const floatingCards = document.querySelectorAll('.floating-card');
+    floatingCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.zIndex = '10';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.zIndex = '1';
+        });
+    });
+
+    // Efeito de digitação para o primeiro parágrafo (opcional)
+    const firstParagraph = document.querySelector('.about-intro p:first-child');
+    if (firstParagraph) {
+        const originalText = firstParagraph.textContent;
+        firstParagraph.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < originalText.length) {
+                firstParagraph.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 20);
+            }
+        };
+        
+        // Iniciar efeito de digitação quando a seção for visível
+        const typeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(typeWriter, 500);
+                    typeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        typeObserver.observe(aboutContent);
+    }
+});
+
+// Adicione também este CSS adicional para garantir que tudo funcione
+</script>
    <!-- Professional Experience Section -->
     <section id="professional-experience">
         <div class="container">
@@ -1022,6 +1141,217 @@
     </div>
 </section>
 
+<script>
+// Skills Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Filter buttons functionality
+    const filterButtons = document.querySelectorAll('.skill-nav-btn');
+    const skillCards = document.querySelectorAll('.skill-category-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-category');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter cards
+            skillCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'block';
+                    card.style.animation = 'slideInRight 0.6s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // View More functionality
+    const viewMoreButtons = document.querySelectorAll('.view-more-btn');
+    
+    viewMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.skill-category-card');
+            const skillsList = card.querySelector('.skills-progress');
+            const skillsTags = card.querySelector('.skills-tags');
+            const category = card.querySelector('h3').textContent;
+            
+            // Show all skills based on category
+            showAllSkills(category, card, skillsList, skillsTags);
+            this.style.display = 'none';
+        });
+    });
+    
+    // Function to show all skills (you can expand this with your actual skills data)
+    function showAllSkills(category, card, skillsList, skillsTags) {
+        const allSkills = {
+            'Frontend Development': [
+                { name: 'HTML', level: 'advanced', percentage: 95 },
+                { name: 'CSS', level: 'advanced', percentage: 90 },
+                { name: 'JavaScript', level: 'advanced', percentage: 92 },
+                { name: 'React.js', level: 'advanced', percentage: 88 },
+                { name: 'Angular', level: 'intermediate', percentage: 75 },
+                { name: 'Vue.js', level: 'intermediate', percentage: 70 },
+                { name: 'TypeScript', level: 'intermediate', percentage: 75 },
+                { name: 'Bootstrap', level: 'advanced', percentage: 85 },
+                { name: 'Sass', level: 'intermediate', percentage: 72 },
+                { name: 'jQuery', level: 'intermediate', percentage: 68 }
+            ],
+            'Backend Development': [
+                { name: 'Node.js', level: 'advanced', percentage: 90 },
+                { name: 'PHP', level: 'advanced', percentage: 85 },
+                { name: 'Laravel', level: 'advanced', percentage: 88 },
+                { name: 'C#', level: 'advanced', percentage: 88 },
+                { name: 'ASP.NET', level: 'advanced', percentage: 85 },
+                { name: 'ASP.NET Core', level: 'advanced', percentage: 82 },
+                { name: '.NET Framework', level: 'intermediate', percentage: 78 },
+                { name: 'Python', level: 'intermediate', percentage: 70 },
+                { name: 'Java', level: 'intermediate', percentage: 72 },
+                { name: 'Express.js', level: 'advanced', percentage: 86 }
+            ],
+            'Mobile Development': [
+                { name: 'Android Development', level: 'intermediate', percentage: 75 },
+                { name: 'Java (Android)', level: 'intermediate', percentage: 72 },
+                { name: 'Kotlin', level: 'intermediate', percentage: 70 },
+                { name: 'Android Studio', level: 'intermediate', percentage: 78 },
+                { name: 'RxJava', level: 'intermediate', percentage: 65 }
+            ],
+            'Databases': [
+                { name: 'MySQL', level: 'advanced', percentage: 88 },
+                { name: 'PostgreSQL', level: 'advanced', percentage: 85 },
+                { name: 'MongoDB', level: 'intermediate', percentage: 65 },
+                { name: 'Firebase', level: 'intermediate', percentage: 70 },
+                { name: 'SQLite', level: 'intermediate', percentage: 68 },
+                { name: 'Microsoft SQL Server', level: 'intermediate', percentage: 72 }
+            ],
+            'Tools & DevOps': [
+                { name: 'Git', level: 'advanced', percentage: 92 },
+                { name: 'GitHub', level: 'advanced', percentage: 90 },
+                { name: 'GitLab', level: 'intermediate', percentage: 75 },
+                { name: 'Docker', level: 'intermediate', percentage: 78 },
+                { name: 'CI/CD Pipelines', level: 'intermediate', percentage: 72 },
+                { name: 'GitHub Actions', level: 'intermediate', percentage: 70 },
+                { name: 'GitLab CI', level: 'intermediate', percentage: 68 },
+                { name: 'Kubernetes', level: 'basic', percentage: 45 },
+                { name: 'AWS', level: 'intermediate', percentage: 70 },
+                { name: 'Heroku', level: 'intermediate', percentage: 75 },
+                { name: 'Visual Studio Code', level: 'advanced', percentage: 95 },
+                { name: 'Microsoft Visual Studio', level: 'intermediate', percentage: 80 },
+                { name: 'Postman', level: 'intermediate', percentage: 85 },
+                { name: 'JIRA', level: 'intermediate', percentage: 78 },
+                { name: 'Trello', level: 'intermediate', percentage: 82 }
+            ],
+            'Design & UX': [
+                { name: 'UX Design', level: 'intermediate', percentage: 72 },
+                { name: 'Figma', level: 'intermediate', percentage: 75 },
+                { name: 'Wireframing', level: 'intermediate', percentage: 70 },
+                { name: 'Prototyping', level: 'intermediate', percentage: 68 },
+                { name: 'User Research', level: 'intermediate', percentage: 65 },
+                { name: 'Usability Testing', level: 'intermediate', percentage: 62 },
+                { name: 'Graphic Design', level: 'intermediate', percentage: 70 },
+                { name: 'Adobe Photoshop', level: 'intermediate', percentage: 68 },
+                { name: 'Adobe Premiere Pro', level: 'intermediate', percentage: 60 },
+                { name: 'Video Editing', level: 'intermediate', percentage: 65 },
+                { name: 'Sound Editing', level: 'intermediate', percentage: 58 },
+                { name: 'Advanced Image Processing', level: 'intermediate', percentage: 72 }
+            ],
+            'Programming Languages': [
+                { name: 'JavaScript', level: 'advanced', percentage: 92 },
+                { name: 'TypeScript', level: 'advanced', percentage: 85 },
+                { name: 'PHP', level: 'advanced', percentage: 85 },
+                { name: 'C#', level: 'advanced', percentage: 88 },
+                { name: 'Java', level: 'intermediate', percentage: 72 },
+                { name: 'Python', level: 'intermediate', percentage: 70 },
+                { name: 'C', level: 'intermediate', percentage: 68 },
+                { name: 'C++', level: 'intermediate', percentage: 65 },
+                { name: 'Kotlin', level: 'intermediate', percentage: 70 },
+                { name: 'SQL', level: 'intermediate', percentage: 82 }
+            ],
+            'Professional Skills': [
+                { name: 'Problem Solving', level: 'advanced' },
+                { name: 'Creative Thinking', level: 'advanced' },
+                { name: 'Teamwork', level: 'advanced' },
+                { name: 'Communication', level: 'advanced' },
+                { name: 'Responsibility', level: 'advanced' },
+                { name: 'Resilience', level: 'advanced' },
+                { name: 'Organization', level: 'advanced' },
+                { name: 'Agile Methodologies', level: 'intermediate' },
+                { name: 'Project Management', level: 'intermediate' },
+                { name: 'Customer Service', level: 'intermediate' },
+                { name: 'Professional Ethics', level: 'intermediate' }
+            ]
+        };
+        
+        const skills = allSkills[category];
+        if (!skills) return;
+        
+        if (skillsList) {
+            skillsList.innerHTML = '';
+            skills.forEach(skill => {
+                const skillItem = document.createElement('div');
+                skillItem.className = 'skill-progress-item';
+                skillItem.setAttribute('data-level', skill.level);
+                
+                skillItem.innerHTML = `
+                    <div class="skill-info">
+                        <span class="skill-name">${skill.name}</span>
+                        ${skill.percentage ? `<span class="skill-percentage">${skill.percentage}%</span>` : ''}
+                    </div>
+                    ${skill.percentage ? `
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${skill.percentage}%"></div>
+                    </div>
+                    ` : ''}
+                `;
+                
+                skillsList.appendChild(skillItem);
+            });
+        }
+        
+        if (skillsTags) {
+            skillsTags.innerHTML = '';
+            skills.forEach(skill => {
+                const skillTag = document.createElement('span');
+                skillTag.className = 'skill-tag';
+                skillTag.setAttribute('data-level', skill.level);
+                skillTag.textContent = skill.name;
+                skillsTags.appendChild(skillTag);
+            });
+        }
+        
+        // Update skill count
+        const skillCount = card.querySelector('.skill-count');
+        if (skillCount) {
+            skillCount.textContent = `${skills.length} skills`;
+        }
+    }
+    
+    // Animate progress bars on scroll
+    const animateOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBars = entry.target.querySelectorAll('.progress-fill');
+                progressBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 200);
+                });
+                animateOnScroll.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    skillCards.forEach(card => {
+        animateOnScroll.observe(card);
+    });
+});
+
+</script>
+
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
@@ -1182,8 +1512,8 @@
 
                 <!-- E-Commerce Platform -->
                 <div class="project-card" data-category="web">
-                    <div class="project-img no-image-text">
-                        <p>E-Commerce Platform</p>
+                    <div class="project-img">
+                        <img src="https://snipboard.io/KAs9eN.jpg" alt="Modern E-Commerce Platform">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Modern E-Commerce Platform</h3>
@@ -1204,8 +1534,9 @@
 
                 <!-- Task Management App -->
                 <div class="project-card" data-category="web">
-                    <div class="project-img no-image-text">
-                        <p>Task Management App</p>
+                        <div class="project-img">
+                        <img src="https://snipboard.io/omxY2G.jpg" alt="Advanced Task Management">
+                        
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Advanced Task Management</h3>
@@ -1225,8 +1556,9 @@
                 <!-- Rhea Print Services -->
                 <div class="project-card" data-category="web in-progress">
                     <div class="project-status">In Development</div>
-                    <div class="project-img no-image-text">
-                        <p>Rhea Print Services</p>
+                                       <div class="project-img">
+                        <img src="https://snipboard.io/pmTtCF.jpg" alt="Rhea Print Services">
+                        
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Rhea Print Services</h3>
