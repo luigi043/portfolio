@@ -27,7 +27,88 @@ function initAllAnimations() {
     initScrollAnimations();
     initParallaxEffects();
 }
+// Enhanced Header Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.main-header');
+    const progressBar = document.querySelector('.progress-bar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-item');
 
+    // Scroll progress and header effects
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrolled / height) * 100;
+        
+        // Progress bar
+        progressBar.style.width = progress + '%';
+        
+        // Header background effect
+        if (scrolled > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Active section highlighting
+        highlightActiveSection();
+    });
+
+    // Mobile menu toggle
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close mobile menu when clicking on links
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+
+    // Active section highlighting
+    function highlightActiveSection() {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
 // ----------- Mobile Menu -----------
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -857,3 +938,101 @@ if (document.readyState === 'loading') {
 } else {
     initAllAnimations();
 }
+
+// JavaScript para a seção About
+document.addEventListener('DOMContentLoaded', function() {
+    // Animação de scroll para a seção About
+    const aboutContent = document.querySelector('.about-content');
+    
+    const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // Animar os cards flutuantes
+                const floatingCards = entry.target.querySelectorAll('.floating-card');
+                floatingCards.forEach((card, index) => {
+                    card.style.animationDelay = `${0.2 + (index * 0.2)}s`;
+                });
+                
+                // Animar as estatísticas
+                const stats = entry.target.querySelectorAll('.stat-number');
+                stats.forEach((stat, index) => {
+                    setTimeout(() => {
+                        animateCounter(stat);
+                    }, 1000 + (index * 300));
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    if (aboutContent) {
+        aboutObserver.observe(aboutContent);
+    }
+
+    // Função para animar contadores
+    function animateCounter(element) {
+        const target = parseInt(element.textContent.replace('+', '').replace('%', ''));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            
+            if (element.textContent.includes('+')) {
+                element.textContent = Math.floor(current) + '+';
+            } else if (element.textContent.includes('%')) {
+                element.textContent = Math.floor(current) + '%';
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 16);
+    }
+
+    // Efeitos hover para os cards flutuantes
+    const floatingCards = document.querySelectorAll('.floating-card');
+    floatingCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.zIndex = '10';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.zIndex = '1';
+        });
+    });
+
+    // Efeito de digitação para o primeiro parágrafo (opcional)
+    const firstParagraph = document.querySelector('.about-intro p:first-child');
+    if (firstParagraph) {
+        const originalText = firstParagraph.textContent;
+        firstParagraph.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < originalText.length) {
+                firstParagraph.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 20);
+            }
+        };
+        
+        // Iniciar efeito de digitação quando a seção for visível
+        const typeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(typeWriter, 500);
+                    typeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        typeObserver.observe(aboutContent);
+    }
+});
+
+// Adicione também este CSS adicional para garantir que tudo funcione
