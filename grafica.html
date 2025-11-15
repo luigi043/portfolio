@@ -1,276 +1,818 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Curso de Design e Comunicação Gráfica</title>
-  <link rel="stylesheet" href="style.css"> <!-- Usa o teu CSS principal -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
- <!-- CSS -->
-  <link rel="stylesheet" href="styles.css" />
-<script>
-  // Aplica volume 45% apenas aos elementos de áudio
-  document.querySelectorAll("section h2:contains('Edição de Som') ~ audio").forEach(el => {
-    el.volume = 0.45;
-  });
-  document.querySelectorAll("section").forEach(section => {
-  if (section.querySelector('h2')?.textContent.includes("Edição de Som")) {
-    section.querySelectorAll("audio").forEach(audio => {
-      audio.volume = 0.45;
-    });
-  }
-});
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design e Comunicação Gráfica - Luiz Fehlberg</title>
+  <style>
+    /* === RESET E ESTILOS GLOBAIS === */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-</script>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #0a0a0a;
+        color: #ffffff;
+        line-height: 1.6;
+        padding-top: 80px;
+    }
 
+    /* === NAVEGAÇÃO === */
+    .project-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #1a1a1a;
+        padding: 1rem 0;
+        z-index: 1000;
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-logo {
+        color: #1fffe0;
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        color: #cccccc;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #1fffe0;
+    }
+
+    /* === HERO SECTION === */
+    .project-hero {
+        background: #1a1a1a;
+        padding: 4rem 0;
+        text-align: center;
+    }
+
+    .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .title-main {
+        display: block;
+        color: #ffffff;
+    }
+
+    .title-sub {
+        display: block;
+        color: #1fffe0;
+    }
+
+    .hero-description {
+        font-size: 1.2rem;
+        color: #cccccc;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 2rem;
+    }
+
+    .stat {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #1fffe0;
+    }
+
+    .stat-label {
+        color: #888;
+        font-size: 0.9rem;
+    }
+
+    /* === SEÇÕES GERAIS === */
+    section {
+        padding: 4rem 0;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #1fffe0;
+    }
+
+    .section-header p {
+        color: #cccccc;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* === SEÇÃO DE ÁUDIO === */
+    .audio-section {
+        background: #0a0a0a;
+    }
+
+    .audio-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .audio-card {
+        background: #1a1a1a;
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid #333;
+    }
+
+    .audio-card h3 {
+        color: #1fffe0;
+        margin-bottom: 1rem;
+    }
+
+    .audio-card p {
+        color: #cccccc;
+        margin-bottom: 1.5rem;
+    }
+
+    .audio-player {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    /* === SEÇÃO DE VÍDEO === */
+    .video-section {
+        background: #1a1a1a;
+    }
+
+    .video-showcase {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .video-project {
+        margin-bottom: 3rem;
+        background: #0a0a0a;
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid #333;
+    }
+
+    .video-project h3 {
+        color: #1fffe0;
+        margin-bottom: 1rem;
+    }
+
+    .video-project p {
+        color: #cccccc;
+        margin-bottom: 1.5rem;
+    }
+
+    .video-container video {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* === SEÇÃO DE IMAGENS === */
+    .image-section {
+        background: #0a0a0a;
+    }
+
+    .image-projects {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .image-project {
+        background: #1a1a1a;
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid #333;
+        margin-bottom: 2rem;
+    }
+
+    .image-project h3 {
+        color: #1fffe0;
+        margin-bottom: 1rem;
+    }
+
+    .image-project p {
+        color: #cccccc;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-media iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .image-collage {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .image-collage img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* === PROJETO FINAL === */
+    .final-section {
+        background: #1a1a1a;
+    }
+
+    .final-project {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .project-phase {
+        background: #0a0a0a;
+        padding: 2rem;
+        border-radius: 10px;
+        border: 1px solid #333;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .phase-number {
+        background: #1fffe0;
+        color: #000;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        position: absolute;
+        top: -15px;
+        left: -15px;
+    }
+
+    .project-phase h3 {
+        color: #1fffe0;
+        margin-bottom: 1rem;
+    }
+
+    .project-phase p {
+        color: #cccccc;
+    }
+
+    .phase-image {
+        width: 100%;
+        max-width: 200px;
+        margin-top: 1rem;
+        border-radius: 5px;
+    }
+
+    .showcase-container {
+        position: relative;
+    }
+
+    .showcase-slider {
+        position: relative;
+        height: 400px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slider-controls {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        transform: translateY(-50%);
+    }
+
+    .slider-btn {
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+
+    .slider-dots {
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background: #1fffe0;
+    }
+
+    .project-cta {
+        display: inline-block;
+        background: #1fffe0;
+        color: #000;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 2rem;
+        transition: background 0.3s;
+    }
+
+    .project-cta:hover {
+        background: #00dddd;
+    }
+
+    /* === FOOTER === */
+    .project-footer {
+        background: #0a0a0a;
+        padding: 2rem 0;
+        border-top: 1px solid #333;
+        text-align: center;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .footer-info h3 {
+        color: #1fffe0;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-info p {
+        color: #cccccc;
+    }
+
+    .footer-credits a {
+        color: #1fffe0;
+        text-decoration: none;
+    }
+
+    /* === RESPONSIVO === */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 70px;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        .hero-title {
+            font-size: 2rem;
+        }
+        
+        .hero-stats {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .audio-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .final-project {
+            grid-template-columns: 1fr;
+        }
+        
+        .image-collage {
+            grid-template-columns: 1fr;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .nav-container, .hero-container {
+            padding: 0 1rem;
+        }
+        
+        .audio-card, .video-project, .image-project, .project-phase {
+            padding: 1.5rem;
+        }
+        
+        .showcase-slider {
+            height: 300px;
+        }
+    }
+  </style>
 </head>
 <body>
-  <!-- MAIN CONTENT -->
-  <main>
-    <h1 data-aos="fade-down">Curso: Design e Comunicação Gráfica</h1>
-
-<!-- ========================
-     EDIÇÃO DE SOM
-========================= -->
-<section data-aos="fade-up" id="edicao-som">
-  <h2>Edição de Som</h2>
-  <p>
-    Neste projeto, utilizei ferramentas como <strong>Audacity</strong> e <strong>Soundtrap</strong> para edição e criação dos áudios apresentados abaixo. 
-    O Audacity foi usado para gravação, edição detalhada e aplicação de efeitos, enquanto o Soundtrap auxiliou na composição e mixagem musical online.
-  </p>
-
-  <div class="audio-grid">
-
-    <article class="audio-item">
-      <h3>🎙️ Spot Publicitário – MozPest</h3>
-      <p>
-        Produzi um spot publicitário de até 30 segundos para promover a empresa <strong>MozPest</strong> em Moçambique. Desenvolvi um roteiro claro e impactante, realizei a locução com entonação adequada e editei o áudio com efeitos, cortes precisos e compressão para qualidade profissional.
-      </p>
-      <audio src="midia/Spot - MozPest.mp3" controls preload="none"></audio>
-    </article>
-
-    <article class="audio-item">
-      <h3>🎧 Medley de Sons – Edição Criativa</h3>
-      <p>
-        Criei um medley harmonioso ao mixar vários trechos de áudio, garantindo transições suaves e ajustes dinâmicos para uma experiência sonora coesa e agradável.
-      </p>
-      <audio src="midia/sons variados - Luiz Fehlberg.mp3" controls preload="none"></audio>
-    </article>
-
-    <article class="audio-item">
-      <h3>🎶 Medley Musical – Criação no Soundtrap</h3>
-      <p>
-        Produzi um medley musical de aproximadamente 5 minutos na plataforma <a href="https://www.soundtrap.com/" target="_blank" rel="noopener noreferrer">Soundtrap</a>, utilizando composição, arranjo e mixagem colaborativa com múltiplas camadas sonoras.
-      </p>
-      <audio src="midia/Medley Luiz Fehlberg 1.mp3" controls preload="none"></audio>
-    </article>
-
-    <article class="audio-item">
-      <h3>🔥 Intro Musical – Canal Twitch.tv/luigi_043</h3>
-      <p>
-        Desenvolvi uma intro sonora personalizada para o canal Twitch.tv/luigi_043, criando uma identidade sonora marcante através de composição, efeitos sonoros e mixagem para impacto imediato nas transmissões ao vivo.
-      </p>
-      <audio src="midia/My Intro_.mp3" controls preload="none"></audio>
-    </article>
-
-  </div>
-</section>
-
-
-
-<!-- ========================
-     EDIÇÃO DE VÍDEO
-========================= -->
-<section data-aos="fade-up">
-  <h2>Edição de Vídeo</h2>
-  <p>Produção de vídeos com técnicas profissionais incluindo cortes precisos, transições dinâmicas, correção de cor avançada e integração harmoniosa de áudio e texto para um resultado impactante e coerente.</p>
-
-  <!-- Bloco 1 -->
-  <div class="video-block">
-    <!-- Texto -->
-    <div class="video-text">
-      <p>
-        <strong>🎞️ Projeto de Edição Livre – M4 CS</strong><br>
-        Vídeo elaborado a partir de uma seleção cuidadosa de fotografias e música, utilizando o Adobe Premiere para criar uma narrativa visual envolvente, explorando ritmo, sincronização e efeitos de transição para transmitir emoção e dinamismo.
-      </p>
+  <!-- Navigation -->
+  <nav class="project-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        ← Voltar ao Portfolio
+      </a>
+      <div class="nav-links">
+        <a href="#edicao-som">Áudio</a>
+        <a href="#edicao-video">Vídeo</a>
+        <a href="#tratamento-imagem">Imagem</a>
+        <a href="#projeto-final">Projeto Final</a>
+      </div>
     </div>
-    <!-- Vídeo -->
-    <div class="video-wrapper">
-      <video src="midia/M4_CS_LuizFehlberg.mov" controls autoplay muted loop></video>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="project-hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-main">Design & Comunicação</span>
+          <span class="title-sub">Gráfica</span>
+        </h1>
+        <p class="hero-description">
+          Uma jornada criativa através do áudio, vídeo e design visual. 
+          Explorando ferramentas profissionais para criar experiências multimédia impactantes.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Projetos de Áudio</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Produções de Vídeo</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">12+</div>
+            <div class="stat-label">Imagens Editadas</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Bloco 2 -->
-  <div class="video-block">
-    <div class="video-text">
-      <p>
-        <strong>📱 Vídeo Publicitário – Reel: BMW M4 CS Edition VR46</strong><br>
-        Produção de um vídeo vertical (reel) publicitário, focado em captar a atenção rápida do público nas redes sociais. Com cortes ágeis, enquadramentos impactantes e cores vibrantes, o vídeo promove o BMW M4 CS Edition VR46, destacando seu design e performance em formato otimizado para dispositivos móveis.
-      </p>
+  <!-- Audio Section -->
+  <section id="edicao-som" class="audio-section">
+    <div class="section-header">
+      <h2>Produção & Edição de Áudio</h2>
+      <p>Domínio de ferramentas profissionais para criação e manipulação sonora</p>
     </div>
-    <div class="video-wrapper">
-      <video class="video-reel" src="midia/BMW M4 CS EDITION VR46_Luiz.mp4" controls autoplay muted loop></video>
-    </div>
-  </div>
 
-  <!-- Outros blocos podem seguir o mesmo padrão -->
-</section>
-
-
-<!-- ========================
-     TRATAMENTO DE IMAGEM
-========================= -->
-<section data-aos="fade-up" class="image-treatment-section">
-  <h2>Tratamento de Imagem Avançado</h2>
-  <p>
-    Durante esta etapa, aprofundei técnicas avançadas de manipulação e edição de imagens utilizando ferramentas como 
-    <strong>Adobe Photoshop</strong>, <strong>Lightroom</strong> e <strong>GIMP</strong>. 
-    Aprendi desde o retoque fino até a composição criativa, preparando imagens para diversos fins profissionais.
-  </p>
-
-  <hr>
-
-  <h3>Exercícios Realizados</h3>
-
-  <article class="exercise exercise-analysis">
-    <h4>Análise Visual Detalhada</h4>
-    <p>Avaliação crítica de imagens para identificar elementos de composição, iluminação e cor.</p>
-    <div class="media-container">
-      <iframe 
-        src="https://docs.google.com/presentation/d/e/2PACX-1vS31iCL1lx14OqfcXSLzpywbFV6MbPV9ZXrQpJjhjMqVad7HO8QXtXNuoQxqV-p4A/pubembed?start=true&loop=true&delayms=3500" 
-        frameborder="0" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </article>
-
-  <article class="exercise exercise-editing">
-    <h4>Edição Fotográfica Profissional (Photoshop)</h4>
-    <p>Aplicação de ajustes de cor, remoção de imperfeições e técnicas de máscara para aprimorar imagens com alta qualidade.</p>
-    <div class="media-container">
-      <iframe 
-        src="https://docs.google.com/presentation/d/e/2PACX-1vRDx-DfbzTxFAUPvBqZALqe5ICVMGaX-Cd5MmgB3vdbJgWee5xGSyCeL1VOC3ZDhg/pubembed?start=true&loop=true&delayms=3000" 
-        frameborder="0" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </article>
-
-  <article class="exercise exercise-cutout">
-    <h4>Recorte Preciso de Elementos</h4>
-    <p>Treinamento em recorte detalhado e isolamento de elementos para uso em montagens e colagens.</p>
-    <div class="image-grid">
-      <img src="imagens/1.png" alt="Recorte Imagem 1" loading="lazy">
-      <img src="imagens/2.png" alt="Recorte Imagem 2" loading="lazy">
-      <img src="imagens/3.png" alt="Recorte Imagem 3" loading="lazy">
-      <img src="imagens/4.png" alt="Recorte Imagem 4" loading="lazy">
-      <img src="imagens/5.png" alt="Recorte Imagem 5" loading="lazy">
-      <img src="imagens/6.png" alt="Recorte Imagem 6" loading="lazy">
-    </div>
-  </article>
-
-  <article class="exercise exercise-composition">
-    <h4>Composição Visual Criativa</h4>
-    <p>Desenvolvimento de composições visuais harmoniosas, trabalhando com camadas, efeitos e equilíbrio visual.</p>
-    <div class="image-grid">
-      <img src="imagens/images-0.jpg" alt="Composição Visual 1" loading="lazy">
-      <img src="imagens/images-1.jpg" alt="Composição Visual 2" loading="lazy">
-      <img src="imagens/images-2.jpg" alt="Composição Visual 3" loading="lazy">
-      <img src="imagens/images-3.jpg" alt="Composição Visual 4" loading="lazy">
-      <img src="imagens/images-4.jpg" alt="Composição Visual 5" loading="lazy">
-      <img src="imagens/images-5.jpg" alt="Composição Visual 6" loading="lazy">
-    </div>
-  </article>
-
-</section>
-
-<!-- ========================
-     PROJETO FINAL
-========================= -->
-<section id="projeto-final" class="container">
-  <h1>Projeto Final de Design</h1>
-
-  <div class="final-project-wrapper">
-
-    <!-- Conteúdo principal com cards -->
-    <div class="final-project-cards">
-
-      <article class="project-card" id="briefing">
-        <h2>Exercício 1: Desenvolvimento de um Briefing</h2>
-        <p><strong>Objetivo:</strong> Criar um briefing detalhado para um projeto de design, que serve como documento base para orientar todas as etapas seguintes do trabalho.</p>
-        <p>Este exercício envolveu a pesquisa sobre o público-alvo, definição dos objetivos do projeto, análise da concorrência e especificação dos requisitos visuais e funcionais. O briefing é fundamental para alinhar expectativas entre o cliente e a equipe de design, garantindo clareza e foco durante a execução.</p>
+    <div class="audio-grid">
+      <article class="audio-card">
+        <h3>🎙️ Spot Publicitário – MozPest</h3>
+        <p>Produção completa de spot publicitário de 30 segundos para empresa moçambicana, desde roteiro até mixagem final.</p>
+        <audio class="audio-player" src="midia/Spot - MozPest.mp3" controls preload="none"></audio>
       </article>
 
-      <article class="project-card" id="logotipos">
-        <h2>Exercício 2: Criação de Logotipo</h2>
-        <p>Desenvolvimento de um logotipo original para a identidade visual do projeto, considerando simplicidade, memorabilidade e versatilidade. O processo contemplou esboços, refinamento digital e escolha cuidadosa de cores e tipografia.</p>
-        <img src="imagens/logo.png" alt="Logotipo do Projeto" loading="lazy">
+      <article class="audio-card">
+        <h3>🎧 Medley de Sons – Edição Criativa</h3>
+        <p>Mixagem harmoniosa de múltiplos trechos de áudio com transições suaves e ajustes dinâmicos profissionais.</p>
+        <audio class="audio-player" src="midia/sons variados - Luiz Fehlberg.mp3" controls preload="none"></audio>
       </article>
 
-      <article class="project-card" id="web-apresentacao">
-        <h2>Apresentação do Projeto Web — BMW M Series</h2>
-        <p>Criação de uma página web moderna e responsiva para apresentar a linha BMW M Series, com animações suaves, layout intuitivo e navegação otimizada para dispositivos móveis e desktops.</p>
-        <p>O projeto focou em design centrado no usuário, acessibilidade e carregamento rápido, destacando modelos, especificações técnicas e diferenciais da linha.</p>
+      <article class="audio-card">
+        <h3>🎶 Medley Musical – Soundtrap</h3>
+        <p>Composição e arranjo musical de 5 minutos utilizando plataforma colaborativa online para produção musical.</p>
+        <audio class="audio-player" src="midia/Medley Luiz Fehlberg 1.mp3" controls preload="none"></audio>
       </article>
 
-      <div class="project-summary-text">
-        <p>As imagens à direita (ou abaixo em dispositivos móveis) ilustram os principais layouts e elementos visuais do site BMW M Series, ressaltando a identidade e o impacto visual do projeto.</p>
+      <article class="audio-card">
+        <h3>🔥 Intro Musical – Twitch</h3>
+        <p>Identidade sonora personalizada para canal de streaming, criando marcação auditiva única e impactante.</p>
+        <audio class="audio-player" src="midia/My Intro_.mp3" controls preload="none"></audio>
+      </article>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="edicao-video" class="video-section">
+    <div class="section-header">
+      <h2>Produção & Edição de Vídeo</h2>
+      <p>Narrativas visuais impactantes com técnicas profissionais de pós-produção</p>
+    </div>
+
+    <div class="video-showcase">
+      <article class="video-project">
+        <div class="video-content">
+          <h3>🎞️ Projeto de Edição Livre – M4 CS</h3>
+          <p>Narrativa visual envolvente criada através de fotografias selecionadas e sincronização musical precisa. Exploração de ritmo, transições dinâmicas e composição emocional.</p>
+        </div>
+        <div class="video-container">
+          <video src="midia/M4_CS_LuizFehlberg.mov" controls muted></video>
+        </div>
+      </article>
+
+      <article class="video-project">
+        <div class="video-content">
+          <h3>📱 Vídeo Publicitário – BMW M4 CS Edition VR46</h3>
+          <p>Produção otimizada para redes sociais com cortes ágeis, enquadramentos impactantes e cores vibrantes. Foco em captação de atenção rápida e otimização mobile.</p>
+        </div>
+        <div class="video-container">
+          <video src="midia/BMW M4 CS EDITION VR46_Luiz.mp4" controls muted></video>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Image Treatment Section -->
+  <section id="tratamento-imagem" class="image-section">
+    <div class="section-header">
+      <h2>Tratamento de Imagem Avançado</h2>
+      <p>Domínio de técnicas profissionais em Adobe Photoshop, Lightroom e GIMP</p>
+    </div>
+
+    <div class="image-projects">
+      <article class="image-project">
+        <h3>Análise Visual Detalhada</h3>
+        <p>Avaliação crítica de elementos de composição, iluminação e cor para fundamentar decisões criativas.</p>
+        <div class="project-media">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS31iCL1lx14OqfcXSLzpywbFV6MbPV9ZXrQpJjhjMqVad7HO8QXtXNuoQxqV-p4A/pubembed?start=true&loop=true&delayms=3500" 
+                  frameborder="0" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </article>
+
+      <article class="image-project">
+        <h3>Edição Fotográfica Profissional</h3>
+        <p>Aplicação de ajustes avançados de cor, remoção de imperfeições e técnicas de máscara para qualidade superior.</p>
+        <div class="project-media">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRDx-DfbzTxFAUPvBqZALqe5ICVMGaX-Cd5MmgB3vdbJgWee5xGSyCeL1VOC3ZDhg/pubembed?start=true&loop=true&delayms=3000" 
+                  frameborder="0" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </article>
+
+      <article class="image-project">
+        <h3>Recorte Preciso de Elementos</h3>
+        <p>Domínio de técnicas avançadas de recorte para isolamento perfeito de elementos em composições complexas.</p>
+        <div class="project-media">
+          <div class="image-collage">
+            <img src="imagens/1.png" alt="Recorte profissional 1" loading="lazy">
+            <img src="imagens/2.png" alt="Recorte profissional 2" loading="lazy">
+            <img src="imagens/3.png" alt="Recorte profissional 3" loading="lazy">
+            <img src="imagens/4.png" alt="Recorte profissional 4" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <article class="image-project">
+        <h3>Composição Visual Criativa</h3>
+        <p>Criação de composições harmoniosas utilizando camadas, efeitos e equilíbrio visual avançado.</p>
+        <div class="project-media">
+          <div class="image-collage">
+            <img src="imagens/images-0.jpg" alt="Composição criativa 1" loading="lazy">
+            <img src="imagens/images-1.jpg" alt="Composição criativa 2" loading="lazy">
+            <img src="imagens/images-2.jpg" alt="Composição criativa 3" loading="lazy">
+            <img src="imagens/images-3.jpg" alt="Composição criativa 4" loading="lazy">
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Final Project Section -->
+  <section id="projeto-final" class="final-section">
+    <div class="section-header">
+      <h2>Projeto Final: BMW M Series</h2>
+      <p>Desenvolvimento completo de identidade visual e plataforma web</p>
+    </div>
+
+    <div class="final-project">
+      <div class="project-overview">
+        <div class="project-phase">
+          <div class="phase-number">01</div>
+          <h3>Briefing Estratégico</h3>
+          <p>Pesquisa detalhada de público-alvo, análise de concorrência e definição de objetivos visuais para orientar todo o desenvolvimento do projeto.</p>
+        </div>
+
+        <div class="project-phase">
+          <div class="phase-number">02</div>
+          <h3>Identidade Visual</h3>
+          <p>Criação de logotipo original com foco em simplicidade, memorabilidade e versatilidade para aplicação em múltiplos suportes.</p>
+          <img src="imagens/logo.png" alt="Logotipo BMW M Series" class="phase-image">
+        </div>
+
+        <div class="project-phase">
+          <div class="phase-number">03</div>
+          <h3>Desenvolvimento Web</h3>
+          <p>Implementação de website responsivo com design centrado no usuário, animações suaves e otimização para performance.</p>
+        </div>
       </div>
 
-      <div class="btn-wrapper">
-        <a href="BMW_M_Series.html" class="btn-primary" role="button" aria-label="Acessar Projeto BMW M Series">
+      <div class="project-showcase">
+        <div class="showcase-container">
+          <div class="showcase-slider">
+            <div class="slide active">
+              <img src="imagens/Cabeçalho.png" alt="BMW M Series - Cabeçalho">
+            </div>
+            <div class="slide">
+              <img src="imagens/Hero.png" alt="BMW M Series - Hero Section">
+            </div>
+            <div class="slide">
+              <img src="imagens/História da Linha M.png" alt="BMW M Series - História">
+            </div>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn prev">❮</button>
+            <button class="slider-btn next">❯</button>
+          </div>
+          <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+
+        <a href="BMW_M_Series.html" class="project-cta">
           Ver Projeto Completo
         </a>
       </div>
     </div>
+  </section>
 
-    <!-- Slideshow de imagens -->
-    <aside class="final-project-slideshow">
-      <div class="slideshow-container">
-        <div class="slide fade active">
-          <img src="imagens/Cabeçalho.png" alt="BMW M Series 1" loading="lazy">
-        </div>
-        <div class="slide fade">
-          <img src="imagens/Hero.png" alt="BMW M Series 2" loading="lazy">
-        </div>
-        <div class="slide fade">
-          <img src="imagens/Hero.png" alt="BMW M Series 3" loading="lazy">
-        </div>
-        <div class="slide fade">
-          <img src="imagens/História da Linha M.png" alt="BMW M Series 4" loading="lazy">
-        </div>
-
-        <!-- Controles -->
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
-      </div>
-
-      <!-- Pontos indicadores -->
-      <div class="dots-container" aria-label="Navegação do slideshow">
-        <span class="dot active" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-        <span class="dot" onclick="currentSlide(4)"></span> 
-      </div>
-    </aside>
-
-  </div>
-</section>
-
-
-  <!-- ========================
-       FOOTER
-  ========================= -->
-  <footer class="footer">
-    <div class="container">
+  <!-- Footer -->
+  <footer class="project-footer">
+    <div class="footer-container">
       <div class="footer-content">
-        <p>&copy; 2025 Design by
-          <a href="https://github.com/luigi043" target="_blank" rel="noopener noreferrer" class="footer-link">
-            Luiz Fehlberg
-          </a>
-        </p>
+        <div class="footer-info">
+          <h3>Design & Comunicação Gráfica</h3>
+          <p>Projeto académico demonstrando competências em multimédia e design visual</p>
+        </div>
+        <div class="footer-credits">
+          <p>&copy; 2025 Criado por 
+            <a href="https://github.com/luigi043" target="_blank" rel="noopener noreferrer">
+              Luiz Fehlberg
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Slider functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(n) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Update current slide
+        currentSlide = n;
+        if (currentSlide >= slides.length) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = slides.length - 1;
+        
+        // Add active class to current slide and dot
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function changeSlide(n) {
+        showSlide(currentSlide + n);
+    }
+
+    function currentSlide(n) {
+        showSlide(n);
+    }
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize slider
+        showSlide(0);
+        
+        // Auto slide every 5 seconds
+        setInterval(() => changeSlide(1), 5000);
+        
+        // Set audio volume to 45%
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.volume = 0.45;
+        });
+        
+        // Add click events to slider buttons
+        document.querySelector('.slider-btn.prev').addEventListener('click', () => changeSlide(-1));
+        document.querySelector('.slider-btn.next').addEventListener('click', () => changeSlide(1));
+        
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => currentSlide(index));
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+
+    // Add scroll effect to header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.project-nav');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(26, 26, 26, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.background = '#1a1a1a';
+            header.style.backdropFilter = 'none';
+        }
+    });
+  </script>
 </body>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="scripts.js"></script>
-
 </html>
