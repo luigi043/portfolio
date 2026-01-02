@@ -2299,3 +2299,154 @@ a:hover {
     align-items: center;
   }
 }
+/* Projects Highlight */
+.projects-highlight-section {
+  margin: 20px 0;
+}
+
+.projects-highlight-section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.mini-project-item {
+  background: var(--section-bg-color);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 3px solid var(--accent-color);
+}
+
+.mini-project-item strong {
+  color: var(--primary-color);
+}
+
+/* Technology Tags */
+.technology-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tech-pill {
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-pill:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Professional Skills Section */
+.professional-skills-section {
+  margin-top: 60px;
+  padding: 40px;
+  background: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.professional-skills-section h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+
+/* Competencies Grid */
+.competencies-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.competency-card {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--section-bg-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.competency-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.competency-card i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.competency-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.competency-card p {
+  color: var(--text-muted-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #professional-experience {
+    padding: 60px 0;
+  }
+  
+  .experience-timeline {
+    padding-left: 20px;
+  }
+  
+  .timeline-icon-container {
+    left: -35px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .timeline-card {
+    padding: 20px;
+  }
+  
+  .timeline-header-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .professional-skills-section {
+    padding: 30px 20px;
+  }
+  
+  .competencies-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-timeline::before {
+    left: 10px;
+  }
+  
+  .timeline-icon-container {
+    left: -25px;
+  }
+  
+  .technology-tags-container {
+    justify-content: center;
+  }
+}
