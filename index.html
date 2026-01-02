@@ -1353,34 +1353,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
-    <!-- Projects Section -->
+<!-- Projects Section -->
 <section id="projects" class="section">
-  <script src="/portfolio//js/script.js" defer></script>
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">A curated selection of my most impactful work</p>
+      <h2 class="section-title">My Projects</h2>
+      <p class="section-subtitle">A showcase of my technical projects, from games to full-stack applications</p>
     </div>
 
     <!-- Project Filters -->
     <div class="projects-filter">
       <button class="filter-btn active" data-filter="all">All Projects</button>
       <button class="filter-btn" data-filter="featured">Featured</button>
+      <button class="filter-btn" data-filter="web">Web Development</button>
       <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-      <button class="filter-btn" data-filter="web">Web Apps</button>
-      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
       <button class="filter-btn" data-filter="angular">Angular</button>
+      <button class="filter-btn" data-filter="game">Games</button>
+      <button class="filter-btn" data-filter="data">Data Analysis</button>
+      <button class="filter-btn" data-filter="in-progress">In Progress</button>
       <button class="filter-btn" data-filter="small">Small Projects</button>
     </div>
 
-    <!-- SECTION 1: PROJETOS PRINCIPAIS (IMPORTANTES) -->
+    <!-- SECTION 1: FEATURED & MAJOR PROJECTS -->
     <div class="projects-section">
-      <h3 class="section-subsection-title">Major Projects</h3>
+      <h3 class="section-subsection-title">Featured Projects</h3>
       <p class="section-subsection-subtitle">Large-scale applications with significant impact</p>
       
       <div class="projects-grid major-grid">
         <!-- Trattoria Bella Italia - Restaurant Web App -->
-        <div class="project-card" data-category="web angular featured">
+        <div class="project-card " data-category="web angular featured">
           <div class="project-badge featured">Featured</div>
           <div class="project-badge modern">Modern Stack</div>
           <div class="project-image">
@@ -1394,18 +1396,12 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="project-content">
             <h3>Trattoria Bella Italia</h3>
             <span class="project-date">2024 • Restaurant Web App</span>
-            <p>Complete restaurant platform with menu management, cart system, checkout flow, reservations, and advanced UX patterns (loading skeletons, empty states, local persistence).</p>
+            <p>Complete restaurant platform with menu management, cart system, checkout flow, reservations, and advanced UX patterns.</p>
             <div class="project-tech">
               <span class="tech-tag">Angular 17+</span>
               <span class="tech-tag">TypeScript</span>
               <span class="tech-tag">RxJS</span>
               <span class="tech-tag">SCSS</span>
-              <span class="tech-tag">Reactive Forms</span>
-            </div>
-            <div class="project-features">
-              <span><i class="fas fa-shopping-cart"></i> Cart System</span>
-              <span><i class="fas fa-calendar-check"></i> Reservations</span>
-              <span><i class="fas fa-bolt"></i> Real-time Updates</span>
             </div>
             <div class="project-impact">
               <span class="impact-badge production">Production Ready</span>
@@ -1413,9 +1409,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
         </div>
-
-        <!-- Rhea Print Services -->
-        <div class="project-card" data-category="web">
+  <!-- Rhea Print Services -->
+        <div class="project-card" data-category="web in-progress">
           <div class="project-badge in-progress">In Progress</div>
           <div class="project-badge scale">Business App</div>
           <div class="project-image">
@@ -1424,13 +1419,12 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="project-content">
             <h3>Rhea Print Services</h3>
             <span class="project-date">2025 • Laravel Application</span>
-            <p>Print service management system with order tracking, logistics integration, CRM features, and reporting dashboard for a printing business.</p>
+            <p>Print service management system with order tracking, logistics integration, CRM features, and reporting dashboard.</p>
             <div class="project-tech">
               <span class="tech-tag">Laravel</span>
               <span class="tech-tag">PHP</span>
               <span class="tech-tag">MySQL</span>
-              <span class="tech-tag">Bootstrap</span>
-              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Logistics</span>
             </div>
             <div class="project-progress">
               <div class="progress-bar">
@@ -1440,43 +1434,9 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
         </div>
-       
 
-        <!-- Hotel Management System - Featured -->
-        <div class="project-card " data-category="web featured">
-          <div class="project-badge featured">Featured</div>
-          <div class="project-badge scale">Enterprise</div>
-          <div class="project-image">
-            <img src="https://snipboard.io/yuKkea.jpg" alt="Hotel Management System" loading="lazy">
-            <div class="project-overlay">
-              <a href="https://github.com/luigi043/whitebeards.git" class="project-link" target="_blank">
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>Hotel Management System</h3>
-            <span class="project-date">2023 • Python Application</span>
-            <p>Complete lodging system with room management, billing, reservations, and reporting. Reduced manual errors by 60% and improved booking efficiency by 45%.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">MySQL</span>
-              <span class="tech-tag">Tkinter</span>
-              <span class="tech-tag">Reporting</span>
-            </div>
-            <div class="project-stats">
-              <span><i class="fas fa-chart-line"></i> 60% error reduction</span>
-              <span><i class="fas fa-clock"></i> 45% faster bookings</span>
-            </div>
-            <div class="project-impact">
-              <span class="impact-badge high-impact">High Impact</span>
-              <span class="impact-badge business">Business Solution</span>
-            </div>
-          </div>
-        </div>
-        
         <!-- Luigi's Clouds - Featured -->
-        <div class="project-card " data-category="fullstack featured">
+        <div class="project-card " data-category="fullstack web featured">
           <div class="project-badge featured">Featured</div>
           <div class="project-badge scale">Large Scale</div>
           <div class="project-image">
@@ -1490,17 +1450,12 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="project-content">
             <h3>Luigi's Clouds</h3>
             <span class="project-date">2024 • Full-Stack Application</span>
-            <p>A complete movie/TV series platform integrating TMDB API with React frontend and Node.js backend. Features user authentication, personalized watchlists, and real-time updates.</p>
+            <p>A complete movie/TV series platform integrating TMDB API with React frontend and Node.js backend.</p>
             <div class="project-tech">
               <span class="tech-tag">React</span>
               <span class="tech-tag">Node.js</span>
               <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">JWT Auth</span>
-              <span class="tech-tag">REST API</span>
-            </div>
-            <div class="project-stats">
-              <span><i class="fas fa-star"></i> 15k+ users</span>
-              <span><i class="fas fa-code"></i> 95% test coverage</span>
+              <span class="tech-tag">TMDB API</span>
             </div>
             <div class="project-impact">
               <span class="impact-badge high-impact">High Impact</span>
@@ -1509,29 +1464,50 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
 
-        <!-- Whitebeard's Frontend - E-commerce -->
-        <div class="project-card" data-category="web angular">
-          <div class="project-badge scale">E-commerce</div>
+        <!-- Hotel Management System - Featured -->
+        <div class="project-card " data-category="web data">
+          <div class="project-badge featured">Featured</div>
+          <div class="project-badge scale">Enterprise</div>
           <div class="project-image">
-            <div class="image-placeholder">
-              <span class="placeholder-text">Whitebeard's E-commerce</span>
+            <img src="https://snipboard.io/yuKkea.jpg" alt="Hotel Management System" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/luigi043/whitebeards.git" class="project-link" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
             </div>
           </div>
           <div class="project-content">
-            <h3>Whitebeard's E-commerce</h3>
-            <span class="project-date">2024 • Angular Application</span>
-            <p>Full-featured e-commerce web application with product listing, shopping cart, user authentication, and admin dashboard.</p>
+            <h3>Hotel Management System</h3>
+            <span class="project-date">2023 • Python Application</span>
+            <p>Complete lodging system with room management, billing, reservations, and reporting. Reduced manual errors by 60%.</p>
             <div class="project-tech">
-              <span class="tech-tag">Angular</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">SCSS</span>
-              <span class="tech-tag">RxJS</span>
-              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Tkinter</span>
+              <span class="tech-tag">Reporting</span>
             </div>
-            <div class="project-features">
-              <span><i class="fas fa-shopping-bag"></i> Product Catalog</span>
-              <span><i class="fas fa-lock"></i> User Auth</span>
-              <span><i class="fas fa-chart-bar"></i> Admin Dashboard</span>
+            <div class="project-impact">
+              <span class="impact-badge high-impact">High Impact</span>
+              <span class="impact-badge business">Business Solution</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- E-Commerce Platform -->
+        <div class="project-card" data-category="web fullstack">
+          <div class="project-badge scale">Full-Stack</div>
+          <div class="project-image">
+            <img src="https://snipboard.io/KAs9eN.jpg" alt="Modern E-Commerce Platform" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3>Modern E-Commerce Platform</h3>
+            <span class="project-date">2024 • Full-Stack</span>
+            <p>Complete online store with shopping cart, payment processing, admin dashboard, inventory management, and order tracking.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Stripe</span>
+              <span class="tech-tag">MongoDB</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/luigi043" target="_blank">
@@ -1541,27 +1517,150 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
 
-        <!-- Modern E-Commerce Platform -->
-        <div class="project-card" data-category="fullstack web">
-          <div class="project-badge scale">Full-Stack</div>
+      
+      </div>
+    </div>
+
+    <!-- SECTION 2: MOBILE & GAME DEVELOPMENT -->
+    <div class="projects-section">
+      <h3 class="section-subsection-title">Mobile Apps & Games</h3>
+      <p class="section-subsection-subtitle">Native mobile applications and game development projects</p>
+      
+      <div class="projects-grid">
+        <!-- Customer Registration App -->
+        <div class="project-card" data-category="mobile">
+          <div class="project-badge mobile">Mobile App</div>
           <div class="project-image">
-            <div class="image-placeholder">
-              <span class="placeholder-text">E-Commerce Platform</span>
-            </div>
+            <img src="https://snipboard.io/KVtrNi.jpg" alt="Customer Registration App" loading="lazy">
           </div>
           <div class="project-content">
-            <h3>Modern E-Commerce Platform</h3>
-            <span class="project-date">2024 • Full-Stack</span>
-            <p>Complete online store with shopping cart, payment processing (Stripe), admin dashboard, inventory management, and order tracking.</p>
+            <h3>Customer Registration & Billing</h3>
+            <span class="project-date">2023 • Android Application</span>
+            <p>Mobile app for managing vehicles in a mechanic workshop with customer registration, invoicing, and cloud sync.</p>
             <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Stripe</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">Express</span>
+              <span class="tech-tag">Android Studio</span>
+              <span class="tech-tag">Java/Kotlin</span>
+              <span class="tech-tag">SQLite</span>
+              <span class="tech-tag">Firebase</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/luigi043" target="_blank">
+              <a href="https://github.com/luigi043/BookStoreApp.git" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bookstore App -->
+        <div class="project-card" data-category="mobile">
+          <div class="project-badge mobile">Mobile App</div>
+          <div class="project-image">
+            <img src="https://snipboard.io/PBW7n2.jpg" alt="Bookstore App" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3>Bookstore Mobile App</h3>
+            <span class="project-date">2023 • Android Application</span>
+            <p>Bookstore application with listing, details, search functionality and local database storage.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Kotlin</span>
+              <span class="tech-tag">Android</span>
+              <span class="tech-tag">Room DB</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/luigi043/BookStoreApp" target="_blank">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz App -->
+        <div class="project-card" data-category="mobile">
+          <div class="project-badge mobile">Mobile Demo</div>
+          <div class="project-image">
+            <img src="https://snipboard.io/OtxlIw.jpg" alt="Quiz App" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3>Interactive Quiz App</h3>
+            <span class="project-date">2023 • Mobile Application</span>
+            <p>Android quiz application with multiple-choice questions, score tracking, and navigation.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Kotlin</span>
+              <span class="tech-tag">Android</span>
+              <span class="tech-tag">Navigation</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/luigi043/QuizApp" target="_blank">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tic-Tac-Toe AI -->
+        <div class="project-card" data-category="game">
+          <div class="project-badge game">Game Demo</div>
+          <div class="project-image">
+            <img src="https://snipboard.io/Kt7LuW.jpg" alt="Tic-Tac-Toe AI" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3>Tic-Tac-Toe AI</h3>
+            <span class="project-date">2022 • Game Development</span>
+            <p>AI opponent using minimax algorithm with customizable difficulty levels and board sizes.</p>
+            <div class="project-tech">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">OOP</span>
+              <span class="tech-tag">AI Algorithms</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/luigi043/Tic-Tac-Toe" target="_blank">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sokoban -->
+        <div class="project-card" data-category="game">
+          <div class="project-badge game">Puzzle Game</div>
+          <div class="project-image">
+            <img src="https://snipboard.io/1SvQac.jpg" alt="Sokoban" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3>Sokoban</h3>
+            <span class="project-date">2023 • 2D Puzzle Game</span>
+            <p>Classic 2D puzzle game where players push boxes to designated locations with multiple levels and undo functionality.</p>
+            <div class="project-tech">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Game Development</span>
+              <span class="tech-tag">SFML</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Word Game on the Grid -->
+        <div class="project-card" data-category="game">
+          <div class="project-badge game">Word Game</div>
+          <div class="project-image">
+            <img src="https://snipboard.io/2WaH6g.jpg" alt="Word-Game-on-the-Grid" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3>Word Game on the Grid</h3>
+            <span class="project-date">2023 • Java Game</span>
+            <p>Word search game on customizable grid with hidden words placed vertically, horizontally, or diagonally.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">Swing</span>
+              <span class="tech-tag">GUI</span>
+              <span class="tech-tag">File I/O</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/luigi043/Word-Game-on-the-Grid.git" target="_blank">
                 <i class="fab fa-github"></i> View Code
               </a>
             </div>
@@ -1570,12 +1669,36 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
 
-    <!-- SECTION 2: PROJETOS MENORES / DEMONSTRAÇÕES -->
+    <!-- SECTION 3: SMALL PROJECTS & DEMOS -->
     <div class="projects-section small-projects">
       <h3 class="section-subsection-title">Small Projects & Demos</h3>
       <p class="section-subsection-subtitle">Quick prototypes, learning projects, and utility applications</p>
       
       <div class="projects-grid small-grid">
+        <!-- Car Sales Analysis -->
+        <div class="project-card small" data-category="data">
+          <div class="project-badge small">Data Analysis</div>
+          <div class="project-image">
+            <img src="https://snipboard.io/NVYCi8.jpg" alt="Car Sales Analysis" loading="lazy">
+          </div>
+          <div class="project-content">
+            <h3>Car Sales Analysis</h3>
+            <span class="project-date">2023 • Data Analysis</span>
+            <p>System to analyze car sales trends, customer demographics, and market behavior using SQL and Power BI.</p>
+            <div class="project-tech">
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">Data Analysis</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/luigi043/Data-Structures-and-Algorithms.git" target="_blank">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </div>
+
         <!-- Contacts App -->
         <div class="project-card small" data-category="web angular small">
           <div class="project-badge small">CRUD Demo</div>
@@ -1585,7 +1708,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="project-content">
             <h3>Contacts Management</h3>
             <span class="project-date">2024 • Angular Application</span>
-            <p>Contact management application with CRUD operations and search.</p>
+            <p>Contact management application with CRUD operations and search functionality.</p>
             <div class="project-tech">
               <span class="tech-tag">Angular</span>
               <span class="tech-tag">TypeScript</span>
@@ -1593,29 +1716,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="project-links">
               <a href="https://github.com/luigi043/contacts-app-1" target="_blank">
-                <i class="fab fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Bookstore App -->
-        <div class="project-card small" data-category="mobile small">
-          <div class="project-badge small">Mobile App</div>
-          <div class="project-image">
-            <img src="https://snipboard.io/PBW7n2.jpg" alt="Bookstore App" loading="lazy">
-          </div>
-          <div class="project-content">
-            <h3>Bookstore Mobile App</h3>
-            <span class="project-date">2023 • Android Application</span>
-            <p>Bookstore application with listing, details, and search functionality.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Kotlin</span>
-              <span class="tech-tag">Android</span>
-              <span class="tech-tag">Room DB</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/luigi043/BookStoreApp" target="_blank">
                 <i class="fab fa-github"></i> Code
               </a>
             </div>
@@ -1645,29 +1745,6 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
         
-        <!-- Quiz App -->
-        <div class="project-card small" data-category="mobile small">
-          <div class="project-badge small">Mobile Demo</div>
-          <div class="project-image">
-            <img src="https://snipboard.io/OtxlIw.jpg" alt="Quiz App" loading="lazy">
-          </div>
-          <div class="project-content">
-            <h3>Interactive Quiz App</h3>
-            <span class="project-date">2023 • Mobile Application</span>
-            <p>Android quiz application with multiple-choice questions and score tracking.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Kotlin</span>
-              <span class="tech-tag">Android</span>
-              <span class="tech-tag">Navigation</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/luigi043/QuizApp" target="_blank">
-                <i class="fab fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-        </div>
-        
         <!-- Counter App -->
         <div class="project-card small" data-category="web small">
           <div class="project-badge small">Mini App</div>
@@ -1686,9 +1763,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="project-links">
               <a href="https://github.com/luigi043/counter-app" target="_blank">
                 <i class="fab fa-github"></i> Code
-              </a>
-              <a href="#" class="demo-link">
-                <i class="fas fa-external-link-alt"></i> Demo
               </a>
             </div>
           </div>
@@ -1716,30 +1790,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
         </div>
-        
-        <!-- Tic-Tac-Toe AI -->
-        <div class="project-card small" data-category="game small">
-          <div class="project-badge small">Game Demo</div>
-          <div class="project-image">
-            <img src="https://snipboard.io/Kt7LuW.jpg" alt="Tic-Tac-Toe AI" loading="lazy">
-          </div>
-          <div class="project-content">
-            <h3>Tic-Tac-Toe AI</h3>
-            <span class="project-date">2022 • Game Development</span>
-            <p>AI opponent using minimax algorithm with customizable difficulty levels.</p>
-            <div class="project-tech">
-              <span class="tech-tag">C++</span>
-              <span class="tech-tag">OOP</span>
-              <span class="tech-tag">AI Algorithms</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/luigi043/Tic-Tac-Toe" target="_blank">
-                <i class="fab fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-        </div>
-        
+
         <!-- Angular Learning Projects -->
         <div class="project-card small learning" data-category="angular small">
           <div class="project-badge learning">Learning</div>
@@ -1781,7 +1832,18 @@ document.addEventListener('DOMContentLoaded', function() {
         <h3>60%</h3>
         <p>Average Efficiency Gain</p>
       </div>
-    
+
+      <div class="stat-card">
+        <i class="fas fa-layer-group"></i>
+        <h3>8+</h3>
+        <p>Technologies Mastered</p>
+      </div>
+
+      <div class="stat-card">
+        <i class="fas fa-users"></i>
+        <h3>15K+</h3>
+        <p>Users Impacted</p>
+      </div>
     </div>
 
     <!-- CTA Section -->
@@ -1789,11 +1851,13 @@ document.addEventListener('DOMContentLoaded', function() {
       <p>Interested in collaborating or have a project in mind?</p>
       <a href="#contact" class="btn btn-primary">Let's Work Together</a>
       <a href="https://github.com/luigi043" target="_blank" class="btn btn-secondary">
-        <i class="fab fa-github"></i> View All Projects
+        <i class="fab fa-github"></i> View All Projects on GitHub
       </a>
     </div>
   </div>
 </section>
+
+<script src="/portfolio/js/projects-filter.js" defer></script>
 
 <!-- JavaScript para animação ao rolar -->
 <script>
