@@ -1,10 +1,33 @@
 :root {
-  --blue: #0d6efd;        /* azul principal */
-  --neon-blue: #1fffe0;   /* azul neon */
-  --gray-dark: #2f2f2f;   /* cinza escuro */
-  --gray-light: #d3d3d3;  /* cinza claro */
-  --black: #000000;       /* preto */
-  --white: #ffffff;       /* branco */
+  /* Original palette */
+  --blue: #0d6efd;
+  --neon-blue: #1fffe0;
+  --gray-dark: #2f2f2f;
+  --gray-light: #d3d3d3;
+  --black: #000000;
+  --white: #ffffff;
+
+  /* Extended design tokens (used by Projects, Cards, Badges) */
+  --primary-color: #1fffe0;
+  --primary-dark: #00dddd;
+  --secondary-color: #0d6efd;
+  --accent-color: #ff6b35;
+  --primary-rgb: 31, 255, 224;
+
+  /* Surfaces */
+  --card-bg: #1a1a1a;
+  --card-background: #1a1a1a;
+  --section-bg: #0a0a0a;
+  --section-bg-color: #2f2f2f;
+
+  /* Borders */
+  --border-color: #333333;
+
+  /* Text */
+  --text-color: #ffffff;
+  --text-light: #cccccc;
+  --text-muted: #888888;
+  --text-muted-color: #999999;
 }
 
 /* Reset básico */
@@ -16,11 +39,13 @@
 
 /* Corpo */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   background-color: var(--gray-dark);
   color: var(--white);
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Container padrão responsivo */
@@ -2820,12 +2845,156 @@ a:hover {
   .experience-timeline::before {
     left: 10px;
   }
-  
+
   .timeline-icon-container {
     left: -25px;
   }
-  
+
   .technology-tags-container {
     justify-content: center;
   }
+}
+
+/* ============================================
+   ADDITIONAL IMPROVEMENTS
+   ============================================ */
+
+/* --- SKIP LINK (Accessibility) --- */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  color: #0a0a0a;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  z-index: 10000;
+  transition: top 0.3s ease;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- SCROLL TO TOP BUTTON --- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: var(--primary-color);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(31, 255, 224, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(31, 255, 224, 0.6);
+}
+
+/* --- ENHANCED CONTACT FORM --- */
+.contact-form .btn {
+  background: var(--primary-color);
+  color: #0a0a0a;
+  border: 2px solid var(--primary-color);
+  padding: 0.9rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.contact-form .btn:hover {
+  background: transparent;
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(31, 255, 224, 0.3);
+}
+
+/* --- MOBILE BADGE STACKING FIX --- */
+.project-badge.mobile {
+  background: #00BCD4;
+  color: white;
+}
+
+.project-badge.game {
+  background: #E91E63;
+  color: white;
+}
+
+/* --- FOCUS STYLES (Accessibility) --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* --- SMOOTHER PAGE TRANSITIONS --- */
+section {
+  position: relative;
+}
+
+/* --- SELECTION COLOR --- */
+::selection {
+  background: rgba(31, 255, 224, 0.3);
+  color: #ffffff;
+}
+
+/* --- SCROLLBAR STYLING --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1fffe0, #0d6efd);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00dddd, #0d6efd);
+}
+
+/* --- HAMBURGER ANIMATION --- */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
 }
