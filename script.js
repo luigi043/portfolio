@@ -1,9 +1,9 @@
 // main.js - Consolidated JavaScript for Portfolio Animations
-import { Chart } from 'chart.js';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-
-// Register Chart.js plugins
-Chart.register(ChartDataLabels);
+// Chart.js and ChartDataLabels are loaded via CDN in index.html
+// Register Chart.js plugins (using global objects from CDN)
+if (typeof Chart !== 'undefined' && typeof ChartDataLabels !== 'undefined') {
+    Chart.register(ChartDataLabels);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     initAllAnimations();
