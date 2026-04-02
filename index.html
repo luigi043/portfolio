@@ -288,33 +288,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Efeito de digitação para o primeiro parágrafo (opcional)
-    const firstParagraph = document.querySelector('.about-intro p:first-child');
-    if (firstParagraph) {
-        const originalText = firstParagraph.textContent;
-        firstParagraph.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < originalText.length) {
-                firstParagraph.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 20);
-            }
-        };
-        
-        // Iniciar efeito de digitação quando a seção for visível
-        const typeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTimeout(typeWriter, 500);
-                    typeObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        typeObserver.observe(aboutContent);
-    }
 });
 
 // Adicione também este CSS adicional para garantir que tudo funcione
