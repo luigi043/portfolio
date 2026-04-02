@@ -652,6 +652,8 @@ a:hover {
 
 .about-text {
   padding-right: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .about-intro {
@@ -818,6 +820,7 @@ a:hover {
 .about-visual {
   position: relative;
   height: 480px;
+  z-index: 0;
 }
 
 .visual-container {
@@ -866,7 +869,8 @@ a:hover {
 }
 
 .card-1 { top: 8%; left: 0; }
-.card-2 { top: 42%; right: 0; transform: translateY(-50%); }
+.card-2 { top: 50%; right: 0; transform: translateY(-50%); }
+.card-2:hover { transform: translateY(calc(-50% - 8px)) scale(1.02); }
 .card-3 { bottom: 8%; left: 20%; }
 
 .card-icon {
@@ -903,19 +907,7 @@ a:hover {
   margin: 0;
 }
 
-/* About intro first letter */
-.about-intro p:first-child::first-letter {
-  float: left;
-  font-size: 3.5rem;
-  line-height: 1;
-  margin-right: 0.4rem;
-  margin-top: 0.3rem;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 800;
-}
+/* Drop cap removed — caused text flow issues with the bordered paragraphs */
 
 /* ============================================
    TIMELINE STYLES (Experience & Education)
