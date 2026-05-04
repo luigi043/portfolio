@@ -640,7 +640,7 @@ a:hover {
 
 .about-content {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 320px;
   gap: 4rem;
   align-items: start;
   width: 100%;
@@ -740,15 +740,12 @@ a:hover {
 }
 
 .stat-number {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 800;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
   margin-bottom: 0.3rem;
   line-height: 1;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 
 .stat-label {
@@ -816,95 +813,123 @@ a:hover {
   box-shadow: 0 6px 16px var(--accent-glow);
 }
 
-/* Visual Section - Floating Cards */
-.about-visual {
-  position: relative;
-  height: 480px;
-  z-index: 0;
+/* About Sidebar */
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: sticky;
+  top: 7rem;
+  align-self: start;
 }
 
-.visual-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.sidebar-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(52, 199, 89, 0.08);
+  border: 1px solid rgba(52, 199, 89, 0.22);
+  color: #34C759;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.1rem;
+  border-radius: 50px;
+  width: fit-content;
 }
 
-.floating-card {
-  position: absolute;
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 1.5rem;
-  border-radius: var(--radius-md);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.avail-dot {
+  width: 7px;
+  height: 7px;
+  background: #34C759;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-avail 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-avail {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.5); }
+  50% { box-shadow: 0 0 0 5px rgba(52, 199, 89, 0); }
+}
+
+.sidebar-values {
+  display: flex;
+  flex-direction: column;
+  background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 260px;
-  text-align: center;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.floating-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 122, 255, 0.08), transparent);
   border-radius: var(--radius-md);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  overflow: hidden;
 }
 
-.floating-card:hover::before {
-  opacity: 1;
+.sidebar-value {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.3rem;
+  border-bottom: 1px solid var(--glass-border);
+  transition: background 0.2s ease;
 }
 
-.floating-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 122, 255, 0.15);
-  border-color: rgba(0, 122, 255, 0.3);
+.sidebar-value:last-child {
+  border-bottom: none;
 }
 
-.card-1 { top: 8%; left: 0; }
-.card-2 { top: 50%; right: 0; transform: translateY(-50%); }
-.card-2:hover { transform: translateY(calc(-50% - 8px)) scale(1.02); }
-.card-3 { bottom: 8%; left: 20%; }
+.sidebar-value:hover {
+  background: var(--glass-bg-hover);
+}
 
-.card-icon {
-  width: 60px;
-  height: 60px;
-  background: var(--accent-gradient);
-  border-radius: 16px;
+.sv-icon {
+  width: 34px;
+  height: 34px;
+  background: rgba(0, 122, 255, 0.1);
+  border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.2rem;
-  color: white;
-  font-size: 1.5rem;
-  box-shadow: 0 6px 16px var(--accent-glow);
-  transition: all 0.3s ease;
-  animation: pulse-glow 2s infinite;
+  color: var(--accent);
+  font-size: 0.88rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
 }
 
-.floating-card:hover .card-icon {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.card-title {
-  font-size: 1.2rem;
-  color: var(--text-primary);
-  margin-bottom: 0.7rem;
+.sv-body h4 {
+  font-size: 0.9rem;
   font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
 }
 
-.card-desc {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  line-height: 1.6;
+.sv-body p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
   margin: 0;
+}
+
+.sidebar-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.1rem 1.3rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.meta-item i {
+  color: var(--accent);
+  width: 13px;
+  text-align: center;
+  font-size: 0.78rem;
+  flex-shrink: 0;
 }
 
 /* Drop cap removed — caused text flow issues with the bordered paragraphs */
@@ -1103,6 +1128,178 @@ a:hover {
 
 .timeline-item:nth-child(odd) .timeline-marker { right: -55px; }
 .timeline-item:nth-child(even) .timeline-marker { left: -55px; }
+
+/* ============================================
+   COMPACT JOB CARDS (Summer & Part-Time)
+   Click / hover to reveal details.
+   ============================================ */
+#summer-jobs .jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding: 0 0.5rem;
+}
+
+.job-card {
+  position: relative;
+  padding: 1.1rem 1.25rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition:
+    transform .35s cubic-bezier(.2,.7,.2,1),
+    border-color .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
+  will-change: transform;
+}
+
+.job-card:hover,
+.job-card:focus-visible,
+.job-card.is-open {
+  transform: translateY(-4px);
+  border-color: rgba(0, 122, 255, 0.4);
+  background: var(--glass-bg-hover);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+.job-card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-right: 28px; /* room for the + indicator */
+}
+
+.job-card .job-date {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.job-card .job-role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.job-card .job-company {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Smooth height-from-zero using grid trick */
+.job-card-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  margin-top: 0;
+  transition:
+    grid-template-rows .45s cubic-bezier(.2,.7,.2,1),
+    margin-top .3s ease;
+}
+.job-card-body > .job-card-inner {
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .35s ease .05s, transform .4s ease .05s;
+}
+
+.job-card:hover .job-card-body,
+.job-card:focus-visible .job-card-body,
+.job-card.is-open .job-card-body {
+  grid-template-rows: 1fr;
+  margin-top: 0.85rem;
+}
+.job-card:hover .job-card-inner,
+.job-card:focus-visible .job-card-inner,
+.job-card.is-open .job-card-inner {
+  opacity: 1;
+  transform: none;
+}
+
+.job-card-inner p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0 0 0.65rem;
+}
+
+.job-skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.job-skills li {
+  background: rgba(0, 122, 255, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  padding: 0.2rem 0.55rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.job-card .expand-hint {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.9rem;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  opacity: 0.55;
+  font-size: 0.75rem;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.job-card:hover .expand-hint,
+.job-card:focus-visible .expand-hint,
+.job-card.is-open .expand-hint {
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #summer-jobs .jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+@media (max-width: 480px) {
+  #summer-jobs .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job-card,
+  .job-card-body,
+  .job-card-inner,
+  .job-card .expand-hint {
+    transition: none !important;
+  }
+}
 
 .timeline-marker i {
   color: var(--accent);
@@ -2713,13 +2910,9 @@ textarea:focus-visible {
     order: 2;
   }
 
-  .about-visual {
-    height: 400px;
+  .about-sidebar {
     order: 1;
-  }
-
-  .floating-card {
-    width: 240px;
+    position: static;
   }
 }
 
@@ -2769,8 +2962,7 @@ textarea:focus-visible {
     padding: 1.2rem;
   }
 
-  .about-visual { height: 350px; }
-  .floating-card { width: 210px; padding: 1.3rem; }
+  .about-sidebar { position: static; }
 
   .timeline::before { left: 20px; }
   .timeline-item {
@@ -2873,10 +3065,7 @@ textarea:focus-visible {
   .section-title { font-size: 2rem; }
 
   .about-content { gap: 2rem; }
-  .about-visual { height: 300px; }
-  .floating-card { width: 180px; padding: 1.1rem; }
-  .card-title { font-size: 1.1rem; }
-  .card-desc { font-size: 0.82rem; }
+  .about-sidebar { position: static; }
 
   .skills-summary { grid-template-columns: 1fr; }
   .skills-nav { flex-direction: column; align-items: stretch; }
