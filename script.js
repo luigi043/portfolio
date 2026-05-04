@@ -10,7 +10,34 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initSmoothScrolling();
     initThemeToggle();
+    initJobCards();
 });
+
+// Tap-to-toggle for the compact job cards (touch devices + keyboard)
+function initJobCards() {
+    const cards = document.querySelectorAll('.job-card');
+    if (!cards.length) return;
+
+    const isTouch = window.matchMedia('(hover: none)').matches;
+
+    cards.forEach(card => {
+        const toggle = () => {
+            const open = card.classList.toggle('is-open');
+            card.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+
+        if (isTouch) {
+            card.addEventListener('click', toggle);
+        }
+
+        card.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle();
+            }
+        });
+    });
+}
 
 function initAllAnimations() {
     initNameTyping();
