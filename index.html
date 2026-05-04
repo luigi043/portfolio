@@ -79,7 +79,7 @@
 
             <!-- Simple CTA -->
             <div class="nav-cta">
-                <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/luigi043/portfolio/main/file/CV-LuizFehlberg.pdf&embedded=true" 
+                <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/luigi043/portfolio/main/file/CV_LuizFehlberg_EN.pdf&embedded=true"
                    target="_blank" rel="noopener noreferrer" class="resume-btn">
                     Resume
                 </a>
@@ -117,7 +117,7 @@
                 </div>
 
                 <div class="description">
-                    <p>Web apps, Android apps, and the occasional Arduino project. Recent stuff includes a Spring Boot vehicle platform, a Kotlin fitness tracker, and custom engine controls for a BMW E36.</p>
+                    <p>I build web apps and Android apps, and lately I've been doing some Arduino work I probably shouldn't admit to (the E36 still runs, mostly). Recent stuff: a Spring Boot vehicle platform, a Kotlin fitness tracker, custom engine control for the BMW.</p>
                 </div>
 
                 <!-- Simple CTA -->
@@ -146,7 +146,7 @@
                     <div class="about-intro">
                         <p>I'm a computer engineer with a B.Sc. from IPBeja, Portugal. I spend most of my time building full stack web apps, but I also do native Android development in Kotlin and Jetpack Compose, and I've gotten into embedded systems with Arduino and Raspberry Pi on the side.</p>
 
-                        <p>The projects I'm most proud of are all over the place: a vehicle management platform with Spring Boot and React, health tracking apps, an insurance management system with WCF services, and custom engine control systems for my BMW E36. I like when things work well and look right.</p>
+                        <p>The projects I'm most proud of are kind of all over the map. A Spring Boot + React vehicle platform. Some health tracking apps. An insurance system running on WCF (yes, WCF in 2026, don't ask). And then there's the E36 — I've been writing custom engine control for it because off-the-shelf wasn't doing what I wanted. I'm picky about things that work. I'm pickier about things that work *and* don't look like garbage.</p>
                     </div>
 
                     <div class="about-highlight">
@@ -155,7 +155,7 @@
 
                     <p>I've done internships, freelance client work, and I keep building personal projects because that's honestly how I learn best. I hold certifications in UX Design (Google), .NET Full Stack, and React development.</p>
 
-                    <p>Before software, I worked in hospitality across Portugal. It taught me how to talk to people, stay calm when things get hectic, and notice the small stuff that actually matters.</p>
+                    <p>Before software I worked hospitality across Portugal. Bars and restaurants, mostly. You learn how to read people fast, stay sharp on tired legs, and not lose your temper when the kitchen is sixty tickets behind.</p>
                     
                     <div class="about-stats">
                         <div class="stat">
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Professional Experience</h2>
-                <p class="section-subtitle">Where I've worked and what I've built — hover a card for the details.</p>
+                <p class="section-subtitle">Where I've worked and what I've shipped.</p>
             </div>
 
             <div class="compact-filters" data-filter-scope="experience">
@@ -326,14 +326,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="compact-tag tag-freelance">Freelance</span>
                     <span class="compact-date"><i class="fas fa-calendar-alt"></i> 2024 – Present · Remote</span>
                     <h3 class="compact-title">Freelance Full-Stack Developer</h3>
-                    <p class="compact-meta"><i class="fas fa-building"></i> Independent &amp; Client Projects</p>
+                    <p class="compact-meta"><i class="fas fa-shield-alt"></i> Lead project: <strong>Insurex</strong> · insurance asset-protection platform</p>
                     <div class="compact-body"><div class="compact-inner">
-                        <p>Client projects in web and enterprise apps. Main project is <strong>Insurex</strong> — an insurance asset-protection system with separate dashboards for admins, insurers and financiers. Handles policies, assets, FusionCharts reporting and encrypted data on a 3-tier architecture.</p>
-                        <p style="font-size:.82rem; opacity:.85;">Built the full Insurex platform end-to-end (API + data + ASP.NET Web Forms with WCF services), role-based access, asset-to-policy workflows, search across modules, plus side work in Laravel, Angular and MySQL.</p>
-                        <ul class="compact-pills">
-                            <li>C# / .NET</li><li>ASP.NET</li><li>WCF</li><li>SQL Server</li>
-                            <li>Laravel</li><li>PHP</li><li>Angular</li><li>MySQL</li>
+                        <p>Built the whole insurance system myself. Three dashboards (admins, insurers, financiers), the API, the data layer, the UI. Everything.</p>
+                        <ul style="margin: 0.4rem 0 0.8rem; padding-left: 1.1rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+                            <li><strong>3-tier architecture</strong> — REST/WCF API layer, data layer, ASP.NET Web Forms portal.</li>
+                            <li><strong>Policy &amp; asset workflows</strong> — role-based access, asset-to-policy mapping, cross-module search.</li>
+                            <li><strong>Reporting</strong> — FusionCharts dashboards for asset tracking and financial reports.</li>
+                            <li><strong>Security</strong> — encrypted data at rest, role gating across all modules.</li>
+                            <li><strong>Other client work</strong> — Laravel, Angular, MySQL projects on the side.</li>
                         </ul>
+                        <ul class="compact-pills">
+                            <li>C# / .NET</li><li>ASP.NET Web Forms</li><li>WCF</li><li>REST API</li>
+                            <li>SQL Server</li><li>FusionCharts</li><li>Laravel</li><li>Angular</li>
+                        </ul>
+                        <a href="#projects" class="compact-cta">
+                            <i class="fas fa-arrow-right"></i> See the Insurex project card
+                        </a>
                     </div></div>
                 </article>
 
@@ -344,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3 class="compact-title">Web Developer Intern</h3>
                     <p class="compact-meta"><i class="fas fa-building"></i> Redshift III Innovation, Lda</p>
                     <div class="compact-body"><div class="compact-inner">
-                        <p>Front-end and back-end work on a Markdown-based application. Hands-on database analysis and SQL implementation to optimise data processing.</p>
+                        <p>Worked on a Markdown app, both sides of the stack. Got pulled into the database side too. Spent a fair bit of time analysing queries and rewriting SQL until things stopped being slow.</p>
                         <ul class="compact-pills">
                             <li>Node.js</li><li>PHP / Laravel</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li><li>HTML/CSS</li>
                         </ul>
@@ -360,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Summer & Part-Time Jobs</h2>
-                <p class="section-subtitle">Hover a card to see the details — the non-tech work that taught me how to work with people, deadlines, and pressure.</p>
+                <p class="section-subtitle">The non-tech work. Most of what I know about working under pressure came from these jobs.</p>
             </div>
 
             <div class="jobs-grid" role="list">
@@ -494,7 +503,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">My Educational Journey</h2>
-                <p class="section-subtitle">Hover a card for institution details, dates and skills.</p>
+                <p class="section-subtitle">Degrees, courses, and the certs I bothered to actually finish.</p>
             </div>
 
             <div class="compact-filters" data-filter-scope="education">
@@ -514,7 +523,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3 class="compact-title">Computer Engineering</h3>
                     <p class="compact-meta"><i class="fas fa-university"></i> IPBeja — Polytechnic Institute of Beja</p>
                     <div class="compact-body"><div class="compact-inner">
-                        <p>Higher School of Technology and Management. Four years covering software development, algorithms, databases, networking and computer systems.</p>
+                        <p>Higher School of Technology and Management. Four years of software dev, algorithms, databases, networking, the usual. Hard parts were the systems and compilers stuff.</p>
                         <p style="font-size:.78rem; opacity:.7;"><i class="fas fa-medal"></i> EQF Level 6</p>
                         <ul class="compact-pills">
                             <li>Software Engineering</li><li>Algorithms</li><li>Database Systems</li><li>Networking</li>
@@ -547,7 +556,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3 class="compact-title">UX Design</h3>
                     <p class="compact-meta"><i class="fas fa-laptop"></i> Coursera · Google</p>
                     <div class="compact-body"><div class="compact-inner">
-                        <p>Google's UX course covering user research, wireframing, prototyping and usability testing.</p>
+                        <p>Google's UX course on Coursera. User research, wireframing, prototyping, usability testing — all the basics you need before you start drawing screens.</p>
                         <p style="font-size:.78rem; opacity:.7;"><i class="fas fa-medal"></i> EQF Level 5</p>
                         <ul class="compact-pills">
                             <li>User Research</li><li>Wireframing</li><li>Prototyping</li><li>Usability Testing</li>
@@ -590,7 +599,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3 class="compact-title">Demola Project</h3>
                     <p class="compact-meta"><i class="fas fa-building"></i> IPBeja · Higher School of Technology and Management</p>
                     <div class="compact-body"><div class="compact-inner">
-                        <p>Worked with a mixed-discipline team of students on a real problem set by an external company. Good introduction to cross-functional work.</p>
+                        <p>Worked with students from other courses on a real problem given by an external company. First time I had to explain my thinking to people who weren't engineers.</p>
                         <ul class="compact-pills">
                             <li>Innovation</li><li>Team Collaboration</li><li>Problem Solving</li>
                         </ul>
@@ -715,7 +724,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="view-more">
-                    <button class="view-more-btn">View All 10 Skills</button>
+                    <button class="view-more-btn"><i class="fas fa-arrow-right"></i> Show all 10</button>
                 </div>
             </div>
 
@@ -776,7 +785,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="view-more">
-                    <button class="view-more-btn">View All 12 Skills</button>
+                    <button class="view-more-btn"><i class="fas fa-arrow-right"></i> Show all 12</button>
                 </div>
             </div>
 
@@ -908,7 +917,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="view-more">
-                    <button class="view-more-btn">View All 15 Skills</button>
+                    <button class="view-more-btn"><i class="fas fa-arrow-right"></i> Show all 15</button>
                 </div>
             </div>
 
@@ -1010,7 +1019,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="skill-tag" data-level="advanced">Adaptability</span>
                 </div>
                 <div class="view-more">
-                    <button class="view-more-btn">View All 11 Skills</button>
+                    <button class="view-more-btn"><i class="fas fa-arrow-right"></i> Show all 11</button>
                 </div>
             </div>
         </div>
@@ -1265,7 +1274,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">My Projects</h2>
-      <p class="section-subtitle">Things I've built, from web platforms to games</p>
+      <p class="section-subtitle">Things I've built. Web apps, Android, a few games.</p>
     </div>
 
     <!-- Project Filters -->
@@ -1284,8 +1293,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- SECTION 1: FEATURED & MAJOR PROJECTS -->
     <div class="projects-section">
-      <h3 class="section-subsection-title">Featured Projects</h3>
-      <p class="section-subsection-subtitle">Large-scale applications with significant impact</p>
+      <h3 class="section-subsection-title">Featured</h3>
+      <p class="section-subsection-subtitle">The work I'd want a recruiter to look at first.</p>
       
       <div class="projects-grid major-grid">
         <!-- Trattoria Bella Italia - Restaurant Web App -->
@@ -1476,8 +1485,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- SECTION 2: RECENT 2026 PROJECTS -->
     <div class="projects-section">
-      <h3 class="section-subsection-title">Recent Projects (2026)</h3>
-      <p class="section-subsection-subtitle">What I've been building lately</p>
+      <h3 class="section-subsection-title">2026</h3>
+      <p class="section-subsection-subtitle">What I've been building lately.</p>
 
       <div class="projects-grid major-grid">
         <!-- VehicleOS - BMW Platform -->
@@ -1717,8 +1726,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- SECTION 3: MOBILE & GAME DEVELOPMENT -->
     <div class="projects-section">
-      <h3 class="section-subsection-title">Mobile Apps & Games</h3>
-      <p class="section-subsection-subtitle">Android apps and a few games I made along the way</p>
+      <h3 class="section-subsection-title">Mobile &amp; Games</h3>
+      <p class="section-subsection-subtitle">Android apps and a few games on the side.</p>
       
       <div class="projects-grid">
         <!-- Customer Registration App -->
@@ -1871,8 +1880,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- SECTION 3: SMALL PROJECTS & DEMOS -->
     <div class="projects-section small-projects">
-      <h3 class="section-subsection-title">Small Projects & Demos</h3>
-      <p class="section-subsection-subtitle">Smaller things I built while learning or just for fun</p>
+      <h3 class="section-subsection-title">Small &amp; Demos</h3>
+      <p class="section-subsection-subtitle">Smaller things I built while learning or just for fun.</p>
       
       <div class="projects-grid small-grid">
         <!-- Car Sales Analysis -->
@@ -2048,8 +2057,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- CTA Section -->
     <div class="projects-cta">
-      <p>Interested in collaborating or have a project in mind?</p>
-      <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+      <p>Got a project? Want to chat? I'm around.</p>
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
       <a href="https://github.com/luigi043" target="_blank" class="btn btn-secondary">
         <i class="fab fa-github"></i> View All Projects on GitHub
       </a>
@@ -2097,7 +2106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Licenses & Certifications</h2>
-                <p class="section-subtitle">Courses I've completed and credentials I've earned</p>
+                <p class="section-subtitle">The courses and credentials I actually finished.</p>
             </div>
 
             <div class="certifications-filter">

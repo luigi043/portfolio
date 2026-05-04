@@ -14,7 +14,86 @@ document.addEventListener('DOMContentLoaded', () => {
     initCompactFilters();
     initProjectsCollapseTap();
     initSkillsCollapseTap();
+    initAboutBadgeAnimation();
 });
+
+// Stagger-in + idle float for tech badges, plus cursor-following sheen.
+// Stagger reveal for sidebar value cards and meta items.
+function initAboutBadgeAnimation() {
+    const techTags = document.querySelector('.about-content .tech-tags');
+    const sidebarValues = document.querySelectorAll('.sidebar-value');
+    const metaItems = document.querySelectorAll('.meta-item');
+
+    if (techTags) {
+        const badges = Array.from(techTags.querySelectorAll('.tech-badge'));
+
+        // Pre-assign random float delays so the cluster doesn't bob in unison
+        badges.forEach(b => {
+            b.style.setProperty('--float-delay', `${(Math.random() * 3).toFixed(2)}s`);
+        });
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                badges.forEach((b, i) => {
+                    setTimeout(() => b.classList.add('is-in'), 60 * i);
+                });
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.25 });
+
+        io.observe(techTags);
+
+        // Cursor-following radial sheen (rAF-throttled)
+        let rafId = null;
+        let pendingX = 0, pendingY = 0;
+
+        const onMove = (e) => {
+            const r = techTags.getBoundingClientRect();
+            pendingX = e.clientX - r.left;
+            pendingY = e.clientY - r.top;
+            if (rafId == null) {
+                rafId = requestAnimationFrame(() => {
+                    techTags.style.setProperty('--mx', pendingX + 'px');
+                    techTags.style.setProperty('--my', pendingY + 'px');
+                    rafId = null;
+                });
+            }
+        };
+
+        techTags.addEventListener('pointermove', onMove);
+        techTags.addEventListener('pointerleave', () => {
+            techTags.style.setProperty('--mx', '50%');
+            techTags.style.setProperty('--my', '50%');
+        });
+    }
+
+    if (sidebarValues.length) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                sidebarValues.forEach((el, i) => {
+                    setTimeout(() => el.classList.add('is-in'), 120 * i);
+                });
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.3 });
+        io.observe(sidebarValues[0]);
+    }
+
+    if (metaItems.length) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                metaItems.forEach((el, i) => {
+                    setTimeout(() => el.classList.add('is-in'), 80 * i);
+                });
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.3 });
+        io.observe(metaItems[0]);
+    }
+}
 
 // Tap-to-toggle for compact cards (touch + keyboard) — covers .job-card and .compact-card
 function initCompactCards() {
