@@ -1301,6 +1301,388 @@ a:hover {
   }
 }
 
+/* ============================================
+   FILTER CHIPS (shared, Apple-style minimal)
+   ============================================ */
+.compact-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 1.5rem auto 2rem;
+  max-width: 900px;
+  padding: 0 0.5rem;
+}
+.compact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.compact-chip:hover {
+  color: var(--accent);
+  border-color: rgba(0, 122, 255, 0.4);
+  transform: translateY(-1px);
+}
+.compact-chip.is-active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+.compact-chip i { font-size: 0.7rem; }
+
+/* Hide / show filtered cards smoothly (FLIP-lite) */
+.compact-card.is-hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+.compact-card {
+  transition:
+    transform .35s cubic-bezier(.2,.7,.2,1),
+    opacity .25s ease,
+    border-color .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
+}
+
+/* ============================================
+   COMPACT CARDS — generic (shared with .job-card)
+   ============================================ */
+.compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+.compact-card {
+  position: relative;
+  padding: 1.1rem 1.25rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  will-change: transform;
+}
+
+.compact-card:hover,
+.compact-card:focus-visible,
+.compact-card.is-open {
+  transform: translateY(-4px);
+  border-color: rgba(0, 122, 255, 0.4);
+  background: var(--glass-bg-hover);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+.compact-card .compact-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.6rem;
+  border-radius: 50px;
+  margin-bottom: 0.5rem;
+}
+.compact-tag.tag-degree    { background: rgba(0,122,255,.12);  color: var(--accent); border:1px solid rgba(0,122,255,.25); }
+.compact-tag.tag-course    { background: rgba(48,213,200,.12); color: var(--accent-secondary); border:1px solid rgba(48,213,200,.25); }
+.compact-tag.tag-cert      { background: rgba(255,159,10,.12); color: #ff9f0a; border:1px solid rgba(255,159,10,.3); }
+.compact-tag.tag-project   { background: rgba(191,90,242,.12); color: #bf5af2; border:1px solid rgba(191,90,242,.3); }
+.compact-tag.tag-secondary { background: rgba(142,142,147,.15); color: var(--text-secondary); border:1px solid rgba(142,142,147,.25); }
+.compact-tag.tag-freelance { background: rgba(0,122,255,.12);  color: var(--accent); border:1px solid rgba(0,122,255,.25); }
+.compact-tag.tag-internship{ background: rgba(48,213,200,.12); color: var(--accent-secondary); border:1px solid rgba(48,213,200,.25); }
+
+.compact-card .compact-date {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+}
+.compact-card .compact-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.3rem;
+  line-height: 1.25;
+  padding-right: 28px;
+}
+.compact-card .compact-meta {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.compact-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  margin-top: 0;
+  transition:
+    grid-template-rows .45s cubic-bezier(.2,.7,.2,1),
+    margin-top .3s ease;
+}
+.compact-body > .compact-inner {
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .35s ease .05s, transform .4s ease .05s;
+}
+.compact-card:hover .compact-body,
+.compact-card:focus-visible .compact-body,
+.compact-card.is-open .compact-body {
+  grid-template-rows: 1fr;
+  margin-top: 0.85rem;
+}
+.compact-card:hover .compact-inner,
+.compact-card:focus-visible .compact-inner,
+.compact-card.is-open .compact-inner {
+  opacity: 1;
+  transform: none;
+}
+
+.compact-inner p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0 0 0.65rem;
+}
+.compact-inner .compact-pills {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.compact-inner .compact-pills li,
+.compact-inner .compact-pills span {
+  background: rgba(0, 122, 255, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  padding: 0.2rem 0.55rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.compact-inner .compact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: 50px;
+  background: rgba(0,122,255,.1);
+  border: 1px solid rgba(0,122,255,.2);
+  transition: all .25s ease;
+}
+.compact-inner .compact-cta:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.compact-card .expand-hint {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.9rem;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  opacity: 0.55;
+  font-size: 0.75rem;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.compact-card:hover .expand-hint,
+.compact-card:focus-visible .expand-hint,
+.compact-card.is-open .expand-hint {
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .compact-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+}
+@media (max-width: 480px) {
+  .compact-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   COLLAPSE-ON-HOVER for existing PROJECT cards
+   (CSS-only — preserves existing markup)
+   ============================================ */
+#projects .project-card {
+  transition:
+    transform .4s cubic-bezier(.2,.7,.2,1),
+    border-color .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
+}
+
+/* By default: hide description, tech, impact, links, progress */
+#projects .project-card .project-content > p,
+#projects .project-card .project-tech,
+#projects .project-card .project-impact,
+#projects .project-card .project-links,
+#projects .project-card .project-progress,
+#projects .project-card .project-overlay {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+  transition:
+    opacity .3s ease,
+    max-height .45s cubic-bezier(.2,.7,.2,1),
+    margin .3s ease,
+    padding .3s ease;
+  pointer-events: none;
+}
+
+/* Reveal on hover/focus-within/.is-open */
+#projects .project-card:hover .project-content > p,
+#projects .project-card:focus-within .project-content > p,
+#projects .project-card.is-open .project-content > p {
+  opacity: 1;
+  max-height: 200px;
+  margin-bottom: 0.75rem !important;
+  pointer-events: auto;
+}
+#projects .project-card:hover .project-tech,
+#projects .project-card:focus-within .project-tech,
+#projects .project-card.is-open .project-tech,
+#projects .project-card:hover .project-impact,
+#projects .project-card:focus-within .project-impact,
+#projects .project-card.is-open .project-impact,
+#projects .project-card:hover .project-links,
+#projects .project-card:focus-within .project-links,
+#projects .project-card.is-open .project-links,
+#projects .project-card:hover .project-progress,
+#projects .project-card:focus-within .project-progress,
+#projects .project-card.is-open .project-progress {
+  opacity: 1;
+  max-height: 240px;
+  margin-top: 0.6rem !important;
+  pointer-events: auto;
+}
+#projects .project-card:hover .project-overlay,
+#projects .project-card:focus-within .project-overlay,
+#projects .project-card.is-open .project-overlay {
+  opacity: 1;
+  max-height: 80px;
+  pointer-events: auto;
+}
+
+#projects .project-card:hover,
+#projects .project-card:focus-within,
+#projects .project-card.is-open {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+/* ============================================
+   COLLAPSE-ON-HOVER for existing SKILL cards
+   ============================================ */
+#skills .skill-category-card {
+  cursor: pointer;
+  transition:
+    transform .4s cubic-bezier(.2,.7,.2,1),
+    border-color .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
+}
+#skills .skill-category-card .skills-progress,
+#skills .skill-category-card .skills-tags,
+#skills .skill-category-card .view-more {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0 !important;
+  overflow: hidden;
+  transition:
+    opacity .3s ease,
+    max-height .5s cubic-bezier(.2,.7,.2,1),
+    margin .3s ease;
+  pointer-events: none;
+}
+#skills .skill-category-card:hover .skills-progress,
+#skills .skill-category-card:focus-within .skills-progress,
+#skills .skill-category-card.is-open .skills-progress,
+#skills .skill-category-card:hover .skills-tags,
+#skills .skill-category-card:focus-within .skills-tags,
+#skills .skill-category-card.is-open .skills-tags {
+  opacity: 1;
+  max-height: 600px;
+  margin-top: 1rem !important;
+  pointer-events: auto;
+}
+#skills .skill-category-card:hover .view-more,
+#skills .skill-category-card:focus-within .view-more,
+#skills .skill-category-card.is-open .view-more {
+  opacity: 1;
+  max-height: 50px;
+  margin-top: 0.5rem !important;
+  pointer-events: auto;
+}
+#skills .skill-category-card:hover,
+#skills .skill-category-card:focus-within,
+#skills .skill-category-card.is-open {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compact-card,
+  .compact-body,
+  .compact-inner,
+  .compact-card .expand-hint,
+  #projects .project-card,
+  #projects .project-card *,
+  #skills .skill-category-card,
+  #skills .skill-category-card * {
+    transition: none !important;
+  }
+}
+
 .timeline-marker i {
   color: var(--accent);
   font-size: 0.9rem;

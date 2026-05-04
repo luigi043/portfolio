@@ -10,12 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initSmoothScrolling();
     initThemeToggle();
-    initJobCards();
+    initCompactCards();
+    initCompactFilters();
+    initProjectsCollapseTap();
+    initSkillsCollapseTap();
 });
 
-// Tap-to-toggle for the compact job cards (touch devices + keyboard)
-function initJobCards() {
-    const cards = document.querySelectorAll('.job-card');
+// Tap-to-toggle for compact cards (touch + keyboard) — covers .job-card and .compact-card
+function initCompactCards() {
+    const cards = document.querySelectorAll('.job-card, .compact-card');
     if (!cards.length) return;
 
     const isTouch = window.matchMedia('(hover: none)').matches;
@@ -27,7 +30,11 @@ function initJobCards() {
         };
 
         if (isTouch) {
-            card.addEventListener('click', toggle);
+            card.addEventListener('click', e => {
+                // Don't swallow clicks on actual links/buttons inside the card
+                if (e.target.closest('a, button')) return;
+                toggle();
+            });
         }
 
         card.addEventListener('keydown', e => {
@@ -35,6 +42,64 @@ function initJobCards() {
                 e.preventDefault();
                 toggle();
             }
+        });
+    });
+}
+
+// Filter chips for #professional-experience and #education
+function initCompactFilters() {
+    const filterBars = document.querySelectorAll('.compact-filters');
+    if (!filterBars.length) return;
+
+    filterBars.forEach(bar => {
+        const scope = bar.dataset.filterScope;
+        const grid = bar.parentElement.querySelector('.compact-grid');
+        if (!grid) return;
+
+        const cards = grid.querySelectorAll('.compact-card');
+        const chips = bar.querySelectorAll('.compact-chip');
+
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                const filter = chip.dataset.filter;
+
+                chips.forEach(c => c.classList.remove('is-active'));
+                chip.classList.add('is-active');
+
+                cards.forEach(card => {
+                    const cat = card.dataset.category || '';
+                    const match = filter === 'all' || cat.split(/\s+/).includes(filter);
+                    card.classList.toggle('is-hidden', !match);
+                });
+            });
+        });
+    });
+}
+
+// Touch tap-to-toggle for collapse-on-hover project cards
+function initProjectsCollapseTap() {
+    const cards = document.querySelectorAll('#projects .project-card');
+    if (!cards.length) return;
+    if (!window.matchMedia('(hover: none)').matches) return;
+
+    cards.forEach(card => {
+        card.addEventListener('click', e => {
+            if (e.target.closest('a, button')) return;
+            card.classList.toggle('is-open');
+        });
+    });
+}
+
+// Touch tap-to-toggle for collapse-on-hover skill cards
+function initSkillsCollapseTap() {
+    const cards = document.querySelectorAll('#skills .skill-category-card');
+    if (!cards.length) return;
+    if (!window.matchMedia('(hover: none)').matches) return;
+
+    cards.forEach(card => {
+        card.addEventListener('click', e => {
+            if (e.target.closest('a, button, .skill-nav-btn, .view-more-btn')) return;
+            card.classList.toggle('is-open');
         });
     });
 }
