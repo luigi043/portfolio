@@ -10,7 +10,178 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initSmoothScrolling();
     initThemeToggle();
+    initCompactCards();
+    initCompactFilters();
+    initProjectsCollapseTap();
+    initSkillsCollapseTap();
+    initAboutBadgeAnimation();
 });
+
+// Stagger-in + idle float for tech badges, plus cursor-following sheen.
+// Stagger reveal for sidebar value cards and meta items.
+function initAboutBadgeAnimation() {
+    const techTags = document.querySelector('.about-content .tech-tags');
+    const sidebarValues = document.querySelectorAll('.sidebar-value');
+    const metaItems = document.querySelectorAll('.meta-item');
+
+    if (techTags) {
+        const badges = Array.from(techTags.querySelectorAll('.tech-badge'));
+
+        // Pre-assign random float delays so the cluster doesn't bob in unison
+        badges.forEach(b => {
+            b.style.setProperty('--float-delay', `${(Math.random() * 3).toFixed(2)}s`);
+        });
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                badges.forEach((b, i) => {
+                    setTimeout(() => b.classList.add('is-in'), 60 * i);
+                });
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.25 });
+
+        io.observe(techTags);
+
+        // Cursor-following radial sheen (rAF-throttled)
+        let rafId = null;
+        let pendingX = 0, pendingY = 0;
+
+        const onMove = (e) => {
+            const r = techTags.getBoundingClientRect();
+            pendingX = e.clientX - r.left;
+            pendingY = e.clientY - r.top;
+            if (rafId == null) {
+                rafId = requestAnimationFrame(() => {
+                    techTags.style.setProperty('--mx', pendingX + 'px');
+                    techTags.style.setProperty('--my', pendingY + 'px');
+                    rafId = null;
+                });
+            }
+        };
+
+        techTags.addEventListener('pointermove', onMove);
+        techTags.addEventListener('pointerleave', () => {
+            techTags.style.setProperty('--mx', '50%');
+            techTags.style.setProperty('--my', '50%');
+        });
+    }
+
+    if (sidebarValues.length) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                sidebarValues.forEach((el, i) => {
+                    setTimeout(() => el.classList.add('is-in'), 120 * i);
+                });
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.3 });
+        io.observe(sidebarValues[0]);
+    }
+
+    if (metaItems.length) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                metaItems.forEach((el, i) => {
+                    setTimeout(() => el.classList.add('is-in'), 80 * i);
+                });
+                io.unobserve(entry.target);
+            });
+        }, { threshold: 0.3 });
+        io.observe(metaItems[0]);
+    }
+}
+
+// Tap-to-toggle for compact cards (touch + keyboard) — covers .job-card and .compact-card
+function initCompactCards() {
+    const cards = document.querySelectorAll('.job-card, .compact-card');
+    if (!cards.length) return;
+
+    const isTouch = window.matchMedia('(hover: none)').matches;
+
+    cards.forEach(card => {
+        const toggle = () => {
+            const open = card.classList.toggle('is-open');
+            card.setAttribute('aria-expanded', open ? 'true' : 'false');
+        };
+
+        if (isTouch) {
+            card.addEventListener('click', e => {
+                // Don't swallow clicks on actual links/buttons inside the card
+                if (e.target.closest('a, button')) return;
+                toggle();
+            });
+        }
+
+        card.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle();
+            }
+        });
+    });
+}
+
+// Filter chips for #professional-experience and #education
+function initCompactFilters() {
+    const filterBars = document.querySelectorAll('.compact-filters');
+    if (!filterBars.length) return;
+
+    filterBars.forEach(bar => {
+        const scope = bar.dataset.filterScope;
+        const grid = bar.parentElement.querySelector('.compact-grid');
+        if (!grid) return;
+
+        const cards = grid.querySelectorAll('.compact-card');
+        const chips = bar.querySelectorAll('.compact-chip');
+
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                const filter = chip.dataset.filter;
+
+                chips.forEach(c => c.classList.remove('is-active'));
+                chip.classList.add('is-active');
+
+                cards.forEach(card => {
+                    const cat = card.dataset.category || '';
+                    const match = filter === 'all' || cat.split(/\s+/).includes(filter);
+                    card.classList.toggle('is-hidden', !match);
+                });
+            });
+        });
+    });
+}
+
+// Touch tap-to-toggle for collapse-on-hover project cards
+function initProjectsCollapseTap() {
+    const cards = document.querySelectorAll('#projects .project-card');
+    if (!cards.length) return;
+    if (!window.matchMedia('(hover: none)').matches) return;
+
+    cards.forEach(card => {
+        card.addEventListener('click', e => {
+            if (e.target.closest('a, button')) return;
+            card.classList.toggle('is-open');
+        });
+    });
+}
+
+// Touch tap-to-toggle for collapse-on-hover skill cards
+function initSkillsCollapseTap() {
+    const cards = document.querySelectorAll('#skills .skill-category-card');
+    if (!cards.length) return;
+    if (!window.matchMedia('(hover: none)').matches) return;
+
+    cards.forEach(card => {
+        card.addEventListener('click', e => {
+            if (e.target.closest('a, button, .skill-nav-btn, .view-more-btn')) return;
+            card.classList.toggle('is-open');
+        });
+    });
+}
 
 function initAllAnimations() {
     initNameTyping();
