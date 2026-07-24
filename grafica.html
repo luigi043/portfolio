@@ -317,6 +317,18 @@
       border-radius: 5px;
     }
 
+    .media-unavailable {
+      display: grid;
+      place-items: center;
+      min-height: 5.5rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      color: var(--medium-text);
+      text-align: center;
+    }
+
     /* === VIDEO SECTION === */
     .video-section {
       background: var(--card-bg);
@@ -365,6 +377,12 @@
     .video-container {
       display: flex;
       justify-content: center;
+    }
+
+    .video-container .media-unavailable {
+      width: 100%;
+      min-height: 15rem;
+      margin-top: 0;
     }
 
     .video-container video {
@@ -632,6 +650,18 @@
       box-shadow: 0 5px 15px rgba(31, 255, 224, 0.3);
     }
 
+    .project-cta[aria-disabled="true"] {
+      cursor: default;
+      opacity: 0.75;
+    }
+
+    .project-cta[aria-disabled="true"]:hover {
+      background: var(--primary);
+      color: #000;
+      transform: none;
+      box-shadow: none;
+    }
+
     /* === FOOTER === */
     .project-footer {
       background: var(--dark-bg);
@@ -833,25 +863,25 @@
       <article class="audio-card">
         <h3>🎙️ Advertising Spot – MozPest</h3>
         <p>Complete production of a 30-second advertising spot for a Mozambican company, from script to final mixing.</p>
-        <audio class="audio-player" src="midia/Spot - MozPest.mp3" controls preload="none"></audio>
+        <p class="media-unavailable" role="status">Audio preview is not included in this repository.</p>
       </article>
 
       <article class="audio-card">
         <h3>🎧 Sound Medley – Creative Editing</h3>
         <p>Harmonious mixing of multiple audio segments with smooth transitions and professional dynamic adjustments.</p>
-        <audio class="audio-player" src="midia/sons variados - Luiz Fehlberg.mp3" controls preload="none"></audio>
+        <p class="media-unavailable" role="status">Audio preview is not included in this repository.</p>
       </article>
 
       <article class="audio-card">
         <h3>🎶 Music Medley – Soundtrap</h3>
         <p>Musical composition and arrangement of 5 minutes using an online collaborative platform for music production.</p>
-        <audio class="audio-player" src="midia/Medley Luiz Fehlberg 1.mp3" controls preload="none"></audio>
+        <p class="media-unavailable" role="status">Audio preview is not included in this repository.</p>
       </article>
 
       <article class="audio-card">
         <h3>🔥 Music Intro – Twitch</h3>
         <p>Custom sonic identity for streaming channel, creating a unique and impactful auditory signature.</p>
-        <audio class="audio-player" src="midia/My Intro_.mp3" controls preload="none"></audio>
+        <p class="media-unavailable" role="status">Audio preview is not included in this repository.</p>
       </article>
     </div>
   </section>
@@ -870,7 +900,7 @@
           <p>Engaging visual narrative created through selected photographs and precise musical synchronization. Exploration of rhythm, dynamic transitions, and emotional composition.</p>
         </div>
         <div class="video-container">
-          <video src="midia/M4_CS_LuizFehlberg.mov" controls muted></video>
+          <p class="media-unavailable" role="status">Video preview is not included in this repository.</p>
         </div>
       </article>
 
@@ -880,7 +910,7 @@
           <p>Production optimized for social media with quick cuts, impactful framing, and vibrant colors. Focus on quick attention capture and mobile optimization.</p>
         </div>
         <div class="video-container">
-          <video src="midia/BMW M4 CS EDITION VR46_Luiz.mp4" controls muted></video>
+          <p class="media-unavailable" role="status">Video preview is not included in this repository.</p>
         </div>
       </article>
     </div>
@@ -993,9 +1023,9 @@
           </div>
         </div>
 
-        <a href="BMW_M_Series.html" class="project-cta">
-          View Complete Project
-        </a>
+        <span class="project-cta" aria-disabled="true">
+          Complete project website unavailable
+        </span>
       </div>
     </div>
   </section>
