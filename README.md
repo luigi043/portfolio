@@ -34,6 +34,9 @@ I'm Luiz Fehlberg, a developer based in Portugal with a Bachelor's in Computer E
 - **Rhea Print Services** - Print service management system (Laravel, PHP, MySQL)
 - **Hotel Management System** - Lodging system with billing and reporting (Python, MySQL)
 - **WorkoutLevelUp** - Gamified fitness tracker (Kotlin, Jetpack Compose)
+- **Markdown Editor** - Safe, accessible Markdown previewer (Angular 18, TypeScript, DOMPurify)
+- **StarWave** - Responsive productivity workspace public prototype (Next.js, React, TypeScript)
+- **SecurePass Manager** - Encrypted credential-vault CLI with security reporting (Python, Fernet, Pytest)
 
 ## Structure
 
