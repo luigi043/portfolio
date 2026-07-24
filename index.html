@@ -69,7 +69,7 @@
             </div>
 
             <!-- Navigation -->
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="primary-navigation">
                 <li><a href="#about">About</a></li>
                 <li><a href="#professional-experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
@@ -88,11 +88,11 @@
             </div>
 
             <!-- Mobile Menu -->
-            <div class="hamburger">
+            <button class="hamburger" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
     </div>
 </header>
@@ -1369,17 +1369,17 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <!-- Project Filters -->
-    <div class="projects-filter">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="featured">Featured</button>
-      <button class="filter-btn" data-filter="web">Web Development</button>
-      <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-      <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-      <button class="filter-btn" data-filter="angular">Angular</button>
-      <button class="filter-btn" data-filter="game">Games</button>
-      <button class="filter-btn" data-filter="data">Data Analysis</button>
-      <button class="filter-btn" data-filter="in-progress">In Progress</button>
-      <button class="filter-btn" data-filter="small">Small Projects</button>
+    <div class="projects-filter" aria-label="Filter projects">
+      <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All Projects</button>
+      <button class="filter-btn" type="button" data-filter="featured" aria-pressed="false">Featured</button>
+      <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web Development</button>
+      <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-Stack</button>
+      <button class="filter-btn" type="button" data-filter="mobile" aria-pressed="false">Mobile Apps</button>
+      <button class="filter-btn" type="button" data-filter="angular" aria-pressed="false">Angular</button>
+      <button class="filter-btn" type="button" data-filter="game" aria-pressed="false">Games</button>
+      <button class="filter-btn" type="button" data-filter="data" aria-pressed="false">Data Analysis</button>
+      <button class="filter-btn" type="button" data-filter="in-progress" aria-pressed="false">In Progress</button>
+      <button class="filter-btn" type="button" data-filter="small" aria-pressed="false">Small Projects</button>
     </div>
 
     <!-- SECTION 1: FEATURED & MAJOR PROJECTS -->
@@ -2925,6 +2925,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button type="submit" class="btn" aria-label="Send Message">
           Send
         </button>
+        <p id="formStatus" class="form-status" role="status" aria-live="polite" hidden></p>
       </form>
 
     </div>
@@ -2973,17 +2974,23 @@ document.addEventListener('DOMContentLoaded', function() {
           const filter = this.getAttribute('data-filter');
 
           // Update active button
-          filterBtns.forEach(function(b) { b.classList.remove('active'); });
+          filterBtns.forEach(function(b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+          });
           this.classList.add('active');
+          this.setAttribute('aria-pressed', 'true');
 
           // Filter cards
           allProjectCards.forEach(function(card) {
             const categories = card.getAttribute('data-category') || '';
             if (filter === 'all' || categories.includes(filter)) {
               card.style.display = '';
+              card.removeAttribute('aria-hidden');
               card.style.animation = 'fadeInUp 0.4s ease forwards';
             } else {
               card.style.display = 'none';
+              card.setAttribute('aria-hidden', 'true');
             }
           });
         });

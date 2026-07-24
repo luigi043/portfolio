@@ -5,8 +5,9 @@ if (typeof Chart !== 'undefined' && typeof ChartDataLabels !== 'undefined') {
     Chart.register(ChartDataLabels);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initPortfolio() {
     initAllAnimations();
+    initHeader();
     initMobileMenu();
     initSmoothScrolling();
     initThemeToggle();
@@ -15,7 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectsCollapseTap();
     initSkillsCollapseTap();
     initAboutBadgeAnimation();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPortfolio, { once: true });
+} else {
+    initPortfolio();
+}
 
 // Stagger-in + idle float for tech badges, plus cursor-following sheen.
 // Stagger reveal for sidebar value cards and meta items.
@@ -198,114 +205,62 @@ function initAllAnimations() {
     initScrollAnimations();
     initParallaxEffects();
 }
-// Enhanced Header Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('.main-header');
-    const progressBar = document.querySelector('.progress-bar');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const navItems = document.querySelectorAll('.nav-item');
+// Header state and active navigation stay in sync without assuming optional UI exists.
+function initHeader() {
+    const header = document.querySelector('.header');
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const navLinks = Array.from(document.querySelectorAll('.nav-menu a[href^="#"]'));
 
-    // Scroll progress and header effects
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const height = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = (scrolled / height) * 100;
-        
-        // Progress bar
-        progressBar.style.width = progress + '%';
-        
-        // Header background effect
-        if (scrolled > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        
-        // Active section highlighting
-        highlightActiveSection();
-    });
+    const updateHeader = () => {
+        const scrollPosition = window.scrollY;
+        header?.classList.toggle('scrolled', scrollPosition > 32);
 
-    // Mobile menu toggle
-    menuToggle.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Close mobile menu when clicking on links
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-
-    // Active section highlighting
-    function highlightActiveSection() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        let current = '';
+        let currentSection = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
+            if (scrollPosition >= section.offsetTop - 140) currentSection = section.id;
         });
 
         navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
+            const isCurrent = link.getAttribute('href') === `#${currentSection}`;
+            link.classList.toggle('active', isCurrent);
+            if (isCurrent) link.setAttribute('aria-current', 'page');
+            else link.removeAttribute('aria-current');
         });
-    }
+    };
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-});
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+}
 // ----------- Mobile Menu -----------
 function initMobileMenu() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-menu');
     
     if (menuToggle && navLinks) {
+        const closeMenu = () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open navigation menu');
+            document.body.style.overflow = '';
+        };
+
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            menuToggle.innerHTML = navLinks.classList.contains('show') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         });
 
-        // Close menu when clicking on links
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('show');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.navbar') && navLinks.classList.contains('show')) {
-                navLinks.classList.remove('show');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
+            if (!e.target.closest('.nav') && navLinks.classList.contains('active')) closeMenu();
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) closeMenu();
         });
     }
 }
@@ -328,9 +283,14 @@ function initSmoothScrolling() {
 
 // ----------- Theme Toggle -----------
 function initThemeToggle() {
+    if (document.querySelector('.theme-toggle')) return;
+
     const themeToggle = document.createElement('button');
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     themeToggle.className = 'theme-toggle';
+    themeToggle.type = 'button';
+    themeToggle.setAttribute('aria-label', 'Toggle color theme');
+    themeToggle.setAttribute('aria-pressed', 'false');
     themeToggle.style.cssText = `
         position: fixed;
         bottom: 20px;
@@ -367,6 +327,7 @@ function initThemeToggle() {
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        themeToggle.setAttribute('aria-pressed', 'true');
     }
 }
 
@@ -378,9 +339,11 @@ function toggleTheme() {
     
     if (body.classList.contains('dark-theme')) {
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        themeToggle.setAttribute('aria-pressed', 'true');
         localStorage.setItem('theme', 'dark');
     } else {
         themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        themeToggle.setAttribute('aria-pressed', 'false');
         localStorage.setItem('theme', 'light');
     }
 }
@@ -898,14 +861,19 @@ function initContactAnimations() {
 
     // Form submission handling
     const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
+    if (contactForm && !contactForm.dataset.enhanced) {
         const formStatus = document.getElementById('formStatus');
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        if (!formStatus || !submitBtn) return;
+
+        contactForm.dataset.enhanced = 'true';
 
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            const submitBtn = this.querySelector('.submit-btn');
             const originalText = submitBtn.innerHTML;
+            formStatus.hidden = false;
+            formStatus.className = 'form-status';
+            formStatus.textContent = 'Sending your message…';
             
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -922,26 +890,23 @@ function initContactAnimations() {
                 });
                 
                 if (response.ok) {
-                    // Success
-                    formStatus.textContent = 'Thank you! Your message has been sent successfully. I\'ll get back to you soon.';
+                    formStatus.textContent = 'Thanks — your message has been sent. I’ll get back to you soon.';
                     formStatus.className = 'form-status success';
                     this.reset();
                 } else {
                     throw new Error('Form submission failed');
                 }
             } catch (error) {
-                // Error
-                formStatus.textContent = 'Sorry, there was an error sending your message. Please try again or email me directly.';
+                formStatus.textContent = 'Your message could not be sent. Please try again or email me directly.';
                 formStatus.className = 'form-status error';
             } finally {
                 // Reset button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 
-                // Hide status message after 5 seconds
                 setTimeout(() => {
-                    formStatus.style.display = 'none';
-                }, 5000);
+                    formStatus.hidden = true;
+                }, 7000);
             }
         });
     }
@@ -1103,15 +1068,8 @@ if (typeof module !== 'undefined' && module.exports) {
     };
 }
 
-// Initialize everything when DOM is fully loaded
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAllAnimations);
-} else {
-    initAllAnimations();
-}
-
-// JavaScript para a seção About
-document.addEventListener('DOMContentLoaded', function() {
+// Retained for compatibility with older markup; the page now owns these counters.
+function initLegacyAboutAnimations() {
     // Animação de scroll para a seção About
     const aboutContent = document.querySelector('.about-content');
     
@@ -1204,6 +1162,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         typeObserver.observe(aboutContent);
     }
-});
+}
 
 // Adicione também este CSS adicional para garantir que tudo funcione

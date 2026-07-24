@@ -49,13 +49,31 @@ portfolio/
 └── imagens/            # Project images and screenshots
 ```
 
-## Running Locally
+## Run Locally
 
-Simply open `index.html` in a browser, or serve with any static file server:
+The portfolio is a static site. Open `index.html` directly, or serve the folder with any static file server:
 
 ```bash
 npx serve .
 ```
+
+## Development Checks
+
+Install the small Chart.js dependency set once, then run the JavaScript syntax check before publishing changes:
+
+```bash
+npm install
+npm run check
+```
+
+The portfolio uses Chart.js, Font Awesome, and Google Fonts from CDNs. The contact form submits through Formspree; update the form endpoint in `index.html` if the contact inbox changes.
+
+## Interaction Notes
+
+- The responsive navigation is keyboard-accessible and closes after choosing a section.
+- Project filters expose their selected state to assistive technology.
+- The contact form reports sending, success, and error states without leaving the page.
+- Project poster cards are intentional text-first fallbacks where a project screenshot is not available yet.
 
 ## License
 

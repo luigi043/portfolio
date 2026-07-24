@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "check": "node --check script.js && node --check scripts.js"
+  },
   "dependencies": {
     "chart.js": "^4.4.9",
     "chartjs-plugin-datalabels": "^2.2.0"

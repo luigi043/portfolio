@@ -314,6 +314,14 @@ a:hover {
   cursor: pointer;
   gap: 5px;
   padding: 6px;
+  appearance: none;
+  background: transparent;
+  border: 0;
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 .hamburger span {
@@ -3194,6 +3202,21 @@ a:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.form-status {
+  margin: -0.4rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+.form-status.success {
+  color: #75d8a0;
+}
+
+.form-status.error {
+  color: #ff9a9a;
 }
 
 /* ============================================
