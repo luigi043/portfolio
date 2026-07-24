@@ -2,14 +2,18 @@
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function initGraphicsPage() {
-        const menuButton = document.querySelector('.mobile-menu-btn');
-        const navigation = document.querySelector('.nav-links');
+        const menuButton = document.querySelector('.hamburger');
+        const navigation = document.querySelector('.nav-menu');
+        const scrollTopButton = document.getElementById('scrollTopBtn');
+        const year = document.getElementById('current-year');
         const slides = Array.from(document.querySelectorAll('.slide'));
         const dots = Array.from(document.querySelectorAll('.dot'));
         const previousButton = document.querySelector('.slider-btn.prev');
         const nextButton = document.querySelector('.slider-btn.next');
         let currentSlide = 0;
         let intervalId;
+
+        if (year) year.textContent = new Date().getFullYear();
 
         const closeMenu = () => {
             navigation?.classList.remove('active');
@@ -58,8 +62,17 @@
             if (event.key === 'Escape') closeMenu();
         });
         document.addEventListener('click', (event) => {
-            if (!event.target.closest('.nav-container')) closeMenu();
+            if (!event.target.closest('.nav')) closeMenu();
         });
+
+        if (scrollTopButton) {
+            const updateScrollTop = () => scrollTopButton.classList.toggle('visible', window.scrollY > 400);
+            window.addEventListener('scroll', updateScrollTop, { passive: true });
+            updateScrollTop();
+            scrollTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+            });
+        }
 
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries) => {

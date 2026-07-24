@@ -7,18 +7,22 @@
   <title>Graphic Design & Communication - Luiz Fehlberg</title>
    <!-- Favicon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
     /* === GLOBAL STYLES AND RESET === */
     :root {
-      --primary: #1fffe0;
-      --primary-dark: #00dddd;
-      --dark-bg: #0a0a0a;
-      --card-bg: #1a1a1a;
-      --light-text: #ffffff;
-      --medium-text: #cccccc;
-      --dark-text: #888888;
-      --border: #333333;
+      --primary: #007AFF;
+      --primary-dark: #0055CC;
+      --dark-bg: #050A14;
+      --card-bg: #0C1426;
+      --light-text: #F5F5F7;
+      --medium-text: #A1A1B5;
+      --dark-text: #666680;
+      --border: rgba(255, 255, 255, 0.1);
       --transition: all 0.3s ease;
     }
 
@@ -33,7 +37,7 @@
     }
 
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--dark-bg);
       color: var(--light-text);
       line-height: 1.6;
@@ -807,22 +811,25 @@
     }
   </style>
 </head>
-<body>
+<body class="graphics-page">
+  <div class="mesh-bg" aria-hidden="true"></div>
+  <button class="scroll-top-btn" id="scrollTopBtn" type="button" aria-label="Scroll to top" title="Back to top">↑</button>
   <!-- Navigation -->
-  <nav class="project-nav">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        ← Back to Portfolio
-      </a>
-      <div class="nav-links" id="graphics-navigation">
-        <a href="#audio">Audio</a>
-        <a href="#video">Video</a>
-        <a href="#image">Image</a>
-        <a href="#final-project">Final Project</a>
-      </div>
-      <button class="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="graphics-navigation">☰</button>
+  <header class="header">
+    <div class="container">
+      <nav class="nav" aria-label="Graphic design portfolio navigation">
+        <div class="logo"><a href="index.html"><span class="logo-text">Luiz Fehlberg</span></a></div>
+        <ul class="nav-menu" id="graphics-navigation">
+          <li><a href="#audio">Audio</a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#image">Image</a></li>
+          <li><a href="#final-project">Final project</a></li>
+        </ul>
+        <div class="nav-cta"><a href="index.html#projects" class="resume-btn">Software portfolio</a></div>
+        <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="graphics-navigation"><span></span><span></span><span></span></button>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <!-- Hero Section -->
   <section class="project-hero">
@@ -1033,20 +1040,10 @@
   </section>
 
   <!-- Footer -->
-  <footer class="project-footer">
-    <div class="footer-container">
+  <footer class="footer">
+    <div class="container">
       <div class="footer-content">
-        <div class="footer-info">
-          <h3>Graphic Design & Visual Communication</h3>
-          <p>Academic project demonstrating skills in multimedia and visual design</p>
-        </div>
-        <div class="footer-credits">
-          <p>&copy; 2025 Created by 
-            <a href="https://github.com/luigi043" target="_blank" rel="noopener noreferrer">
-              Luiz Fehlberg
-            </a>
-          </p>
-        </div>
+        <p>&copy; <span id="current-year">2026</span> Design by <a href="https://github.com/luigi043" target="_blank" rel="noopener noreferrer" class="footer-link">Luiz Fehlberg</a></p>
       </div>
     </div>
   </footer>
