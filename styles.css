@@ -105,6 +105,26 @@ a:hover {
   color: var(--accent-secondary);
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent-secondary);
+  outline-offset: 3px;
+}
+
+.filter-reveal {
+  animation: fadeInUp 0.35s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ============================================
    MESH / ANIMATED BACKGROUND
    ============================================ */

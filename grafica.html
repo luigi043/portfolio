@@ -619,6 +619,8 @@
     .dot {
       width: 10px;
       height: 10px;
+      padding: 0;
+      border: 0;
       background: rgba(255, 255, 255, 0.5);
       border-radius: 50%;
       cursor: pointer;
@@ -812,13 +814,13 @@
       <a href="index.html" class="nav-logo">
         ← Back to Portfolio
       </a>
-      <div class="nav-links">
+      <div class="nav-links" id="graphics-navigation">
         <a href="#audio">Audio</a>
         <a href="#video">Video</a>
         <a href="#image">Image</a>
         <a href="#final-project">Final Project</a>
       </div>
-      <button class="mobile-menu-btn">☰</button>
+      <button class="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="graphics-navigation">☰</button>
     </div>
   </nav>
 
@@ -1013,13 +1015,13 @@
             </div>
           </div>
           <div class="slider-controls">
-            <button class="slider-btn prev">❮</button>
-            <button class="slider-btn next">❯</button>
+            <button class="slider-btn prev" type="button" aria-label="Previous project image">❮</button>
+            <button class="slider-btn next" type="button" aria-label="Next project image">❯</button>
           </div>
           <div class="slider-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <button class="dot active" type="button" aria-label="Show project image 1" aria-current="true"></button>
+            <button class="dot" type="button" aria-label="Show project image 2" aria-current="false"></button>
+            <button class="dot" type="button" aria-label="Show project image 3" aria-current="false"></button>
           </div>
         </div>
 
@@ -1049,7 +1051,8 @@
     </div>
   </footer>
 
-  <script>
+  <script src="js/graphics.js" defer></script>
+  <script type="application/json" data-migrated-to="js/graphics.js">
     // DOM elements
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');

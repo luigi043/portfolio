@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "check": "node --check script.js && node --check scripts.js"
+    "check": "node --check script.js && node --check js/about.js && node --check js/project-controls.js && node --check js/graphics.js"
   },
   "dependencies": {
     "chart.js": "^4.4.9",

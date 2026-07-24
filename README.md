@@ -42,8 +42,8 @@ portfolio/
 ├── index.html          # Main portfolio page
 ├── grafica.html        # Graphic design projects page
 ├── styles.css          # Main stylesheet
-├── script.js           # Core animations and interactions
-├── scripts.js          # Additional scripts (slideshow, mobile menu)
+├── script.js           # Core portfolio interactions
+├── js/                 # Page-specific interaction scripts
 ├── assets/             # Favicon and static assets
 ├── file/               # CV and resume PDFs
 └── imagens/            # Project images and screenshots
@@ -67,6 +67,10 @@ npm run check
 ```
 
 The portfolio uses Chart.js, Font Awesome, and Google Fonts from CDNs. The contact form submits through Formspree; update the form endpoint in `index.html` if the contact inbox changes.
+
+## Asset and media policy
+
+Keep portfolio assets in the repository whenever possible. Do not add new externally hosted screenshots or media. If an original asset is unavailable, use an explicit unavailable-preview state rather than a broken request or a replacement that could misrepresent the work. The existing externally hosted profile and project screenshots should be replaced with owner-supplied local originals in a future update.
 
 ## Interaction Notes
 

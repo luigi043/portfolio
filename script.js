@@ -203,7 +203,6 @@ function initAllAnimations() {
     initCertificationsAnimations();
     initContactAnimations();
     initScrollAnimations();
-    initParallaxEffects();
 }
 // Header state and active navigation stay in sync without assuming optional UI exists.
 function initHeader() {
@@ -261,6 +260,10 @@ function initMobileMenu() {
 
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) closeMenu();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeMenu();
         });
     }
 }
@@ -998,7 +1001,6 @@ const optimizedScroll = debounce(() => {
     // Scroll-based animations here
 }, 10);
 
-window.addEventListener('scroll', optimizedScroll);
 
 // ----------- Loading States -----------
 function showLoading() {
@@ -1068,7 +1070,6 @@ if (typeof module !== 'undefined' && module.exports) {
     };
 }
 
-// Retained for compatibility with older markup; the page now owns these counters.
 function initLegacyAboutAnimations() {
     // Animação de scroll para a seção About
     const aboutContent = document.querySelector('.about-content');
