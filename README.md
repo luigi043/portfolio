@@ -27,11 +27,12 @@ I'm Luiz Fehlberg, a developer based in Portugal with a Bachelor's in Computer E
 ## Featured Projects
 
 - **VehicleOS** - Full-stack vehicle management platform (Spring Boot + React + PostgreSQL + Docker)
+- **Insurex** - Freelance insurance asset-protection system (.NET, WCF, SQL Server)
+- **BemEstar** - Multi-tenant gym management SaaS (Node.js, React, PostgreSQL)
 - **Vitalis** - Health & wellness Android app with meal planning and mood tracking (Kotlin, Jetpack Compose)
 - **BMW E36 Control Systems** - Custom Arduino/Raspberry Pi control systems for a turbocharged BMW E36
 - **Trattoria Bella Italia** - Restaurant web app (Angular 17+, TypeScript, RxJS)
 - **Luigi's Clouds** - Movie/TV series platform (React, Node.js, MongoDB, TMDB API)
-- **Rhea Print Services** - Print service management system (Laravel, PHP, MySQL)
 - **Markdown Editor** - Safe, accessible Markdown previewer (Angular 18, TypeScript, DOMPurify)
 - **StarWave** - Responsive productivity workspace public prototype (Next.js, React, TypeScript)
 - **SecurePass Manager** - Encrypted credential-vault CLI with security reporting (Python, Fernet, Pytest)
