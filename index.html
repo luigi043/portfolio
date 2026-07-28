@@ -1378,10 +1378,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-Stack</button>
       <button class="filter-btn" type="button" data-filter="mobile" aria-pressed="false">Mobile Apps</button>
       <button class="filter-btn" type="button" data-filter="angular" aria-pressed="false">Angular</button>
-      <button class="filter-btn" type="button" data-filter="game" aria-pressed="false">Games</button>
       <button class="filter-btn" type="button" data-filter="data" aria-pressed="false">Data Analysis</button>
       <button class="filter-btn" type="button" data-filter="in-progress" aria-pressed="false">In Progress</button>
-      <button class="filter-btn" type="button" data-filter="small" aria-pressed="false">Small Projects</button>
     </div>
 
     <!-- SECTION 1: FEATURED & MAJOR PROJECTS -->
@@ -1702,7 +1700,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <!-- WorkoutLevelUp -->
-        <div class="project-card" data-category="mobile">
+        <div class="project-card" data-category="mobile" data-archived="true" hidden>
           <div class="project-badge mobile">Android App</div>
           <div class="project-image">
             <div class="image-placeholder">
@@ -1777,7 +1775,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <!-- Expense Tracker -->
-        <div class="project-card" data-category="mobile">
+        <div class="project-card" data-category="mobile" data-archived="true" hidden>
           <div class="project-badge mobile">Android App</div>
           <div class="project-image">
             <div class="image-placeholder">
@@ -1798,7 +1796,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <!-- QR Scanner App -->
-        <div class="project-card" data-category="mobile">
+        <div class="project-card" data-category="mobile" data-archived="true" hidden>
           <div class="project-badge mobile">Android App</div>
           <div class="project-image">
             <div class="image-placeholder">
@@ -1819,7 +1817,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <!-- DevVoice -->
-        <div class="project-card" data-category="web in-progress">
+        <div class="project-card" data-category="web in-progress" data-archived="true" hidden>
           <div class="project-badge in-progress">In Progress</div>
           <div class="project-image">
             <div class="image-placeholder">
@@ -1921,8 +1919,9 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
 
+    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
     <!-- SECTION 2.7: WEB & SAAS (from GitHub) -->
-    <div class="projects-section">
+    <div class="projects-section" data-archived="true" hidden>
       <h3 class="section-subsection-title">Web &amp; SaaS</h3>
       <p class="section-subsection-subtitle">Web platforms, SaaS apps, and browser tooling.</p>
 
@@ -2073,8 +2072,9 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
 
+    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
     <!-- SECTION 2.5: TOOLS & WEB APPS (from GitHub) -->
-    <div class="projects-section">
+    <div class="projects-section" data-archived="true" hidden>
       <h3 class="section-subsection-title">Tools &amp; Web Apps</h3>
       <p class="section-subsection-subtitle">Self-contained apps and tools I've shipped to GitHub.</p>
 
@@ -2375,8 +2375,9 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
 
+    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
     <!-- SECTION 2.6: DASHBOARDS & DEV TOOLS (from GitHub) -->
-    <div class="projects-section">
+    <div class="projects-section" data-archived="true" hidden>
       <h3 class="section-subsection-title">Dashboards &amp; Dev Tools</h3>
       <p class="section-subsection-subtitle">Local-first dashboards and developer tooling experiments.</p>
 
@@ -2553,8 +2554,9 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
 
+    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
     <!-- SECTION 3: MOBILE & GAME DEVELOPMENT -->
-    <div class="projects-section">
+    <div class="projects-section" data-archived="true" hidden>
       <h3 class="section-subsection-title">Mobile &amp; Games</h3>
       <p class="section-subsection-subtitle">Android apps and a few games on the side.</p>
       
@@ -2707,8 +2709,9 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
 
+    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
     <!-- SECTION 3: SMALL PROJECTS & DEMOS -->
-    <div class="projects-section small-projects">
+    <div class="projects-section small-projects" data-archived="true" hidden>
       <h3 class="section-subsection-title">Small &amp; Demos</h3>
       <p class="section-subsection-subtitle">Smaller things I built while learning or just for fun.</p>
       

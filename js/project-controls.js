@@ -15,7 +15,9 @@
 
     function initFilters(containerSelector, cardSelector) {
         const buttons = Array.from(document.querySelectorAll(`${containerSelector} .filter-btn`));
-        const cards = Array.from(document.querySelectorAll(cardSelector));
+        const cards = Array.from(document.querySelectorAll(cardSelector)).filter(
+            (card) => card.dataset.archived !== 'true' && !card.closest('[data-archived="true"]')
+        );
         if (!buttons.length || !cards.length) return;
 
         buttons.forEach((button) => {
