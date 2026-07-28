@@ -32,10 +32,6 @@ I'm Luiz Fehlberg, a developer based in Portugal with a Bachelor's in Computer E
 - **Vitalis** - Health & wellness Android app with meal planning and mood tracking (Kotlin, Jetpack Compose)
 - **BMW E36 Control Systems** - Custom Arduino/Raspberry Pi control systems for a turbocharged BMW E36
 - **Trattoria Bella Italia** - Restaurant web app (Angular 17+, TypeScript, RxJS)
-- **Luigi's Clouds** - Movie/TV series platform (React, Node.js, MongoDB, TMDB API)
-- **Markdown Editor** - Safe, accessible Markdown previewer (Angular 18, TypeScript, DOMPurify)
-- **StarWave** - Responsive productivity workspace public prototype (Next.js, React, TypeScript)
-- **SecurePass Manager** - Encrypted credential-vault CLI with security reporting (Python, Fernet, Pytest)
 
 The public portfolio intentionally shows this curated selection. Additional, lower-priority project cards remain archived in `index.html` with `data-archived="true"` and `hidden`; remove both attributes only after deciding they should return to the public selection.
 
