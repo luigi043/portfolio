@@ -6,7 +6,17 @@
         if (!button) return;
 
         const updateVisibility = () => button.classList.toggle('visible', window.scrollY > 400);
-        window.addEventListener('scroll', updateVisibility, { passive: true });
+        let frameRequested = false;
+        const scheduleVisibilityUpdate = () => {
+            if (frameRequested) return;
+            frameRequested = true;
+            requestAnimationFrame(() => {
+                frameRequested = false;
+                updateVisibility();
+            });
+        };
+
+        window.addEventListener('scroll', scheduleVisibilityUpdate, { passive: true });
         updateVisibility();
         button.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
@@ -19,6 +29,10 @@
             (card) => card.dataset.archived !== 'true' && !card.closest('[data-archived="true"]')
         );
         if (!buttons.length || !cards.length) return;
+
+        cards.forEach((card) => {
+            card.addEventListener('animationend', () => card.classList.remove('filter-reveal'));
+        });
 
         buttons.forEach((button) => {
             button.addEventListener('click', () => {
@@ -34,7 +48,11 @@
                     const isVisible = filter === 'all' || categories.includes(filter);
                     card.hidden = !isVisible;
                     card.toggleAttribute('aria-hidden', !isVisible);
-                    if (isVisible && !prefersReducedMotion) card.classList.add('filter-reveal');
+                    if (isVisible && !prefersReducedMotion) {
+                        card.classList.add('is-revealed');
+                        card.classList.remove('filter-reveal');
+                        requestAnimationFrame(() => card.classList.add('filter-reveal'));
+                    }
                 });
             });
         });

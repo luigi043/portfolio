@@ -43,7 +43,7 @@ portfolio/
 ├── grafica.html        # Graphic design projects page
 ├── styles.css          # Main stylesheet
 ├── script.js           # Core portfolio interactions
-├── js/                 # Page-specific interaction scripts
+├── js/                 # Focused UI modules (about, projects, skills, graphics)
 ├── assets/             # Favicon and static assets
 ├── file/               # CV and resume PDFs
 └── imagens/            # Project images and screenshots
@@ -59,14 +59,13 @@ npx serve .
 
 ## Development Checks
 
-Install the small Chart.js dependency set once, then run the JavaScript syntax check before publishing changes:
+No package installation is required for the current checks. Run the JavaScript syntax check before publishing changes:
 
 ```bash
-npm install
 npm run check
 ```
 
-The portfolio uses Chart.js, Font Awesome, and Google Fonts from CDNs. The contact form submits through Formspree; update the form endpoint in `index.html` if the contact inbox changes.
+The portfolio uses Font Awesome and Google Fonts from CDNs. The contact form submits through Formspree; update the form endpoint in `index.html` if the contact inbox changes.
 
 ## Asset and media policy
 
@@ -78,6 +77,7 @@ Keep portfolio assets in the repository whenever possible. Do not add new extern
 - Project filters expose their selected state to assistive technology.
 - The contact form reports sending, success, and error states without leaving the page.
 - Project poster cards are intentional text-first fallbacks where a project screenshot is not available yet.
+- Motion honors each visitor's reduced-motion preference; the graphics slideshow also pauses on hover, focus, and request.
 
 ## License
 

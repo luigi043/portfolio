@@ -3638,3 +3638,227 @@ textarea:focus-visible {
 
   .technology-tags-container { justify-content: center; }
 }
+
+/* ============================================
+   MOTION SYSTEM REFINEMENT
+   One reveal system, deliberate feedback, no competing transforms.
+   ============================================ */
+:root {
+  --motion-fast: 160ms;
+  --motion-base: 360ms;
+  --motion-slow: 620ms;
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#main-content,
+section[id] {
+  scroll-margin-top: 6.5rem;
+}
+
+.header {
+  transition:
+    background var(--motion-base) ease,
+    border-color var(--motion-base) ease,
+    box-shadow var(--motion-base) ease;
+}
+
+.header.scrolled {
+  background: rgba(5, 10, 20, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.nav-menu a.active {
+  background: rgba(0, 122, 255, 0.16);
+  color: var(--text-primary);
+}
+
+html.has-motion:not(.prefers-reduced-motion) .motion-reveal {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity var(--motion-slow) var(--motion-ease),
+    transform var(--motion-slow) var(--motion-ease);
+  transition-delay: 0ms;
+  will-change: opacity, transform;
+  animation: none !important;
+}
+
+html.has-motion:not(.prefers-reduced-motion) .motion-reveal--scale {
+  transform: scale(0.975);
+}
+
+html.has-motion:not(.prefers-reduced-motion) .motion-reveal[data-motion-delay="1"] {
+  transition-delay: 80ms;
+}
+
+html.has-motion:not(.prefers-reduced-motion) .motion-reveal[data-motion-delay="2"] {
+  transition-delay: 160ms;
+}
+
+html.has-motion:not(.prefers-reduced-motion) .motion-reveal[data-motion-delay="3"] {
+  transition-delay: 240ms;
+}
+
+html.has-motion .motion-reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* The selected projects must be readable before an interaction. */
+#projects .project-card {
+  transition:
+    transform var(--motion-base) var(--motion-ease),
+    border-color var(--motion-base) ease,
+    box-shadow var(--motion-base) ease,
+    background var(--motion-base) ease;
+}
+
+#projects .project-card .project-content > p,
+#projects .project-card .project-tech,
+#projects .project-card .project-impact,
+#projects .project-card .project-links,
+#projects .project-card .project-progress {
+  opacity: 1;
+  max-height: none;
+  overflow: visible;
+  pointer-events: auto;
+  transition: none;
+}
+
+#projects .project-card .project-content > p {
+  margin: 0.55rem 0 0.85rem !important;
+}
+
+#projects .project-card .project-tech,
+#projects .project-card .project-impact,
+#projects .project-card .project-links,
+#projects .project-card .project-progress {
+  margin-top: 0.75rem !important;
+}
+
+#projects .project-card .project-overlay {
+  max-height: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible;
+  pointer-events: none;
+  transition: opacity var(--motion-base) ease;
+}
+
+#projects .project-card:hover .project-overlay,
+#projects .project-card:focus-within .project-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#projects .project-card:hover,
+#projects .project-card:focus-within {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.3);
+}
+
+#skills .skill-category-card {
+  animation: none;
+  transition:
+    transform var(--motion-base) var(--motion-ease),
+    border-color var(--motion-base) ease,
+    box-shadow var(--motion-base) ease,
+    background var(--motion-base) ease;
+}
+
+#skills .skill-category-card:nth-child(odd),
+#skills .skill-category-card:nth-child(even) {
+  animation-delay: 0s;
+}
+
+#skills .category-icon {
+  animation: none;
+}
+
+.filter-reveal {
+  animation: filter-reveal var(--motion-base) var(--motion-ease) both;
+}
+
+@keyframes filter-reveal {
+  from {
+    opacity: 0.45;
+    transform: translate3d(0, 12px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Badges and sidebar details are visible by default when scripting is unavailable. */
+.tech-badge,
+.sidebar-value,
+.meta-item {
+  opacity: 1;
+  transform: none;
+}
+
+html.has-motion:not(.prefers-reduced-motion) .tech-badge:not(.is-in) {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0) scale(0.96);
+}
+
+html.has-motion:not(.prefers-reduced-motion) .sidebar-value:not(.is-in) {
+  opacity: 0;
+  transform: translate3d(14px, 0, 0);
+}
+
+html.has-motion:not(.prefers-reduced-motion) .meta-item:not(.is-in) {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+}
+
+.tech-badge,
+.sidebar-value,
+.meta-item {
+  transition-delay: var(--motion-item-delay, 0ms);
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    top: 4.75rem;
+    max-height: calc(100dvh - 4.75rem);
+    overflow-y: auto;
+    transform: translate3d(0, -1rem, 0);
+    transition:
+      opacity var(--motion-base) var(--motion-ease),
+      transform var(--motion-base) var(--motion-ease),
+      visibility 0s linear var(--motion-base);
+  }
+
+  .nav-menu.active {
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .mesh-bg::before,
+  .about-highlight::before,
+  .avail-dot::before,
+  .avail-dot::after,
+  .tech-badge.is-in,
+  .filter-reveal {
+    animation: none !important;
+  }
+
+  .motion-reveal,
+  .motion-reveal.is-revealed,
+  .project-card,
+  .nav-menu,
+  .scroll-top-btn {
+    transition: none !important;
+  }
+}

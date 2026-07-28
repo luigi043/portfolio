@@ -41,28 +41,27 @@
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   <script src="script.js" defer></script>
   <script src="js/about.js" defer></script>
   <script src="js/project-controls.js" defer></script>
+  <script src="js/skills.js" defer></script>
 </head>
 
 <body>
 <!-- Animated Mesh Background -->
 <div class="mesh-bg" aria-hidden="true"></div>
 <!-- Skip to main content (accessibility) -->
-<a href="#about" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Scroll to Top Button -->
-<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+<button class="scroll-top-btn" id="scrollTopBtn" type="button" aria-label="Scroll to top" title="Back to top">
   <i class="fas fa-chevron-up"></i>
 </button>
 
 <!-- Clean Header -->
 <header class="header">
     <div class="container">
-        <nav class="nav">
+        <nav class="nav" aria-label="Primary navigation">
             <!-- Simple Logo -->
             <div class="logo">
                 <a href="#hero">
@@ -100,6 +99,7 @@
 </header>
 <!-- Enhanced Hero Section -->
 <!-- Spacious Hero Section -->
+<main id="main-content">
 <section id="hero" class="hero">
     <div class="hero-container">
         <div class="hero-content">
@@ -239,79 +239,7 @@
             </div>
         </div>
     </section>
-<script type="application/json" data-migrated-to="js/about.js">
-  // JavaScript para a seção About
-document.addEventListener('DOMContentLoaded', function() {
-    // Animação de scroll para a seção About
-    const aboutContent = document.querySelector('.about-content');
-    
-    const aboutObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // Animar os cards flutuantes
-                const floatingCards = entry.target.querySelectorAll('.floating-card');
-                floatingCards.forEach((card, index) => {
-                    card.style.animationDelay = `${0.2 + (index * 0.2)}s`;
-                });
-                
-                // Animar as estatísticas
-                const stats = entry.target.querySelectorAll('.stat-number');
-                stats.forEach((stat, index) => {
-                    setTimeout(() => {
-                        animateCounter(stat);
-                    }, 1000 + (index * 300));
-                });
-            }
-        });
-    }, { threshold: 0.3 });
-
-    if (aboutContent) {
-        aboutObserver.observe(aboutContent);
-    }
-
-    // Função para animar contadores
-    function animateCounter(element) {
-        const target = parseInt(element.textContent.replace('+', '').replace('%', ''));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            
-            if (element.textContent.includes('+')) {
-                element.textContent = Math.floor(current) + '+';
-            } else if (element.textContent.includes('%')) {
-                element.textContent = Math.floor(current) + '%';
-            } else {
-                element.textContent = Math.floor(current);
-            }
-        }, 16);
-    }
-
-    // Efeitos hover para os cards flutuantes
-    const floatingCards = document.querySelectorAll('.floating-card');
-    floatingCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.zIndex = '10';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.zIndex = '1';
-        });
-    });
-
-});
-
-// Adicione também este CSS adicional para garantir que tudo funcione
-</script>
-    <!-- Professional Experience Section -->
+<!-- Professional Experience Section -->
     <section id="professional-experience">
         <div class="container">
             <div class="section-header">
@@ -320,9 +248,9 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <div class="compact-filters" data-filter-scope="experience">
-                <button class="compact-chip is-active" data-filter="all"><i class="fas fa-layer-group"></i> All</button>
-                <button class="compact-chip" data-filter="freelance"><i class="fas fa-code"></i> Freelance</button>
-                <button class="compact-chip" data-filter="internship"><i class="fas fa-graduation-cap"></i> Internship</button>
+                <button class="compact-chip is-active" type="button" data-filter="all" aria-pressed="true"><i class="fas fa-layer-group"></i> All</button>
+                <button class="compact-chip" type="button" data-filter="freelance" aria-pressed="false"><i class="fas fa-code"></i> Freelance</button>
+                <button class="compact-chip" type="button" data-filter="internship" aria-pressed="false"><i class="fas fa-graduation-cap"></i> Internship</button>
             </div>
 
             <div class="compact-grid" id="experience-grid">
@@ -513,11 +441,11 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <div class="compact-filters" data-filter-scope="education">
-                <button class="compact-chip is-active" data-filter="all"><i class="fas fa-layer-group"></i> All</button>
-                <button class="compact-chip" data-filter="degree"><i class="fas fa-graduation-cap"></i> Degree</button>
-                <button class="compact-chip" data-filter="course"><i class="fas fa-book"></i> Courses</button>
-                <button class="compact-chip" data-filter="cert"><i class="fas fa-certificate"></i> Certifications</button>
-                <button class="compact-chip" data-filter="project"><i class="fas fa-lightbulb"></i> Projects</button>
+                <button class="compact-chip is-active" type="button" data-filter="all" aria-pressed="true"><i class="fas fa-layer-group"></i> All</button>
+                <button class="compact-chip" type="button" data-filter="degree" aria-pressed="false"><i class="fas fa-graduation-cap"></i> Degree</button>
+                <button class="compact-chip" type="button" data-filter="course" aria-pressed="false"><i class="fas fa-book"></i> Courses</button>
+                <button class="compact-chip" type="button" data-filter="cert" aria-pressed="false"><i class="fas fa-certificate"></i> Certifications</button>
+                <button class="compact-chip" type="button" data-filter="project" aria-pressed="false"><i class="fas fa-lightbulb"></i> Projects</button>
             </div>
 
             <div class="compact-grid" id="education-grid">
@@ -655,35 +583,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <!-- Skills Navigation -->
         <div class="skills-nav">
-            <button class="skill-nav-btn active" data-category="all">
+            <button class="skill-nav-btn active" type="button" data-category="all" aria-pressed="true">
                 <i class="fas fa-layer-group"></i>
                 <span>All Skills</span>
             </button>
-            <button class="skill-nav-btn" data-category="frontend">
+            <button class="skill-nav-btn" type="button" data-category="frontend" aria-pressed="false">
                 <i class="fas fa-code"></i>
                 <span>Frontend</span>
             </button>
-            <button class="skill-nav-btn" data-category="backend">
+            <button class="skill-nav-btn" type="button" data-category="backend" aria-pressed="false">
                 <i class="fas fa-server"></i>
                 <span>Backend</span>
             </button>
-            <button class="skill-nav-btn" data-category="mobile">
+            <button class="skill-nav-btn" type="button" data-category="mobile" aria-pressed="false">
                 <i class="fas fa-mobile-alt"></i>
                 <span>Mobile</span>
             </button>
-            <button class="skill-nav-btn" data-category="tools">
+            <button class="skill-nav-btn" type="button" data-category="tools" aria-pressed="false">
                 <i class="fas fa-tools"></i>
                 <span>DevOps</span>
             </button>
-            <button class="skill-nav-btn" data-category="design">
+            <button class="skill-nav-btn" type="button" data-category="design" aria-pressed="false">
                 <i class="fas fa-paint-brush"></i>
                 <span>Design</span>
             </button>
-            <button class="skill-nav-btn" data-category="ai">
+            <button class="skill-nav-btn" type="button" data-category="ai" aria-pressed="false">
                 <i class="fas fa-robot"></i>
                 <span>AI</span>
             </button>
-            <button class="skill-nav-btn" data-category="soft">
+            <button class="skill-nav-btn" type="button" data-category="soft" aria-pressed="false">
                 <i class="fas fa-users"></i>
                 <span>Professional</span>
             </button>
@@ -748,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="view-more">
-                    <button class="view-more-btn"><i class="fas fa-arrow-right"></i> Show all 10</button>
+                    <button class="view-more-btn" type="button" aria-expanded="false"><i class="fas fa-arrow-right"></i> Show all 10</button>
                 </div>
             </div>
 
@@ -809,7 +737,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="view-more">
-                    <button class="view-more-btn"><i class="fas fa-arrow-right"></i> Show all 12</button>
+                    <button class="view-more-btn" type="button" aria-expanded="false"><i class="fas fa-arrow-right"></i> Show all 12</button>
                 </div>
             </div>
 
@@ -941,7 +869,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="view-more">
-                    <button class="view-more-btn"><i class="fas fa-arrow-right"></i> Show all 15</button>
+                    <button class="view-more-btn" type="button" aria-expanded="false"><i class="fas fa-arrow-right"></i> Show all 15</button>
                 </div>
             </div>
 
@@ -1042,7 +970,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="view-more">
-                    <button class="view-more-btn"><i class="fas fa-arrow-right"></i> Show all 6</button>
+                    <button class="view-more-btn" type="button" aria-expanded="false"><i class="fas fa-arrow-right"></i> Show all 6</button>
                 </div>
             </div>
 
@@ -1104,7 +1032,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="skill-tag" data-level="advanced">Adaptability</span>
                 </div>
                 <div class="view-more">
-                    <button class="view-more-btn"><i class="fas fa-arrow-right"></i> Show all 11</button>
+                    <button class="view-more-btn" type="button" aria-expanded="false"><i class="fas fa-arrow-right"></i> Show all 11</button>
                 </div>
             </div>
         </div>
@@ -1141,226 +1069,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 </section>
-
-<script>
-// Skills Filter Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Filter buttons functionality
-    const filterButtons = document.querySelectorAll('.skill-nav-btn');
-    const skillCards = document.querySelectorAll('.skill-category-card');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filter = this.getAttribute('data-category');
-            
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Filter cards
-            skillCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'block';
-                    card.style.animation = 'slideInRight 0.6s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-    
-    // View More functionality
-    const viewMoreButtons = document.querySelectorAll('.view-more-btn');
-    
-    viewMoreButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const card = this.closest('.skill-category-card');
-            const skillsList = card.querySelector('.skills-progress');
-            const skillsTags = card.querySelector('.skills-tags');
-            const category = card.querySelector('h3').textContent;
-            
-            // Show all skills based on category
-            showAllSkills(category, card, skillsList, skillsTags);
-            this.style.display = 'none';
-        });
-    });
-    
-    // Function to show all skills (you can expand this with your actual skills data)
-    function showAllSkills(category, card, skillsList, skillsTags) {
-        const allSkills = {
-            'Frontend Development': [
-                { name: 'HTML', level: 'advanced', percentage: 95 },
-                { name: 'CSS', level: 'advanced', percentage: 90 },
-                { name: 'JavaScript', level: 'advanced', percentage: 92 },
-                { name: 'React.js', level: 'advanced', percentage: 88 },
-                { name: 'Angular', level: 'intermediate', percentage: 75 },
-                { name: 'Vue.js', level: 'intermediate', percentage: 70 },
-                { name: 'TypeScript', level: 'intermediate', percentage: 75 },
-                { name: 'Bootstrap', level: 'advanced', percentage: 85 },
-                { name: 'Sass', level: 'intermediate', percentage: 72 },
-                { name: 'jQuery', level: 'intermediate', percentage: 68 }
-            ],
-            'Backend Development': [
-                { name: 'Node.js', level: 'advanced', percentage: 90 },
-                { name: 'PHP', level: 'advanced', percentage: 85 },
-                { name: 'Laravel', level: 'advanced', percentage: 88 },
-                { name: 'C#', level: 'advanced', percentage: 88 },
-                { name: 'ASP.NET Core', level: 'advanced', percentage: 82 },
-                { name: 'Java / Spring Boot', level: 'advanced', percentage: 82 },
-                { name: '.NET Framework', level: 'intermediate', percentage: 78 },
-                { name: 'Python', level: 'intermediate', percentage: 70 },
-                { name: 'Express.js', level: 'advanced', percentage: 86 },
-                { name: 'Docker', level: 'intermediate', percentage: 78 }
-            ],
-            'Mobile Development': [
-                { name: 'Android Development', level: 'advanced', percentage: 85 },
-                { name: 'Kotlin', level: 'advanced', percentage: 82 },
-                { name: 'Jetpack Compose', level: 'advanced', percentage: 80 },
-                { name: 'Java (Android)', level: 'intermediate', percentage: 72 },
-                { name: 'Android Studio', level: 'advanced', percentage: 82 },
-                { name: 'Room Database', level: 'advanced', percentage: 80 }
-            ],
-            'Databases': [
-                { name: 'MySQL', level: 'advanced', percentage: 88 },
-                { name: 'PostgreSQL', level: 'advanced', percentage: 85 },
-                { name: 'MongoDB', level: 'intermediate', percentage: 65 },
-                { name: 'Firebase', level: 'intermediate', percentage: 70 },
-                { name: 'SQLite', level: 'intermediate', percentage: 68 },
-                { name: 'Microsoft SQL Server', level: 'intermediate', percentage: 72 }
-            ],
-            'Tools & DevOps': [
-                { name: 'Git', level: 'advanced', percentage: 92 },
-                { name: 'GitHub', level: 'advanced', percentage: 90 },
-                { name: 'GitLab', level: 'intermediate', percentage: 75 },
-                { name: 'Docker', level: 'intermediate', percentage: 78 },
-                { name: 'CI/CD Pipelines', level: 'intermediate', percentage: 72 },
-                { name: 'GitHub Actions', level: 'intermediate', percentage: 70 },
-                { name: 'GitLab CI', level: 'intermediate', percentage: 68 },
-                { name: 'Kubernetes', level: 'basic', percentage: 45 },
-                { name: 'AWS', level: 'intermediate', percentage: 70 },
-                { name: 'Heroku', level: 'intermediate', percentage: 75 },
-                { name: 'Visual Studio Code', level: 'advanced', percentage: 95 },
-                { name: 'Microsoft Visual Studio', level: 'intermediate', percentage: 80 },
-                { name: 'Postman', level: 'intermediate', percentage: 85 },
-                { name: 'JIRA', level: 'intermediate', percentage: 78 },
-                { name: 'Trello', level: 'intermediate', percentage: 82 }
-            ],
-            'Design & UX': [
-                { name: 'UX Design', level: 'intermediate', percentage: 72 },
-                { name: 'Figma', level: 'intermediate', percentage: 75 },
-                { name: 'Wireframing', level: 'intermediate', percentage: 70 },
-                { name: 'Prototyping', level: 'intermediate', percentage: 68 },
-                { name: 'User Research', level: 'intermediate', percentage: 65 },
-                { name: 'Usability Testing', level: 'intermediate', percentage: 62 },
-                { name: 'Graphic Design', level: 'intermediate', percentage: 70 },
-                { name: 'Adobe Photoshop', level: 'intermediate', percentage: 68 },
-                { name: 'Adobe Premiere Pro', level: 'intermediate', percentage: 60 },
-                { name: 'Video Editing', level: 'intermediate', percentage: 65 },
-                { name: 'Sound Editing', level: 'intermediate', percentage: 58 },
-                { name: 'Advanced Image Processing', level: 'intermediate', percentage: 72 }
-            ],
-            'AI & Generative AI': [
-                { name: 'Prompt Engineering', level: 'advanced', percentage: 90 },
-                { name: 'AI-Assisted Development', level: 'advanced', percentage: 88 },
-                { name: 'Generative AI', level: 'advanced', percentage: 85 },
-                { name: 'LLM / API Integration', level: 'advanced', percentage: 84 },
-                { name: 'Anthropic / OpenAI APIs', level: 'advanced', percentage: 82 },
-                { name: 'AI Agents / Agentic Workflows', level: 'intermediate', percentage: 72 }
-            ],
-            'Programming Languages': [
-                { name: 'JavaScript', level: 'advanced', percentage: 92 },
-                { name: 'TypeScript', level: 'advanced', percentage: 85 },
-                { name: 'PHP', level: 'advanced', percentage: 85 },
-                { name: 'C#', level: 'advanced', percentage: 88 },
-                { name: 'Java', level: 'intermediate', percentage: 72 },
-                { name: 'Python', level: 'intermediate', percentage: 70 },
-                { name: 'C', level: 'intermediate', percentage: 68 },
-                { name: 'C++', level: 'intermediate', percentage: 65 },
-                { name: 'Kotlin', level: 'intermediate', percentage: 70 },
-                { name: 'SQL', level: 'intermediate', percentage: 82 }
-            ],
-            'Professional Skills': [
-                { name: 'Problem Solving', level: 'advanced' },
-                { name: 'Creative Thinking', level: 'advanced' },
-                { name: 'Teamwork', level: 'advanced' },
-                { name: 'Communication', level: 'advanced' },
-                { name: 'Responsibility', level: 'advanced' },
-                { name: 'Resilience', level: 'advanced' },
-                { name: 'Organization', level: 'advanced' },
-                { name: 'Agile Methodologies', level: 'intermediate' },
-                { name: 'Project Management', level: 'intermediate' },
-                { name: 'Customer Service', level: 'intermediate' },
-                { name: 'Professional Ethics', level: 'intermediate' }
-            ]
-        };
-        
-        const skills = allSkills[category];
-        if (!skills) return;
-        
-        if (skillsList) {
-            skillsList.innerHTML = '';
-            skills.forEach(skill => {
-                const skillItem = document.createElement('div');
-                skillItem.className = 'skill-progress-item';
-                skillItem.setAttribute('data-level', skill.level);
-                
-                skillItem.innerHTML = `
-                    <div class="skill-info">
-                        <span class="skill-name">${skill.name}</span>
-                        ${skill.percentage ? `<span class="skill-percentage">${skill.percentage}%</span>` : ''}
-                    </div>
-                    ${skill.percentage ? `
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${skill.percentage}%"></div>
-                    </div>
-                    ` : ''}
-                `;
-                
-                skillsList.appendChild(skillItem);
-            });
-        }
-        
-        if (skillsTags) {
-            skillsTags.innerHTML = '';
-            skills.forEach(skill => {
-                const skillTag = document.createElement('span');
-                skillTag.className = 'skill-tag';
-                skillTag.setAttribute('data-level', skill.level);
-                skillTag.textContent = skill.name;
-                skillsTags.appendChild(skillTag);
-            });
-        }
-        
-        // Update skill count
-        const skillCount = card.querySelector('.skill-count');
-        if (skillCount) {
-            skillCount.textContent = `${skills.length} skills`;
-        }
-    }
-    
-    // Animate progress bars on scroll
-    const animateOnScroll = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBars = entry.target.querySelectorAll('.progress-fill');
-                progressBars.forEach(bar => {
-                    const width = bar.style.width;
-                    bar.style.width = '0';
-                    setTimeout(() => {
-                        bar.style.width = width;
-                    }, 200);
-                });
-                animateOnScroll.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-    
-    skillCards.forEach(card => {
-        animateOnScroll.observe(card);
-    });
-});
-
-</script>
 
 <!-- Projects Section -->
 <section id="projects" class="section">
@@ -2897,42 +2605,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- JavaScript para animação ao rolar -->
-<script type="application/json" data-migrated-to="script.js">
-  const cards = document.querySelectorAll('.project-card');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-  cards.forEach(card => observer.observe(card));
-
-  const certs = document.querySelectorAll('.certification-item');
-
-  const certObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animationDelay = "0.2s";
-        entry.target.classList.add('visible');
-        // Reset transform e opacity para animação pelo CSS
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateX(0)';
-        certObserver.unobserve(entry.target); // Só anima uma vez
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  certs.forEach(cert => certObserver.observe(cert));
-</script>
-
-
-
 <!-- Contact Section -->
 <section id="contact" class="section" aria-labelledby="contact-title">
   <div class="container">
@@ -2994,6 +2666,8 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
+</main>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -3006,85 +2680,5 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
-
-<script type="application/json" data-migrated-to="js/project-controls.js">
-  document.getElementById('current-year').textContent = new Date().getFullYear();
-
-  // --- Scroll to Top Button ---
-  const scrollTopBtn = document.getElementById('scrollTopBtn');
-  if (scrollTopBtn) {
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 400) {
-        scrollTopBtn.classList.add('visible');
-      } else {
-        scrollTopBtn.classList.remove('visible');
-      }
-    });
-    scrollTopBtn.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // --- Project Filter Functionality ---
-  (function() {
-    const filterBtns = document.querySelectorAll('.projects-filter .filter-btn');
-    const allProjectCards = document.querySelectorAll('.project-card');
-
-    if (filterBtns.length && allProjectCards.length) {
-      filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          const filter = this.getAttribute('data-filter');
-
-          // Update active button
-          filterBtns.forEach(function(b) {
-            b.classList.remove('active');
-            b.setAttribute('aria-pressed', 'false');
-          });
-          this.classList.add('active');
-          this.setAttribute('aria-pressed', 'true');
-
-          // Filter cards
-          allProjectCards.forEach(function(card) {
-            const categories = card.getAttribute('data-category') || '';
-            if (filter === 'all' || categories.includes(filter)) {
-              card.style.display = '';
-              card.removeAttribute('aria-hidden');
-              card.style.animation = 'fadeInUp 0.4s ease forwards';
-            } else {
-              card.style.display = 'none';
-              card.setAttribute('aria-hidden', 'true');
-            }
-          });
-        });
-      });
-    }
-
-    // --- Certification Filter ---
-    const certFilterBtns = document.querySelectorAll('.certifications-filter .filter-btn');
-    const certCards = document.querySelectorAll('.certification-card');
-
-    if (certFilterBtns.length && certCards.length) {
-      certFilterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          const filter = this.getAttribute('data-filter');
-
-          certFilterBtns.forEach(function(b) { b.classList.remove('active'); });
-          this.classList.add('active');
-
-          certCards.forEach(function(card) {
-            const categories = card.getAttribute('data-category') || '';
-            if (filter === 'all' || categories.includes(filter)) {
-              card.style.display = '';
-              card.style.animation = 'fadeInUp 0.4s ease forwards';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        });
-      });
-    }
-
-  })();
-</script>
 </body>
 </html>
