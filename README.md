@@ -6,7 +6,7 @@ Personal portfolio website showcasing my work as a Computer Engineer and Full-St
 
 I'm Luiz Fehlberg, a developer based in Portugal with a Bachelor's in Computer Engineering from IPBeja. I build web applications, mobile apps, and full-stack solutions using a wide range of technologies.
 
-- **Location**: Lisbon, Portugal
+- **Location**: Porto, Portugal
 - **GitHub**: [luigi043](https://github.com/luigi043)
 - **LinkedIn**: [luizfehlberg](https://www.linkedin.com/in/luizfehlberg/)
 
@@ -74,7 +74,10 @@ Keep portfolio assets in the repository whenever possible. Do not add new extern
 ## Interaction Notes
 
 - The responsive navigation is keyboard-accessible and closes after choosing a section.
-- Project filters expose their selected state to assistive technology.
+- Project search and category filters work together, announce their result count, and provide an empty-state reset.
+- Public project cards progressively enhance with keyboard-accessible detail controls while keeping their summaries visible.
+- Every public project has an accessible preview dialog: original imagery where available and clearly labeled interactive feature previews otherwise.
+- Skill cards use plain-language proficiency labels rather than arbitrary percentage scores.
 - The contact form reports sending, success, and error states without leaving the page.
 - Project poster cards are intentional text-first fallbacks where a project screenshot is not available yet.
 - Motion honors each visitor's reduced-motion preference; the graphics slideshow also pauses on hover, focus, and request.

@@ -84,6 +84,7 @@
 
     function initHeader() {
         const header = document.querySelector('.header');
+        const progressBar = document.querySelector('.scroll-progress span');
         const sections = Array.from(document.querySelectorAll('main section[id]'));
         const links = Array.from(document.querySelectorAll('.nav-menu a[href^="#"]'));
         if (!header || !sections.length || !links.length) return;
@@ -94,6 +95,9 @@
             frameRequested = false;
             const scrollPosition = window.scrollY;
             header.classList.toggle('scrolled', scrollPosition > 24);
+            const scrollableDistance = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = scrollableDistance > 0 ? Math.min(scrollPosition / scrollableDistance, 1) : 0;
+            if (progressBar) progressBar.style.transform = `scaleX(${progress})`;
 
             let activeSection = '';
             sections.forEach((section) => {
@@ -184,25 +188,46 @@
         });
     }
 
+    function initExternalLinks() {
+        document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+            const relValues = new Set((link.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
+            relValues.add('noopener');
+            relValues.add('noreferrer');
+            link.setAttribute('rel', Array.from(relValues).join(' '));
+        });
+    }
+
     function initCompactCards() {
         const cards = document.querySelectorAll('.job-card, .compact-card');
-        if (!cards.length || !window.matchMedia('(hover: none)').matches) return;
+        if (!cards.length) return;
 
-        cards.forEach((card) => {
+        cards.forEach((card, index) => {
+            const body = card.querySelector('.job-card-body, .compact-body');
+            const title = card.querySelector('.job-role, .compact-title')?.textContent.trim() || `Card ${index + 1}`;
+            if (!body) return;
+
+            const bodyId = `expandable-card-${index + 1}`;
+            body.id = bodyId;
+            card.removeAttribute('tabindex');
+            card.removeAttribute('aria-expanded');
+            card.classList.add('is-enhanced');
+
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'expand-hint card-expand-toggle';
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-controls', bodyId);
+            button.setAttribute('aria-label', `Show details for ${title}`);
+            button.innerHTML = '<i class="fas fa-plus" aria-hidden="true"></i>';
+            card.querySelector('.expand-hint')?.replaceWith(button);
+
             const toggle = () => {
                 const isOpen = card.classList.toggle('is-open');
-                card.setAttribute('aria-expanded', String(isOpen));
+                button.setAttribute('aria-expanded', String(isOpen));
+                button.setAttribute('aria-label', `${isOpen ? 'Hide' : 'Show'} details for ${title}`);
             };
 
-            card.addEventListener('click', (event) => {
-                if (!event.target.closest('a, button')) toggle();
-            });
-
-            card.addEventListener('keydown', (event) => {
-                if (event.key !== 'Enter' && event.key !== ' ') return;
-                event.preventDefault();
-                toggle();
-            });
+            button.addEventListener('click', toggle);
         });
     }
 
@@ -212,6 +237,8 @@
             const buttons = Array.from(bar.querySelectorAll('.compact-chip'));
             const cards = grid ? Array.from(grid.querySelectorAll('.compact-card')) : [];
             if (!buttons.length || !cards.length) return;
+            bar.setAttribute('role', 'group');
+            if (!bar.hasAttribute('aria-label')) bar.setAttribute('aria-label', 'Filter cards');
 
             buttons.forEach((button) => {
                 button.addEventListener('click', () => {
@@ -224,7 +251,9 @@
 
                     cards.forEach((card) => {
                         const categories = card.dataset.category?.split(/\s+/) ?? [];
-                        card.classList.toggle('is-hidden', filter !== 'all' && !categories.includes(filter));
+                        const isVisible = filter === 'all' || categories.includes(filter);
+                        card.hidden = !isVisible;
+                        card.toggleAttribute('aria-hidden', !isVisible);
                     });
                 });
             });
@@ -238,21 +267,36 @@
         if (!form || !status || !submitButton || form.dataset.enhanced === 'true') return;
 
         form.dataset.enhanced = 'true';
-        let statusTimer;
+        const fields = Array.from(form.querySelectorAll('input[required], textarea[required]'));
+
+        const syncFieldValidity = (field) => {
+            const error = document.getElementById(`${field.id}-error`);
+            const invalid = !field.validity.valid;
+            field.setAttribute('aria-invalid', String(invalid));
+            if (error) error.hidden = !invalid;
+            return !invalid;
+        };
+
+        fields.forEach((field) => {
+            field.setAttribute('aria-invalid', 'false');
+            field.addEventListener('input', () => syncFieldValidity(field));
+            field.addEventListener('blur', () => syncFieldValidity(field));
+        });
 
         const showStatus = (message, type = '') => {
-            window.clearTimeout(statusTimer);
             status.hidden = false;
             status.className = `form-status${type ? ` ${type}` : ''}`;
+            status.setAttribute('role', type === 'error' ? 'alert' : 'status');
             status.textContent = message;
         };
 
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                showStatus('Please complete your email and message before sending.', 'error');
+            const valid = fields.map(syncFieldValidity).every(Boolean);
+            if (!valid) {
+                showStatus('Please correct the highlighted fields before sending.', 'error');
+                fields.find((field) => field.getAttribute('aria-invalid') === 'true')?.focus();
                 return;
             }
 
@@ -272,6 +316,10 @@
                 if (!response.ok) throw new Error('Form submission failed');
 
                 form.reset();
+                fields.forEach((field) => field.setAttribute('aria-invalid', 'false'));
+                form.querySelectorAll('.field-error').forEach((error) => {
+                    error.hidden = true;
+                });
                 showStatus('Thanks — your message has been sent. I’ll get back to you soon.', 'success');
             } catch {
                 showStatus('Your message could not be sent. Please try again or email me directly.', 'error');
@@ -279,9 +327,6 @@
                 form.removeAttribute('aria-busy');
                 submitButton.disabled = false;
                 submitButton.innerHTML = originalLabel;
-                statusTimer = window.setTimeout(() => {
-                    status.hidden = true;
-                }, 7000);
             }
         });
     }
@@ -291,6 +336,7 @@
         initHeader();
         initMobileMenu();
         initSmoothScrolling();
+        initExternalLinks();
         initCompactCards();
         initCompactFilters();
         initContactForm();

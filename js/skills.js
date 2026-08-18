@@ -1,6 +1,27 @@
 // Skills Filter Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const proficiencyLabels = {
+        advanced: 'Primary',
+        intermediate: 'Working knowledge',
+        basic: 'Familiar'
+    };
+
+    const getProficiencyLabel = (level) => proficiencyLabels[level] || 'Experience';
+
+    document.querySelectorAll('.skill-progress-item').forEach(skillItem => {
+        const percentage = skillItem.querySelector('.skill-percentage');
+        const progressBar = skillItem.querySelector('.progress-bar');
+
+        if (percentage) {
+            percentage.textContent = getProficiencyLabel(skillItem.dataset.level);
+        }
+
+        if (progressBar) {
+            progressBar.hidden = true;
+            progressBar.setAttribute('aria-hidden', 'true');
+        }
+    });
 
     // Filter buttons functionality
     const filterButtons = document.querySelectorAll('.skill-nav-btn');
@@ -49,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Show all skills based on category
             showAllSkills(category, card, skillsList, skillsTags);
-            animateProgressBars(card);
             this.hidden = true;
             this.setAttribute('aria-expanded', 'true');
         });
@@ -177,13 +197,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 skillItem.innerHTML = `
                     <div class="skill-info">
                         <span class="skill-name">${skill.name}</span>
-                        ${skill.percentage ? `<span class="skill-percentage">${skill.percentage}%</span>` : ''}
+                        <span class="skill-percentage">${getProficiencyLabel(skill.level)}</span>
                     </div>
-                    ${skill.percentage ? `
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${skill.percentage}%"></div>
-                    </div>
-                    ` : ''}
                 `;
 
                 skillsList.appendChild(skillItem);
@@ -208,36 +223,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Animate progress bars on scroll
-    const animateProgressBars = (card) => {
-        const progressBars = card.querySelectorAll('.progress-fill');
-        progressBars.forEach(bar => {
-            if (bar.dataset.animated === 'true' || prefersReducedMotion) return;
-            const width = bar.style.width;
-            if (!width) return;
-            bar.dataset.animated = 'true';
-            bar.style.width = '0';
-            requestAnimationFrame(() => {
-                bar.style.width = width;
-            });
-        });
-    };
-
-    if (!('IntersectionObserver' in window)) {
-        skillCards.forEach(animateProgressBars);
-        return;
-    }
-
-    const animateOnScroll = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateProgressBars(entry.target);
-                animateOnScroll.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-
-    skillCards.forEach(card => {
-        animateOnScroll.observe(card);
-    });
 });

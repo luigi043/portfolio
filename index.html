@@ -15,6 +15,8 @@
   <meta property="og:title" content="Luiz Fehlberg - Computer Engineer & Software Developer" />
   <meta property="og:description" content="Portfolio of web, mobile, and full stack projects. React, Angular, Kotlin, Spring Boot, .NET, and more." />
   <meta property="og:url" content="https://luigi043.github.io/portfolio/" />
+  <link rel="canonical" href="https://luigi043.github.io/portfolio/" />
+  <meta name="theme-color" content="#07111f" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -45,9 +47,27 @@
   <script src="js/about.js" defer></script>
   <script src="js/project-controls.js" defer></script>
   <script src="js/skills.js" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Luiz Fehlberg",
+      "jobTitle": "Computer Engineer and Software Developer",
+      "url": "https://luigi043.github.io/portfolio/",
+      "sameAs": [
+        "https://github.com/luigi043",
+        "https://www.linkedin.com/in/luizfehlberg/"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Instituto Politécnico de Beja"
+      }
+    }
+  </script>
 </head>
 
 <body>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
 <!-- Animated Mesh Background -->
 <div class="mesh-bg" aria-hidden="true"></div>
 <!-- Skip to main content (accessibility) -->
@@ -115,13 +135,13 @@
             <!-- Text Content with More Space -->
             <div class="hero-text">
                 <div class="intro">
-                    <p class="greeting">Hello, I'm</p>
+                    <p class="greeting"><span class="status-dot" aria-hidden="true"></span> Based in Porto, Portugal</p>
                     <h1 class="name">Luiz Fehlberg</h1>
                     <h2 class="title">Computer Engineer & Software Developer</h2>
                 </div>
 
                 <div class="description">
-                    <p>I build web apps and Android apps, and lately I've been doing some Arduino work I probably shouldn't admit to (the E36 still runs, mostly). Recent stuff: a Spring Boot vehicle platform, a Kotlin fitness tracker, custom engine control for the BMW.</p>
+                    <p>I design and build dependable products across web, mobile, backend, and embedded systems, with a focus on clear architecture, thoughtful interfaces, and software that holds up beyond the demo.</p>
                 </div>
 
                 <!-- Simple CTA -->
@@ -132,10 +152,10 @@
                 </div>
 
                 <!-- Minimal Social Links -->
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/luizfehlberg/"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/luigi043"><i class="fab fa-github"></i></a>
-                    <a href="https://x.com/luigi_043"><i class="fab fa-twitter"></i></a>
+                <div class="social-links" aria-label="Professional profiles">
+                    <a href="https://www.linkedin.com/in/luizfehlberg/" target="_blank" rel="noopener noreferrer" aria-label="Luiz Fehlberg on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://github.com/luigi043" target="_blank" rel="noopener noreferrer" aria-label="Luiz Fehlberg on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://x.com/luigi_043" target="_blank" rel="noopener noreferrer" aria-label="Luiz Fehlberg on X"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -148,18 +168,18 @@
             <div class="about-content">
                 <div class="about-text">
                     <div class="about-intro">
-                        <p>I'm a computer engineer with a B.Sc. from IPBeja, Portugal. I spend most of my time building full stack web apps, but I also do native Android development in Kotlin and Jetpack Compose, and I've gotten into embedded systems with Arduino and Raspberry Pi on the side.</p>
+                        <p>I'm a computer engineer with a B.Sc. from IPBeja. My work spans full-stack web applications, native Android development with Kotlin and Jetpack Compose, and embedded systems built with Arduino and Raspberry Pi.</p>
 
-                        <p>The projects I'm most proud of are kind of all over the map. A Spring Boot + React vehicle platform. Some health tracking apps. An insurance system running on WCF (yes, WCF in 2026, don't ask). And then there's the E36 — I've been writing custom engine control for it because off-the-shelf wasn't doing what I wanted. I'm picky about things that work. I'm pickier about things that work *and* don't look like garbage.</p>
+                        <p>I have delivered projects across modern and legacy stacks: a Spring Boot and React vehicle platform, privacy-first health applications, an insurance workflow system on .NET and WCF, and custom control systems for a BMW E36. The common thread is practical engineering: understand the constraints, choose the right architecture, and make the result straightforward to use.</p>
                     </div>
 
                     <div class="about-highlight">
-                        <p>I do my best work when I can touch every layer of a project. Database schema, backend logic, frontend, deployment. I'd rather own the whole thing than hand off pieces. I'm comfortable picking up whatever stack the job needs.</p>
+                        <p>I do my best work with end-to-end ownership: data modelling, backend services, frontend experience, testing, and deployment. That broad view helps me make decisions that work across the whole system instead of optimising one layer in isolation.</p>
                     </div>
 
-                    <p>I've done internships, freelance client work, and I keep building personal projects because that's honestly how I learn best. I hold certifications in Generative AI for Software Developers (IBM), UX Design (Google), and .NET Full Stack development.</p>
+                    <p>My experience includes internships, independent client delivery, and product-focused personal work. I also hold certifications in Generative AI for Software Developers (IBM), UX Design (Google), and .NET full-stack development.</p>
 
-                    <p>Before software I worked hospitality across Portugal. Bars and restaurants, mostly. You learn how to read people fast, stay sharp on tired legs, and not lose your temper when the kitchen is sixty tickets behind.</p>
+                    <p>Before moving fully into software, I worked in hospitality across Portugal. That experience strengthened the communication, composure, and customer awareness I now bring to technical teams and client work.</p>
                     
                     <div class="about-stats">
                         <div class="stat">
@@ -217,14 +237,14 @@
                             <div class="sv-icon"><i class="fas fa-layer-group"></i></div>
                             <div class="sv-body">
                                 <h4>Full Ownership</h4>
-                                <p>Database to deployed UI, I'd rather own the whole thing</p>
+                                <p>From data model to deployed interface</p>
                             </div>
                         </div>
                         <div class="sidebar-value">
                             <div class="sv-icon"><i class="fas fa-bolt"></i></div>
                             <div class="sv-body">
                                 <h4>Fast Adaptation</h4>
-                                <p>Give me a new stack, I'll figure it out</p>
+                                <p>Learn quickly without compromising engineering standards</p>
                             </div>
                         </div>
                     </div>
@@ -262,13 +282,13 @@
                     <h3 class="compact-title">Freelance Full-Stack Developer</h3>
                     <p class="compact-meta"><i class="fas fa-shield-alt"></i> Lead project: <strong>Insurex</strong> · insurance asset-protection platform</p>
                     <div class="compact-body"><div class="compact-inner">
-                        <p>Built the whole insurance system myself. Three dashboards (admins, insurers, financiers), the API, the data layer, the UI. Everything.</p>
+                        <p>Led end-to-end delivery of an insurance asset-protection system spanning three role-specific dashboards, service integrations, data access, reporting, and the web interface.</p>
                         <ul style="margin: 0.4rem 0 0.8rem; padding-left: 1.1rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
                             <li><strong>3-tier architecture</strong> — REST/WCF API layer, data layer, ASP.NET Web Forms portal.</li>
                             <li><strong>Policy &amp; asset workflows</strong> — role-based access, asset-to-policy mapping, cross-module search.</li>
                             <li><strong>Reporting</strong> — FusionCharts dashboards for asset tracking and financial reports.</li>
                             <li><strong>Security</strong> — encrypted data at rest, role gating across all modules.</li>
-                            <li><strong>Other client work</strong> — Laravel, Angular, MySQL projects on the side.</li>
+                            <li><strong>Additional client work</strong> — Laravel, Angular, and MySQL applications.</li>
                         </ul>
                         <ul class="compact-pills">
                             <li>C# / .NET</li><li>ASP.NET Web Forms</li><li>WCF</li><li>REST API</li>
@@ -287,7 +307,7 @@
                     <h3 class="compact-title">Web Developer Intern</h3>
                     <p class="compact-meta"><i class="fas fa-building"></i> Redshift III Innovation, Lda</p>
                     <div class="compact-body"><div class="compact-inner">
-                        <p>Worked on a Markdown app, both sides of the stack. Got pulled into the database side too. Spent a fair bit of time analysing queries and rewriting SQL until things stopped being slow.</p>
+                        <p>Contributed across the frontend, backend, and database layers of a Markdown application, including query analysis and SQL optimisation work.</p>
                         <ul class="compact-pills">
                             <li>Node.js</li><li>PHP / Laravel</li><li>JavaScript</li><li>TypeScript</li><li>SQL</li><li>HTML/CSS</li>
                         </ul>
@@ -303,7 +323,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Summer & Part-Time Jobs</h2>
-                <p class="section-subtitle">The non-tech work. Most of what I know about working under pressure came from these jobs.</p>
+                <p class="section-subtitle">Customer-facing and operational roles that strengthened reliability, communication, and composure under pressure.</p>
             </div>
 
             <div class="jobs-grid" role="list">
@@ -437,7 +457,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">My Educational Journey</h2>
-                <p class="section-subtitle">Degrees, courses, and the certs I bothered to actually finish.</p>
+                <p class="section-subtitle">Formal education, professional training, and completed certifications.</p>
             </div>
 
             <div class="compact-filters" data-filter-scope="education">
@@ -457,7 +477,7 @@
                     <h3 class="compact-title">Computer Engineering</h3>
                     <p class="compact-meta"><i class="fas fa-university"></i> IPBeja — Polytechnic Institute of Beja</p>
                     <div class="compact-body"><div class="compact-inner">
-                        <p>Higher School of Technology and Management. Four years of software dev, algorithms, databases, networking, the usual. Hard parts were the systems and compilers stuff.</p>
+                        <p>Coursework across software engineering, algorithms, databases, networking, systems programming, and compiler design.</p>
                         <p style="font-size:.78rem; opacity:.7;"><i class="fas fa-medal"></i> EQF Level 6</p>
                         <ul class="compact-pills">
                             <li>Software Engineering</li><li>Algorithms</li><li>Database Systems</li><li>Networking</li>
@@ -1074,18 +1094,37 @@
 <section id="projects" class="section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">My Projects</h2>
-      <p class="section-subtitle">Selected work across full-stack, mobile, security, and embedded development.</p>
+      <h2 class="section-title">Selected Engineering Work</h2>
+      <p class="section-subtitle">A focused selection of product, platform, mobile, and embedded work, with implementation details and honest preview states.</p>
+    </div>
+
+    <div class="project-explorer" role="search" aria-label="Search portfolio projects">
+      <label class="project-search" for="project-search-input">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <span class="sr-only">Search projects</span>
+        <input id="project-search-input" type="search" placeholder="Search by project, technology, or outcome" autocomplete="off" />
+        <button id="project-search-clear" class="project-search-clear" type="button" aria-label="Clear project search" hidden>
+          <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+      </label>
+      <p id="project-results-count" class="project-results-count" role="status" aria-live="polite">Showing selected projects</p>
     </div>
 
     <!-- Project Filters -->
-    <div class="projects-filter" aria-label="Filter projects">
+    <div class="projects-filter" role="group" aria-label="Filter projects by category">
       <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All Projects</button>
       <button class="filter-btn" type="button" data-filter="featured" aria-pressed="false">Featured</button>
       <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web Development</button>
       <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-Stack</button>
       <button class="filter-btn" type="button" data-filter="mobile" aria-pressed="false">Mobile Apps</button>
       <button class="filter-btn" type="button" data-filter="angular" aria-pressed="false">Angular</button>
+    </div>
+
+    <div id="project-empty-state" class="project-empty-state" hidden>
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <h3>No matching projects</h3>
+      <p>Try another technology or clear the current search.</p>
+      <button id="project-empty-reset" class="btn btn-secondary" type="button">Show all projects</button>
     </div>
 
     <!-- SECTION 1: FEATURED & MAJOR PROJECTS -->
@@ -1106,7 +1145,7 @@
               <div class="laptop-base"></div>
             </div>
             <div class="project-overlay">
-              <a href="https://github.com/luigi043/restaurant-app" class="project-link" target="_blank">
+              <a href="https://github.com/luigi043/restaurant-app" class="project-link" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i> View Code
               </a>
             </div>
@@ -1122,8 +1161,8 @@
               <span class="tech-tag">SCSS</span>
             </div>
             <div class="project-impact">
-              <span class="impact-badge production">Production Ready</span>
-              <span class="impact-badge advanced-ux">Advanced UX</span>
+              <span class="impact-badge production">Complete User Flows</span>
+              <span class="impact-badge advanced-ux">Responsive UX</span>
             </div>
           </div>
         </div>
@@ -1354,7 +1393,7 @@
               <span class="placeholder-text">VehicleOS</span>
             </div>
             <div class="project-overlay">
-              <a href="https://github.com/luigi043" class="project-link" target="_blank">
+              <a href="https://github.com/luigi043" class="project-link" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i> View Code
               </a>
             </div>
@@ -1372,8 +1411,8 @@
               <span class="tech-tag">Tailwind CSS</span>
             </div>
             <div class="project-impact">
-              <span class="impact-badge production">Production Ready</span>
-              <span class="impact-badge high-impact">Dockerized</span>
+              <span class="impact-badge production">Containerized Stack</span>
+              <span class="impact-badge high-impact">Service History</span>
             </div>
           </div>
         </div>
@@ -1577,12 +1616,12 @@
               <span class="tech-tag">TypeScript</span>
             </div>
             <div class="project-impact">
-              <span class="impact-badge production">Production Ready</span>
+              <span class="impact-badge production">Pilot Scope</span>
               <span class="impact-badge business">Multi-Tenant</span>
               <span class="impact-badge high-impact">Stripe Payments</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/luigi043" target="_blank">
+              <a href="https://github.com/luigi043" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i> View Code
               </a>
             </div>
@@ -1605,7 +1644,7 @@
           <div class="project-content">
             <h3>Insurex - Insurance Asset Protection System</h3>
             <span class="project-date">2026 • Freelance / Enterprise Application</span>
-            <p>Insurance management system I built as freelance work. Three separate dashboards for admins, insurers, and financiers. Handles policies, assets, reporting (FusionCharts), and encrypted data. Built on a 3-tier architecture: REST/WCF API layer, data layer, and ASP.NET Web Forms portal.</p>
+            <p>Freelance insurance management system with dedicated dashboards for administrators, insurers, and financiers. Supports policy and asset workflows, FusionCharts reporting, encrypted data, and a three-tier REST/WCF, data, and ASP.NET Web Forms architecture.</p>
             <div class="project-tech">
               <span class="tech-tag">C# / .NET</span>
               <span class="tech-tag">ASP.NET Web Forms</span>
@@ -1616,8 +1655,8 @@
               <span class="tech-tag">Bootstrap</span>
             </div>
             <div class="project-impact">
-              <span class="impact-badge production">Production Ready</span>
-              <span class="impact-badge business">Client Project</span>
+              <span class="impact-badge production">Client Delivery</span>
+              <span class="impact-badge business">Role-Based Workflows</span>
               <span class="impact-badge high-impact">Multi-Role System</span>
             </div>
           </div>
@@ -2595,20 +2634,41 @@
 
     <!-- CTA Section -->
     <div class="projects-cta">
-      <p>Got a project? Want to chat? I'm around.</p>
-      <a href="#contact" class="btn btn-primary">Get in touch</a>
-      <a href="https://github.com/luigi043" target="_blank" class="btn btn-secondary">
-        <i class="fab fa-github"></i> View All Projects on GitHub
+      <p>Looking for an engineer who can move from architecture to implementation?</p>
+      <a href="#contact" class="btn btn-primary">Discuss a project</a>
+      <a href="https://github.com/luigi043" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        <i class="fab fa-github" aria-hidden="true"></i> View GitHub profile
       </a>
     </div>
   </div>
 </section>
 
-<!-- JavaScript para animação ao rolar -->
+<dialog id="project-preview-dialog" class="project-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="project-preview-title" aria-describedby="project-preview-description project-preview-note">
+  <div class="project-preview-shell">
+    <button class="project-preview-close" type="button" aria-label="Close project preview">
+      <i class="fas fa-xmark" aria-hidden="true"></i>
+    </button>
+    <div id="project-preview-visual" class="project-preview-visual"></div>
+    <div class="project-preview-copy">
+      <span id="project-preview-kind" class="project-preview-kind">Project preview</span>
+      <h2 id="project-preview-title"></h2>
+      <p id="project-preview-date" class="project-preview-date"></p>
+      <p id="project-preview-description"></p>
+      <dl id="project-preview-facts" class="project-preview-facts"></dl>
+      <div id="project-preview-tech" class="project-preview-tech" aria-label="Project technologies"></div>
+      <p id="project-preview-note" class="project-preview-note"></p>
+      <div id="project-preview-links" class="project-preview-links"></div>
+    </div>
+  </div>
+</dialog>
+
 <!-- Contact Section -->
 <section id="contact" class="section" aria-labelledby="contact-title">
   <div class="container">
-    <h2 id="contact-title" class="section-title">Get in Touch</h2>
+    <div class="section-header">
+      <h2 id="contact-title" class="section-title">Start a Conversation</h2>
+      <p class="section-subtitle">Have a product problem, engineering challenge, or role in mind? Send the context and I’ll reply directly.</p>
+    </div>
     <div class="contact-container">
 
       <!-- Contact Info -->
@@ -2633,13 +2693,13 @@
             <h3>Find Me Online</h3>
             <nav class="social-links" aria-label="Social Media Links">
               <a href="https://www.linkedin.com/in/luizfehlberg/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
               </a>
               <a href="https://github.com/luigi043" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="fab fa-github"></i>
+                <i class="fab fa-github" aria-hidden="true"></i>
               </a>
               <a href="https://x.com/luigi_043" target="_blank" rel="noopener" aria-label="X Twitter">
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter" aria-hidden="true"></i>
               </a>
             </nav>
           </div>
@@ -2649,15 +2709,17 @@
       <!-- Updated Contact Form -->
       <form action="https://formspree.io/f/xovdzoqy" method="POST" class="contact-form" novalidate>
         <label for="email">
-          Your email:
-          <input type="email" id="email" name="email" placeholder="example@mail.com" required autocomplete="email" />
+          Email address
+          <input type="email" id="email" name="email" placeholder="example@mail.com" required autocomplete="email" aria-describedby="email-error" />
+          <span id="email-error" class="field-error" hidden>Enter a valid email address.</span>
         </label>
         <label for="message">
-          Your message:
-          <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+          Project or opportunity details
+          <textarea id="message" name="message" placeholder="Tell me what you are building, the main challenge, and where you need help." rows="6" required aria-describedby="message-error"></textarea>
+          <span id="message-error" class="field-error" hidden>Add a short message so I have enough context to respond.</span>
         </label>
-        <button type="submit" class="btn" aria-label="Send Message">
-          Send
+        <button type="submit" class="btn">
+          Send message
         </button>
         <p id="formStatus" class="form-status" role="status" aria-live="polite" hidden></p>
       </form>

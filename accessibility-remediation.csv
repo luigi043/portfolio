@@ -1,0 +1,10 @@
+id,severity,wcag,area,status,owner,verification
+A-001,High,"1.3.1; 4.1.2",Expandable cards,Resolved,Portfolio owner,"Semantic button; aria-expanded and aria-controls verified"
+A-002,High,"1.3.1; 2.1.1; 4.1.2",Project dialog,Resolved,Portfolio owner,"Arrow navigation; labels; focus return verified"
+A-003,High,"1.3.1; 3.3.1; 3.3.3",Contact form,Resolved,Portfolio owner,"Field errors and alert summary verified"
+A-004,High,1.3.1,Hidden content,Resolved,Portfolio owner,"Archived and filtered elements have no rendered boxes"
+A-005,Medium,"2.4.4; 4.1.2",Icon links,Resolved,Portfolio owner,"Accessible names present"
+A-006,Medium,"2.2.2; 2.3.3",Motion,Resolved,Portfolio owner,"Reduced-motion CSS and runtime preference handling present"
+A-007,Medium,2.5.5,Mobile navigation,Resolved,Portfolio owner,"44 by 44 CSS pixel control verified at 320 px"
+A-008,Validation gap,"1.4.3; 1.4.11",Contrast,Open,Portfolio owner,"Run full automated scan after deployment"
+A-009,Validation gap,Multiple,Screen reader,Open,Portfolio owner,"Run NVDA end-to-end session before release"
