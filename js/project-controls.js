@@ -380,7 +380,9 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') (() => {
                     figure.append(image, caption);
                     visual.replaceChildren(figure);
                     kind.textContent = 'Project screenshot';
-                    note.textContent = 'Original project screenshot. Open the repository for implementation details.';
+                    note.textContent = card.dataset.preparedProject
+                        ? 'Runtime capture of a local demo with illustrative data. No hosted interactive demo is available. Prepared changes have not been pushed; public source may differ. Read the case study for scope and verification.'
+                        : 'Original project screenshot. Open the repository for implementation details.';
                 } else if (preview) {
                     visual.replaceChildren(createPreviewDashboard(preview));
                     kind.textContent = 'Feature walkthrough';

@@ -39,8 +39,8 @@ test('keeps unprofessional and AI-attribution phrases out of public copy', () =>
     const forbidden = [
         /don't ask/i,
         /garbage/i,
-        /generated with (?:claude|codex|chatgpt)/i,
-        /co-authored-by:\s*(?:claude|codex|chatgpt)/i
+        /generated with\s+/i,
+        /co-authored-by:\s*/i
     ];
 
     forbidden.forEach((pattern) => assert.doesNotMatch(html, pattern));
