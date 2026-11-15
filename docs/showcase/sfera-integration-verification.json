@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-30T10:50:15.067Z",
+  "results": [
+    {
+      "demo": "http://127.0.0.1:5181",
+      "sharedKotlinInspection": true,
+      "duplicateEntryRejected": true,
+      "invalidInputRejected": true,
+      "existingStateUnchanged": true,
+      "mobileOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "kind": "static",
+      "width": 390,
+      "route": "http://127.0.0.1:5185/projects/sferatagscanner.html",
+      "galleryImages": 2,
+      "imagesDecoded": true,
+      "overflow": false,
+      "pageErrors": []
+    },
+    {
+      "kind": "static",
+      "width": 1440,
+      "route": "http://127.0.0.1:5185/projects/sferatagscanner.html",
+      "galleryImages": 2,
+      "imagesDecoded": true,
+      "overflow": false,
+      "pageErrors": []
+    },
+    {
+      "kind": "react",
+      "width": 390,
+      "route": "http://127.0.0.1:3100/projects/sferatagscanner",
+      "galleryImages": 2,
+      "imagesDecoded": true,
+      "overflow": false,
+      "pageErrors": []
+    },
+    {
+      "kind": "react",
+      "width": 1440,
+      "route": "http://127.0.0.1:3100/projects/sferatagscanner",
+      "galleryImages": 2,
+      "imagesDecoded": true,
+      "overflow": false,
+      "pageErrors": []
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+[
+  {
+    "id": "expense-tracker",
+    "slug": "expense-tracker",
+    "title": "Expense Tracker",
+    "shortSummary": "Track personal transactions, category budgets and recurring templates in a local ledger.",
+    "problem": "Track personal transactions, category budgets and recurring templates in a local ledger.",
+    "architecture": "Room stores transactions, budgets and recurring templates. The browser demo uses sample records and resets on reload.",
+    "outcome": "The handoff documents Android build and emulator evidence. Bank connections and live exchange-rate requests are outside the browser demo.",
+    "decisions": [
+      "Room stores transactions, budgets and recurring templates. The browser demo uses sample records and resets on reload."
+    ],
+    "highlights": [
+      "Track personal transactions, category budgets and recurring templates in a local ledger."
+    ],
+    "constraints": [
+      "The handoff documents Android build and emulator evidence. Bank connections and live exchange-rate requests are outside the browser demo."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/expense-tracker-android.webp",
+    "screenshotAlt": "Expense Tracker running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Expense Tracker emulator capture"
+    },
+    "seo": {
+      "title": "Expense Tracker Case Study | Luiz Fehlberg",
+      "description": "Track personal transactions, category budgets and recurring templates in a local ledger."
+    }
+  },
+  {
+    "id": "simpleloginapp",
+    "slug": "simpleloginapp",
+    "title": "SimpleLoginApp",
+    "shortSummary": "Explore an offline login, profile and logout flow using sample credentials.",
+    "problem": "Explore an offline login, profile and logout flow using sample credentials.",
+    "architecture": "The Android app checks sample credentials locally and manages a device-local session. The browser demo uses tab storage.",
+    "outcome": "Six emulator walkthroughs passed on the final APK. The demo supports sample credentials and has no account server.",
+    "decisions": [
+      "The Android app checks sample credentials locally and manages a device-local session. The browser demo uses tab storage."
+    ],
+    "highlights": [
+      "Explore an offline login, profile and logout flow using sample credentials."
+    ],
+    "constraints": [
+      "Six emulator walkthroughs passed on the final APK. The demo supports sample credentials and has no account server."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/simpleloginapp-android.webp",
+    "screenshotAlt": "SimpleLoginApp running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "SimpleLoginApp emulator capture"
+    },
+    "liveUrl": "https://quantum-login-demo.vercel.app/",
+    "apkUrl": "https://quantum-login-demo.vercel.app/quantum-login-demo.apk",
+    "repositoryUrl": "https://github.com/luigi043/SimpleLoginApp",
+    "seo": {
+      "title": "SimpleLoginApp Case Study | Luiz Fehlberg",
+      "description": "Explore an offline login, profile and logout flow using sample credentials."
+    }
+  },
+  {
+    "id": "lifeos",
+    "slug": "lifeos",
+    "title": "LifeOS",
+    "shortSummary": "Set up a personal profile and track monthly expenses by currency.",
+    "problem": "Set up a personal profile and track monthly expenses by currency.",
+    "architecture": "Room stores profile and finance records, and DataStore holds preferences. Expense totals stay grouped by currency.",
+    "outcome": "Ten Kotlin tests and one emulator workflow passed. The browser demo covers the implemented profile and finance flows. Broader roadmap modules are future work.",
+    "decisions": [
+      "Room stores profile and finance records, and DataStore holds preferences. Expense totals stay grouped by currency."
+    ],
+    "highlights": [
+      "Set up a personal profile and track monthly expenses by currency."
+    ],
+    "constraints": [
+      "Ten Kotlin tests and one emulator workflow passed. The browser demo covers the implemented profile and finance flows. Broader roadmap modules are future work."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/lifeos-android.webp",
+    "screenshotAlt": "LifeOS running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "LifeOS emulator capture"
+    },
+    "liveUrl": "https://lifeos-phone-demo.vercel.app/",
+    "apkUrl": "https://lifeos-phone-demo.vercel.app/lifeos-debug.apk",
+    "seo": {
+      "title": "LifeOS Case Study | Luiz Fehlberg",
+      "description": "Set up a personal profile and track monthly expenses by currency."
+    }
+  },
+  {
+    "id": "mealplanner",
+    "slug": "mealplanner",
+    "title": "MealPlanner",
+    "shortSummary": "Manage recipes, plan a week of meals and build a grocery list.",
+    "problem": "Manage recipes, plan a week of meals and build a grocery list.",
+    "architecture": "Kotlin and Compose drive the Android interface. Room stores recipes, meal plans and grocery items.",
+    "outcome": "The handoff records a passing debug build and native screen walkthrough. The browser demo keeps its sample data in browser storage.",
+    "decisions": [
+      "Kotlin and Compose drive the Android interface. Room stores recipes, meal plans and grocery items."
+    ],
+    "highlights": [
+      "Manage recipes, plan a week of meals and build a grocery list."
+    ],
+    "constraints": [
+      "The handoff records a passing debug build and native screen walkthrough. The browser demo keeps its sample data in browser storage."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/mealplanner-android.webp",
+    "screenshotAlt": "MealPlanner running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "MealPlanner emulator capture"
+    },
+    "liveUrl": "https://mealplanner-portfolio-psi.vercel.app/",
+    "apkUrl": "https://mealplanner-portfolio-psi.vercel.app/downloads/mealplanner-debug.apk",
+    "seo": {
+      "title": "MealPlanner Case Study | Luiz Fehlberg",
+      "description": "Manage recipes, plan a week of meals and build a grocery list."
+    }
+  },
+  {
+    "id": "workout-level-up",
+    "slug": "workout-level-up",
+    "title": "Workout Level Up",
+    "shortSummary": "Follow a training calendar, log completed exercises and earn badges.",
+    "problem": "Follow a training calendar, log completed exercises and earn badges.",
+    "architecture": "Room saves workout records. Compose presents the calendar, daily checklist, streaks and badges.",
+    "outcome": "The debug build and lint passed, with 16 lint warnings. The browser demo simulates the calendar and checklist with its own data.",
+    "decisions": [
+      "Room saves workout records. Compose presents the calendar, daily checklist, streaks and badges."
+    ],
+    "highlights": [
+      "Follow a training calendar, log completed exercises and earn badges."
+    ],
+    "constraints": [
+      "The debug build and lint passed, with 16 lint warnings. The browser demo simulates the calendar and checklist with its own data."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/workout-level-up-android.webp",
+    "screenshotAlt": "Workout Level Up running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Workout Level Up emulator capture"
+    },
+    "liveUrl": "https://workout-level-up-portfolio.vercel.app/",
+    "seo": {
+      "title": "Workout Level Up Case Study | Luiz Fehlberg",
+      "description": "Follow a training calendar, log completed exercises and earn badges."
+    }
+  },
+  {
+    "id": "luigis-workout",
+    "slug": "luigis-workout",
+    "title": "Luigi’s Workout",
+    "shortSummary": "Log hydration, meals and weight, and follow timed workouts.",
+    "problem": "Log hydration, meals and weight, and follow timed workouts.",
+    "architecture": "The Android app keeps activity in Room. The phone demo exposes the water tracker, meal log, workout checklist and weight history.",
+    "outcome": "One native instrumentation test passed for drink-recipe quantity validation. The browser demo saves sample activity locally. Native reminders and the full training and recipe catalog remain Android features.",
+    "decisions": [
+      "The Android app keeps activity in Room. The phone demo exposes the water tracker, meal log, workout checklist and weight history."
+    ],
+    "highlights": [
+      "Log hydration, meals and weight, and follow timed workouts."
+    ],
+    "constraints": [
+      "One native instrumentation test passed for drink-recipe quantity validation. The browser demo saves sample activity locally. Native reminders and the full training and recipe catalog remain Android features."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/luigis-workout-android.webp",
+    "screenshotAlt": "Luigi’s Workout running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Luigi’s Workout emulator capture"
+    },
+    "liveUrl": "https://luigis-workout-portfolio.vercel.app/",
+    "seo": {
+      "title": "Luigi’s Workout Case Study | Luiz Fehlberg",
+      "description": "Log hydration, meals and weight, and follow timed workouts."
+    }
+  },
+  {
+    "id": "meal-prep-workout",
+    "slug": "meal-prep-workout",
+    "title": "Meal Prep Workout",
+    "shortSummary": "Follow a fixed weekly plan with daily tasks, workout cards, meals and groceries.",
+    "problem": "Follow a fixed weekly plan with daily tasks, workout cards, meals and groceries.",
+    "architecture": "The Android app stores checklist state and measurements locally. The browser demo uses sample tasks and resets on reload.",
+    "outcome": "The rebuilt APK assembled and installed, and its unit test passed. The screenshot is from the earlier emulator walkthrough. An emulator timeout blocked the rapid-entry and relaunch retest on the rebuilt APK.",
+    "decisions": [
+      "The Android app stores checklist state and measurements locally. The browser demo uses sample tasks and resets on reload."
+    ],
+    "highlights": [
+      "Follow a fixed weekly plan with daily tasks, workout cards, meals and groceries."
+    ],
+    "constraints": [
+      "The rebuilt APK assembled and installed, and its unit test passed. The screenshot is from the earlier emulator walkthrough. An emulator timeout blocked the rapid-entry and relaunch retest on the rebuilt APK."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/meal-prep-workout-android.webp",
+    "screenshotAlt": "Meal Prep Workout running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Meal Prep Workout emulator capture"
+    },
+    "liveUrl": "https://meal-prep-workout-demo.vercel.app/",
+    "seo": {
+      "title": "Meal Prep Workout Case Study | Luiz Fehlberg",
+      "description": "Follow a fixed weekly plan with daily tasks, workout cards, meals and groceries."
+    }
+  },
+  {
+    "id": "study-assistant",
+    "slug": "study-assistant",
+    "title": "Study Assistant",
+    "shortSummary": "Turn notes into short excerpts and recall quizzes, then review answer counts by note.",
+    "problem": "Turn notes into short excerpts and recall quizzes, then review answer counts by note.",
+    "architecture": "The Android app accepts typed text and Latin-script image imports. The browser demo uses sample image text to demonstrate summary and quiz flows.",
+    "outcome": "Debug and instrumentation builds and three JVM tests passed. The browser demo uses simulated image imports and resets on reload.",
+    "decisions": [
+      "The Android app accepts typed text and Latin-script image imports. The browser demo uses sample image text to demonstrate summary and quiz flows."
+    ],
+    "highlights": [
+      "Turn notes into short excerpts and recall quizzes, then review answer counts by note."
+    ],
+    "constraints": [
+      "Debug and instrumentation builds and three JVM tests passed. The browser demo uses simulated image imports and resets on reload."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/study-assistant-android.webp",
+    "screenshotAlt": "Study Assistant running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Study Assistant emulator capture"
+    },
+    "liveUrl": "https://study-assistant-android-demo.vercel.app/",
+    "seo": {
+      "title": "Study Assistant Case Study | Luiz Fehlberg",
+      "description": "Turn notes into short excerpts and recall quizzes, then review answer counts by note."
+    }
+  },
+  {
+    "id": "echofree",
+    "slug": "echofree",
+    "title": "EchoFree",
+    "shortSummary": "Browse a text-first feed, discover posts in shuffled order and compose short posts.",
+    "problem": "Browse a text-first feed, discover posts in shuffled order and compose short posts.",
+    "architecture": "The Android client talks to an HTTP API. The phone demo uses sample posts and simulated publishing within the open tab.",
+    "outcome": "Thirteen Android JVM tests and fifteen backend tests passed. Native verification used an HTTP fixture, and live MongoDB and physical devices remain unverified.",
+    "decisions": [
+      "The Android client talks to an HTTP API. The phone demo uses sample posts and simulated publishing within the open tab."
+    ],
+    "highlights": [
+      "Browse a text-first feed, discover posts in shuffled order and compose short posts."
+    ],
+    "constraints": [
+      "Thirteen Android JVM tests and fifteen backend tests passed. Native verification used an HTTP fixture, and live MongoDB and physical devices remain unverified."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/echofree-android.webp",
+    "screenshotAlt": "EchoFree running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "EchoFree emulator capture"
+    },
+    "liveUrl": "https://echofree-android-demo.vercel.app/?view=phone",
+    "seo": {
+      "title": "EchoFree Case Study | Luiz Fehlberg",
+      "description": "Browse a text-first feed, discover posts in shuffled order and compose short posts."
+    }
+  },
+  {
+    "id": "drivemind",
+    "slug": "drivemind",
+    "title": "DriveMind",
+    "shortSummary": "Capture short notes and organize them into tasks, reminders and ideas.",
+    "problem": "Capture short notes and organize them into tasks, reminders and ideas.",
+    "architecture": "The Android app categorizes transcripts with English keywords and stores them in Room. The demo simulates speech and driving status.",
+    "outcome": "Twenty-four JVM and eight Room instrumentation tests passed. The browser demo uses sample data. Reminders are note categories without scheduled alerts.",
+    "decisions": [
+      "The Android app categorizes transcripts with English keywords and stores them in Room. The demo simulates speech and driving status."
+    ],
+    "highlights": [
+      "Capture short notes and organize them into tasks, reminders and ideas."
+    ],
+    "constraints": [
+      "Twenty-four JVM and eight Room instrumentation tests passed. The browser demo uses sample data. Reminders are note categories without scheduled alerts."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/drivemind-android.webp",
+    "screenshotAlt": "DriveMind running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "DriveMind emulator capture"
+    },
+    "liveUrl": "https://drivemind-demo.vercel.app/",
+    "seo": {
+      "title": "DriveMind Case Study | Luiz Fehlberg",
+      "description": "Capture short notes and organize them into tasks, reminders and ideas."
+    }
+  },
+  {
+    "id": "sferatagscanner",
+    "slug": "sferatagscanner",
+    "title": "Sfera Tag Scanner",
+    "shortSummary": "Inspect clothing references, track inventory entries and exits, and review stock history.",
+    "problem": "Inspect clothing references, track inventory entries and exits, and review stock history.",
+    "architecture": "Native Kotlin rules preserve leading zeros. Room transactions keep stock and movements consistent. The browser demo simulates the workflow with sample data.",
+    "outcome": "Four JVM and three instrumentation tests passed on the Android emulator, including Room rollback and ML Kit OCR on a synthetic bitmap. Physical camera and RFID workflows remain unverified.",
+    "decisions": [
+      "Native Kotlin rules preserve leading zeros. Room transactions keep stock and movements consistent. The browser demo simulates the workflow with sample data."
+    ],
+    "highlights": [
+      "Inspect clothing references, track inventory entries and exits, and review stock history."
+    ],
+    "constraints": [
+      "Four JVM and three instrumentation tests passed on the Android emulator, including Room rollback and ML Kit OCR on a synthetic bitmap. Physical camera and RFID workflows remain unverified."
+    ],
+    "evidence": [],
+    "stack": [
+      "Kotlin",
+      "Android"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "caseStudy": true,
+    "status": "Android emulator capture",
+    "screenshot": "assets/projects/sferatagscanner-android.webp",
+    "screenshotAlt": "Sfera Tag Scanner running in the Android emulator",
+    "width": 1080,
+    "height": 2340,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Sfera Tag Scanner emulator capture"
+    },
+    "repositoryUrl": "https://github.com/luigi043/sferatagscanner",
+    "seo": {
+      "title": "Sfera Tag Scanner Case Study | Luiz Fehlberg",
+      "description": "Inspect clothing references, track inventory entries and exits, and review stock history."
+    }
+  }
+]

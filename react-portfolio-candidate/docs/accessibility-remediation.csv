@@ -1,0 +1,5 @@
+id,severity,status,scope,validation,owner,release_gate
+A11Y-001,Manual validation,Open,Homepage case study project disclosure mobile menu contact form,NVDA plus Chrome or Firefox smoke test,Portfolio owner,Yes
+A11Y-002,Manual validation,Open,Light and dark visual themes,Deuteranopia simulation and Windows High Contrast review,Portfolio owner,Yes
+A11Y-003,Manual validation,Open,Production deployment,Production Lighthouse accessibility audit,Portfolio owner,Yes
+

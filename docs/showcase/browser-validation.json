@@ -1,0 +1,34 @@
+[
+  {
+    "kind": "static",
+    "width": 390,
+    "routes": 8,
+    "images": "decoded",
+    "overflow": false,
+    "pageErrors": []
+  },
+  {
+    "kind": "static",
+    "width": 1440,
+    "routes": 8,
+    "images": "decoded",
+    "overflow": false,
+    "pageErrors": []
+  },
+  {
+    "kind": "react",
+    "width": 390,
+    "routes": 8,
+    "images": "decoded",
+    "overflow": false,
+    "pageErrors": []
+  },
+  {
+    "kind": "react",
+    "width": 1440,
+    "routes": 8,
+    "images": "decoded",
+    "overflow": false,
+    "pageErrors": []
+  }
+]

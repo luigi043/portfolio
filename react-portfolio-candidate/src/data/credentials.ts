@@ -1,0 +1,215 @@
+export type Certification = {
+  id: string;
+  title: string;
+  issuer: string;
+  issued: string;
+  kind: "Professional Certificate" | "Specialization" | "Course";
+  featured?: boolean;
+};
+
+export const certifications: Certification[] = [
+  {
+    id: "4JB4IY80RAIT",
+    title: "Google UX Design",
+    issuer: "Google",
+    issued: "March 2025",
+    kind: "Professional Certificate",
+    featured: true,
+  },
+  {
+    id: "H5J9ALBJSKDE",
+    title: ".NET FullStack Developer",
+    issuer: "Board Infinity",
+    issued: "November 2025",
+    kind: "Specialization",
+    featured: true,
+  },
+  {
+    id: "M93PIEH5W8MS",
+    title: "Generative AI for Software Developers",
+    issuer: "IBM",
+    issued: "June 2026",
+    kind: "Specialization",
+    featured: true,
+  },
+  {
+    id: "2X6WO149Q8ED",
+    title: "Conduct UX Research and Test Early Concepts",
+    issuer: "Google",
+    issued: "March 2025",
+    kind: "Course",
+  },
+  {
+    id: "9J8X9XB292RB",
+    title: "Foundations of User Experience (UX) Design",
+    issuer: "Google",
+    issued: "March 2025",
+    kind: "Course",
+  },
+  {
+    id: "BCYSIH3OZ3NP",
+    title: "Backend Development for .Net Full Stack",
+    issuer: "Board Infinity",
+    issued: "October 2025",
+    kind: "Course",
+  },
+  {
+    id: "EEN7ONZEPLF3",
+    title: ".Net Full Stack Foundation",
+    issuer: "Board Infinity",
+    issued: "October 2025",
+    kind: "Course",
+  },
+  {
+    id: "EQBXPDAMWQL7",
+    title: "Create High-Fidelity Designs and Prototypes in Figma",
+    issuer: "Google",
+    issued: "March 2025",
+    kind: "Course",
+  },
+  {
+    id: "G62776GKGFOG",
+    title: "Design a User Experience for Social Good & Prepare for Jobs",
+    issuer: "Google",
+    issued: "March 2025",
+    kind: "Course",
+  },
+  {
+    id: "K0SZD9PO6X5K",
+    title: "Generative AI: Introduction and Applications",
+    issuer: "IBM",
+    issued: "June 2026",
+    kind: "Course",
+  },
+  {
+    id: "KXQAGJAEV86X",
+    title: "Generative AI: Elevate your Software Development Career",
+    issuer: "IBM",
+    issued: "June 2026",
+    kind: "Course",
+  },
+  {
+    id: "L8IX84GYJDL6",
+    title: "Introduction to Software Engineering",
+    issuer: "IBM",
+    issued: "June 2026",
+    kind: "Course",
+  },
+  {
+    id: "P4EUBMY5TBPV",
+    title: "Frontend Development using React",
+    issuer: "Board Infinity",
+    issued: "October 2025",
+    kind: "Course",
+  },
+  {
+    id: "QL2PQCVT4YM6",
+    title: "Generative AI: Prompt Engineering Basics",
+    issuer: "IBM",
+    issued: "June 2026",
+    kind: "Course",
+  },
+  {
+    id: "QOTVAHUJQUKX",
+    title: "Build Dynamic User Interfaces (UI) for Websites",
+    issuer: "Google",
+    issued: "March 2025",
+    kind: "Course",
+  },
+  {
+    id: "TCVHSORBTUBN",
+    title: "Start the UX Design Process: Empathize, Define, and Ideate",
+    issuer: "Google",
+    issued: "March 2025",
+    kind: "Course",
+  },
+  {
+    id: "UEMC2U8BQQ5T",
+    title: "Build Wireframes and Low-Fidelity Prototypes",
+    issuer: "Google",
+    issued: "March 2025",
+    kind: "Course",
+  },
+];
+
+export function getVerificationUrl(certificate: Certification) {
+  const path =
+    certificate.kind === "Professional Certificate"
+      ? "professional-cert"
+      : certificate.kind === "Specialization"
+        ? "specialization"
+        : "";
+
+  return `https://www.coursera.org/verify/${path ? `${path}/` : ""}${certificate.id}`;
+}
+
+export const learningProgress = [
+  ["Scripting and API Automation for IT Operations", 30, 600],
+  ["Automation Scripting for IT Operations & System Management", 9, 400],
+  ["Machine Learning Foundations", 10, 500],
+  ["System Security and Automation Management", 24, 700],
+  ["Object-Oriented Design & Architecture", 53, 300],
+  ["Work Planning and Professional Execution", 7, 700],
+  ["Foundational Programming", 767, 1000],
+  ["Data Cleaning and Preparation", 29, 500],
+  ["Statistical Modeling and Inference", 29, 1200],
+  ["AI-Powered Productivity for Business Communication", 247, 600],
+  ["Visual Design & Assets", 243, 700],
+  ["Applied Generative AI Development and Strategy", 62, 800],
+  ["Generative AI Applications", 82, 500],
+  ["Product Discovery and Competitive Analysis (C1)", 134, 500],
+  ["Object-Oriented Backend Architecture", 417, 1000],
+  ["Building and Documenting RESTful APIs", 270, 900],
+  ["Connecting the Front-End with Back-End APIs", 107, 600],
+  ["Fundamentals of API Interaction in JavaScript", 8, 700],
+  ["Implementing Networking and Navigation in Android Apps", 45, 900],
+  ["Database Design & Operations", 15, 700],
+  ["API Integration", 65, 900],
+  ["API Architecture & Security", 77, 800],
+  ["Resilient Systems and Third-Party Integrations", 45, 700],
+  ["Full-Stack Application Security", 38, 900],
+  ["Automated Testing and Advanced Data Management", 27, 700],
+  ["Foundational Web Page Construction", 242, 600],
+  ["Advanced Frontend Engineering", 154, 400],
+  ["Professional React Development", 212, 800],
+  ["Interactive User Interfaces with JavaScript", 153, 700],
+  ["Developing Asynchronous and Interactive Frontends", 13, 1000],
+  ["Responsive Frontend Development", 95, 700],
+  ["Responsive Design and Visual Debugging", 127, 800],
+  ["Mobile & Responsive Design", 327, 800],
+  ["Software Quality and Resilience", 3, 800],
+  ["Design Systems", 545, 1000],
+  ["Applying Generative AI in Consulting", 3, 400],
+  ["AI-Assisted Project Coordination & Innovation", 6, 700],
+  ["User Modeling", 521, 1000],
+  ["Strategic Communication and Stakeholder Engagement", 50, 1000],
+  ["Client Acquisition and Business Development", 20, 800],
+  ["Product Strategy and Goal Setting", 13, 600],
+  ["Advanced Visual Design", 675, 1000],
+  ["Research Execution", 384, 800],
+  ["Validation & Developer Handoff", 289, 700],
+  ["User Research Strategy", 630, 1000],
+  ["Interaction Design & Architecture", 570, 800],
+  ["High-Fidelity UI Design", 271, 500],
+  ["Design Iteration & Handoff", 262, 700],
+  ["Interactive Prototyping", 522, 700],
+  ["Advanced Development Techniques for Mobile Applications", 9, 600],
+  ["Mobile Architecture: Building Robust Applications", 42, 700],
+  ["Building Responsive Mobile User Interfaces", 3, 800],
+  ["Ideation & Wireframing", 463, 600],
+  ["Public Relations & Executive Communications", 10, 1000],
+  ["Project Performance Reporting and Stakeholder Communication", 2, 500],
+  ["Research Synthesis", 215, 500],
+  ["User Research and Problem Discovery", 45, 700],
+  ["User Research", 54, 500],
+  ["IT Governance and Compliance Support", 14, 900],
+  ["Professional Foundations for Business Analysis", 23, 1000],
+  ["Product Performance Analysis and Reporting", 4, 500],
+  ["Advanced Exploratory Data Analysis", 45, 900],
+  ["Qualifying Leads and Managing the Discovery Process", 54, 1000],
+  ["Agile Story Authoring (C3)", 58, 800],
+  ["Requirement Definition and Epic Decomposition", 3, 700],
+  ["Agile Project Delivery for Consultants", 11, 800],
+  ["Project Monitoring, Closure, and Change Control", 6, 900],
+  ["Agile Ceremonies & Team Alignment (C4)", 9, 600],
+] as const;

@@ -1,0 +1,231 @@
+[
+  {
+    "id": "bugrepro",
+    "slug": "bugrepro",
+    "title": "BugRepro",
+    "shortSummary": "Track a defect from its initial report through reproduction attempts and proposed fixes.",
+    "problem": "Track a defect from its initial report through reproduction attempts and proposed fixes.",
+    "architecture": "A React client has a browser-storage demo mode. The full application uses an Express API and MongoDB.",
+    "decisions": [
+      "Try a checkout defect, draft a report, log a reproduction attempt, and vote on a proposed fix."
+    ],
+    "highlights": [
+      "Try a checkout defect, draft a report, log a reproduction attempt, and vote on a proposed fix."
+    ],
+    "outcome": "Browser checks covered duplicate recovery and persistence. Live MongoDB was outside the verified demo.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "cd client\nnpm ci\nnpm run demo",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Express",
+      "MongoDB"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/bugrepro.webp",
+    "screenshotAlt": "BugRepro demo showing a checkout defect report",
+    "width": 1440,
+    "height": 1108,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "BugRepro demo showing a checkout defect report"
+    },
+    "repositoryUrl": "https://github.com/luigi043/bugrepro",
+    "seo": {
+      "title": "BugRepro Case Study | Luiz Fehlberg",
+      "description": "Track a defect from its initial report through reproduction attempts and proposed fixes."
+    }
+  },
+  {
+    "id": "constraint-engine",
+    "slug": "constraint-engine",
+    "title": "Constraint Engine",
+    "shortSummary": "Find a valid route through a grid and inspect the rules that fired after each move.",
+    "problem": "Find a valid route through a grid and inspect the rules that fired after each move.",
+    "architecture": "The same browser rules engine powers the route search and a live sandbox with editable rules.",
+    "decisions": [
+      "Change the starting energy or move limit and compare a successful route with an unsatisfiable one."
+    ],
+    "highlights": [
+      "Change the starting energy or move limit and compare a successful route with an unsatisfiable one."
+    ],
+    "outcome": "The project handoff reports 41 Vitest tests and desktop and mobile browser checks.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "npm ci\nnpm run dev -- --host 127.0.0.1",
+    "stack": [
+      "TypeScript",
+      "Vite",
+      "Vitest"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/constraint-engine.webp",
+    "screenshotAlt": "Constraint Engine demo showing a solved grid route",
+    "width": 1440,
+    "height": 980,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Constraint Engine demo showing a solved grid route"
+    },
+    "repositoryUrl": "https://github.com/luigi043/constraint-engine",
+    "seo": {
+      "title": "Constraint Engine Case Study | Luiz Fehlberg",
+      "description": "Find a valid route through a grid and inspect the rules that fired after each move."
+    }
+  },
+  {
+    "id": "debug-ai",
+    "slug": "debug-ai",
+    "title": "Debug AI",
+    "shortSummary": "Inspect a runtime error, trace the stack, and review a proposed fix.",
+    "problem": "Inspect a runtime error, trace the stack, and review a proposed fix.",
+    "architecture": "A TypeScript client calls an API. The default mode applies deterministic rules to produce labeled simulated results.",
+    "decisions": [
+      "Load the React or Python example and inspect the highlighted stack frames before reviewing its suggested fix."
+    ],
+    "highlights": [
+      "Load the React or Python example and inspect the highlighted stack frames before reviewing its suggested fix."
+    ],
+    "outcome": "Three API integration tests and browser checks passed in the handoff. The live provider path remains untested.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "npm run install:all\nnpm run dev",
+    "stack": [
+      "TypeScript",
+      "React",
+      "Express"
+    ],
+    "categories": [
+      "Web",
+      "AI"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/debug-ai.webp",
+    "screenshotAlt": "Debug AI demo showing a simulated runtime error analysis",
+    "width": 1440,
+    "height": 1000,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Debug AI demo showing a simulated runtime error analysis"
+    },
+    "repositoryUrl": "https://github.com/luigi043/debug-ai",
+    "seo": {
+      "title": "Debug AI Case Study | Luiz Fehlberg",
+      "description": "Inspect a runtime error, trace the stack, and review a proposed fix."
+    }
+  },
+  {
+    "id": "smart-home-command-center",
+    "slug": "smart-home-command-center",
+    "title": "Smart Home Command Center",
+    "shortSummary": "Control a simulated home, switch between rooms, and activate scenes.",
+    "problem": "Control a simulated home, switch between rooms, and activate scenes.",
+    "architecture": "The React simulation runs in the browser. A separate API workspace uses ASP.NET Core, EF Core and PostgreSQL.",
+    "decisions": [
+      "Toggle a light or choose Movie Night, then check how the dashboard records the change."
+    ],
+    "highlights": [
+      "Toggle a light or choose Movie Night, then check how the dashboard records the change."
+    ],
+    "outcome": "Browser workflow checks passed in the handoff. Physical devices and a live PostgreSQL workflow remain unverified.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "cd frontend\nnpm ci\nnpm run dev",
+    "stack": [
+      "React",
+      "TypeScript",
+      "ASP.NET Core",
+      "PostgreSQL"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/smart-home-command-center.webp",
+    "screenshotAlt": "Smart Home Command Center demo showing the simulated home dashboard",
+    "width": 1440,
+    "height": 960,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Smart Home Command Center demo showing the simulated home dashboard"
+    },
+    "repositoryUrl": "https://github.com/luigi043/smart-home-command-center",
+    "seo": {
+      "title": "Smart Home Command Center Case Study | Luiz Fehlberg",
+      "description": "Control a simulated home, switch between rooms, and activate scenes."
+    }
+  },
+  {
+    "id": "voice-to-code",
+    "slug": "voice-to-code",
+    "title": "Voice to Code",
+    "shortSummary": "Turn a typed or spoken instruction into a code snippet you can review and export.",
+    "problem": "Turn a typed or spoken instruction into a code snippet you can review and export.",
+    "architecture": "The browser UI offers sample generation and a separate live mode. The example workflow uses local sample output.",
+    "decisions": [
+      "Choose Sort numbers, switch to TypeScript, generate the snippet, then copy or download it."
+    ],
+    "highlights": [
+      "Choose Sort numbers, switch to TypeScript, generate the snippet, then copy or download it."
+    ],
+    "outcome": "Browser checks exercised simulated speech and generation. Physical microphone capture and authenticated provider calls remain unverified.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "npm ci\nnpm run demo",
+    "stack": [
+      "JavaScript",
+      "Vite",
+      "Web Speech API"
+    ],
+    "categories": [
+      "Web",
+      "AI"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/voice-to-code.webp",
+    "screenshotAlt": "Voice to Code demo showing a generated sorting example",
+    "width": 1366,
+    "height": 1013,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Voice to Code demo showing a generated sorting example"
+    },
+    "repositoryUrl": "https://github.com/luigi043/voice-to-code",
+    "seo": {
+      "title": "Voice to Code Case Study | Luiz Fehlberg",
+      "description": "Turn a typed or spoken instruction into a code snippet you can review and export."
+    }
+  }
+]

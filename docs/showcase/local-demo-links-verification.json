@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "static",
+    "localHomepageLinks": 10,
+    "localCaseStudies": 9,
+    "publicHostnameLinks": 0
+  },
+  {
+    "kind": "react",
+    "localHomepageLinks": 10,
+    "localCaseStudies": 9,
+    "publicHostnameLinks": 0
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-29T22:39:27.350Z",
+  "projects": [
+    {
+      "project": "vehicle-build-cost-calculator",
+      "url": "http://127.0.0.1:5173/",
+      "verified": "Real JWT login and PostgreSQL-backed scenario totals rendered",
+      "pageErrors": []
+    },
+    {
+      "project": "bmw-configurator",
+      "url": "http://127.0.0.1:5174/",
+      "verified": "WebGL canvas, configuration price change and real build summary",
+      "pageErrors": []
+    },
+    {
+      "project": "flowchart-to-code-converter",
+      "url": "http://127.0.0.1:5175/",
+      "verified": "Frontend converts the graph through the running Express API",
+      "pageErrors": []
+    },
+    {
+      "project": "ctw-vehicle-fleet",
+      "url": "http://127.0.0.1:5176/",
+      "verified": "PostgreSQL catalogue (4 vehicles), Mongo telemetry (3 samples), health and detail UI",
+      "pageErrors": []
+    },
+    {
+      "project": "academic-portal",
+      "url": "http://127.0.0.1:5081/",
+      "verified": "Real teacher session, assigned DAW course and saved fictional attendance from SQLite",
+      "pageErrors": []
+    },
+    {
+      "project": "bella-ops",
+      "url": "http://127.0.0.1:5177/restaurant/home",
+      "verified": "New fictional booking reaches operations in an isolated browser storage context",
+      "pageErrors": []
+    },
+    {
+      "project": "lang-interpreter",
+      "url": "http://127.0.0.1:5178/",
+      "verified": "Actual worker interpreter executes factorial and lexical closures",
+      "pageErrors": []
+    },
+    {
+      "project": "taskflow",
+      "url": "http://127.0.0.1:5179/",
+      "verified": "Live API create/read rendered after reload; disposable record deleted, existing list retained",
+      "pageErrors": []
+    }
+  ]
+}

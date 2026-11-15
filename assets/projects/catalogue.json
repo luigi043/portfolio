@@ -1,0 +1,746 @@
+[
+  {
+    "id": "vehicle-build-cost-calculator",
+    "slug": "vehicle-build-cost-calculator",
+    "title": "Vehicle Build Cost Calculator",
+    "shortSummary": "Owner-scoped build budgets with planned, actual and projected costs across independent scenarios.",
+    "problem": "Build estimates need explicit prices, consistent scenario links and a reliable ownership boundary.",
+    "architecture": "React communicates with an ASP.NET Core API; EF Core persists owner-scoped records and decimal costs in PostgreSQL.",
+    "decisions": [
+      "Scope queries and summaries to the JWT owner, including parent links.",
+      "Keep unknown legacy costs and owners unassigned; never infer money from notes.",
+      "Compare alternatives separately and include shared costs once."
+    ],
+    "highlights": [
+      "Build and scenario CRUD with linked parts, labor and forecast allowances.",
+      "Server-calculated planned, actual and projected totals; EUR, USD and GBP without conversion."
+    ],
+    "outcome": "38 backend tests, frontend build, real browser cost edits and PostgreSQL migration/persistence checks passed.",
+    "constraints": [
+      "Full line totals only: no quantity pricing, partial-payment ledger, receipts or currency conversion.",
+      "Production secrets, token lifecycle, deployment migrations and broader accessibility review remain."
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "ASP.NET Core",
+      "EF Core",
+      "PostgreSQL",
+      "JWT"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "featured": true,
+    "public": true,
+    "status": "Local demonstration · Static runtime preview",
+    "screenshot": "assets/projects/vehicle-build-cost-calculator.webp",
+    "screenshotAlt": "Cost comparison table with separate planned, paid, projected and remaining amounts",
+    "width": 1152,
+    "height": 481,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Cost comparison table with separate planned, paid, projected and remaining amounts"
+    },
+    "repositoryUrl": "https://github.com/luigi043/vehicle-build-cost-calculator",
+    "evidence": [
+      "Verification describes the prepared local checkout on 28–29 October 2026; it is not a production or business outcome claim.",
+      "Prepared improvements have not been pushed; the public repository may differ from this runtime preview."
+    ],
+    "seo": {
+      "title": "Vehicle Build Cost Calculator Case Study | Luiz Fehlberg",
+      "description": "Owner-scoped build budgets with planned, actual and projected costs across independent scenarios."
+    }
+  },
+  {
+    "id": "bmw-configurator",
+    "slug": "bmw-configurator",
+    "title": "BMW Configurator / Drive Studio",
+    "shortSummary": "A procedural 3D concept car with visible customization, indicative pricing and a build-summary dialog.",
+    "problem": "Visual selections and the quoted total must agree with the rendered car and build summary.",
+    "architecture": "A React interface shares configuration through Zustand; React Three Fiber renders one procedural body with local studio reflections.",
+    "decisions": [
+      "Render one procedural model and expose wheels through body openings.",
+      "Validate package IDs and deduplicate charges.",
+      "Honor reduced motion and separate the viewport from mobile controls."
+    ],
+    "highlights": [
+      "Paint, wheel and cabin-accent selections with reset.",
+      "Build review lists current selections and exact illustrative EUR line items."
+    ],
+    "outcome": "14 unit tests, 12 desktop/mobile browser checks, lint and production build passed.",
+    "constraints": [
+      "Independent concept; no official BMW affiliation. Prices are illustrative, not dealer quotations.",
+      "Two tiers share one stylized body; interior is an accent and driver assistance affects price only.",
+      "No saved builds, checkout or backend. Inactive OBJ provenance is unverified; that asset is not reused here."
+    ],
+    "stack": [
+      "React",
+      "JavaScript",
+      "Three.js",
+      "React Three Fiber",
+      "GSAP",
+      "Zustand"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "featured": true,
+    "public": true,
+    "status": "Local demonstration · Static runtime preview",
+    "screenshot": "assets/projects/bmw-configurator.webp",
+    "screenshotAlt": "Customized procedural concept car and configuration controls",
+    "width": 1440,
+    "height": 1000,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Customized procedural concept car and configuration controls"
+    },
+    "repositoryUrl": "https://github.com/luigi043/bmw-configurator",
+    "evidence": [
+      "Verification describes the prepared local checkout on 28–29 October 2026; it is not a production or business outcome claim.",
+      "Prepared improvements have not been pushed; the public repository may differ from this runtime preview."
+    ],
+    "seo": {
+      "title": "BMW Configurator / Drive Studio Case Study | Luiz Fehlberg",
+      "description": "A procedural 3D concept car with visible customization, indicative pricing and a build-summary dialog."
+    }
+  },
+  {
+    "id": "flowchart-to-code-converter",
+    "slug": "flowchart-to-code-converter",
+    "title": "Flowchart-to-Code",
+    "shortSummary": "A visual editor that validates structured graphs and generates pseudocode, Python and JavaScript.",
+    "problem": "Branch joins and invalid graph connections can silently change the meaning of generated code.",
+    "architecture": "React Flow sends a graph to Express; validation precedes a shared intermediate representation and three language renderers.",
+    "decisions": [
+      "Validate connectivity and outgoing edges after adjacency construction.",
+      "Use common postdominators to identify shared continuations.",
+      "Clear stale output after edits and discard delayed responses."
+    ],
+    "highlights": [
+      "Edit nodes and connections, reset examples, copy and download generated source.",
+      "Actionable feedback for invalid graphs and unsupported structures."
+    ],
+    "outcome": "36 backend tests with Python enabled, two frontend API tests, HTTP checks and real browser workflows passed.",
+    "constraints": [
+      "Acyclic sequences and structured decisions only; loops and crossing overlaps are rejected.",
+      "Labels are emitted as verbatim code: no expression parser, type checker or safe-code guarantee.",
+      "No diagram persistence or hosted execution. The canvas is designed for desktop/laptop use."
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "React Flow",
+      "Express"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "featured": true,
+    "public": true,
+    "status": "Local demonstration · Static runtime preview",
+    "screenshot": "assets/projects/flowchart-to-code-converter.webp",
+    "screenshotAlt": "Flowchart canvas and generated pseudocode for an even/odd decision",
+    "width": 1280,
+    "height": 800,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Flowchart canvas and generated pseudocode for an even/odd decision"
+    },
+    "repositoryUrl": "https://github.com/luigi043/demo3-flowchart-to-code",
+    "evidence": [
+      "Verification describes the prepared local checkout on 28–29 October 2026; it is not a production or business outcome claim.",
+      "Prepared improvements have not been pushed; the public repository may differ from this runtime preview."
+    ],
+    "seo": {
+      "title": "Flowchart-to-Code Case Study | Luiz Fehlberg",
+      "description": "A visual editor that validates structured graphs and generates pseudocode, Python and JavaScript."
+    }
+  },
+  {
+    "id": "ctw-vehicle-fleet",
+    "slug": "ctw-vehicle-fleet",
+    "title": "CTW Vehicle Fleet",
+    "shortSummary": "A vehicle catalogue and stored telemetry reference app with two persistence models.",
+    "problem": "Vehicle master data and timestamped telemetry require distinct storage and clear validation feedback.",
+    "architecture": "Angular calls a layered Spring Boot API; Flyway manages PostgreSQL vehicle records and MongoDB stores timestamped telemetry. nginx proxies the integrated Docker environment.",
+    "decisions": [
+      "Use DTOs and service boundaries rather than exposing persistence entities.",
+      "Validate VIN uniqueness, numeric precision and missing measurements.",
+      "Distinguish an empty telemetry result from a failed request."
+    ],
+    "highlights": [
+      "Create, inspect, edit and delete vehicles with structured conflict errors.",
+      "Read the latest stored telemetry; API endpoints expose ordered history."
+    ],
+    "outcome": "24 backend tests plus browser CRUD, mobile, API and restart-persistence checks passed.",
+    "constraints": [
+      "Independent reference app; no company, client or employment affiliation is claimed.",
+      "No authentication, streaming or sensor integration; history is unpaginated and telemetry remains after vehicle deletion.",
+      "Local demo only. Preparation audit reported 55 npm advisories, including two critical build dependencies; remediation remains."
+    ],
+    "stack": [
+      "Angular",
+      "TypeScript",
+      "Java 21",
+      "Spring Boot",
+      "PostgreSQL",
+      "MongoDB",
+      "Docker"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "featured": true,
+    "public": true,
+    "status": "Local demonstration · Static runtime preview",
+    "screenshot": "assets/projects/ctw-vehicle-fleet.webp",
+    "screenshotAlt": "Vehicle fleet catalogue with illustrative vehicle records",
+    "width": 1440,
+    "height": 1000,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Vehicle fleet catalogue with illustrative vehicle records"
+    },
+    "repositoryUrl": "https://github.com/luigi043/ctw-vehicle-fleet",
+    "evidence": [
+      "Verification describes the prepared local checkout on 28–29 October 2026; it is not a production or business outcome claim.",
+      "Prepared improvements have not been pushed; the public repository may differ from this runtime preview."
+    ],
+    "seo": {
+      "title": "CTW Vehicle Fleet Case Study | Luiz Fehlberg",
+      "description": "A vehicle catalogue and stored telemetry reference app with two persistence models."
+    }
+  },
+  {
+    "id": "academic-portal",
+    "slug": "academic-portal",
+    "title": "Academic Portal / Portal Académico",
+    "shortSummary": "Course-scoped teacher access and attendance recording in a Laravel application.",
+    "problem": "Attendance updates must validate the enrolled roster and restrict teachers to assigned courses.",
+    "architecture": "Laravel session authentication protects Blade attendance views. Assignment checks run on the server; transactional writes and unique student/class keys preserve record integrity.",
+    "decisions": [
+      "Reuse Laravel sessions and hashed passwords.",
+      "Apply one course-context policy to viewing, editing and direct submissions.",
+      "Validate the complete enrollment roster before a transaction."
+    ],
+    "highlights": [
+      "Teacher sign-in/logout and assigned-course dashboard.",
+      "Record present, absent, late or excused; review and correct saved attendance."
+    ],
+    "outcome": "10 tests with 68 assertions plus cross-teacher denial, browser logout, mobile and restart checks passed.",
+    "constraints": [
+      "Local demo uses fictional students and SQLite; no institutional deployment or endorsement is claimed.",
+      "No account administration, password recovery, MFA, change audit history or concurrent-edit resolution.",
+      "Individual/group coursework context and exact personal contribution are unconfirmed."
+    ],
+    "stack": [
+      "Laravel",
+      "PHP",
+      "Blade",
+      "SQLite",
+      "Eloquent"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "featured": true,
+    "public": true,
+    "status": "Local demonstration · Static runtime preview",
+    "screenshot": "assets/projects/academic-portal.webp",
+    "screenshotAlt": "Attendance summary with fictional student records and four attendance states",
+    "width": 1265,
+    "height": 712,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Attendance summary with fictional student records and four attendance states"
+    },
+    "repositoryUrl": "https://github.com/luigi043/projeto_psa",
+    "evidence": [
+      "Verification describes the prepared local checkout on 28–29 October 2026; it is not a production or business outcome claim.",
+      "Prepared improvements have not been pushed; the public repository may differ from this runtime preview."
+    ],
+    "seo": {
+      "title": "Academic Portal / Portal Académico Case Study | Luiz Fehlberg",
+      "description": "Course-scoped teacher access and attendance recording in a Laravel application."
+    }
+  },
+  {
+    "id": "bella-ops",
+    "slug": "bella-ops",
+    "title": "Bella Ops",
+    "shortSummary": "Connected restaurant customer and operations experiences sharing bookings, menus and orders in one browser.",
+    "problem": "Guest reservations and orders need to reach the operational view, while menu changes must reach customers.",
+    "architecture": "Lazy Angular customer and operations routes share TypeScript browser-local stores. SCSS supports the restaurant site and compact operations console.",
+    "decisions": [
+      "Keep the existing frontend stack and explicit browser-local scope.",
+      "Validate bookings and integer-cent totals; report failed storage writes.",
+      "Persist customer order/status handoffs and menu visibility across reloads."
+    ],
+    "highlights": [
+      "Browse the menu, save a reservation and place a simulated collection order.",
+      "Review customer bookings/orders and publish menu prices and availability."
+    ],
+    "outcome": "Production build and five Chrome regression scenarios passed, including mobile, persistence, denied writes and repeat checkout.",
+    "constraints": [
+      "Fictional restaurant prototype: no backend, real authentication, payments, email or multi-user synchronization.",
+      "Overview sales, staff and charts are sample modules rather than measured checkout analytics.",
+      "17 dependency advisories remain, including one critical; broader deployment needs remediation."
+    ],
+    "stack": [
+      "Angular",
+      "TypeScript",
+      "SCSS",
+      "localStorage"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "featured": true,
+    "public": true,
+    "status": "Local demonstration · Static runtime preview",
+    "screenshot": "assets/projects/bella-ops.webp",
+    "screenshotAlt": "Fictional restaurant customer homepage with existing illustrative photography",
+    "width": 1440,
+    "height": 1000,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Fictional restaurant customer homepage with existing illustrative photography"
+    },
+    "repositoryUrl": "https://github.com/luigi043/restaurant-app",
+    "evidence": [
+      "Verification describes the prepared local checkout on 28–29 October 2026; it is not a production or business outcome claim.",
+      "Prepared improvements have not been pushed; the public repository may differ from this runtime preview."
+    ],
+    "seo": {
+      "title": "Bella Ops Case Study | Luiz Fehlberg",
+      "description": "Connected restaurant customer and operations experiences sharing bookings, menus and orders in one browser."
+    }
+  },
+  {
+    "id": "lang-interpreter",
+    "slug": "lang-interpreter",
+    "title": "MiniLang Interpreter",
+    "shortSummary": "A TypeScript language pipeline with lexical environments, recursion, closures and a bounded browser playground.",
+    "problem": "Language features need consistent scope, logical precedence, return behavior and readable execution errors.",
+    "architecture": "A lexer feeds a recursive-descent parser and tree-walk interpreter. The browser runs the actual interpreter in a disposable worker; the CLI provides a persistent REPL.",
+    "decisions": [
+      "Give blocks child environments and separate AND/OR precedence.",
+      "Validate native arity/types and propagate returns explicitly.",
+      "Bound visits, call depth and output; terminate browser workers on timeout."
+    ],
+    "highlights": [
+      "Inspect editable examples including factorial and returned counter closures.",
+      "Display tokens/statement counts, output and language errors; preserve/reset REPL state."
+    ],
+    "outcome": "62 interpreter tests, type checks, CLI/REPL checks, production build and browser examples passed.",
+    "constraints": [
+      "Educational language: no arrays/objects, modules or JavaScript interop; numbers use JavaScript floating-point behavior.",
+      "Worker limits are demo safeguards, not a hardened hostile-code sandbox or memory quota.",
+      "Manual Stop was not independently confirmed; interpreter-budget termination and subsequent recovery were verified."
+    ],
+    "stack": [
+      "TypeScript",
+      "Lexer",
+      "Parser",
+      "AST",
+      "Web Workers",
+      "Vite"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demonstration · Static runtime preview",
+    "screenshot": "assets/projects/lang-interpreter.webp",
+    "screenshotAlt": "Actual MiniLang playground executing factorial of seven with output 5040",
+    "width": 1265,
+    "height": 1154,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Actual MiniLang playground executing factorial of seven with output 5040"
+    },
+    "repositoryUrl": "https://github.com/luigi043/lang-interpreter",
+    "evidence": [
+      "Verification describes the prepared local checkout on 28–29 October 2026; it is not a production or business outcome claim.",
+      "Prepared improvements have not been pushed; the public repository may differ from this runtime preview."
+    ],
+    "seo": {
+      "title": "MiniLang Interpreter Case Study | Luiz Fehlberg",
+      "description": "A TypeScript language pipeline with lexical environments, recursion, closures and a bounded browser playground."
+    }
+  },
+  {
+    "id": "taskflow",
+    "slug": "taskflow",
+    "title": "TaskFlow",
+    "shortSummary": "A task manager with browser-local storage or an optional file-backed Express API.",
+    "problem": "Tasks should survive normal restarts and failed loads should be recoverable without losing edit feedback.",
+    "architecture": "A React task hook uses interchangeable storage adapters. The Express demo validates records and replaces JSON snapshots before publishing mutations in memory.",
+    "decisions": [
+      "Keep components independent of the selected storage adapter.",
+      "Clear completed tasks through one atomic server operation.",
+      "Add Retry loading and visible edit errors that retain the draft."
+    ],
+    "highlights": [
+      "Add, edit, complete, reopen and delete tasks; filter active/completed items.",
+      "Separate local/API lists, retained theme and responsive inline editing."
+    ],
+    "outcome": "29 client tests, 16 server tests, both production builds and browser/restart checks passed; package audits reported zero at preparation time.",
+    "constraints": [
+      "No accounts, authentication, automatic synchronization or hosted database guarantees.",
+      "Snapshot persistence supports one process and small lists; no power-loss guarantee or concurrent-edit protection.",
+      "Browser and API modes keep separate lists. Hosted durability and physical-device coverage remain unverified."
+    ],
+    "stack": [
+      "React",
+      "Express",
+      "Tailwind CSS",
+      "Vitest",
+      "React Testing Library",
+      "Supertest"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demonstration · Static runtime preview",
+    "screenshot": "assets/projects/taskflow.webp",
+    "screenshotAlt": "TaskFlow dark interface with illustrative active and completed tasks",
+    "width": 1440,
+    "height": 900,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "TaskFlow dark interface with illustrative active and completed tasks"
+    },
+    "repositoryUrl": "https://github.com/luigi043/taskflows",
+    "evidence": [
+      "Verification describes the prepared local checkout on 28–29 October 2026; it is not a production or business outcome claim.",
+      "Prepared improvements have not been pushed; the public repository may differ from this runtime preview."
+    ],
+    "seo": {
+      "title": "TaskFlow Case Study | Luiz Fehlberg",
+      "description": "A task manager with browser-local storage or an optional file-backed Express API."
+    }
+  },
+  {
+    "id": "sferatagscanner",
+    "slug": "sferatagscanner",
+    "title": "Sfera Tag Scanner",
+    "shortSummary": "A Kotlin Android inventory app with a synthetic-input browser companion powered by shared reference, quantity and duplicate rules.",
+    "problem": "Clothing-tag references must preserve leading zeros, distinguish exact duplicates from color variants and reject invalid stock operations.",
+    "architecture": "The Android source uses Kotlin, Jetpack Compose, Hilt and Room, with CameraX and ML Kit image-input paths and basic Apache POI spreadsheet helpers. The separate browser companion calls a loopback Kotlin HTTP server compiling the actual InventoryRules.kt and SferaCode.kt. Its inventory and movement adapter is server-side and in memory; it does not run Room or reproduce the Android interface.",
+    "decisions": [
+      "Share platform-independent Kotlin reference, quantity and duplicate rules with Android rather than reimplementing them in JavaScript.",
+      "Correct status filtering, reject malformed references, invalid quantities, duplicate entries and repeated exits.",
+      "Make unfinished Bluetooth/USB/NFC RFID adapters explicitly report unsupported instead of claiming a successful connection.",
+      "Keep the companion synthetic and loopback-only, with a bounded 128 MB Java heap and no API credentials."
+    ],
+    "highlights": [
+      "Inspect a dotted reference while retaining leading zeros; distinguish a color variant from an exact duplicate.",
+      "Companion inventory supports synthetic entry, full-reference exit, movement history, search and status filtering.",
+      "Restore the Gradle wrapper and remove generated Android build products from Git tracking; update the basic spreadsheet dependency without claiming native compatibility verification."
+    ],
+    "outcome": "Preparation passed 18 actual Kotlin core assertions and real Chromium workflow/mobile checks. Integration verifies the running companion without resetting existing inventory. Native Gradle configuration reached SDK discovery and stopped because the Android SDK is missing.",
+    "constraints": [
+      "Native Android build remains blocked by the missing SDK. Camera capture, physical OCR, optional remote image extraction, Room persistence and device file access were not verified.",
+      "RFID is unfinished: no tested reader connection, EPC mapping or hardware compatibility is claimed.",
+      "Companion inventory/history are server-side in memory, not browser storage. State resets on server restart or explicit sample reset; there is no authentication or persistence.",
+      "Exit marks the entire reference out, not a partial sale. Native save/movement transactions and failure recovery still need integration tests.",
+      "Spreadsheet helpers read the first worksheet/seven fields and create a new workbook; they do not preserve macros, quantities/status/history or provide full inventory sync/backup.",
+      "No affiliation, commissioning, individual contribution narrative, production deployment or business outcome is inferred."
+    ],
+    "stack": [
+      "Kotlin",
+      "Jetpack Compose",
+      "Room",
+      "Hilt",
+      "CameraX",
+      "ML Kit",
+      "Apache POI"
+    ],
+    "categories": [
+      "Mobile"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Android source · Synthetic Kotlin browser companion",
+    "screenshot": "assets/projects/sfera-desktop.webp",
+    "screenshotAlt": "Browser companion inspecting a synthetic color variant; not a native Android capture",
+    "width": 1440,
+    "height": 1169,
+    "gallery": [
+      {
+        "src": "assets/projects/sfera-movements.webp",
+        "alt": "Kotlin browser companion showing a synthetic quantity-four entry and full-reference exit",
+        "width": 1440,
+        "height": 1223
+      },
+      {
+        "src": "assets/projects/sfera-mobile.webp",
+        "alt": "Browser companion at 390px with synthetic input and in-memory inventory; not Android UI",
+        "width": 390,
+        "height": 1982
+      }
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Real synthetic-input browser companion capture; not Android, OCR or RFID evidence."
+    },
+    "repositoryUrl": "https://github.com/luigi043/sferatagscanner",
+    "evidence": [
+      "18 Kotlin assertions and browser checks were reported in the prepared checkout on 30 October 2026; these are technical checks, not production or business metrics.",
+      "Prepared source improvements have not been pushed; public GitHub may differ from the companion captures."
+    ],
+    "seo": {
+      "title": "Sfera Tag Scanner Case Study | Luiz Fehlberg",
+      "description": "Shared Kotlin inventory validation, a synthetic browser companion and the explicit Android SDK, OCR and RFID verification boundaries."
+    }
+  },
+  {
+    "id": "bugrepro",
+    "slug": "bugrepro",
+    "title": "BugRepro",
+    "shortSummary": "Track a defect from its initial report through reproduction attempts and proposed fixes.",
+    "problem": "Track a defect from its initial report through reproduction attempts and proposed fixes.",
+    "architecture": "A React client has a browser-storage demo mode. The full application uses an Express API and MongoDB.",
+    "decisions": [
+      "Try a checkout defect, draft a report, log a reproduction attempt, and vote on a proposed fix."
+    ],
+    "highlights": [
+      "Try a checkout defect, draft a report, log a reproduction attempt, and vote on a proposed fix."
+    ],
+    "outcome": "Browser checks covered duplicate recovery and persistence. Live MongoDB was outside the verified demo.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "cd client\nnpm ci\nnpm run demo",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Express",
+      "MongoDB"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/bugrepro.webp",
+    "screenshotAlt": "BugRepro demo showing a checkout defect report",
+    "width": 1440,
+    "height": 1108,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "BugRepro demo showing a checkout defect report"
+    },
+    "repositoryUrl": "https://github.com/luigi043/bugrepro",
+    "seo": {
+      "title": "BugRepro Case Study | Luiz Fehlberg",
+      "description": "Track a defect from its initial report through reproduction attempts and proposed fixes."
+    }
+  },
+  {
+    "id": "constraint-engine",
+    "slug": "constraint-engine",
+    "title": "Constraint Engine",
+    "shortSummary": "Find a valid route through a grid and inspect the rules that fired after each move.",
+    "problem": "Find a valid route through a grid and inspect the rules that fired after each move.",
+    "architecture": "The same browser rules engine powers the route search and a live sandbox with editable rules.",
+    "decisions": [
+      "Change the starting energy or move limit and compare a successful route with an unsatisfiable one."
+    ],
+    "highlights": [
+      "Change the starting energy or move limit and compare a successful route with an unsatisfiable one."
+    ],
+    "outcome": "The project handoff reports 41 Vitest tests and desktop and mobile browser checks.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "npm ci\nnpm run dev -- --host 127.0.0.1",
+    "stack": [
+      "TypeScript",
+      "Vite",
+      "Vitest"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/constraint-engine.webp",
+    "screenshotAlt": "Constraint Engine demo showing a solved grid route",
+    "width": 1440,
+    "height": 980,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Constraint Engine demo showing a solved grid route"
+    },
+    "repositoryUrl": "https://github.com/luigi043/constraint-engine",
+    "seo": {
+      "title": "Constraint Engine Case Study | Luiz Fehlberg",
+      "description": "Find a valid route through a grid and inspect the rules that fired after each move."
+    }
+  },
+  {
+    "id": "debug-ai",
+    "slug": "debug-ai",
+    "title": "Debug AI",
+    "shortSummary": "Inspect a runtime error, trace the stack, and review a proposed fix.",
+    "problem": "Inspect a runtime error, trace the stack, and review a proposed fix.",
+    "architecture": "A TypeScript client calls an API. The default mode applies deterministic rules to produce labeled simulated results.",
+    "decisions": [
+      "Load the React or Python example and inspect the highlighted stack frames before reviewing its suggested fix."
+    ],
+    "highlights": [
+      "Load the React or Python example and inspect the highlighted stack frames before reviewing its suggested fix."
+    ],
+    "outcome": "Three API integration tests and browser checks passed in the handoff. The live provider path remains untested.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "npm run install:all\nnpm run dev",
+    "stack": [
+      "TypeScript",
+      "React",
+      "Express"
+    ],
+    "categories": [
+      "Web",
+      "AI"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/debug-ai.webp",
+    "screenshotAlt": "Debug AI demo showing a simulated runtime error analysis",
+    "width": 1440,
+    "height": 1000,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Debug AI demo showing a simulated runtime error analysis"
+    },
+    "repositoryUrl": "https://github.com/luigi043/debug-ai",
+    "seo": {
+      "title": "Debug AI Case Study | Luiz Fehlberg",
+      "description": "Inspect a runtime error, trace the stack, and review a proposed fix."
+    }
+  },
+  {
+    "id": "smart-home-command-center",
+    "slug": "smart-home-command-center",
+    "title": "Smart Home Command Center",
+    "shortSummary": "Control a simulated home, switch between rooms, and activate scenes.",
+    "problem": "Control a simulated home, switch between rooms, and activate scenes.",
+    "architecture": "The React simulation runs in the browser. A separate API workspace uses ASP.NET Core, EF Core and PostgreSQL.",
+    "decisions": [
+      "Toggle a light or choose Movie Night, then check how the dashboard records the change."
+    ],
+    "highlights": [
+      "Toggle a light or choose Movie Night, then check how the dashboard records the change."
+    ],
+    "outcome": "Browser workflow checks passed in the handoff. Physical devices and a live PostgreSQL workflow remain unverified.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "cd frontend\nnpm ci\nnpm run dev",
+    "stack": [
+      "React",
+      "TypeScript",
+      "ASP.NET Core",
+      "PostgreSQL"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/smart-home-command-center.webp",
+    "screenshotAlt": "Smart Home Command Center demo showing the simulated home dashboard",
+    "width": 1440,
+    "height": 960,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Smart Home Command Center demo showing the simulated home dashboard"
+    },
+    "repositoryUrl": "https://github.com/luigi043/smart-home-command-center",
+    "seo": {
+      "title": "Smart Home Command Center Case Study | Luiz Fehlberg",
+      "description": "Control a simulated home, switch between rooms, and activate scenes."
+    }
+  },
+  {
+    "id": "voice-to-code",
+    "slug": "voice-to-code",
+    "title": "Voice to Code",
+    "shortSummary": "Turn a typed or spoken instruction into a code snippet you can review and export.",
+    "problem": "Turn a typed or spoken instruction into a code snippet you can review and export.",
+    "architecture": "The browser UI offers sample generation and a separate live mode. The example workflow uses local sample output.",
+    "decisions": [
+      "Choose Sort numbers, switch to TypeScript, generate the snippet, then copy or download it."
+    ],
+    "highlights": [
+      "Choose Sort numbers, switch to TypeScript, generate the snippet, then copy or download it."
+    ],
+    "outcome": "Browser checks exercised simulated speech and generation. Physical microphone capture and authenticated provider calls remain unverified.",
+    "constraints": [
+      "The examples use sample data and are designed for local review."
+    ],
+    "evidence": [],
+    "demoSetup": "npm ci\nnpm run demo",
+    "stack": [
+      "JavaScript",
+      "Vite",
+      "Web Speech API"
+    ],
+    "categories": [
+      "Web",
+      "AI"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local demo · Example workflow",
+    "screenshot": "assets/projects/voice-to-code.webp",
+    "screenshotAlt": "Voice to Code demo showing a generated sorting example",
+    "width": 1366,
+    "height": 1013,
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Voice to Code demo showing a generated sorting example"
+    },
+    "repositoryUrl": "https://github.com/luigi043/voice-to-code",
+    "seo": {
+      "title": "Voice to Code Case Study | Luiz Fehlberg",
+      "description": "Turn a typed or spoken instruction into a code snippet you can review and export."
+    }
+  }
+]

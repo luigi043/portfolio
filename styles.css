@@ -693,6 +693,19 @@ body.dialog-open {
   color: var(--text-primary);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  :is(.btn, .filter-btn):not(:disabled):active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.btn, .filter-btn):is(:hover, :active) {
+    transform: none;
+  }
+}
+
 /* Social Links */
 .social-links {
   display: flex;

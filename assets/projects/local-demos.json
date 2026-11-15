@@ -1,0 +1,60 @@
+{
+  "vehicle-build-cost-calculator": [
+    {
+      "label": "Open local demo",
+      "url": "http://127.0.0.1:5173/"
+    }
+  ],
+  "bmw-configurator": [
+    {
+      "label": "Open local demo",
+      "url": "http://127.0.0.1:5174/"
+    }
+  ],
+  "flowchart-to-code-converter": [
+    {
+      "label": "Open local demo",
+      "url": "http://127.0.0.1:5175/"
+    }
+  ],
+  "ctw-vehicle-fleet": [
+    {
+      "label": "Open local demo",
+      "url": "http://127.0.0.1:5176/"
+    }
+  ],
+  "academic-portal": [
+    {
+      "label": "Open local demo",
+      "url": "http://127.0.0.1:5081/"
+    }
+  ],
+  "bella-ops": [
+    {
+      "label": "Open local demo",
+      "url": "http://127.0.0.1:5177/restaurant/home"
+    },
+    {
+      "label": "Local operations console",
+      "url": "http://127.0.0.1:5177/operations"
+    }
+  ],
+  "lang-interpreter": [
+    {
+      "label": "Open local demo",
+      "url": "http://127.0.0.1:5178/"
+    }
+  ],
+  "taskflow": [
+    {
+      "label": "Open local demo",
+      "url": "http://127.0.0.1:5179/"
+    }
+  ],
+  "sferatagscanner": [
+    {
+      "label": "Local companion demo",
+      "url": "http://127.0.0.1:5181/"
+    }
+  ]
+}
