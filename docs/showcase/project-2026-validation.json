@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "static",
+    "width": 390,
+    "newRoutes": 2,
+    "images": "decoded",
+    "androidCards": 11,
+    "overflow": false,
+    "pageErrors": []
+  },
+  {
+    "kind": "static",
+    "width": 1440,
+    "newRoutes": 2,
+    "images": "decoded",
+    "androidCards": 11,
+    "overflow": false,
+    "pageErrors": []
+  },
+  {
+    "kind": "react",
+    "width": 390,
+    "newRoutes": 2,
+    "images": "decoded",
+    "androidCards": 11,
+    "overflow": false,
+    "pageErrors": []
+  },
+  {
+    "kind": "react",
+    "width": 1440,
+    "newRoutes": 2,
+    "images": "decoded",
+    "androidCards": 11,
+    "overflow": false,
+    "pageErrors": []
+  }
+]
