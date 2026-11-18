@@ -7,7 +7,7 @@ describe("secondary project explorer", () => {
     const user = userEvent.setup();
     render(<ProjectExplorer />);
 
-    expect(screen.getByRole("status")).toHaveTextContent("Showing 17 projects");
+    expect(screen.getByRole("status")).toHaveTextContent("Showing 19 projects");
     await user.click(screen.getByRole("button", { name: "Mobile" }));
 
     expect(screen.getByRole("button", { name: "Mobile" })).toHaveAttribute(

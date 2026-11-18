@@ -742,5 +742,128 @@
       "title": "Voice to Code Case Study | Luiz Fehlberg",
       "description": "Turn a typed or spoken instruction into a code snippet you can review and export."
     }
+  },
+  {
+    "slug": "social",
+    "title": "Mosaic Content Planner",
+    "shortSummary": "Plan creator content across channels with drafts, a calendar and browser-saved edits.",
+    "architecture": "Next.js App Router provides routes and page states. A React workspace uses a shared planner module to validate drafts, planned dates and saved data in browser local storage.",
+    "problem": "Keep draft ideas and dated editorial plans together across creator channels.",
+    "decisions": [
+      "Use one validated post model for the editor, content plan and calendar.",
+      "Keep fictional starter content and reset controls available for a self-contained demonstration."
+    ],
+    "highlights": [
+      "Create a draft, add a planned date and find the post in the calendar.",
+      "Filter posts and fictional profiles by channel and retain edits after reload."
+    ],
+    "constraints": [
+      "Dates represent editorial plans. Publishing, live metrics, accounts and shared workspaces are unavailable.",
+      "Browser storage is local to the origin and profile. Simultaneous writes across tabs are not atomic.",
+      "The source handoff identifies a framework update as a prerequisite for public hosting."
+    ],
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Browser Storage"
+    ],
+    "outcome": "The source handoff records four planner tests, lint, TypeScript, production build and desktop/mobile workflow checks. Changes remain in the prepared local checkout.",
+    "demoSetup": "cd social\npnpm install --frozen-lockfile\nnpm run dev -- --hostname 127.0.0.1",
+    "id": "social",
+    "categories": [
+      "Web"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "screenshot": "assets/projects/social.webp",
+    "screenshotAlt": "Mosaic calendar showing a planned creator post",
+    "width": 1440,
+    "height": 1000,
+    "gallery": [
+      {
+        "src": "assets/projects/social-mobile.webp",
+        "alt": "Mosaic creator workspace on a mobile screen",
+        "width": 780,
+        "height": 1688
+      }
+    ],
+    "repositoryUrl": "https://github.com/luigi043/social",
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Mosaic calendar showing a planned creator post"
+    },
+    "evidence": [
+      "Reviewed the project README, source configuration, captured screens and completion handoff in project-2026."
+    ],
+    "seo": {
+      "title": "Mosaic Content Planner Case Study | Luiz Fehlberg",
+      "description": "Plan creator content across channels with drafts, a calendar and browser-saved edits."
+    }
+  },
+  {
+    "slug": "smart-gym-transformation-app",
+    "title": "Smart Gym Transformation App",
+    "shortSummary": "Log workouts and body measurements, then review dated training progress and weight trends.",
+    "architecture": "A React and TypeScript interface shares record editors and an API client. Demo mode uses browser storage with fictional records. The ASP.NET Core API uses EF Core and PostgreSQL with account-scoped queries and rotating refresh cookies.",
+    "problem": "Connect dated workout sessions and body measurements to a readable progress history.",
+    "decisions": [
+      "Store workout dates independently from record creation timestamps.",
+      "Store duration in whole minutes and weight in kilograms, with a display unit switch.",
+      "Keep older records with unknown ownership excluded from authenticated account views."
+    ],
+    "highlights": [
+      "Create and edit a workout, then filter its history by date.",
+      "Log body weight and switch the progress display between kilograms and pounds.",
+      "Reset fictional demo records or use the documented full-stack setup."
+    ],
+    "constraints": [
+      "The browser demo uses fictional data saved to the current browser. It does not connect to the account API.",
+      "Full-stack use requires the documented PostgreSQL and API setup and private server signing configuration.",
+      "The handoff records an older development signing key in repository history. Public deployment requires resolving that historical exposure."
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "ASP.NET Core",
+      "EF Core",
+      "PostgreSQL"
+    ],
+    "outcome": "The source handoff records seven backend tests, Release and frontend builds, lint, TypeScript, browser workflows and PostgreSQL integration checks including account isolation and token rotation. Changes remain local.",
+    "demoSetup": "cd smart-gym-transformation-app/frontend\nnpm ci\nnpm run demo",
+    "id": "smart-gym-transformation-app",
+    "categories": [
+      "Web"
+    ],
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "screenshot": "assets/projects/smart-gym-transformation-app.webp",
+    "screenshotAlt": "Smart Gym progress showing workout history and body-weight measurements",
+    "width": 1440,
+    "height": 780,
+    "gallery": [
+      {
+        "src": "assets/projects/smart-gym-transformation-app-mobile.webp",
+        "alt": "Smart Gym progress on a mobile screen",
+        "width": 390,
+        "height": 1023
+      }
+    ],
+    "repositoryUrl": "https://github.com/luigi043/smart-gym-transformation-app",
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Smart Gym progress showing workout history and body-weight measurements"
+    },
+    "evidence": [
+      "Reviewed the project README, source configuration, captured screens and completion handoff in project-2026."
+    ],
+    "seo": {
+      "title": "Smart Gym Transformation App Case Study | Luiz Fehlberg",
+      "description": "Log workouts and body measurements, then review dated training progress and weight trends."
+    }
   }
 ]

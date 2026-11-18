@@ -10,7 +10,11 @@ const localSlot = p => `<div data-local-demo="${p.slug}"></div>`;
 const gallery = p => p.gallery ? `<section class="companion-gallery" aria-label="Companion screenshot gallery">${p.gallery.map(i => `<figure><a href="../${i.src}"><img src="../${i.src}" alt="${escape(i.alt)}" width="${i.width}" height="${i.height}" loading="lazy"></a><figcaption>${escape(i.alt)}</figcaption></figure>`).join('')}</section>` : '';
 fs.copyFileSync('assets/projects/local-demos.json', 'react-portfolio-candidate/src/data/local-demos.json');
 fs.copyFileSync('assets/projects/android.json', 'react-portfolio-candidate/src/data/android.json');
-fs.writeFileSync('react-portfolio-candidate/src/data/local-projects.json', JSON.stringify(records.filter(project => project.demoSetup), null, 2) + '\n');
+const localProjects = records.filter(project => project.demoSetup).map(project => ({
+  ...project,
+  gallery: project.gallery?.map(image => ({ ...image, src: '/' + image.src })),
+}));
+fs.writeFileSync('react-portfolio-candidate/src/data/local-projects.json', JSON.stringify(localProjects, null, 2) + '\n');
 fs.mkdirSync('projects', { recursive: true });
 for (const project of android) {
   const { slug, title, shortSummary, screenshot, screenshotAlt, width, height, architecture, outcome } = project;
