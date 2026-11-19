@@ -24,7 +24,7 @@
   <meta name="twitter:description" content="Computer Engineer and Full Stack Developer based in Portugal. Web apps, Android, embedded systems." />
 
 
-  
+
   <!-- Favicon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
@@ -127,9 +127,12 @@
         <div class="hero-content">
             <!-- Profile Image -->
             <div class="hero-image">
-                <img 
-                    src="https://snipboard.io/aOEr1c.jpg" 
-                    alt="Luiz Fehlberg" 
+                <img
+                    src="assets/images/luiz-fehlberg.webp"
+                    alt="Portrait of Luiz Fehlberg"
+                    width="1122"
+                    height="1402"
+                    fetchpriority="high"
                     class="profile-pic"
                 />
             </div>
@@ -191,7 +194,7 @@
                             <div class="stat-label">Years Coding</div>
                         </div>
                     </div>
-                    
+
                     <div class="tech-stack">
                         <h3>Core Technical Skills</h3>
                         <div class="tech-tags">
@@ -214,7 +217,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="about-sidebar">
                     <div class="sidebar-availability">
                         <span class="avail-dot"></span>
@@ -1099,10 +1102,11 @@
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Selected Engineering Work</h2>
-      <p class="section-subtitle">A focused selection of product, platform, mobile, and embedded work, with implementation details and honest preview states.</p>
+      <p class="section-subtitle">Six projects with completed workflows, engineering decisions and recorded checks.</p>
     </div>
 
-    <div class="project-explorer" role="search" aria-label="Search portfolio projects">
+    <!-- Archived homepage code. Retained for future use.
+<div class="project-explorer" role="search" aria-label="Search portfolio projects">
       <label class="project-search" for="project-search-input">
         <i class="fas fa-search" aria-hidden="true"></i>
         <span class="sr-only">Search projects</span>
@@ -1114,7 +1118,7 @@
       <p id="project-results-count" class="project-results-count" role="status" aria-live="polite">Showing selected projects</p>
     </div>
 
-    <!-- Project Filters -->
+    <!- - Project Filters - ->
     <div class="projects-filter" role="group" aria-label="Filter projects by category">
       <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All Projects</button>
       <button class="filter-btn" type="button" data-filter="featured" aria-pressed="false">Featured</button>
@@ -1131,27 +1135,36 @@
       <button id="project-empty-reset" class="btn btn-secondary" type="button">Show all projects</button>
     </div>
 
-    <!-- PREPARED SHOWCASE START --><div class="projects-section prepared-section"><h3 class="section-subsection-title">Featured Projects</h3><p class="section-subsection-subtitle">Real application captures · Case studies and source · No hosted interactive demos</p><div class="projects-grid major-grid"><article class="project-card prepared-project" data-category="web featured fullstack " data-prepared-project="vehicle-build-cost-calculator"><div class="project-image"><img src="assets/projects/vehicle-build-cost-calculator.webp" width="1152" height="481" alt="Cost comparison table with separate planned, paid, projected and remaining amounts" loading="lazy" decoding="async"></div><div class="project-content"><h3>Vehicle Build Cost Calculator</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Owner-scoped build budgets with planned, actual and projected costs across independent scenarios.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">ASP.NET Core</span><span class="tech-tag">EF Core</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">JWT</span></div><div data-local-demo="vehicle-build-cost-calculator"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/vehicle-build-cost-calculator.html">Read case study</a><a href="https://github.com/luigi043/vehicle-build-cost-calculator" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web featured  " data-prepared-project="bmw-configurator"><div class="project-image"><img src="assets/projects/bmw-configurator.webp" width="1440" height="1000" alt="Customized procedural concept car and configuration controls" loading="lazy" decoding="async"></div><div class="project-content"><h3>BMW Configurator / Drive Studio</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A procedural 3D concept car with visible customization, indicative pricing and a build-summary dialog.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Three.js</span><span class="tech-tag">React Three Fiber</span><span class="tech-tag">GSAP</span><span class="tech-tag">Zustand</span></div><div data-local-demo="bmw-configurator"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/bmw-configurator.html">Read case study</a><a href="https://github.com/luigi043/bmw-configurator" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web featured fullstack " data-prepared-project="flowchart-to-code-converter"><div class="project-image"><img src="assets/projects/flowchart-to-code-converter.webp" width="1280" height="800" alt="Flowchart canvas and generated pseudocode for an even/odd decision" loading="lazy" decoding="async"></div><div class="project-content"><h3>Flowchart-to-Code</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A visual editor that validates structured graphs and generates pseudocode, Python and JavaScript.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">React Flow</span><span class="tech-tag">Express</span></div><div data-local-demo="flowchart-to-code-converter"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/flowchart-to-code-converter.html">Read case study</a><a href="https://github.com/luigi043/demo3-flowchart-to-code" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web featured fullstack angular" data-prepared-project="ctw-vehicle-fleet"><div class="project-image"><img src="assets/projects/ctw-vehicle-fleet.webp" width="1440" height="1000" alt="Vehicle fleet catalogue with illustrative vehicle records" loading="lazy" decoding="async"></div><div class="project-content"><h3>CTW Vehicle Fleet</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A vehicle catalogue and stored telemetry reference app with two persistence models.</p><div class="project-tech"><span class="tech-tag">Angular</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Java 21</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Docker</span></div><div data-local-demo="ctw-vehicle-fleet"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/ctw-vehicle-fleet.html">Read case study</a><a href="https://github.com/luigi043/ctw-vehicle-fleet" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web featured fullstack " data-prepared-project="academic-portal"><div class="project-image"><img src="assets/projects/academic-portal.webp" width="1265" height="712" alt="Attendance summary with fictional student records and four attendance states" loading="lazy" decoding="async"></div><div class="project-content"><h3>Academic Portal / Portal Académico</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Course-scoped teacher access and attendance recording in a Laravel application.</p><div class="project-tech"><span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span><span class="tech-tag">Blade</span><span class="tech-tag">SQLite</span><span class="tech-tag">Eloquent</span></div><div data-local-demo="academic-portal"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/academic-portal.html">Read case study</a><a href="https://github.com/luigi043/projeto_psa" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web featured  angular" data-prepared-project="bella-ops"><div class="project-image"><img src="assets/projects/bella-ops.webp" width="1440" height="1000" alt="Fictional restaurant customer homepage with existing illustrative photography" loading="lazy" decoding="async"></div><div class="project-content"><h3>Bella Ops</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Connected restaurant customer and operations experiences sharing bookings, menus and orders in one browser.</p><div class="project-tech"><span class="tech-tag">Angular</span><span class="tech-tag">TypeScript</span><span class="tech-tag">SCSS</span><span class="tech-tag">localStorage</span></div><div data-local-demo="bella-ops"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/bella-ops.html">Read case study</a><a href="https://github.com/luigi043/restaurant-app" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article></div></div><div class="projects-section prepared-section"><h3 class="section-subsection-title">Additional Engineering Projects</h3><p class="section-subsection-subtitle">Real application captures · Case studies and source · No hosted interactive demos</p><div class="projects-grid major-grid"><article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="lang-interpreter"><div class="project-image"><img src="assets/projects/lang-interpreter.webp" width="1265" height="1154" alt="Actual MiniLang playground executing factorial of seven with output 5040" loading="lazy" decoding="async"></div><div class="project-content"><h3>MiniLang Interpreter</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A TypeScript language pipeline with lexical environments, recursion, closures and a bounded browser playground.</p><div class="project-tech"><span class="tech-tag">TypeScript</span><span class="tech-tag">Lexer</span><span class="tech-tag">Parser</span><span class="tech-tag">AST</span><span class="tech-tag">Web Workers</span><span class="tech-tag">Vite</span></div><div data-local-demo="lang-interpreter"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/lang-interpreter.html">Read case study</a><a href="https://github.com/luigi043/lang-interpreter" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web engineering fullstack " data-prepared-project="taskflow"><div class="project-image"><img src="assets/projects/taskflow.webp" width="1440" height="900" alt="TaskFlow dark interface with illustrative active and completed tasks" loading="lazy" decoding="async"></div><div class="project-content"><h3>TaskFlow</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A task manager with browser-local storage or an optional file-backed Express API.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">Express</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Vitest</span><span class="tech-tag">React Testing Library</span><span class="tech-tag">Supertest</span></div><div data-local-demo="taskflow"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/taskflow.html">Read case study</a><a href="https://github.com/luigi043/taskflows" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="bugrepro"><div class="project-image"><img src="assets/projects/bugrepro.webp" width="1440" height="1108" alt="BugRepro demo showing a checkout defect report" loading="lazy" decoding="async"></div><div class="project-content"><h3>BugRepro</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Track a defect from its initial report through reproduction attempts and proposed fixes.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Express</span><span class="tech-tag">MongoDB</span></div><div data-local-demo="bugrepro"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/bugrepro.html">Read case study</a><a href="https://github.com/luigi043/bugrepro" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="constraint-engine"><div class="project-image"><img src="assets/projects/constraint-engine.webp" width="1440" height="980" alt="Constraint Engine demo showing a solved grid route" loading="lazy" decoding="async"></div><div class="project-content"><h3>Constraint Engine</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Find a valid route through a grid and inspect the rules that fired after each move.</p><div class="project-tech"><span class="tech-tag">TypeScript</span><span class="tech-tag">Vite</span><span class="tech-tag">Vitest</span></div><div data-local-demo="constraint-engine"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/constraint-engine.html">Read case study</a><a href="https://github.com/luigi043/constraint-engine" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="debug-ai"><div class="project-image"><img src="assets/projects/debug-ai.webp" width="1440" height="1000" alt="Debug AI demo showing a simulated runtime error analysis" loading="lazy" decoding="async"></div><div class="project-content"><h3>Debug AI</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Inspect a runtime error, trace the stack, and review a proposed fix.</p><div class="project-tech"><span class="tech-tag">TypeScript</span><span class="tech-tag">React</span><span class="tech-tag">Express</span></div><div data-local-demo="debug-ai"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/debug-ai.html">Read case study</a><a href="https://github.com/luigi043/debug-ai" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="smart-home-command-center"><div class="project-image"><img src="assets/projects/smart-home-command-center.webp" width="1440" height="960" alt="Smart Home Command Center demo showing the simulated home dashboard" loading="lazy" decoding="async"></div><div class="project-content"><h3>Smart Home Command Center</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Control a simulated home, switch between rooms, and activate scenes.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">ASP.NET Core</span><span class="tech-tag">PostgreSQL</span></div><div data-local-demo="smart-home-command-center"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/smart-home-command-center.html">Read case study</a><a href="https://github.com/luigi043/smart-home-command-center" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="voice-to-code"><div class="project-image"><img src="assets/projects/voice-to-code.webp" width="1366" height="1013" alt="Voice to Code demo showing a generated sorting example" loading="lazy" decoding="async"></div><div class="project-content"><h3>Voice to Code</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Turn a typed or spoken instruction into a code snippet you can review and export.</p><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">Vite</span><span class="tech-tag">Web Speech API</span></div><div data-local-demo="voice-to-code"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/voice-to-code.html">Read case study</a><a href="https://github.com/luigi043/voice-to-code" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="social"><div class="project-image"><img src="assets/projects/social.webp" width="1440" height="1000" alt="Mosaic calendar showing a planned creator post" loading="lazy" decoding="async"></div><div class="project-content"><h3>Mosaic Content Planner</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Plan creator content across channels with drafts, a calendar and browser-saved edits.</p><div class="project-tech"><span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Browser Storage</span></div><div data-local-demo="social"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/social.html">Read case study</a><a href="https://github.com/luigi043/social" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article>
-<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="smart-gym-transformation-app"><div class="project-image"><img src="assets/projects/smart-gym-transformation-app.webp" width="1440" height="780" alt="Smart Gym progress showing workout history and body-weight measurements" loading="lazy" decoding="async"></div><div class="project-content"><h3>Smart Gym Transformation App</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Log workouts and body measurements, then review dated training progress and weight trends.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">ASP.NET Core</span><span class="tech-tag">EF Core</span><span class="tech-tag">PostgreSQL</span></div><div data-local-demo="smart-gym-transformation-app"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/smart-gym-transformation-app.html">Read case study</a><a href="https://github.com/luigi043/smart-gym-transformation-app" target="_blank" rel="noopener noreferrer">GitHub source ↗</a></div></div></article></div></div><!-- PREPARED SHOWCASE END -->
-    <!-- SECTION 1: FEATURED & MAJOR PROJECTS -->
+
+End archived homepage code. -->
+<!-- PREPARED SHOWCASE START --><div class="projects-section prepared-section"><h3 class="section-subsection-title">Featured Projects</h3><p class="section-subsection-subtitle">Real application captures · Case studies and source · No hosted interactive demos</p><div class="projects-grid major-grid"><article class="project-card prepared-project" data-category="web featured  " data-prepared-project="job-tracker"><div class="project-image"><img src="assets/projects/job-tracker.webp" width="1440" height="1000" alt="Job Tracker overview with a fictional application pipeline and recent roles" loading="lazy" decoding="async"></div><div class="project-content"><h3>Job Tracker</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Track applications from submission to interview and offer, with authenticated editing and focused filters.</p><div class="project-tech"><span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">NextAuth</span><span class="tech-tag">Prisma</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Zod</span></div><div data-local-demo="job-tracker"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/job-tracker.html">Read case study</a></div></div></article>
+<article class="project-card prepared-project" data-category="web featured fullstack " data-prepared-project="ecommerce-analytics"><div class="project-image"><img src="assets/projects/ecommerce-analytics.webp" width="1425" height="1316" alt="Ecommerce Analytics with date and Portugal filters applied" loading="lazy" decoding="async"></div><div class="project-content"><h3>Ecommerce Analytics</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Reconcile revenue, refunds and conversion, then explore shipping markets and daily trends backed by SQL.</p><div class="project-tech"><span class="tech-tag">PostgreSQL</span><span class="tech-tag">SQL</span><span class="tech-tag">Node.js</span><span class="tech-tag">JavaScript</span></div><div data-local-demo="ecommerce-analytics"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/ecommerce-analytics.html">Read case study</a></div></div></article>
+<article class="project-card prepared-project" data-category="web featured fullstack " data-prepared-project="core-banking-ledger"><div class="project-image"><img src="assets/projects/core-banking-ledger.webp" width="1440" height="1000" alt="Core Banking Ledger with balances and a completed transfer receipt" loading="lazy" decoding="async"></div><div class="project-content"><h3>Core Banking Ledger</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Post a transfer once, retry it safely, reject an overdraft and inspect an audited reversal.</p><div class="project-tech"><span class="tech-tag">PostgreSQL</span><span class="tech-tag">SQL</span><span class="tech-tag">Node.js</span><span class="tech-tag">PowerShell</span></div><div data-local-demo="core-banking-ledger"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/core-banking-ledger.html">Read case study</a></div></div></article>
+<article class="project-card prepared-project" data-category="web featured fullstack " data-prepared-project="bmw-e36-digital-cluster"><div class="project-image"><img src="assets/projects/bmw-e36-digital-cluster.webp" width="1440" height="1000" alt="Digital Cluster showing the simulated cooling warning" loading="lazy" decoding="async"></div><div class="project-content"><h3>BMW E36 Automotive Systems</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Three related prototypes explore controls, telemetry and a digital instrument cluster using simulated inputs.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Arduino</span><span class="tech-tag">ASP.NET Core</span><span class="tech-tag">PostgreSQL</span></div><div data-local-demo="bmw-e36-digital-cluster"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/bmw-e36-digital-cluster.html">Read case study</a></div></div></article>
+<article class="project-card prepared-project" data-category="web featured fullstack " data-prepared-project="fivem-cad-mdt-system"><div class="project-image"><img src="assets/projects/fivem-cad-mdt-system.webp" width="1440" height="1116" alt="Completed dispatch with a released unit" loading="lazy" decoding="async"></div><div class="project-content"><h3>FiveM CAD/MDT</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Create a fictional dispatch call, assign a unit, close an incident and search citizen records.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">ASP.NET Core</span><span class="tech-tag">EF Core</span><span class="tech-tag">PostgreSQL</span></div><div data-local-demo="fivem-cad-mdt-system"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/fivem-cad-mdt-system.html">Read case study</a></div></div></article>
+<article class="project-card prepared-project" data-category="web featured  " data-prepared-project="smart-gym-transformation-app"><div class="project-image"><img src="assets/projects/smart-gym-transformation-app.webp" width="1440" height="780" alt="Smart Gym progress showing workout history and body-weight measurements" loading="lazy" decoding="async"></div><div class="project-content"><h3>Smart Gym Transformation App</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Log workouts and body measurements, then review dated training progress and weight trends.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">ASP.NET Core</span><span class="tech-tag">EF Core</span><span class="tech-tag">PostgreSQL</span></div><div data-local-demo="smart-gym-transformation-app"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/smart-gym-transformation-app.html">Read case study</a></div></div></article></div></div><!-- Archived additional project cards. Retained for future use. <div class="projects-section prepared-section"><h3 class="section-subsection-title">Additional Engineering Projects</h3><p class="section-subsection-subtitle">Real application captures · Case studies and source · No hosted interactive demos</p><div class="projects-grid major-grid"><article class="project-card prepared-project" data-category="web engineering fullstack " data-prepared-project="vehicle-build-cost-calculator"><div class="project-image"><img src="assets/projects/vehicle-build-cost-calculator.webp" width="1152" height="481" alt="Cost comparison table with separate planned, paid, projected and remaining amounts" loading="lazy" decoding="async"></div><div class="project-content"><h3>Vehicle Build Cost Calculator</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Owner-scoped build budgets with planned, actual and projected costs across independent scenarios.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">ASP.NET Core</span><span class="tech-tag">EF Core</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">JWT</span></div><div data-local-demo="vehicle-build-cost-calculator"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/vehicle-build-cost-calculator.html">Read case study</a><a href="https://github.com/luigi043/vehicle-build-cost-calculator" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="bmw-configurator"><div class="project-image"><img src="assets/projects/bmw-configurator.webp" width="1440" height="1000" alt="Customized procedural concept car and configuration controls" loading="lazy" decoding="async"></div><div class="project-content"><h3>BMW Configurator / Drive Studio</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A procedural 3D concept car with visible customization, indicative pricing and a build-summary dialog.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Three.js</span><span class="tech-tag">React Three Fiber</span><span class="tech-tag">GSAP</span><span class="tech-tag">Zustand</span></div><div data-local-demo="bmw-configurator"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/bmw-configurator.html">Read case study</a><a href="https://github.com/luigi043/bmw-configurator" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering fullstack " data-prepared-project="flowchart-to-code-converter"><div class="project-image"><img src="assets/projects/flowchart-to-code-converter.webp" width="1280" height="800" alt="Flowchart canvas and generated pseudocode for an even/odd decision" loading="lazy" decoding="async"></div><div class="project-content"><h3>Flowchart-to-Code</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A visual editor that validates structured graphs and generates pseudocode, Python and JavaScript.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">React Flow</span><span class="tech-tag">Express</span></div><div data-local-demo="flowchart-to-code-converter"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/flowchart-to-code-converter.html">Read case study</a><a href="https://github.com/luigi043/demo3-flowchart-to-code" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering fullstack angular" data-prepared-project="ctw-vehicle-fleet"><div class="project-image"><img src="assets/projects/ctw-vehicle-fleet.webp" width="1440" height="1000" alt="Vehicle fleet catalogue with illustrative vehicle records" loading="lazy" decoding="async"></div><div class="project-content"><h3>CTW Vehicle Fleet</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A vehicle catalogue and stored telemetry reference app with two persistence models.</p><div class="project-tech"><span class="tech-tag">Angular</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Java 21</span><span class="tech-tag">Spring Boot</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Docker</span></div><div data-local-demo="ctw-vehicle-fleet"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/ctw-vehicle-fleet.html">Read case study</a><a href="https://github.com/luigi043/ctw-vehicle-fleet" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering fullstack " data-prepared-project="academic-portal"><div class="project-image"><img src="assets/projects/academic-portal.webp" width="1265" height="712" alt="Attendance summary with fictional student records and four attendance states" loading="lazy" decoding="async"></div><div class="project-content"><h3>Academic Portal / Portal Académico</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Course-scoped teacher access and attendance recording in a Laravel application.</p><div class="project-tech"><span class="tech-tag">Laravel</span><span class="tech-tag">PHP</span><span class="tech-tag">Blade</span><span class="tech-tag">SQLite</span><span class="tech-tag">Eloquent</span></div><div data-local-demo="academic-portal"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/academic-portal.html">Read case study</a><a href="https://github.com/luigi043/projeto_psa" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering  angular" data-prepared-project="bella-ops"><div class="project-image"><img src="assets/projects/bella-ops.webp" width="1440" height="1000" alt="Fictional restaurant customer homepage with existing illustrative photography" loading="lazy" decoding="async"></div><div class="project-content"><h3>Bella Ops</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Connected restaurant customer and operations experiences sharing bookings, menus and orders in one browser.</p><div class="project-tech"><span class="tech-tag">Angular</span><span class="tech-tag">TypeScript</span><span class="tech-tag">SCSS</span><span class="tech-tag">localStorage</span></div><div data-local-demo="bella-ops"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/bella-ops.html">Read case study</a><a href="https://github.com/luigi043/restaurant-app" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="lang-interpreter"><div class="project-image"><img src="assets/projects/lang-interpreter.webp" width="1265" height="1154" alt="Actual MiniLang playground executing factorial of seven with output 5040" loading="lazy" decoding="async"></div><div class="project-content"><h3>MiniLang Interpreter</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A TypeScript language pipeline with lexical environments, recursion, closures and a bounded browser playground.</p><div class="project-tech"><span class="tech-tag">TypeScript</span><span class="tech-tag">Lexer</span><span class="tech-tag">Parser</span><span class="tech-tag">AST</span><span class="tech-tag">Web Workers</span><span class="tech-tag">Vite</span></div><div data-local-demo="lang-interpreter"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/lang-interpreter.html">Read case study</a><a href="https://github.com/luigi043/lang-interpreter" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering fullstack " data-prepared-project="taskflow"><div class="project-image"><img src="assets/projects/taskflow.webp" width="1440" height="900" alt="TaskFlow dark interface with illustrative active and completed tasks" loading="lazy" decoding="async"></div><div class="project-content"><h3>TaskFlow</h3><span class="project-date">Local demo · Runtime screenshot</span><p>A task manager with browser-local storage or an optional file-backed Express API.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">Express</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Vitest</span><span class="tech-tag">React Testing Library</span><span class="tech-tag">Supertest</span></div><div data-local-demo="taskflow"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/taskflow.html">Read case study</a><a href="https://github.com/luigi043/taskflows" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="bugrepro"><div class="project-image"><img src="assets/projects/bugrepro.webp" width="1440" height="1108" alt="BugRepro demo showing a checkout defect report" loading="lazy" decoding="async"></div><div class="project-content"><h3>BugRepro</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Track a defect from its initial report through reproduction attempts and proposed fixes.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Express</span><span class="tech-tag">MongoDB</span></div><div data-local-demo="bugrepro"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/bugrepro.html">Read case study</a><a href="https://github.com/luigi043/bugrepro" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="constraint-engine"><div class="project-image"><img src="assets/projects/constraint-engine.webp" width="1440" height="980" alt="Constraint Engine demo showing a solved grid route" loading="lazy" decoding="async"></div><div class="project-content"><h3>Constraint Engine</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Find a valid route through a grid and inspect the rules that fired after each move.</p><div class="project-tech"><span class="tech-tag">TypeScript</span><span class="tech-tag">Vite</span><span class="tech-tag">Vitest</span></div><div data-local-demo="constraint-engine"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/constraint-engine.html">Read case study</a><a href="https://github.com/luigi043/constraint-engine" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="debug-ai"><div class="project-image"><img src="assets/projects/debug-ai.webp" width="1440" height="1000" alt="Debug AI demo showing a simulated runtime error analysis" loading="lazy" decoding="async"></div><div class="project-content"><h3>Debug AI</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Inspect a runtime error, trace the stack, and review a proposed fix.</p><div class="project-tech"><span class="tech-tag">TypeScript</span><span class="tech-tag">React</span><span class="tech-tag">Express</span></div><div data-local-demo="debug-ai"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/debug-ai.html">Read case study</a><a href="https://github.com/luigi043/debug-ai" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="smart-home-command-center"><div class="project-image"><img src="assets/projects/smart-home-command-center.webp" width="1440" height="960" alt="Smart Home Command Center demo showing the simulated home dashboard" loading="lazy" decoding="async"></div><div class="project-content"><h3>Smart Home Command Center</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Control a simulated home, switch between rooms, and activate scenes.</p><div class="project-tech"><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">ASP.NET Core</span><span class="tech-tag">PostgreSQL</span></div><div data-local-demo="smart-home-command-center"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/smart-home-command-center.html">Read case study</a><a href="https://github.com/luigi043/smart-home-command-center" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="voice-to-code"><div class="project-image"><img src="assets/projects/voice-to-code.webp" width="1366" height="1013" alt="Voice to Code demo showing a generated sorting example" loading="lazy" decoding="async"></div><div class="project-content"><h3>Voice to Code</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Turn a typed or spoken instruction into a code snippet you can review and export.</p><div class="project-tech"><span class="tech-tag">JavaScript</span><span class="tech-tag">Vite</span><span class="tech-tag">Web Speech API</span></div><div data-local-demo="voice-to-code"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/voice-to-code.html">Read case study</a><a href="https://github.com/luigi043/voice-to-code" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article>
+<article class="project-card prepared-project" data-category="web engineering  " data-prepared-project="social"><div class="project-image"><img src="assets/projects/social.webp" width="1440" height="1000" alt="Mosaic calendar showing a planned creator post" loading="lazy" decoding="async"></div><div class="project-content"><h3>Mosaic Content Planner</h3><span class="project-date">Local demo · Runtime screenshot</span><p>Plan creator content across channels with drafts, a calendar and browser-saved edits.</p><div class="project-tech"><span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Browser Storage</span></div><div data-local-demo="social"></div><div class="prepared-actions"><a class="btn btn-secondary" href="projects/social.html">Read case study</a><a href="https://github.com/luigi043/social" target="_blank" rel="noopener noreferrer">View GitHub source</a></div></div></article></div></div> --><!-- PREPARED SHOWCASE END -->
+    <!-- FEATURED PROJECT INSERT -->
+<!-- Archived homepage code. Retained for future use.
+<!- - SECTION 1: FEATURED & MAJOR PROJECTS - ->
     <div class="projects-section">
       <h3 class="section-subsection-title">Selected Work</h3>
       <p class="section-subsection-subtitle">Earlier projects and portfolio studies.</p>
-      
+
       <div class="projects-grid major-grid">
-        <!-- Trattoria Bella Italia - Restaurant Web App -->
+        <!- - Trattoria Bella Italia - Restaurant Web App - ->
         <div class="project-card " data-category="web angular" data-archived="true" hidden>
           <div class="project-badge">Earlier work</div>
           <div class="project-badge modern">Modern Stack</div>
@@ -1184,7 +1197,7 @@
             </div>
           </div>
         </div>
-  <!-- Rhea Print Services -->
+  <!- - Rhea Print Services - ->
         <div class="project-card" data-category="web in-progress" data-archived="true" hidden>
           <div class="project-badge in-progress">In Progress</div>
           <div class="project-badge scale">Business App</div>
@@ -1209,7 +1222,7 @@
             </div>
           </div>
         </div>
-<!-- Mini Store - E-commerce Frontend -->
+<!- - Mini Store - E-commerce Frontend - ->
 <div class="project-card" data-category="web" data-archived="true" hidden>
     <div class="project-image">
         <div class="laptop-frame">
@@ -1236,7 +1249,7 @@
         </div>
     </div>
 </div>
-        <!-- Luigi's Clouds - Featured -->
+        <!- - Luigi's Clouds - Featured - ->
         <div class="project-card " data-category="fullstack web" data-archived="true" hidden>
           <div class="project-badge">Earlier work</div>
           <div class="project-badge scale">Large Scale</div>
@@ -1270,7 +1283,7 @@
           </div>
         </div>
 
-        <!-- Hotel Management System - Featured -->
+        <!- - Hotel Management System - Featured - ->
         <div class="project-card " data-category="web data" data-archived="true" hidden>
           <div class="project-badge">Earlier work</div>
           <div class="project-badge scale">Enterprise</div>
@@ -1304,7 +1317,7 @@
           </div>
         </div>
 
-        <!-- E-Commerce Platform -->
+        <!- - E-Commerce Platform - ->
         <div class="project-card" data-category="web fullstack" data-archived="true" hidden>
           <div class="project-badge scale">Full-Stack</div>
           <div class="project-image">
@@ -1333,17 +1346,17 @@
           </div>
         </div>
 
-      
+
       </div>
     </div>
 
-    <!-- SECTION 2: RECENT 2026 PROJECTS -->
+    <!- - SECTION 2: RECENT 2026 PROJECTS - ->
     <div class="projects-section">
       <h3 class="section-subsection-title">Core Technical Work</h3>
       <p class="section-subsection-subtitle">Five recent projects across web, mobile, product, and embedded systems.</p>
 
       <div class="projects-grid major-grid">
-        <!-- Recent GitHub: Markdown Editor -->
+        <!- - Recent GitHub: Markdown Editor - ->
         <article class="project-card" data-category="web angular" data-archived="true" hidden>
           <div class="project-badge featured">Recent GitHub</div>
           <div class="project-badge modern">Angular 18</div>
@@ -1364,7 +1377,7 @@
           </div>
         </article>
 
-        <!-- Recent GitHub: StarWave -->
+        <!- - Recent GitHub: StarWave - ->
         <article class="project-card" data-category="web fullstack" data-archived="true" hidden>
           <div class="project-badge featured">Recent GitHub</div>
           <div class="project-badge scale">SaaS Foundation</div>
@@ -1383,7 +1396,7 @@
           </div>
         </article>
 
-        <!-- Important GitHub: SecurePass Manager -->
+        <!- - Important GitHub: SecurePass Manager - ->
         <article class="project-card" data-category="" data-archived="true" hidden>
           <div class="project-badge featured">Important Project</div>
           <div class="project-badge scale">Security Tool</div>
@@ -1402,7 +1415,7 @@
           </div>
         </article>
 
-        <!-- VehicleOS - BMW Platform -->
+        <!- - VehicleOS - BMW Platform - ->
         <div class="project-card" data-category="fullstack web">
           <div class="project-badge">Earlier work</div>
           <div class="project-badge modern">Full-Stack</div>
@@ -1435,7 +1448,7 @@
           </div>
         </div>
 
-        <!-- Vitalis - Health & Wellness App -->
+        <!- - Vitalis - Health & Wellness App - ->
         <div class="project-card" data-category="mobile">
           <div class="project-badge">Earlier work</div>
           <div class="project-badge mobile">Android App</div>
@@ -1462,7 +1475,7 @@
           </div>
         </div>
 
-        <!-- WorkoutLevelUp -->
+        <!- - WorkoutLevelUp - ->
         <div class="project-card" data-category="mobile" data-archived="true" hidden>
           <div class="project-badge mobile">Android App</div>
           <div class="project-image">
@@ -1491,7 +1504,7 @@
           </div>
         </div>
 
-        <!-- BMW E36 Control Systems -->
+        <!- - BMW E36 Control Systems - ->
         <div class="project-card" data-category="">
           <div class="project-badge">Earlier work</div>
           <div class="project-badge scale">Hardware + Software</div>
@@ -1517,7 +1530,7 @@
           </div>
         </div>
 
-        <!-- BMW E36 Dashboard -->
+        <!- - BMW E36 Dashboard - ->
         <div class="project-card" data-category="web" data-archived="true" hidden>
           <div class="project-image">
             <div class="image-placeholder">
@@ -1537,7 +1550,7 @@
           </div>
         </div>
 
-        <!-- Expense Tracker -->
+        <!- - Expense Tracker - ->
         <div class="project-card" data-category="mobile" data-archived="true" hidden>
           <div class="project-badge mobile">Android App</div>
           <div class="project-image">
@@ -1558,7 +1571,7 @@
           </div>
         </div>
 
-        <!-- QR Scanner App -->
+        <!- - QR Scanner App - ->
         <div class="project-card" data-category="mobile" data-archived="true" hidden>
           <div class="project-badge mobile">Android App</div>
           <div class="project-image">
@@ -1579,7 +1592,7 @@
           </div>
         </div>
 
-        <!-- DevVoice -->
+        <!- - DevVoice - ->
         <div class="project-card" data-category="web in-progress" data-archived="true" hidden>
           <div class="project-badge in-progress">In Progress</div>
           <div class="project-image">
@@ -1606,7 +1619,7 @@
           </div>
         </div>
 
-        <!-- BemEstar - SaaS Gym Management -->
+        <!- - BemEstar - SaaS Gym Management - ->
         <div class="project-card" data-category="fullstack web">
           <div class="project-badge">Earlier work</div>
           <div class="project-badge scale">SaaS</div>
@@ -1646,7 +1659,7 @@
           </div>
         </div>
 
-        <!-- Insurex -->
+        <!- - Insurex - ->
         <div class="project-card" data-category="fullstack web">
           <div class="project-badge">Earlier work</div>
           <div class="project-badge scale">Enterprise</div>
@@ -1682,15 +1695,15 @@
       </div>
     </div>
 
-    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
-    <!-- SECTION 2.7: WEB & SAAS (from GitHub) -->
+    <!- - Archived secondary projects: retained in source for review/reuse, but intentionally not shown. - ->
+    <!- - SECTION 2.7: WEB & SAAS (from GitHub) - ->
     <div class="projects-section" data-archived="true" hidden>
       <h3 class="section-subsection-title">Web &amp; SaaS</h3>
       <p class="section-subsection-subtitle">Web platforms, SaaS apps, and browser tooling.</p>
 
       <div class="projects-grid major-grid">
 
-        <!-- AutoNexa - Automotive Platform -->
+        <!- - AutoNexa - Automotive Platform - ->
         <div class="project-card" data-category="web fullstack">
           <div class="project-badge modern">Full-Stack</div>
           <div class="project-image">
@@ -1718,7 +1731,7 @@
           </div>
         </div>
 
-        <!-- DevLog Productivity SaaS -->
+        <!- - DevLog Productivity SaaS - ->
         <div class="project-card" data-category="web fullstack">
           <div class="project-badge modern">SaaS</div>
           <div class="project-image">
@@ -1746,7 +1759,7 @@
           </div>
         </div>
 
-        <!-- Accessibility Audit Extension -->
+        <!- - Accessibility Audit Extension - ->
         <div class="project-card" data-category="web">
           <div class="project-badge modern">Browser Extension</div>
           <div class="project-image">
@@ -1774,7 +1787,7 @@
           </div>
         </div>
 
-        <!-- WatchParty -->
+        <!- - WatchParty - ->
         <div class="project-card" data-category="web fullstack">
           <div class="project-badge modern">Real-Time</div>
           <div class="project-image">
@@ -1803,7 +1816,7 @@
           </div>
         </div>
 
-        <!-- Notion-lite - Markdown Editor -->
+        <!- - Notion-lite - Markdown Editor - ->
         <div class="project-card" data-category="web">
           <div class="project-badge modern">Offline-First</div>
           <div class="project-image">
@@ -1835,15 +1848,15 @@
       </div>
     </div>
 
-    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
-    <!-- SECTION 2.5: TOOLS & WEB APPS (from GitHub) -->
+    <!- - Archived secondary projects: retained in source for review/reuse, but intentionally not shown. - ->
+    <!- - SECTION 2.5: TOOLS & WEB APPS (from GitHub) - ->
     <div class="projects-section" data-archived="true" hidden>
       <h3 class="section-subsection-title">Tools &amp; Web Apps</h3>
       <p class="section-subsection-subtitle">Self-contained apps and tools I've shipped to GitHub.</p>
 
       <div class="projects-grid major-grid">
 
-        <!-- Drive Studio - 3D Car Configurator -->
+        <!- - Drive Studio - 3D Car Configurator - ->
         <div class="project-card" data-category="web">
           <div class="project-badge">Earlier work</div>
           <div class="project-badge modern">3D / WebGL</div>
@@ -1874,7 +1887,7 @@
           </div>
         </div>
 
-        <!-- Flowchart-to-Code Converter -->
+        <!- - Flowchart-to-Code Converter - ->
         <div class="project-card" data-category="web fullstack">
           <div class="project-badge">Earlier work</div>
           <div class="project-badge modern">Full-Stack</div>
@@ -1904,7 +1917,7 @@
           </div>
         </div>
 
-        <!-- TaskFlow -->
+        <!- - TaskFlow - ->
         <div class="project-card" data-category="web fullstack">
           <div class="project-badge modern">Full-Stack</div>
           <div class="project-image">
@@ -1933,7 +1946,7 @@
           </div>
         </div>
 
-        <!-- Code Snippet Manager -->
+        <!- - Code Snippet Manager - ->
         <div class="project-card" data-category="web fullstack">
           <div class="project-badge scale">Full-Stack</div>
           <div class="project-image">
@@ -1963,7 +1976,7 @@
           </div>
         </div>
 
-        <!-- Canvas - Collaborative Whiteboard -->
+        <!- - Canvas - Collaborative Whiteboard - ->
         <div class="project-card" data-category="web fullstack">
           <div class="project-badge modern">Real-Time</div>
           <div class="project-image">
@@ -1992,7 +2005,7 @@
           </div>
         </div>
 
-        <!-- VaultMan - Password Manager -->
+        <!- - VaultMan - Password Manager - ->
         <div class="project-card" data-category="web">
           <div class="project-badge modern">Desktop App</div>
           <div class="project-image">
@@ -2021,7 +2034,7 @@
           </div>
         </div>
 
-        <!-- snip - URL Shortener -->
+        <!- - snip - URL Shortener - ->
         <div class="project-card" data-category="web fullstack">
           <div class="project-badge modern">SaaS</div>
           <div class="project-image">
@@ -2050,7 +2063,7 @@
           </div>
         </div>
 
-        <!-- System Resource Monitor -->
+        <!- - System Resource Monitor - ->
         <div class="project-card" data-category="web">
           <div class="project-badge modern">Desktop App</div>
           <div class="project-image">
@@ -2079,7 +2092,7 @@
           </div>
         </div>
 
-        <!-- mini-notion -->
+        <!- - mini-notion - ->
         <div class="project-card" data-category="web">
           <div class="project-badge modern">Block Editor</div>
           <div class="project-image">
@@ -2107,7 +2120,7 @@
           </div>
         </div>
 
-        <!-- lang-interpreter -->
+        <!- - lang-interpreter - ->
         <div class="project-card" data-category="web">
           <div class="project-badge scale">Language Design</div>
           <div class="project-image">
@@ -2138,15 +2151,15 @@
       </div>
     </div>
 
-    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
-    <!-- SECTION 2.6: DASHBOARDS & DEV TOOLS (from GitHub) -->
+    <!- - Archived secondary projects: retained in source for review/reuse, but intentionally not shown. - ->
+    <!- - SECTION 2.6: DASHBOARDS & DEV TOOLS (from GitHub) - ->
     <div class="projects-section" data-archived="true" hidden>
       <h3 class="section-subsection-title">Dashboards &amp; Dev Tools</h3>
       <p class="section-subsection-subtitle">Local-first dashboards and developer tooling experiments.</p>
 
       <div class="projects-grid">
 
-        <!-- FluxGate - API Gateway Dashboard -->
+        <!- - FluxGate - API Gateway Dashboard - ->
         <div class="project-card" data-category="web">
           <div class="project-badge modern">Dashboard</div>
           <div class="project-image">
@@ -2174,7 +2187,7 @@
           </div>
         </div>
 
-        <!-- E2E Test Suite Generator -->
+        <!- - E2E Test Suite Generator - ->
         <div class="project-card" data-category="web">
           <div class="project-badge modern">Dev Tool</div>
           <div class="project-image">
@@ -2202,7 +2215,7 @@
           </div>
         </div>
 
-        <!-- Performance Regression Tracker -->
+        <!- - Performance Regression Tracker - ->
         <div class="project-card" data-category="web data">
           <div class="project-badge modern">Dashboard</div>
           <div class="project-image">
@@ -2230,7 +2243,7 @@
           </div>
         </div>
 
-        <!-- UX Research Dashboard -->
+        <!- - UX Research Dashboard - ->
         <div class="project-card" data-category="web data">
           <div class="project-badge modern">Dashboard</div>
           <div class="project-image">
@@ -2258,7 +2271,7 @@
           </div>
         </div>
 
-        <!-- Design System Builder -->
+        <!- - Design System Builder - ->
         <div class="project-card" data-category="web">
           <div class="project-badge modern">Playground</div>
           <div class="project-image">
@@ -2286,7 +2299,7 @@
           </div>
         </div>
 
-        <!-- PocketHabit -->
+        <!- - PocketHabit - ->
         <div class="project-card" data-category="web">
           <div class="project-badge modern">Offline-First</div>
           <div class="project-image">
@@ -2317,14 +2330,14 @@
       </div>
     </div>
 
-    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
-    <!-- SECTION 3: MOBILE & GAME DEVELOPMENT -->
+    <!- - Archived secondary projects: retained in source for review/reuse, but intentionally not shown. - ->
+    <!- - SECTION 3: MOBILE & GAME DEVELOPMENT - ->
     <div class="projects-section" data-archived="true" hidden>
       <h3 class="section-subsection-title">Mobile &amp; Games</h3>
       <p class="section-subsection-subtitle">Android apps and a few games on the side.</p>
-      
+
       <div class="projects-grid">
-        <!-- Customer Registration App -->
+        <!- - Customer Registration App - ->
         <div class="project-card" data-category="mobile">
           <div class="project-badge mobile">Mobile App</div>
           <div class="project-image">
@@ -2350,7 +2363,7 @@
           </div>
         </div>
 
-        <!-- Bookstore App -->
+        <!- - Bookstore App - ->
         <div class="project-card" data-category="mobile">
           <div class="project-badge mobile">Mobile App</div>
           <div class="project-image">
@@ -2375,7 +2388,7 @@
           </div>
         </div>
 
-        <!-- Quiz App -->
+        <!- - Quiz App - ->
         <div class="project-card" data-category="mobile">
           <div class="project-badge mobile">Mobile Demo</div>
           <div class="project-image">
@@ -2400,7 +2413,7 @@
           </div>
         </div>
 
-        <!-- Tic-Tac-Toe AI -->
+        <!- - Tic-Tac-Toe AI - ->
         <div class="project-card" data-category="game">
           <div class="project-badge game">Game Demo</div>
           <div class="project-image">
@@ -2423,7 +2436,7 @@
           </div>
         </div>
 
-        <!-- Sokoban -->
+        <!- - Sokoban - ->
         <div class="project-card" data-category="game">
           <div class="project-badge game">Puzzle Game</div>
           <div class="project-image">
@@ -2446,7 +2459,7 @@
           </div>
         </div>
 
-        <!-- Word Game on the Grid -->
+        <!- - Word Game on the Grid - ->
         <div class="project-card" data-category="game">
           <div class="project-badge game">Word Game</div>
           <div class="project-image">
@@ -2472,14 +2485,14 @@
       </div>
     </div>
 
-    <!-- Archived secondary projects: retained in source for review/reuse, but intentionally not shown. -->
-    <!-- SECTION 3: SMALL PROJECTS & DEMOS -->
+    <!- - Archived secondary projects: retained in source for review/reuse, but intentionally not shown. - ->
+    <!- - SECTION 3: SMALL PROJECTS & DEMOS - ->
     <div class="projects-section small-projects" data-archived="true" hidden>
       <h3 class="section-subsection-title">Small &amp; Demos</h3>
       <p class="section-subsection-subtitle">Smaller things I built while learning or just for fun.</p>
-      
+
       <div class="projects-grid small-grid">
-        <!-- Car Sales Analysis -->
+        <!- - Car Sales Analysis - ->
         <div class="project-card small" data-category="data">
           <div class="project-badge small">Data Analysis</div>
           <div class="project-image">
@@ -2503,7 +2516,7 @@
           </div>
         </div>
 
-        <!-- Contacts App -->
+        <!- - Contacts App - ->
         <div class="project-card small" data-category="web angular small">
           <div class="project-badge small">CRUD Demo</div>
           <div class="project-image">
@@ -2525,8 +2538,8 @@
             </div>
           </div>
         </div>
-        
-        <!-- Markdown Editor -->
+
+        <!- - Markdown Editor - ->
         <div class="project-card small" data-category="web small">
           <div class="project-badge small">Tool</div>
           <div class="project-image">
@@ -2548,8 +2561,8 @@
             </div>
           </div>
         </div>
-        
-        <!-- Counter App -->
+
+        <!- - Counter App - ->
         <div class="project-card small" data-category="web small">
           <div class="project-badge small">Mini App</div>
           <div class="project-image">
@@ -2571,8 +2584,8 @@
             </div>
           </div>
         </div>
-        
-        <!-- Periodic Table -->
+
+        <!- - Periodic Table - ->
         <div class="project-card small" data-category="web small">
           <div class="project-badge small">Educational</div>
           <div class="project-image">
@@ -2595,7 +2608,7 @@
           </div>
         </div>
 
-        <!-- Angular Learning Projects -->
+        <!- - Angular Learning Projects - ->
         <div class="project-card small learning" data-category="angular small">
           <div class="project-badge learning">Learning</div>
           <div class="project-image">
@@ -2623,7 +2636,7 @@
       </div>
     </div>
 
-    <!-- Project Statistics -->
+    <!- - Project Statistics - ->
     <div class="projects-stats">
       <div class="stat-card">
         <i class="fas fa-code-branch"></i>
@@ -2650,7 +2663,8 @@
       </div>
     </div>
 
-    <!-- CTA Section -->
+
+End archived homepage code. --><!-- CTA Section -->
     <div class="projects-cta">
       <p>Looking for an engineer who can move from architecture to implementation?</p>
       <a href="#contact" class="btn btn-primary">Discuss a project</a>

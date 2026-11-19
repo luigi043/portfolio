@@ -417,11 +417,12 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') (() => {
         const emptyState = document.getElementById('project-empty-state');
         const filterButtons = Array.from(document.querySelectorAll('.projects-filter .filter-btn'));
         const cards = getPublicProjectCards();
-        if (!section || !searchInput || !filterButtons.length || !cards.length) return;
+        if (!section || !cards.length) return;
 
         section.classList.add('projects-enhanced');
         enhanceProjectCards(cards);
         initProjectPreviews(cards);
+        if (!searchInput || !filterButtons.length) return;
         let activeFilter = 'all';
 
         const applyProjectView = () => {

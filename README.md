@@ -26,26 +26,22 @@ I'm Luiz Fehlberg, a developer based in Portugal with a Bachelor's in Computer E
 
 ## Featured Projects
 
-- **Vehicle Build Cost Calculator** — owner-scoped budgets and scenario comparisons.
-- **BMW Configurator / Drive Studio** — independent procedural 3D concept configurator.
-- **Flowchart-to-Code** — validated structured graphs and three code outputs.
-- **CTW Vehicle Fleet** — independent vehicle/telemetry reference app.
-- **Academic Portal** — course-scoped teacher access and attendance.
-- **Bella Ops** — browser-local restaurant customer/operations prototype.
+- Job Tracker covers authenticated application management and validated forms.
+- Ecommerce Analytics covers reconciled SQL metrics and market reporting.
+- Core Banking Ledger covers posting consistency, retries, concurrency and audit history.
+- BMW E36 Automotive Systems combines controls, dashboard and digital cluster prototypes.
+- FiveM CAD/MDT covers simulated dispatch and citizen-record workflows.
+- Smart Gym Transformation App covers dated workouts, weight trends and account API scope.
 
-**Additional engineering:** MiniLang Interpreter and TaskFlow. The Android section includes eleven projects with emulator screenshots, public browser demos and case studies. Sfera Tag Scanner appears in the Android section.
+The homepage shows these six projects followed by the existing eleven-project Android showcase. Older homepage project code is commented out for future use. Existing case-study routes and source records are retained.
 
-The Project-2026 additions are BugRepro, Constraint Engine, Debug AI, Smart Home Command Center Voice to Code, Mosaic Content Planner and Smart Gym Transformation App. Each case study includes a screenshot of an example workflow, local demo commands and the limits recorded in the project handoff. The Android cards offer browser demo links where available.
+Each selected case study contains real local screenshots, a walkthrough, two engineering decisions, the project lead role confirmed by the owner, setup commands, recorded checks and limits. The BMW case study has separate Controls, Dashboard and Digital Cluster sections.
 
-The engineering case studies show screenshots from prepared local checkouts. Android cards link to browser demos where available. Preparation changes have not been pushed to the source repositories, so GitHub may differ from the captures. Test counts describe local technical checks, not usage or business outcomes.
+Anonymous GitHub requests returned 404 for the six featured repositories and the two additional BMW repositories on 19 November 2026. Their public repository buttons are withheld. Hosted demos remain pending. The screenshots and local setup instructions support review of the prepared work.
 
-The catalogues are `assets/projects/catalogue.json` and `assets/projects/android.json`. Run `node scripts/prepare-showcase.cjs` to rebuild the HTML cards and case studies. The portfolio exposes the Android section at `#android`.
+The catalogues are assets/projects/catalogue.json and assets/projects/android.json. Run node scripts/prepare-showcase.cjs to rebuild cards and case studies. The generator retains commented additional project cards.
 
-For local review, run `node scripts/preview-static.cjs` and open `http://127.0.0.1:5185/`. Run `npm run check` to verify the HTML and scripts.
-
-To restore the nine local demos on this machine, run `./scripts/demo-hub.ps1 Start -ArtifactsRoot "C:/path/to/demo-artifacts"` in PowerShell 7. `Status` checks listeners and `Stop` stops only hub-owned processes/containers. The portfolio shows local demo buttons only on an exact loopback hostname; public visitors retain screenshot/case-study/source links. See [local demo guide](docs/showcase/LOCAL-DEMOS.md) for prerequisites, retained services and resource limits.
-
-The public portfolio intentionally shows this curated selection. Additional, lower-priority project cards remain archived in `index.html` with `data-archived="true"` and `hidden`; remove both attributes only after deciding they should return to the public selection.
+For local review, use node scripts/preview-static.cjs on port 5185. Run npm run check at the repository root.
 
 ## Structure
 

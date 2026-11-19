@@ -4,7 +4,7 @@ const path = require('node:path');
 const test = require('node:test');
 
 const projectRoot = path.resolve(__dirname, '..');
-const html = fs.readFileSync(path.join(projectRoot, 'index.html'), 'utf8');
+const html = fs.readFileSync(path.join(projectRoot, 'index.html'), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
 
 test('uses unique HTML ids', () => {
     const ids = Array.from(html.matchAll(/\sid=["']([^"']+)["']/g), (match) => match[1]);

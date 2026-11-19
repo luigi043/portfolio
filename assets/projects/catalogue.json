@@ -1,5 +1,444 @@
 [
   {
+    "slug": "job-tracker",
+    "title": "Job Tracker",
+    "problem": "Job seekers need one place to record applications, follow their pipeline and find the next role to follow up.",
+    "architecture": "Next.js App Router renders the overview and applications on the server. Client components handle forms and filters. Server Actions use Zod and ownership checks, with NextAuth sessions and Prisma persistence in PostgreSQL.",
+    "decisions": [
+      "Scope database operations to the authenticated user.",
+      "Validate writes on the server and normalize malformed filter inputs before rendering."
+    ],
+    "highlights": [
+      "Sign in and find an application using company search and status filters.",
+      "Edit its status, save and reload to confirm persistence.",
+      "Try an empty company field, then submit a valid application."
+    ],
+    "outcome": "The source handoff records schema and seed checks, TypeScript, lint, a production build and browser checks for login, validation, filters and persisted edits.",
+    "constraints": [
+      "The repository is unavailable to anonymous visitors. Public source access and hosted demos are pending.",
+      "There is no automated project test suite. Lint records one profile image warning.",
+      "Running the demo requires PostgreSQL and the local configuration described in the source README."
+    ],
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "NextAuth",
+      "Prisma",
+      "PostgreSQL",
+      "Zod"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "id": "job-tracker",
+    "shortSummary": "Track applications from submission to interview and offer, with authenticated editing and focused filters.",
+    "demoSetup": "cd job-tracker\nnpm ci\n# Start the isolated PostgreSQL demo using the source README.\n# Copy .env.example to .env and configure local values.\nnpm run db:push\nnode --env-file=.env prisma/seed.mjs\nnpm run dev -- --port 3036",
+    "featured": true,
+    "public": true,
+    "status": "Local demo · Project lead",
+    "contribution": "I led development of this project.",
+    "repositoryAccess": "unavailable",
+    "screenshot": "assets/projects/job-tracker.webp",
+    "screenshotAlt": "Job Tracker overview with a fictional application pipeline and recent roles",
+    "width": 1440,
+    "height": 1000,
+    "gallery": [
+      {
+        "src": "assets/projects/job-tracker-2.webp",
+        "alt": "Job Tracker showing a saved application edit",
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "src": "assets/projects/job-tracker-1.webp",
+        "alt": "Job Tracker application list on mobile",
+        "width": 390,
+        "height": 897
+      }
+    ],
+    "repositoryUrl": "https://github.com/luigi043/job-tracker",
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Job Tracker overview with a fictional application pipeline and recent roles"
+    },
+    "evidence": [
+      "Source README, prepared screenshots and the completion handoff were reviewed. Source check results are attributed to that handoff."
+    ],
+    "seo": {
+      "title": "Job Tracker Case Study | Luiz Fehlberg",
+      "description": "Track applications from submission to interview and offer, with authenticated editing and focused filters."
+    }
+  },
+  {
+    "slug": "ecommerce-analytics",
+    "title": "Ecommerce Analytics",
+    "problem": "Retail analysts need metric definitions they can reconcile to SQL while exploring dates and shipping markets.",
+    "architecture": "PostgreSQL 17 stores the retail model and deterministic seed. A Node server executes a read-only SQL report and caches an aggregate snapshot. Native browser modules filter daily and market totals locally.",
+    "decisions": [
+      "Keep storewide cart conversion independent of the shipping-market filter.",
+      "Define net revenue as gross sales minus full refunds and expose daily values for reconciliation."
+    ],
+    "highlights": [
+      "Apply July 1–7, 2026 and Portugal, then expand the daily chart values.",
+      "Switch to all markets and compare revenue while cart conversion stays fixed.",
+      "Open Market breakdown and select a market while retaining the date range."
+    ],
+    "outcome": "The latest source handoff records five metric tests, all 14 SQL queries, integrity and inventory concurrency checks, plus Chrome filtering, drill-down, retry and mobile checks.",
+    "constraints": [
+      "The demo reads a snapshot cached until the server restarts.",
+      "The fictional seed uses one EUR reporting currency and full refunds attributed to the original order date.",
+      "Cart conversion is storewide because unconverted carts have no shipping market. Public source access and hosting are pending."
+    ],
+    "stack": [
+      "PostgreSQL",
+      "SQL",
+      "Node.js",
+      "JavaScript"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "id": "ecommerce-analytics",
+    "shortSummary": "Reconcile revenue, refunds and conversion, then explore shipping markets and daily trends backed by SQL.",
+    "demoSetup": "cd ecommerce-analytics\ndocker compose up -d --wait\nnode demo/server.mjs\n# Open http://127.0.0.1:4173",
+    "featured": true,
+    "public": true,
+    "status": "Local demo · Project lead",
+    "contribution": "I led development of this project.",
+    "repositoryAccess": "unavailable",
+    "screenshot": "assets/projects/ecommerce-analytics.webp",
+    "screenshotAlt": "Ecommerce Analytics with date and Portugal filters applied",
+    "width": 1425,
+    "height": 1316,
+    "gallery": [
+      {
+        "src": "assets/projects/ecommerce-analytics-1.webp",
+        "alt": "Shipping-market revenue breakdown",
+        "width": 1440,
+        "height": 940
+      },
+      {
+        "src": "assets/projects/ecommerce-analytics-2.webp",
+        "alt": "Ecommerce Analytics on mobile",
+        "width": 390,
+        "height": 1486
+      }
+    ],
+    "repositoryUrl": "https://github.com/luigi043/ecommerce-analytics",
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Ecommerce Analytics with date and Portugal filters applied"
+    },
+    "evidence": [
+      "Source README, prepared screenshots and the completion handoff were reviewed. Source check results are attributed to that handoff."
+    ],
+    "seo": {
+      "title": "Ecommerce Analytics Case Study | Luiz Fehlberg",
+      "description": "Reconcile revenue, refunds and conversion, then explore shipping markets and daily trends backed by SQL."
+    }
+  },
+  {
+    "slug": "core-banking-ledger",
+    "title": "Core Banking Ledger",
+    "problem": "Transfers must remain balanced and authorized when requests repeat or competing sessions debit the same account.",
+    "architecture": "PostgreSQL stores immutable double-entry journals, posting legs and audit records. Controlled functions calculate balances from the ledger. The loopback Node transfer desk calls the same posting functions as the terminal walkthrough.",
+    "decisions": [
+      "Calculate authoritative balances from posting legs instead of a separately mutable balance column.",
+      "Accept matching retry references only for the same authorized principal and payload."
+    ],
+    "highlights": [
+      "Post a fictional EUR 25.99 transfer and inspect both ledger legs.",
+      "Retry the transfer and confirm that the balance changes once.",
+      "Reject an overdraft, then create a compensating reversal with audit history."
+    ],
+    "outcome": "The source handoff records four SQL contract suites, two concurrent transfer scenarios, eight reporting queries and an upgrade preserving record counts. Chrome covered posting, retries, overdraft rejection, reversal, recovery and mobile layout.",
+    "constraints": [
+      "The browser desk requires local PostgreSQL and listens on loopback.",
+      "FX is outside the demo. Existing compensating service reversals can create a negative balance.",
+      "The repository is unavailable anonymously. Public source access and hosting remain pending."
+    ],
+    "stack": [
+      "PostgreSQL",
+      "SQL",
+      "Node.js",
+      "PowerShell"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "id": "core-banking-ledger",
+    "shortSummary": "Post a transfer once, retry it safely, reject an overdraft and inspect an audited reversal.",
+    "demoSetup": "cd core-banking-ledger/core-banking-ledger\n# Use an isolated Compose project and free database port as documented.\ndocker compose up -d --wait --wait-timeout 600\nnode scripts/web-demo.mjs\n# Open http://127.0.0.1:4176",
+    "featured": true,
+    "public": true,
+    "status": "Local demo · Project lead",
+    "contribution": "I led development of this project.",
+    "repositoryAccess": "unavailable",
+    "screenshot": "assets/projects/core-banking-ledger.webp",
+    "screenshotAlt": "Core Banking Ledger with balances and a completed transfer receipt",
+    "width": 1440,
+    "height": 1000,
+    "gallery": [
+      {
+        "src": "assets/projects/core-banking-ledger-1.webp",
+        "alt": "Ledger transfer and audited reversal on mobile",
+        "width": 390,
+        "height": 1260
+      },
+      {
+        "src": "assets/projects/core-banking-ledger-2.webp",
+        "alt": "Terminal transfer, rejected overdraft and audited reversal",
+        "width": 880,
+        "height": 796
+      }
+    ],
+    "repositoryUrl": "https://github.com/luigi043/core-banking-ledger",
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Core Banking Ledger with balances and a completed transfer receipt"
+    },
+    "evidence": [
+      "Source README, prepared screenshots and the completion handoff were reviewed. Source check results are attributed to that handoff."
+    ],
+    "seo": {
+      "title": "Core Banking Ledger Case Study | Luiz Fehlberg",
+      "description": "Post a transfer once, retry it safely, reject an overdraft and inspect an audited reversal."
+    }
+  },
+  {
+    "slug": "bmw-e36-digital-cluster",
+    "title": "BMW E36 Automotive Systems",
+    "problem": "E36 enthusiasts need to explore control outputs, readable instruments and stale-data recovery before vehicle integration.",
+    "architecture": "Controls pairs an Arduino Mega prototype with a JavaScript scenario model. Dashboard validates and expires telemetry in a static browser panel. Digital Cluster shares a React instrument view between a browser simulator and a separate ASP.NET telemetry workspace.",
+    "decisions": [
+      "Clear or flag stale readings when the simulated connection fails.",
+      "Separate browser simulations from acquisition and actuator control, with visible units and calibration assumptions."
+    ],
+    "highlights": [
+      "Controls: apply boost and wheel slip, inspect pump and traction-request indicators, then simulate a lost connection.",
+      "Dashboard: try partial readings and link dropout, then switch metric and imperial units.",
+      "Digital Cluster: select Road cruise, apply Cooling warning and reconnect after a frozen timestamp."
+    ],
+    "outcome": "The source handoffs record local demos, screenshots and commits for all three repositories. Browser workflows cover scenarios, warnings, units and recovery. Physical hardware and vehicle recovery remain unverified.",
+    "constraints": [
+      "All displayed inputs are simulated. Wiring, calibration, adapter compatibility and vehicle power-loss recovery need physical testing.",
+      "Dashboard has no complete Android host or Bluetooth transport. Controls has no browser connection to USB, CAN or actuators.",
+      "Scenario thresholds are illustrative. The traction output is a request indicator. Public repository access and hosted demos are pending."
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Arduino",
+      "ASP.NET Core",
+      "PostgreSQL"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "id": "bmw-e36-digital-cluster",
+    "shortSummary": "Three related prototypes explore controls, telemetry and a digital instrument cluster using simulated inputs.",
+    "demoSetup": "Digital Cluster (from project-2026)\ncd bmw-e36-digital-cluster/frontend\nnpm ci\nnpm run dev -- --host 127.0.0.1 --port 5173 --strictPort\n\nControls (from project-2026)\ncd BMW-E36-Control-Systems\nnpm run demo\n\nDashboard (from project-2026)\ncd bmw-e36-dashboard\n# Open bmw-dashboard-ui.html in a modern browser.",
+    "featured": true,
+    "public": true,
+    "status": "Local demo · Project lead",
+    "contribution": "I led development of this project.",
+    "repositoryAccess": "unavailable",
+    "screenshot": "assets/projects/bmw-e36-digital-cluster.webp",
+    "screenshotAlt": "Digital Cluster showing the simulated cooling warning",
+    "width": 1440,
+    "height": 1000,
+    "gallery": [
+      {
+        "src": "assets/projects/bmw-e36-digital-cluster-1.webp",
+        "alt": "Digital Cluster on mobile",
+        "width": 390,
+        "height": 1244
+      },
+      {
+        "src": "assets/projects/bmw-e36-digital-cluster-2.webp",
+        "alt": "Controls: boost and wheel-slip scenario",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "src": "assets/projects/bmw-e36-digital-cluster-3.webp",
+        "alt": "Dashboard: stale readings cleared during link dropout",
+        "width": 1280,
+        "height": 850
+      }
+    ],
+    "repositoryUrl": "https://github.com/luigi043/bmw-e36-digital-cluster",
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Digital Cluster showing the simulated cooling warning"
+    },
+    "evidence": [
+      "Source README, prepared screenshots and the completion handoff were reviewed. Source check results are attributed to that handoff."
+    ],
+    "seo": {
+      "title": "BMW E36 Automotive Systems Case Study | Luiz Fehlberg",
+      "description": "Three related prototypes explore controls, telemetry and a digital instrument cluster using simulated inputs."
+    },
+    "components": [
+      {
+        "title": "Controls",
+        "description": "Arduino Mega control prototype and a hardware-free console for fan duty, secondary pump demand and wheel-slip requests. The browser model has no actuator connection."
+      },
+      {
+        "title": "Dashboard",
+        "description": "Static browser instruments validate readings, expire stale frames and preserve scenario and unit preferences. Live adapter transport and the Android host remain unfinished."
+      },
+      {
+        "title": "Digital Cluster",
+        "description": "React instruments show simulated drive scenarios, coolant warnings and connection recovery. A separate authenticated ASP.NET workspace stores telemetry sessions and presets."
+      }
+    ]
+  },
+  {
+    "slug": "fivem-cad-mdt-system",
+    "title": "FiveM CAD/MDT",
+    "problem": "Roleplay dispatchers need a clear call workflow and readable unit and citizen information.",
+    "architecture": "A React and TypeScript simulation stores fictional calls, roster events and records in browser storage. A separate ASP.NET Core API implements sessions and account-scoped citizen records with EF Core and PostgreSQL.",
+    "decisions": [
+      "Model call closure and unit release together in the dispatch workflow.",
+      "Derive API record ownership from the authenticated account and exclude older rows with unknown ownership."
+    ],
+    "highlights": [
+      "Create a roadside-assistance call and assign tow unit T-21.",
+      "Close the call with an incident report and confirm that the unit becomes available.",
+      "Find plate RP 6K19, edit citizen notes and reload to verify browser persistence."
+    ],
+    "outcome": "The handoff records frontend lint, TypeScript and production build, .NET Release build and Chrome workflow checks. Six of seven backend tests passed; Windows Application Control blocked the architecture test and migration runner.",
+    "constraints": [
+      "Dispatch, department roles and units are simulated. The API implements authentication and citizen records.",
+      "There is no FiveM resource manifest, NUI bridge, ESX/QBCore adapter or live dispatch integration.",
+      "Live API and migration verification remain blocked in the recorded environment. Public source access and hosting are pending."
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "ASP.NET Core",
+      "EF Core",
+      "PostgreSQL"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "id": "fivem-cad-mdt-system",
+    "shortSummary": "Create a fictional dispatch call, assign a unit, close an incident and search citizen records.",
+    "demoSetup": "cd fivem-cad-mdt-system/frontend\nnpm ci\nnpm run dev -- --host 127.0.0.1",
+    "featured": true,
+    "public": true,
+    "status": "Local demo · Project lead",
+    "contribution": "I led development of this project.",
+    "repositoryAccess": "unavailable",
+    "screenshot": "assets/projects/fivem-cad-mdt-system.webp",
+    "screenshotAlt": "Completed dispatch with a released unit",
+    "width": 1440,
+    "height": 1116,
+    "gallery": [
+      {
+        "src": "assets/projects/fivem-cad-mdt-system-1.webp",
+        "alt": "Citizen record lookup in the CAD/MDT simulation",
+        "width": 1440,
+        "height": 980
+      },
+      {
+        "src": "assets/projects/fivem-cad-mdt-system-2.webp",
+        "alt": "FiveM CAD/MDT dispatch simulation on mobile",
+        "width": 390,
+        "height": 1606
+      }
+    ],
+    "repositoryUrl": "https://github.com/luigi043/fivem-cad-mdt-system",
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Completed dispatch with a released unit"
+    },
+    "evidence": [
+      "Source README, prepared screenshots and the completion handoff were reviewed. Source check results are attributed to that handoff."
+    ],
+    "seo": {
+      "title": "FiveM CAD/MDT Case Study | Luiz Fehlberg",
+      "description": "Create a fictional dispatch call, assign a unit, close an incident and search citizen records."
+    }
+  },
+  {
+    "slug": "smart-gym-transformation-app",
+    "title": "Smart Gym Transformation App",
+    "shortSummary": "Log workouts and body measurements, then review dated training progress and weight trends.",
+    "architecture": "A React and TypeScript interface shares record editors and an API client. Demo mode uses browser storage with fictional records. The ASP.NET Core API uses EF Core and PostgreSQL with account-scoped queries and rotating refresh cookies.",
+    "problem": "Connect dated workout sessions and body measurements to a readable progress history.",
+    "decisions": [
+      "Store workout dates independently from record creation timestamps.",
+      "Store duration in whole minutes and weight in kilograms, with a display unit switch.",
+      "Keep older records with unknown ownership excluded from authenticated account views."
+    ],
+    "highlights": [
+      "Create and edit a workout, then filter its history by date.",
+      "Log body weight and switch the progress display between kilograms and pounds.",
+      "Reset fictional demo records or use the documented full-stack setup."
+    ],
+    "constraints": [
+      "The browser demo uses fictional data saved to the current browser. It does not connect to the account API.",
+      "Full-stack use requires the documented PostgreSQL and API setup and private server signing configuration.",
+      "The handoff records an older development signing key in repository history. Public deployment requires resolving that historical exposure."
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "ASP.NET Core",
+      "EF Core",
+      "PostgreSQL"
+    ],
+    "outcome": "The source handoff records seven backend tests, Release and frontend builds, lint, TypeScript, browser workflows and PostgreSQL integration checks including account isolation and token rotation. Changes remain local.",
+    "demoSetup": "cd smart-gym-transformation-app/frontend\nnpm ci\nnpm run demo",
+    "id": "smart-gym-transformation-app",
+    "categories": [
+      "Web"
+    ],
+    "featured": true,
+    "public": true,
+    "status": "Local demo · Project lead",
+    "screenshot": "assets/projects/smart-gym-transformation-app.webp",
+    "screenshotAlt": "Smart Gym progress showing workout history and body-weight measurements",
+    "width": 1440,
+    "height": 780,
+    "gallery": [
+      {
+        "src": "assets/projects/smart-gym-transformation-app-1.webp",
+        "alt": "Smart Gym workout and weight progress on mobile",
+        "width": 390,
+        "height": 1023
+      }
+    ],
+    "repositoryUrl": "https://github.com/luigi043/smart-gym-transformation-app",
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Smart Gym progress showing workout history and body-weight measurements"
+    },
+    "evidence": [
+      "Reviewed the project README, source configuration, captured screens and completion handoff in project-2026."
+    ],
+    "seo": {
+      "title": "Smart Gym Transformation App Case Study | Luiz Fehlberg",
+      "description": "Log workouts and body measurements, then review dated training progress and weight trends."
+    },
+    "repositoryAccess": "unavailable",
+    "contribution": "I led development of this project."
+  },
+  {
     "id": "vehicle-build-cost-calculator",
     "slug": "vehicle-build-cost-calculator",
     "title": "Vehicle Build Cost Calculator",
@@ -32,7 +471,7 @@
       "Web",
       "Architecture"
     ],
-    "featured": true,
+    "featured": false,
     "public": true,
     "status": "Local demonstration · Static runtime preview",
     "screenshot": "assets/projects/vehicle-build-cost-calculator.webp",
@@ -87,7 +526,7 @@
     "categories": [
       "Web"
     ],
-    "featured": true,
+    "featured": false,
     "public": true,
     "status": "Local demonstration · Static runtime preview",
     "screenshot": "assets/projects/bmw-configurator.webp",
@@ -141,7 +580,7 @@
       "Web",
       "Architecture"
     ],
-    "featured": true,
+    "featured": false,
     "public": true,
     "status": "Local demonstration · Static runtime preview",
     "screenshot": "assets/projects/flowchart-to-code-converter.webp",
@@ -198,7 +637,7 @@
       "Web",
       "Architecture"
     ],
-    "featured": true,
+    "featured": false,
     "public": true,
     "status": "Local demonstration · Static runtime preview",
     "screenshot": "assets/projects/ctw-vehicle-fleet.webp",
@@ -253,7 +692,7 @@
       "Web",
       "Architecture"
     ],
-    "featured": true,
+    "featured": false,
     "public": true,
     "status": "Local demonstration · Static runtime preview",
     "screenshot": "assets/projects/academic-portal.webp",
@@ -306,7 +745,7 @@
     "categories": [
       "Web"
     ],
-    "featured": true,
+    "featured": false,
     "public": true,
     "status": "Local demonstration · Static runtime preview",
     "screenshot": "assets/projects/bella-ops.webp",
@@ -801,69 +1240,6 @@
     "seo": {
       "title": "Mosaic Content Planner Case Study | Luiz Fehlberg",
       "description": "Plan creator content across channels with drafts, a calendar and browser-saved edits."
-    }
-  },
-  {
-    "slug": "smart-gym-transformation-app",
-    "title": "Smart Gym Transformation App",
-    "shortSummary": "Log workouts and body measurements, then review dated training progress and weight trends.",
-    "architecture": "A React and TypeScript interface shares record editors and an API client. Demo mode uses browser storage with fictional records. The ASP.NET Core API uses EF Core and PostgreSQL with account-scoped queries and rotating refresh cookies.",
-    "problem": "Connect dated workout sessions and body measurements to a readable progress history.",
-    "decisions": [
-      "Store workout dates independently from record creation timestamps.",
-      "Store duration in whole minutes and weight in kilograms, with a display unit switch.",
-      "Keep older records with unknown ownership excluded from authenticated account views."
-    ],
-    "highlights": [
-      "Create and edit a workout, then filter its history by date.",
-      "Log body weight and switch the progress display between kilograms and pounds.",
-      "Reset fictional demo records or use the documented full-stack setup."
-    ],
-    "constraints": [
-      "The browser demo uses fictional data saved to the current browser. It does not connect to the account API.",
-      "Full-stack use requires the documented PostgreSQL and API setup and private server signing configuration.",
-      "The handoff records an older development signing key in repository history. Public deployment requires resolving that historical exposure."
-    ],
-    "stack": [
-      "React",
-      "TypeScript",
-      "ASP.NET Core",
-      "EF Core",
-      "PostgreSQL"
-    ],
-    "outcome": "The source handoff records seven backend tests, Release and frontend builds, lint, TypeScript, browser workflows and PostgreSQL integration checks including account isolation and token rotation. Changes remain local.",
-    "demoSetup": "cd smart-gym-transformation-app/frontend\nnpm ci\nnpm run demo",
-    "id": "smart-gym-transformation-app",
-    "categories": [
-      "Web"
-    ],
-    "featured": false,
-    "public": true,
-    "status": "Local portfolio demo",
-    "screenshot": "assets/projects/smart-gym-transformation-app.webp",
-    "screenshotAlt": "Smart Gym progress showing workout history and body-weight measurements",
-    "width": 1440,
-    "height": 780,
-    "gallery": [
-      {
-        "src": "assets/projects/smart-gym-transformation-app-mobile.webp",
-        "alt": "Smart Gym progress on a mobile screen",
-        "width": 390,
-        "height": 1023
-      }
-    ],
-    "repositoryUrl": "https://github.com/luigi043/smart-gym-transformation-app",
-    "visualization": {
-      "kind": "runtime-screenshot",
-      "label": "Runtime screenshot",
-      "description": "Smart Gym progress showing workout history and body-weight measurements"
-    },
-    "evidence": [
-      "Reviewed the project README, source configuration, captured screens and completion handoff in project-2026."
-    ],
-    "seo": {
-      "title": "Smart Gym Transformation App Case Study | Luiz Fehlberg",
-      "description": "Log workouts and body measurements, then review dated training progress and weight trends."
     }
   }
 ]
