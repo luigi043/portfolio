@@ -35,7 +35,7 @@ I'm Luiz Fehlberg, a developer based in Portugal with a Bachelor's in Computer E
 
 **Additional engineering:** MiniLang Interpreter and TaskFlow. The Android section includes eleven projects with emulator screenshots, public browser demos and case studies. Sfera Tag Scanner appears in the Android section.
 
-The Project-2026 additions are BugRepro, Constraint Engine, Debug AI, Smart Home Command Center and Voice to Code. Each case study includes a screenshot of an example workflow, local demo commands and the limits recorded in the project handoff. The Android cards offer browser demo links where available.
+The Project-2026 additions are BugRepro, Constraint Engine, Debug AI, Smart Home Command Center Voice to Code, Mosaic Content Planner and Smart Gym Transformation App. Each case study includes a screenshot of an example workflow, local demo commands and the limits recorded in the project handoff. The Android cards offer browser demo links where available.
 
 The engineering case studies show screenshots from prepared local checkouts. Android cards link to browser demos where available. Preparation changes have not been pushed to the source repositories, so GitHub may differ from the captures. Test counts describe local technical checks, not usage or business outcomes.
 

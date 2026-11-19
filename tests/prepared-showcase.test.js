@@ -7,9 +7,9 @@ const records = require('../assets/projects/catalogue.json').filter(project => !
 const html = fs.readFileSync('index.html', 'utf8');
 
 test('prepared projects have local captures, unique cards and portable case-study routes', () => {
-    assert.equal(records.length, 13);
+    assert.equal(records.length, 15);
     assert.equal(records.filter(p => p.featured).length, 6);
-    assert.equal(new Set(records.map(p => p.repositoryUrl)).size, 13);
+    assert.equal(new Set(records.map(p => p.repositoryUrl)).size, 15);
     for (const project of records) {
         assert.equal(html.split(`data-prepared-project="${project.slug}"`).length - 1, 1);
         assert.ok(fs.statSync(project.screenshot).size > 1000);
