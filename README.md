@@ -43,6 +43,15 @@ The catalogues are assets/projects/catalogue.json and assets/projects/android.js
 
 For local review, use node scripts/preview-static.cjs on port 5185. Run npm run check at the repository root.
 
+
+## All Projects
+
+The homepage links to projects/index.html, a searchable collection of 42 case studies. It includes the six featured projects, eleven Android projects and additional browser applications and Python tools. The featured selection remains focused, while the older homepage project markup stays in comments.
+
+The November 25 additions are Car OS Dashboard, ConfigCraft, Local-First DB Engine, Aurora Tactical, GTA RP Workshop Management, Meccanico della Velocità, Harbor Desk, Fleetline, CSV Cleaner, File Inventory and Log Analyzer. Ten existing galleries were refreshed from project-2026. The Python examples were executed and their five tests passed. Other application checks are attributed to the source documentation rather than presented as rerun checks.
+
+Project cards now use plain technology text and aligned case-study links, with screenshot previews on the featured cards. Search and project-type filters work on the All Projects page.
+
 ## Structure
 
 ```

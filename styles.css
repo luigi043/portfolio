@@ -1874,7 +1874,7 @@ body.dialog-open {
    COLLAPSE-ON-HOVER for existing PROJECT cards
    (CSS-only — preserves existing markup)
    ============================================ */
-#projects .project-card {
+#projects .project-card:not(.portfolio-card) {
   transition:
     transform .4s cubic-bezier(.2,.7,.2,1),
     border-color .3s ease,
@@ -1883,12 +1883,12 @@ body.dialog-open {
 }
 
 /* By default: hide description, tech, impact, links, progress */
-#projects .project-card .project-content > p,
-#projects .project-card .project-tech,
-#projects .project-card .project-impact,
-#projects .project-card .project-links,
-#projects .project-card .project-progress,
-#projects .project-card .project-overlay {
+#projects .project-card:not(.portfolio-card) .project-content > p,
+#projects .project-card:not(.portfolio-card) .project-tech,
+#projects .project-card:not(.portfolio-card) .project-impact,
+#projects .project-card:not(.portfolio-card) .project-links,
+#projects .project-card:not(.portfolio-card) .project-progress,
+#projects .project-card:not(.portfolio-card) .project-overlay {
   opacity: 0;
   max-height: 0;
   margin-top: 0 !important;
@@ -1905,42 +1905,42 @@ body.dialog-open {
 }
 
 /* Reveal on hover/focus-within/.is-open */
-#projects .project-card:hover .project-content > p,
-#projects .project-card:focus-within .project-content > p,
-#projects .project-card.is-open .project-content > p {
+#projects .project-card:not(.portfolio-card):hover .project-content > p,
+#projects .project-card:not(.portfolio-card):focus-within .project-content > p,
+#projects .project-card:not(.portfolio-card).is-open .project-content > p {
   opacity: 1;
   max-height: 200px;
   margin-bottom: 0.75rem !important;
   pointer-events: auto;
 }
-#projects .project-card:hover .project-tech,
-#projects .project-card:focus-within .project-tech,
-#projects .project-card.is-open .project-tech,
-#projects .project-card:hover .project-impact,
-#projects .project-card:focus-within .project-impact,
-#projects .project-card.is-open .project-impact,
-#projects .project-card:hover .project-links,
-#projects .project-card:focus-within .project-links,
-#projects .project-card.is-open .project-links,
-#projects .project-card:hover .project-progress,
-#projects .project-card:focus-within .project-progress,
-#projects .project-card.is-open .project-progress {
+#projects .project-card:not(.portfolio-card):hover .project-tech,
+#projects .project-card:not(.portfolio-card):focus-within .project-tech,
+#projects .project-card:not(.portfolio-card).is-open .project-tech,
+#projects .project-card:not(.portfolio-card):hover .project-impact,
+#projects .project-card:not(.portfolio-card):focus-within .project-impact,
+#projects .project-card:not(.portfolio-card).is-open .project-impact,
+#projects .project-card:not(.portfolio-card):hover .project-links,
+#projects .project-card:not(.portfolio-card):focus-within .project-links,
+#projects .project-card:not(.portfolio-card).is-open .project-links,
+#projects .project-card:not(.portfolio-card):hover .project-progress,
+#projects .project-card:not(.portfolio-card):focus-within .project-progress,
+#projects .project-card:not(.portfolio-card).is-open .project-progress {
   opacity: 1;
   max-height: 240px;
   margin-top: 0.6rem !important;
   pointer-events: auto;
 }
-#projects .project-card:hover .project-overlay,
-#projects .project-card:focus-within .project-overlay,
-#projects .project-card.is-open .project-overlay {
+#projects .project-card:not(.portfolio-card):hover .project-overlay,
+#projects .project-card:not(.portfolio-card):focus-within .project-overlay,
+#projects .project-card:not(.portfolio-card).is-open .project-overlay {
   opacity: 1;
   max-height: 80px;
   pointer-events: auto;
 }
 
-#projects .project-card:hover,
-#projects .project-card:focus-within,
-#projects .project-card.is-open {
+#projects .project-card:not(.portfolio-card):hover,
+#projects .project-card:not(.portfolio-card):focus-within,
+#projects .project-card:not(.portfolio-card).is-open {
   transform: translateY(-4px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
 }
@@ -2000,8 +2000,8 @@ body.dialog-open {
   .compact-body,
   .compact-inner,
   .compact-card .expand-hint,
-  #projects .project-card,
-  #projects .project-card *,
+  #projects .project-card:not(.portfolio-card),
+  #projects .project-card:not(.portfolio-card) *,
   #skills .skill-category-card,
   #skills .skill-category-card * {
     transition: none !important;
@@ -2888,7 +2888,7 @@ body.dialog-open {
 }
 
 @media (hover: none) {
-  #projects .project-card .project-overlay {
+  #projects .project-card:not(.portfolio-card) .project-overlay {
     opacity: 1;
     pointer-events: auto;
   }
@@ -4394,7 +4394,7 @@ html.has-motion .motion-reveal.is-revealed {
 }
 
 /* The selected projects must be readable before an interaction. */
-#projects .project-card {
+#projects .project-card:not(.portfolio-card) {
   transition:
     transform var(--motion-base) var(--motion-ease),
     border-color var(--motion-base) ease,
@@ -4402,11 +4402,11 @@ html.has-motion .motion-reveal.is-revealed {
     background var(--motion-base) ease;
 }
 
-#projects .project-card .project-content > p,
-#projects .project-card .project-tech,
-#projects .project-card .project-impact,
-#projects .project-card .project-links,
-#projects .project-card .project-progress {
+#projects .project-card:not(.portfolio-card) .project-content > p,
+#projects .project-card:not(.portfolio-card) .project-tech,
+#projects .project-card:not(.portfolio-card) .project-impact,
+#projects .project-card:not(.portfolio-card) .project-links,
+#projects .project-card:not(.portfolio-card) .project-progress {
   opacity: 1;
   max-height: none;
   overflow: visible;
@@ -4414,18 +4414,18 @@ html.has-motion .motion-reveal.is-revealed {
   transition: none;
 }
 
-#projects .project-card .project-content > p {
+#projects .project-card:not(.portfolio-card) .project-content > p {
   margin: 0.55rem 0 0.85rem !important;
 }
 
-#projects .project-card .project-tech,
-#projects .project-card .project-impact,
-#projects .project-card .project-links,
-#projects .project-card .project-progress {
+#projects .project-card:not(.portfolio-card) .project-tech,
+#projects .project-card:not(.portfolio-card) .project-impact,
+#projects .project-card:not(.portfolio-card) .project-links,
+#projects .project-card:not(.portfolio-card) .project-progress {
   margin-top: 0.75rem !important;
 }
 
-#projects .project-card .project-overlay {
+#projects .project-card:not(.portfolio-card) .project-overlay {
   max-height: none;
   margin: 0 !important;
   padding: 0 !important;
@@ -4434,14 +4434,14 @@ html.has-motion .motion-reveal.is-revealed {
   transition: opacity var(--motion-base) ease;
 }
 
-#projects .project-card:hover .project-overlay,
-#projects .project-card:focus-within .project-overlay {
+#projects .project-card:not(.portfolio-card):hover .project-overlay,
+#projects .project-card:not(.portfolio-card):focus-within .project-overlay {
   opacity: 1;
   pointer-events: auto;
 }
 
-#projects .project-card:hover,
-#projects .project-card:focus-within {
+#projects .project-card:not(.portfolio-card):hover,
+#projects .project-card:not(.portfolio-card):focus-within {
   transform: translate3d(0, -6px, 0);
   box-shadow: 0 20px 42px rgba(0, 0, 0, 0.3);
 }

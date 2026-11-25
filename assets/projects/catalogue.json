@@ -44,14 +44,14 @@
     "height": 1000,
     "gallery": [
       {
-        "src": "assets/projects/job-tracker-2.webp",
-        "alt": "Job Tracker showing a saved application edit",
+        "src": "assets/projects/job-tracker-refresh-1.webp",
+        "alt": "Job Tracker additional workflow capture",
         "width": 1440,
         "height": 1000
       },
       {
-        "src": "assets/projects/job-tracker-1.webp",
-        "alt": "Job Tracker application list on mobile",
+        "src": "assets/projects/job-tracker-refresh-2.webp",
+        "alt": "Job Tracker additional mobile capture",
         "width": 390,
         "height": 897
       }
@@ -114,14 +114,14 @@
     "height": 1316,
     "gallery": [
       {
-        "src": "assets/projects/ecommerce-analytics-1.webp",
-        "alt": "Shipping-market revenue breakdown",
+        "src": "assets/projects/ecommerce-analytics-refresh-1.webp",
+        "alt": "Ecommerce Analytics additional workflow capture",
         "width": 1440,
         "height": 940
       },
       {
-        "src": "assets/projects/ecommerce-analytics-2.webp",
-        "alt": "Ecommerce Analytics on mobile",
+        "src": "assets/projects/ecommerce-analytics-refresh-2.webp",
+        "alt": "Ecommerce Analytics additional mobile capture",
         "width": 390,
         "height": 1486
       }
@@ -347,14 +347,14 @@
     "height": 1116,
     "gallery": [
       {
-        "src": "assets/projects/fivem-cad-mdt-system-1.webp",
-        "alt": "Citizen record lookup in the CAD/MDT simulation",
+        "src": "assets/projects/fivem-cad-mdt-system-refresh-1.webp",
+        "alt": "FiveM CAD/MDT additional workflow capture",
         "width": 1440,
         "height": 980
       },
       {
-        "src": "assets/projects/fivem-cad-mdt-system-2.webp",
-        "alt": "FiveM CAD/MDT dispatch simulation on mobile",
+        "src": "assets/projects/fivem-cad-mdt-system-refresh-2.webp",
+        "alt": "FiveM CAD/MDT additional mobile capture",
         "width": 390,
         "height": 1606
       }
@@ -416,8 +416,8 @@
     "height": 780,
     "gallery": [
       {
-        "src": "assets/projects/smart-gym-transformation-app-1.webp",
-        "alt": "Smart Gym workout and weight progress on mobile",
+        "src": "assets/projects/smart-gym-transformation-app-refresh-1.webp",
+        "alt": "Smart Gym Transformation App additional mobile capture",
         "width": 390,
         "height": 1023
       }
@@ -491,7 +491,8 @@
     "seo": {
       "title": "Vehicle Build Cost Calculator Case Study | Luiz Fehlberg",
       "description": "Owner-scoped build budgets with planned, actual and projected costs across independent scenarios."
-    }
+    },
+    "repositoryAccess": "public"
   },
   {
     "id": "bmw-configurator",
@@ -546,7 +547,8 @@
     "seo": {
       "title": "BMW Configurator / Drive Studio Case Study | Luiz Fehlberg",
       "description": "A procedural 3D concept car with visible customization, indicative pricing and a build-summary dialog."
-    }
+    },
+    "repositoryAccess": "public"
   },
   {
     "id": "flowchart-to-code-converter",
@@ -600,7 +602,8 @@
     "seo": {
       "title": "Flowchart-to-Code Case Study | Luiz Fehlberg",
       "description": "A visual editor that validates structured graphs and generates pseudocode, Python and JavaScript."
-    }
+    },
+    "repositoryAccess": "public"
   },
   {
     "id": "ctw-vehicle-fleet",
@@ -657,7 +660,8 @@
     "seo": {
       "title": "CTW Vehicle Fleet Case Study | Luiz Fehlberg",
       "description": "A vehicle catalogue and stored telemetry reference app with two persistence models."
-    }
+    },
+    "repositoryAccess": "public"
   },
   {
     "id": "academic-portal",
@@ -712,7 +716,8 @@
     "seo": {
       "title": "Academic Portal / Portal Académico Case Study | Luiz Fehlberg",
       "description": "Course-scoped teacher access and attendance recording in a Laravel application."
-    }
+    },
+    "repositoryAccess": "public"
   },
   {
     "id": "bella-ops",
@@ -765,7 +770,8 @@
     "seo": {
       "title": "Bella Ops Case Study | Luiz Fehlberg",
       "description": "Connected restaurant customer and operations experiences sharing bookings, menus and orders in one browser."
-    }
+    },
+    "repositoryAccess": "public"
   },
   {
     "id": "lang-interpreter",
@@ -820,7 +826,8 @@
     "seo": {
       "title": "MiniLang Interpreter Case Study | Luiz Fehlberg",
       "description": "A TypeScript language pipeline with lexical environments, recursion, closures and a bounded browser playground."
-    }
+    },
+    "repositoryAccess": "public"
   },
   {
     "id": "taskflow",
@@ -876,7 +883,8 @@
     "seo": {
       "title": "TaskFlow Case Study | Luiz Fehlberg",
       "description": "A task manager with browser-local storage or an optional file-backed Express API."
-    }
+    },
+    "repositoryAccess": "public"
   },
   {
     "id": "sferatagscanner",
@@ -987,7 +995,7 @@
     "screenshot": "assets/projects/bugrepro.webp",
     "screenshotAlt": "BugRepro demo showing a checkout defect report",
     "width": 1440,
-    "height": 1108,
+    "height": 1156,
     "visualization": {
       "kind": "runtime-screenshot",
       "label": "Runtime screenshot",
@@ -997,7 +1005,22 @@
     "seo": {
       "title": "BugRepro Case Study | Luiz Fehlberg",
       "description": "Track a defect from its initial report through reproduction attempts and proposed fixes."
-    }
+    },
+    "gallery": [
+      {
+        "src": "assets/projects/bugrepro-refresh-1.webp",
+        "alt": "BugRepro additional workflow capture",
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "src": "assets/projects/bugrepro-refresh-2.webp",
+        "alt": "BugRepro additional mobile capture",
+        "width": 390,
+        "height": 1035
+      }
+    ],
+    "repositoryAccess": "unavailable"
   },
   {
     "id": "constraint-engine",
@@ -1032,7 +1055,7 @@
     "screenshot": "assets/projects/constraint-engine.webp",
     "screenshotAlt": "Constraint Engine demo showing a solved grid route",
     "width": 1440,
-    "height": 980,
+    "height": 1000,
     "visualization": {
       "kind": "runtime-screenshot",
       "label": "Runtime screenshot",
@@ -1042,7 +1065,22 @@
     "seo": {
       "title": "Constraint Engine Case Study | Luiz Fehlberg",
       "description": "Find a valid route through a grid and inspect the rules that fired after each move."
-    }
+    },
+    "gallery": [
+      {
+        "src": "assets/projects/constraint-engine-refresh-1.webp",
+        "alt": "Constraint Engine additional workflow capture",
+        "width": 1440,
+        "height": 980
+      },
+      {
+        "src": "assets/projects/constraint-engine-refresh-2.webp",
+        "alt": "Constraint Engine additional mobile capture",
+        "width": 390,
+        "height": 1364
+      }
+    ],
+    "repositoryAccess": "unavailable"
   },
   {
     "id": "debug-ai",
@@ -1088,7 +1126,22 @@
     "seo": {
       "title": "Debug AI Case Study | Luiz Fehlberg",
       "description": "Inspect a runtime error, trace the stack, and review a proposed fix."
-    }
+    },
+    "gallery": [
+      {
+        "src": "assets/projects/debug-ai-refresh-1.webp",
+        "alt": "Debug AI additional workflow capture",
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "src": "assets/projects/debug-ai-refresh-2.webp",
+        "alt": "Debug AI additional mobile capture",
+        "width": 390,
+        "height": 1035
+      }
+    ],
+    "repositoryAccess": "unavailable"
   },
   {
     "id": "smart-home-command-center",
@@ -1124,7 +1177,7 @@
     "screenshot": "assets/projects/smart-home-command-center.webp",
     "screenshotAlt": "Smart Home Command Center demo showing the simulated home dashboard",
     "width": 1440,
-    "height": 960,
+    "height": 1050,
     "visualization": {
       "kind": "runtime-screenshot",
       "label": "Runtime screenshot",
@@ -1134,7 +1187,22 @@
     "seo": {
       "title": "Smart Home Command Center Case Study | Luiz Fehlberg",
       "description": "Control a simulated home, switch between rooms, and activate scenes."
-    }
+    },
+    "gallery": [
+      {
+        "src": "assets/projects/smart-home-command-center-refresh-1.webp",
+        "alt": "Smart Home Command Center additional workflow capture",
+        "width": 1425,
+        "height": 1094
+      },
+      {
+        "src": "assets/projects/smart-home-command-center-refresh-2.webp",
+        "alt": "Smart Home Command Center additional mobile capture",
+        "width": 375,
+        "height": 1475
+      }
+    ],
+    "repositoryAccess": "unavailable"
   },
   {
     "id": "voice-to-code",
@@ -1170,7 +1238,7 @@
     "screenshot": "assets/projects/voice-to-code.webp",
     "screenshotAlt": "Voice to Code demo showing a generated sorting example",
     "width": 1366,
-    "height": 1013,
+    "height": 1031,
     "visualization": {
       "kind": "runtime-screenshot",
       "label": "Runtime screenshot",
@@ -1180,7 +1248,22 @@
     "seo": {
       "title": "Voice to Code Case Study | Luiz Fehlberg",
       "description": "Turn a typed or spoken instruction into a code snippet you can review and export."
-    }
+    },
+    "gallery": [
+      {
+        "src": "assets/projects/voice-to-code-refresh-1.webp",
+        "alt": "Voice to Code additional workflow capture",
+        "width": 1366,
+        "height": 900
+      },
+      {
+        "src": "assets/projects/voice-to-code-refresh-2.webp",
+        "alt": "Voice to Code additional mobile capture",
+        "width": 390,
+        "height": 1480
+      }
+    ],
+    "repositoryAccess": "unavailable"
   },
   {
     "slug": "social",
@@ -1222,8 +1305,8 @@
     "height": 1000,
     "gallery": [
       {
-        "src": "assets/projects/social-mobile.webp",
-        "alt": "Mosaic creator workspace on a mobile screen",
+        "src": "assets/projects/social-refresh-1.webp",
+        "alt": "Mosaic Content Planner additional mobile capture",
         "width": 780,
         "height": 1688
       }
@@ -1240,6 +1323,666 @@
     "seo": {
       "title": "Mosaic Content Planner Case Study | Luiz Fehlberg",
       "description": "Plan creator content across channels with drafts, a calendar and browser-saved edits."
-    }
+    },
+    "repositoryAccess": "unavailable"
+  },
+  {
+    "slug": "configcraft",
+    "title": "ConfigCraft",
+    "shortSummary": "Inspect and convert JSON, YAML and dotenv in a browser workbench with validation and structured navigation.",
+    "problem": "Developers need to inspect configuration structure and convert supported formats without sending file contents to a server.",
+    "architecture": "React and Vite share a parser and serialization layer between the editor, validation, structure tree and conversion actions. Drafts remain in browser memory.",
+    "decisions": [
+      "Reject duplicate JSON keys, unsafe numeric values, YAML aliases and unsupported tags.",
+      "Use JSON Pointer paths and one in-memory draft per format to keep inspection and editing consistent."
+    ],
+    "highlights": [
+      "Remove a closing brace and inspect validation feedback, then restore the document.",
+      "Convert the staging configuration to YAML, download it and reopen it as JSON.",
+      "Inspect dotenv string values and duplicate-assignment warnings."
+    ],
+    "constraints": [
+      "Validation covers syntax and representable values, without an application-specific schema.",
+      "Files are limited to 256 KiB and 70 nesting levels. Formatting, quoting and YAML comments can change during conversion.",
+      "Drafts are discarded on reload."
+    ],
+    "stack": [
+      "React",
+      "JavaScript",
+      "Vite",
+      "JSON",
+      "YAML"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "demoSetup": "cd configcraft\nnpm ci\nnpm run dev",
+    "id": "configcraft",
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "repositoryAccess": "unavailable",
+    "repositoryUrl": "https://github.com/luigi043/configcraft",
+    "screenshot": "assets/projects/configcraft.webp",
+    "screenshotAlt": "ConfigCraft: completed demo workflow",
+    "width": 1440,
+    "height": 1051,
+    "gallery": [
+      {
+        "src": "assets/projects/configcraft-1.webp",
+        "alt": "ConfigCraft: responsive view",
+        "width": 390,
+        "height": 1364
+      }
+    ],
+    "outcome": "Prepared application screenshots and the source README document this workflow. Application checks were not rerun during this portfolio update.",
+    "evidence": [
+      "Reviewed the source README and prepared screenshots in project-2026 on 25 November 2026."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "ConfigCraft: completed demo workflow"
+    },
+    "seo": {
+      "title": "ConfigCraft Case Study | Luiz Fehlberg",
+      "description": "Inspect and convert JSON, YAML and dotenv in a browser workbench with validation and structured navigation."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "db-engine",
+    "title": "Local-First DB Engine",
+    "shortSummary": "Save documents offline, inspect an IndexedDB outbox and reconcile changes with a local sync service.",
+    "problem": "Offline-capable tools need local writes and a visible sync history when the server is unavailable or data conflicts.",
+    "architecture": "A TypeScript document library commits local changes and outbox operations together in IndexedDB. Express accepts typed sync batches and returns snapshots and conflict results.",
+    "decisions": [
+      "Commit a document and its queued operation in one browser transaction.",
+      "Deduplicate acknowledged operation IDs in the running server and expose the selected conflict strategy per batch."
+    ],
+    "highlights": [
+      "Load the fictional Field Station collection with sync paused.",
+      "Edit Tern Point, save locally and reload to inspect the queued version.",
+      "Resume sync and compare the acknowledged document with the server snapshot."
+    ],
+    "constraints": [
+      "The demo server stores documents, acknowledgements and conflict history in memory, so restart loses that server state.",
+      "Batches can partially commit. There is no restart-persistent operation journal or multi-process file lock.",
+      "The browser uses HTTP sync and does not subscribe to push updates."
+    ],
+    "stack": [
+      "TypeScript",
+      "IndexedDB",
+      "Express",
+      "Vite"
+    ],
+    "categories": [
+      "Web",
+      "Architecture"
+    ],
+    "demoSetup": "cd db-engine\nnpm ci\nnpm run build\nnpm start\n# Open http://127.0.0.1:3001",
+    "id": "db-engine",
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "repositoryAccess": "unavailable",
+    "repositoryUrl": "https://github.com/luigi043/db-engine",
+    "screenshot": "assets/projects/db-engine.webp",
+    "screenshotAlt": "Local-First DB Engine: completed demo workflow",
+    "width": 1440,
+    "height": 1000,
+    "gallery": [
+      {
+        "src": "assets/projects/db-engine-1.webp",
+        "alt": "Local-First DB Engine: responsive view",
+        "width": 780,
+        "height": 2480
+      }
+    ],
+    "outcome": "Prepared application screenshots and the source README document this workflow. Application checks were not rerun during this portfolio update.",
+    "evidence": [
+      "Reviewed the source README and prepared screenshots in project-2026 on 25 November 2026."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Local-First DB Engine: completed demo workflow"
+    },
+    "seo": {
+      "title": "Local-First DB Engine Case Study | Luiz Fehlberg",
+      "description": "Save documents offline, inspect an IndexedDB outbox and reconcile changes with a local sync service."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "gaming-team-management-system",
+    "title": "Aurora Tactical",
+    "shortSummary": "Review a fictional team workspace and create, edit and retain performance notes.",
+    "problem": "A team coordinator needs a focused place to review a roster and record training observations.",
+    "architecture": "React and Vite render a browser-storage demo and a separate API workspace. ASP.NET Core, EF Core and PostgreSQL provide account-scoped performance notes and session management.",
+    "decisions": [
+      "Separate fictional roster and schedule fixtures from editable notes.",
+      "Derive the API readiness summary from the signed-in account’s notes."
+    ],
+    "highlights": [
+      "Write a performance note and save it.",
+      "Edit the note and reload to confirm local persistence.",
+      "Submit a blank title to inspect validation feedback."
+    ],
+    "constraints": [
+      "Roster membership, roles, schedules and match results are fictional fixtures.",
+      "Actual player availability and third-party integrations are outside the implemented workflow.",
+      "The separate API requires its documented PostgreSQL and server configuration."
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "ASP.NET Core",
+      "PostgreSQL"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "demoSetup": "cd gaming-team-management-system/frontend\nnpm ci\nnpm run dev -- --strictPort",
+    "id": "gaming-team-management-system",
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "repositoryAccess": "unavailable",
+    "repositoryUrl": "https://github.com/luigi043/gaming-team-management-system",
+    "screenshot": "assets/projects/gaming-team-management-system.webp",
+    "screenshotAlt": "Aurora Tactical: completed demo workflow",
+    "width": 1120,
+    "height": 475,
+    "gallery": [
+      {
+        "src": "assets/projects/gaming-team-management-system-1.webp",
+        "alt": "Aurora Tactical: responsive view",
+        "width": 780,
+        "height": 3342
+      }
+    ],
+    "outcome": "Prepared application screenshots and the source README document this workflow. Application checks were not rerun during this portfolio update.",
+    "evidence": [
+      "Reviewed the source README and prepared screenshots in project-2026 on 25 November 2026."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Aurora Tactical: completed demo workflow"
+    },
+    "seo": {
+      "title": "Aurora Tactical Case Study | Luiz Fehlberg",
+      "description": "Review a fictional team workspace and create, edit and retain performance notes."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "gta-rp-business-management-tool",
+    "title": "GTA RP Workshop Management",
+    "shortSummary": "Move a fictional repair job through stock consumption, invoicing and payment.",
+    "problem": "A roleplay workshop manager needs consistent job, stock and payment totals while completing service work.",
+    "architecture": "The React demo stores fictional jobs in browser storage. Web Locks serialize same-origin tab updates, and stock and money summaries derive from saved job states. A separate ASP.NET API manages account-scoped employees.",
+    "decisions": [
+      "Represent monetary values in integer cents and derive summaries from job state.",
+      "Serialize workshop mutations across tabs with Web Locks."
+    ],
+    "highlights": [
+      "Complete the Karin Sultan repair and inspect the brake pad stock deduction.",
+      "Record its full simulated payment and reload to verify persistence.",
+      "Try completing a job that requires more alternators than are in stock."
+    ],
+    "constraints": [
+      "The browser workflow has no live game integration or payment processor.",
+      "Business membership and service operations are simulated, separate from the employee API.",
+      "The demo requires a current browser with Web Locks support."
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Web Locks",
+      "ASP.NET Core"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "demoSetup": "cd gta-rp-business-management-tool/frontend\nnpm ci\nnpm run dev -- --host 127.0.0.1",
+    "id": "gta-rp-business-management-tool",
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "repositoryAccess": "unavailable",
+    "repositoryUrl": "https://github.com/luigi043/gta-rp-business-management-tool",
+    "screenshot": "assets/projects/gta-rp-business-management-tool.webp",
+    "screenshotAlt": "GTA RP Workshop Management: completed demo workflow",
+    "width": 1440,
+    "height": 1000,
+    "gallery": [
+      {
+        "src": "assets/projects/gta-rp-business-management-tool-1.webp",
+        "alt": "GTA RP Workshop Management: responsive view",
+        "width": 390,
+        "height": 1510
+      }
+    ],
+    "outcome": "Prepared application screenshots and the source README document this workflow. Application checks were not rerun during this portfolio update.",
+    "evidence": [
+      "Reviewed the source README and prepared screenshots in project-2026 on 25 November 2026."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "GTA RP Workshop Management: completed demo workflow"
+    },
+    "seo": {
+      "title": "GTA RP Workshop Management Case Study | Luiz Fehlberg",
+      "description": "Move a fictional repair job through stock consumption, invoicing and payment."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "meccanico-della-velocit-",
+    "title": "Meccanico della Velocità",
+    "shortSummary": "Explore manager, mechanic and customer views of a performance-car workshop.",
+    "problem": "Workshop staff and customers need different views of bookings, repair tasks and vehicle progress.",
+    "architecture": "React and Vite render role-based demo views through a browser-storage data adapter. Connected Supabase mode, an Express API and an Expo client are separate integration paths.",
+    "decisions": [
+      "Keep a self-contained fictional-data adapter for the browser walkthrough.",
+      "Normalize appointment and inventory records for the shared dashboard components."
+    ],
+    "highlights": [
+      "Use the manager role to book an appointment for the Porsche.",
+      "Switch to mechanic, complete a checklist task and inspect the timer.",
+      "Open the customer view and review the booking and owned vehicles."
+    ],
+    "constraints": [
+      "Browser role checks demonstrate the workflow and are not a security boundary.",
+      "The mobile capture shows the responsive web view, not a native device run.",
+      "Connected Supabase, Express and native integrations need their own configuration and verification."
+    ],
+    "stack": [
+      "React",
+      "Vite",
+      "Browser Storage",
+      "Express"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "demoSetup": "cd meccanico-della-velocit-\nnpm ci --prefix web-dashboard\nnpm run dev --prefix web-dashboard -- --host 127.0.0.1 --strictPort",
+    "id": "meccanico-della-velocit-",
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "repositoryAccess": "unavailable",
+    "repositoryUrl": "https://github.com/luigi043/meccanico-della-velocit-",
+    "screenshot": "assets/projects/meccanico-della-velocit-.webp",
+    "screenshotAlt": "Meccanico della Velocità: completed demo workflow",
+    "width": 1280,
+    "height": 760,
+    "gallery": [
+      {
+        "src": "assets/projects/meccanico-della-velocit--1.webp",
+        "alt": "Meccanico della Velocità: responsive view",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "outcome": "Prepared application screenshots and the source README document this workflow. Application checks were not rerun during this portfolio update.",
+    "evidence": [
+      "Reviewed the source README and prepared screenshots in project-2026 on 25 November 2026."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Meccanico della Velocità: completed demo workflow"
+    },
+    "seo": {
+      "title": "Meccanico della Velocità Case Study | Luiz Fehlberg",
+      "description": "Explore manager, mechanic and customer views of a performance-car workshop."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "test-web-app",
+    "title": "Harbor Desk",
+    "shortSummary": "Resolve workplace support requests with validation, durable notes and stale-edit recovery.",
+    "problem": "A workplace support operator needs to update requests while avoiding silent overwrites from another browser window.",
+    "architecture": "A dependency-free Node HTTP server serves the queue UI and JSON API. SQLite persists validated, version-checked updates. The browser filters the small queue locally.",
+    "decisions": [
+      "Require a resolution note when a ticket is marked resolved.",
+      "Use version-checked writes and preserve the attempted note when an edit conflicts."
+    ],
+    "highlights": [
+      "Find the east-wing Wi-Fi request and choose Resolved.",
+      "Add the required resolution note and save.",
+      "Reload to verify persistence and inspect conflict or retry feedback."
+    ],
+    "constraints": [
+      "This is a single-user loopback demo with no account system.",
+      "Anyone with access to the local server can edit the seeded requests.",
+      "Synchronous storage and browser filtering target a small fixed queue."
+    ],
+    "stack": [
+      "Node.js",
+      "SQLite",
+      "JavaScript",
+      "HTML/CSS"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "demoSetup": "cd test-web-app\nnpm start\n# Open http://127.0.0.1:4173",
+    "id": "test-web-app",
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "repositoryAccess": "unavailable",
+    "repositoryUrl": "https://github.com/luigi043/test-web-app",
+    "screenshot": "assets/projects/test-web-app.webp",
+    "screenshotAlt": "Harbor Desk: completed demo workflow",
+    "width": 1440,
+    "height": 960,
+    "gallery": [
+      {
+        "src": "assets/projects/test-web-app-1.webp",
+        "alt": "Harbor Desk: responsive view",
+        "width": 780,
+        "height": 1688
+      }
+    ],
+    "outcome": "Prepared application screenshots and the source README document this workflow. Application checks were not rerun during this portfolio update.",
+    "evidence": [
+      "Reviewed the source README and prepared screenshots in project-2026 on 25 November 2026."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Harbor Desk: completed demo workflow"
+    },
+    "seo": {
+      "title": "Harbor Desk Case Study | Luiz Fehlberg",
+      "description": "Resolve workplace support requests with validation, durable notes and stale-edit recovery."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "vehicle-digital-platforms",
+    "title": "Fleetline",
+    "shortSummary": "Review a fictional fleet and record maintenance with date, distance and version validation.",
+    "problem": "A fleet operator needs to record completed maintenance without stale edits or incorrect odometer values.",
+    "architecture": "Spring Boot serves the dashboard and API. Spring Data JPA persists demo vehicles in a local H2 file, with optimistic locking on writes. A separate user service handles accounts.",
+    "decisions": [
+      "Validate UTC dates and whole-kilometre odometer values on the server.",
+      "Keep maintenance completion separate from the operational release decision."
+    ],
+    "highlights": [
+      "Filter the roster to Service due and open the Toyota.",
+      "Record a valid service reading and inspect the updated service interval.",
+      "Try a lower odometer or future date, then reload a stale record."
+    ],
+    "constraints": [
+      "Fuel and battery levels are simulated snapshots.",
+      "The fixed service interval is a demo assumption and the form updates the latest maintenance snapshot.",
+      "There are no live vehicle, driver-license, trip or telemetry connections."
+    ],
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "JPA",
+      "H2"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "demoSetup": "cd vehicle-digital-platforms\nmvn -f services/vehicle-service/pom.xml package\njava -jar services/vehicle-service/target/vehicle-service-1.0.0.jar --spring.profiles.active=demo\n# Open http://127.0.0.1:8082/api/vehicles/",
+    "id": "vehicle-digital-platforms",
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "repositoryAccess": "unavailable",
+    "repositoryUrl": "https://github.com/luigi043/vehicle-digital-platforms",
+    "screenshot": "assets/projects/vehicle-digital-platforms.webp",
+    "screenshotAlt": "Fleetline: completed demo workflow",
+    "width": 1440,
+    "height": 950,
+    "gallery": [
+      {
+        "src": "assets/projects/vehicle-digital-platforms-1.webp",
+        "alt": "Fleetline: responsive view",
+        "width": 390,
+        "height": 1421
+      }
+    ],
+    "outcome": "Prepared application screenshots and the source README document this workflow. Application checks were not rerun during this portfolio update.",
+    "evidence": [
+      "Reviewed the source README and prepared screenshots in project-2026 on 25 November 2026."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Fleetline: completed demo workflow"
+    },
+    "seo": {
+      "title": "Fleetline Case Study | Luiz Fehlberg",
+      "description": "Review a fictional fleet and record maintenance with date, distance and version validation."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "car-os-dashboard",
+    "title": "Car OS Dashboard",
+    "shortSummary": "Follow a live simulated E36 drive cycle with streamed instruments, theme controls and connection recovery.",
+    "problem": "A supplementary automotive display needs clear telemetry freshness and a repeatable way to test unavailable sensor data.",
+    "architecture": "FastAPI owns the simulated drive cycle and trip calculations. React validates versioned WebSocket frames, and Vite proxies the local API and stream. Pydantic validates source samples.",
+    "decisions": [
+      "Share one telemetry source interface between the simulator and future read-only adapters.",
+      "Represent unknown channels as nullable values and hide stale readings after a timeout."
+    ],
+    "highlights": [
+      "Connect to the simulated drive cycle and inspect changing speed, RPM and trip distance.",
+      "Switch day mode and observe the simulated coolant warning.",
+      "Disconnect, inspect unavailable readings and reconnect."
+    ],
+    "constraints": [
+      "The release is a loopback-only simulator, with no verified physical adapter or vehicle acquisition.",
+      "The touchscreen capture is a browser viewport, not evidence of hardware testing.",
+      "Diagnostics, navigation and persisted history are outside this release."
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "WebSocket",
+      "Python"
+    ],
+    "categories": [
+      "Web"
+    ],
+    "demoSetup": "cd car-os-dashboard\nuv sync --locked --python 3.13\nnpm --prefix frontend ci\nuv run --locked python -m uvicorn backend.main:app\n# In a second terminal: npm --prefix frontend run dev",
+    "id": "car-os-dashboard",
+    "featured": false,
+    "public": true,
+    "status": "Local portfolio demo",
+    "repositoryAccess": "unavailable",
+    "screenshot": "assets/projects/car-os-dashboard.webp",
+    "screenshotAlt": "Car OS Dashboard: completed demo workflow",
+    "width": 1440,
+    "height": 900,
+    "gallery": [
+      {
+        "src": "assets/projects/car-os-dashboard-1.webp",
+        "alt": "Car OS Dashboard: responsive view",
+        "width": 800,
+        "height": 480
+      }
+    ],
+    "outcome": "Prepared application screenshots and the source README document this workflow. Application checks were not rerun during this portfolio update.",
+    "evidence": [
+      "Reviewed the source README and prepared screenshots in project-2026 on 25 November 2026."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Car OS Dashboard: completed demo workflow"
+    },
+    "seo": {
+      "title": "Car OS Dashboard Case Study | Luiz Fehlberg",
+      "description": "Follow a live simulated E36 drive cycle with streamed instruments, theme controls and connection recovery."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "csv-cleaner",
+    "title": "CSV Cleaner",
+    "shortSummary": "Clean UTF-8 contact rows and report duplicate IDs and invalid records.",
+    "problem": "Small contact exports need repeatable validation and a separate rejection report.",
+    "architecture": "A Python standard-library CLI parses contact CSV, normalizes IDs and writes accepted rows to stdout and diagnostics to stderr.",
+    "decisions": [
+      "Retain the first valid row for each normalized positive ID.",
+      "Return processing errors separately from row-level rejection results."
+    ],
+    "highlights": [
+      "Run the synthetic contacts example.",
+      "Inspect the two accepted rows and the duplicate and invalid-email report."
+    ],
+    "constraints": [
+      "The input header is fixed to id,name,email. Email checks cover basic form.",
+      "Rejected rows can coexist with successful processing; malformed input and unreadable files return status 2."
+    ],
+    "id": "csv-cleaner",
+    "featured": false,
+    "public": true,
+    "status": "Verified CLI example",
+    "stack": [
+      "Python",
+      "Standard Library"
+    ],
+    "categories": [
+      "CLI"
+    ],
+    "repositoryAccess": "unavailable",
+    "demoSetup": "cd csv-cleaner\npython csv_cleaner.py examples/contacts.csv\npython -m unittest -v",
+    "demoOutput": "id,name,email\r\n1,Ana Silva,ana@example.com\r\n3,\"Costa, Maria\",maria@example.com\n\nValidation report\n{\"accepted\": 2, \"rejected\": [{\"line\": 3, \"reason\": \"duplicate id\"}, {\"line\": 4, \"reason\": \"name and valid email are required\"}]}",
+    "screenshot": "assets/projects/csv-cleaner.webp",
+    "screenshotAlt": "CSV Cleaner output from the supplied synthetic example",
+    "width": 1000,
+    "height": 620,
+    "outcome": "The documented sample command and root-level unittest checks passed during this update.",
+    "evidence": [
+      "Executed the sample command with Python 3.13. CSV Cleaner passed two tests, File Inventory passed two tests and Log Analyzer passed one test."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Captured output from the real CLI sample command."
+    },
+    "seo": {
+      "title": "CSV Cleaner Case Study | Luiz Fehlberg",
+      "description": "Clean UTF-8 contact rows and report duplicate IDs and invalid records."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "file-inventory",
+    "title": "File Inventory",
+    "shortSummary": "Export relative file paths and byte sizes as sorted JSON or CSV.",
+    "problem": "A directory review needs a deterministic inventory without following links into unrelated paths.",
+    "architecture": "A Python standard-library scanner collects regular files, skips links and junctions, sorts relative paths and renders the complete report.",
+    "decisions": [
+      "Collect results before output so a failed scan produces no partial report.",
+      "Skip symbolic links and directory junctions."
+    ],
+    "highlights": [
+      "Run the sample scan and inspect notes.txt followed by reports/daily.txt.",
+      "Use --format csv to produce the equivalent tabular report."
+    ],
+    "constraints": [
+      "The tool reports paths and sizes, not content, hashes or change history.",
+      "Redirect output outside the scanned directory to avoid including the output file."
+    ],
+    "id": "file-inventory",
+    "featured": false,
+    "public": true,
+    "status": "Verified CLI example",
+    "stack": [
+      "Python",
+      "Standard Library"
+    ],
+    "categories": [
+      "CLI"
+    ],
+    "repositoryAccess": "unavailable",
+    "demoSetup": "cd file-inventory\npython file_inventory.py examples/sample\npython -m unittest -v",
+    "demoOutput": "[\r\n  {\r\n    \"path\": \"notes.txt\",\r\n    \"size_bytes\": 6\r\n  },\r\n  {\r\n    \"path\": \"reports/daily.txt\",\r\n    \"size_bytes\": 13\r\n  }\r\n]",
+    "screenshot": "assets/projects/file-inventory.webp",
+    "screenshotAlt": "File Inventory output from the supplied synthetic example",
+    "width": 1000,
+    "height": 620,
+    "outcome": "The documented sample command and root-level unittest checks passed during this update.",
+    "evidence": [
+      "Executed the sample command with Python 3.13. CSV Cleaner passed two tests, File Inventory passed two tests and Log Analyzer passed one test."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Captured output from the real CLI sample command."
+    },
+    "seo": {
+      "title": "File Inventory Case Study | Luiz Fehlberg",
+      "description": "Export relative file paths and byte sizes as sorted JSON or CSV."
+    },
+    "addedOn": "2026-11-25"
+  },
+  {
+    "slug": "log-analyzer",
+    "title": "Log Analyzer",
+    "shortSummary": "Summarize log severity counts and preserve malformed source line numbers.",
+    "problem": "A small application log needs a predictable summary and a clear list of malformed entries.",
+    "architecture": "A Python standard-library CLI validates ISO timestamps and supported severity levels, then emits ordered JSON counts and malformed line numbers.",
+    "decisions": [
+      "Always emit all five severity levels, including zero counts.",
+      "Keep strict malformed-line failure separate from input or command errors."
+    ],
+    "highlights": [
+      "Run the sample log and inspect two INFO, one WARNING and one ERROR entry.",
+      "Add --strict to report malformed input through exit status 1 while retaining the report."
+    ],
+    "constraints": [
+      "Input uses TIMESTAMP LEVEL message and five supported severity names.",
+      "This is a local file summary, without live ingestion, alerting or distributed log storage."
+    ],
+    "id": "log-analyzer",
+    "featured": false,
+    "public": true,
+    "status": "Verified CLI example",
+    "stack": [
+      "Python",
+      "Standard Library"
+    ],
+    "categories": [
+      "CLI"
+    ],
+    "repositoryAccess": "unavailable",
+    "demoSetup": "cd log-analyzer\npython log_analyzer.py examples/sample.log\npython -m unittest -v",
+    "demoOutput": "{\r\n  \"counts\": {\r\n    \"DEBUG\": 0,\r\n    \"INFO\": 2,\r\n    \"WARNING\": 1,\r\n    \"ERROR\": 1,\r\n    \"CRITICAL\": 0\r\n  },\r\n  \"malformed_lines\": [\r\n    3\r\n  ]\r\n}",
+    "screenshot": "assets/projects/log-analyzer.webp",
+    "screenshotAlt": "Log Analyzer output from the supplied synthetic example",
+    "width": 1000,
+    "height": 620,
+    "outcome": "The documented sample command and root-level unittest checks passed during this update.",
+    "evidence": [
+      "Executed the sample command with Python 3.13. CSV Cleaner passed two tests, File Inventory passed two tests and Log Analyzer passed one test."
+    ],
+    "visualization": {
+      "kind": "runtime-screenshot",
+      "label": "Runtime screenshot",
+      "description": "Captured output from the real CLI sample command."
+    },
+    "seo": {
+      "title": "Log Analyzer Case Study | Luiz Fehlberg",
+      "description": "Summarize log severity counts and preserve malformed source line numbers."
+    },
+    "addedOn": "2026-11-25"
   }
 ]
