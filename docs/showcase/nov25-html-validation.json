@@ -1,0 +1,24 @@
+[
+  {
+    "width": 390,
+    "featured": 6,
+    "android": 11,
+    "libraryProjects": 42,
+    "routes": 42,
+    "filters": "passed",
+    "images": "decoded",
+    "overflow": false,
+    "pageErrors": []
+  },
+  {
+    "width": 1440,
+    "featured": 6,
+    "android": 11,
+    "libraryProjects": 42,
+    "routes": 42,
+    "filters": "passed",
+    "images": "decoded",
+    "overflow": false,
+    "pageErrors": []
+  }
+]
